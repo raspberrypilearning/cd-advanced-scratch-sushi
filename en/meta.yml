@@ -12,5 +12,11 @@ technologies: "electronics, sense-hat, physical computing, html/css, scratch, py
 site_areas:
 steps:
   - title: Introduction
-  - title: What you will need
-  - title: Step title
+  - title: Setting things up
+  - title: Losing the game
+  - title: Powerups
+  - title: Super powerups!
+  - title: Adding some competition
+  - title: Level 2
+  - title: Moving platforms
+  - title: What next?
