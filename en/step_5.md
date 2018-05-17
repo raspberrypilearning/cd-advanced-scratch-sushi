@@ -1,12 +1,12 @@
 ## Power-ups
 
-At the moment you have just one type of collectible: a fart cloud that gains you one point when you grab it. On this card, you’re going to create a new type of collectible, in a way that will make adding other types of collectibles easy. Then you can invent your own power-ups and bonuses and really make the game your own!
+At the moment you have just one type of collectible: a star that gains you one point when you grab it. On this card, you’re going to create a new type of collectible, in a way that will make adding other types of collectibles easy. Then you can invent your own power-ups and bonuses and really make the game your own!
 
 I’ve already included some pieces to do this with the `collectable-type`{:class="blockdata"} variable and the `pick-costume`{:class="blockmoreblocks"} **More** block. You’re going to need to improve on them though. 
 
 Let's have a look at how the collectible works right now.
 
-+ In the scripts for the `Collectable` sprite, find the `when I start as a clone`{:class="blockevents"} code. The blocks you should look at are the ones that give you points for collecting a fart:
++ In the scripts for the `Collectable` sprite, find the `when I start as a clone`{:class="blockevents"} code. The blocks you should look at are the ones that give you points for collecting a star:
 
 ```blocks
     if <touching [Player Character v]?> then
@@ -30,14 +30,14 @@ The `pick-costume`{:class="blockmoreblocks"} block works a bit like the `lose`{:
 ```blocks
     define pick-costume (type)
     if <(type) = [1]> then
-        switch costume to [fartCloud v]
+        switch costume to [star1 v]
     end
 ```
     
 When the `pick-costume`{:class="blockmoreblocks"} block runs, what it does is this:
 
  1. It looks at the `type` input variable
- 1. If the value of `type` is equal to `1`, it switches to the `fartCloud` costume
+ 1. If the value of `type` is equal to `1`, it switches to the `star1` costume
 
 Take a look at the part of the script that uses the block:
 
@@ -45,7 +45,7 @@ Take a look at the part of the script that uses the block:
     when I start as a clone
     pick-costume (collectable-type) :: custom
     show
-    repeat until <(y position) < [170]>
+    repeat until <(y position) < [-170]>
         change y by (collectable-speed)
         if <touching [Player Character v]?> then
             change [points v] by (collectable-value)
@@ -60,17 +60,17 @@ You can see that the `collectable-type`{:class="blockdata"} variable gets **pass
 
 Of course, right now the `Collectable` sprite only has one costume, since there's only one type of collectable. You're about to change that!
 
-+ Add a new costume to the `Collectable` sprite for your new power-up. I've drawn a supersize fart cloud, but you can make whatever you like!
++ Add a new costume to the `Collectable` sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
 
 + Next you need to tell the `pick-costume`{:class="blockmoreblocks"} **More** block to set the new costume whenever it gets the new value for `type`, like this \(using whatever costume name you picked\): 
 
 ```blocks
     define pick-costume (type)
     if <(type) = [1]> then
-        switch costume to [fartCloud v]
+        switch costume to [star1 v]
     end
     if <(type) = [2]> then
-        switch costume to [superFart v]
+        switch costume to [lightning v]
     end
 ```
 
@@ -100,7 +100,7 @@ Now you need to decide what the new collectable will do. We’ll start with some
     end
 ```
 
-+ Update the `when I start as a clone`{:class="blockevents"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="blockmoreblocks"}, **passing** `collectable-type`{:class="blockdata"}. By using this **More** block, normal fart clouds still add a point, and the new power-up adds a life. 
++ Update the `when I start as a clone`{:class="blockevents"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="blockmoreblocks"}, **passing** `collectable-type`{:class="blockdata"}. By using this **More** block, stars still add a point, and the new power-up adds a life. 
 
 ```blocks
     if <touching [Player Character v] ?> then
@@ -146,4 +146,4 @@ You're going to set the `collectable-type`{:class="blockdata"} to either `1` or 
 
 This code gives a 1 in 50 chance of setting the `collectable-type`{:class="blockdata"} to `2`.
 
-Great! Now you have a new type of collectable that sometimes shows up instead of the fart cloud, and that gives you an extra life instead of a point when you collect it!
+Great! Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it!

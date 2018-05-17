@@ -4,13 +4,13 @@ These are the Advanced Scratch Sushi Cards, and in them you’ll be making a pla
 
 ### What you will make
 
-Did you know that having lots and lots of cows contributes to climate change? That's because cows produce methane, a greenhouse gas, and fart it out. In this game your mission is to catch as much of the methane as you can.
+Here is an example of the game you will build. Feel free to improve on my "art".
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/219285989/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
 </div>
 
-Use the arrow keys to move Pico around. Make sure you don't crash into the helicopter!
+Use the arrow keys to move the cat around. Watch out for the dog!
 
 ### What you will learn
 

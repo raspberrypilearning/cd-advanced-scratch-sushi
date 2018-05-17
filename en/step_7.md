@@ -1,12 +1,12 @@
 ## Adding some competition
 
-Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition thoug — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platformer games \(like Super Mario\) that we’re being inspired by here.
+Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platformer games \(like Super Mario\) that we’re being inspired by here.
 
-+ First, pick a sprite to add as your enemy. Because our player character is in the sky, I chose a helicopter. There are lots of other sprites you could add though. I also renamed the sprite to `Enemy`, just to make things clearer for me.
++ First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite to `Enemy`, just to make things clearer for me.
 
 + Resize the sprite to the right size and place it somewhere appropriate to start. Here’s what mine looks like: 
 
-![The helicopter enemy sprite](images/enemySprite.png)
+![The dog enemy sprite](images/enemySprite.png)
 
 + Write the easier code first: set up its block for the `game over` message to make the enemy disappear when the player loses the game. 
 
@@ -22,7 +22,7 @@ Your game works and now you can collect points, get special powers from power-up
     show
     set [enemy-move-steps v] to [5]
     set rotation style [left-right v]
-    go to x: (1) y: (59)
+    go to x: (-25) y: (-9)
     forever
         move (enemy-move-steps) steps
         if <not <touching [Platforms v] ?>> then

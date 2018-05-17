@@ -117,7 +117,6 @@ You also need to make sure that every time someone starts the game, the first le
 
 ```blocks
     define reset-game
-    set size to (35) %
     set rotation style [left-right v]
     set [jump-height v] to [15]
     set [gravity v] to [2]

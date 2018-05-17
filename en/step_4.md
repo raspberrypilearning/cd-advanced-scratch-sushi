@@ -10,10 +10,6 @@ You may have noticed that the `lose`{:class="blockmoreblocks"} **More** block on
     broadcast [game over v]
     go to x:(0) y:(0)
     say [Game over!] for (2) secs
-    say [It's pretty much impossible to catch all the methane, right?] for (5) secs
-    say [It would be better to reduce the amount produced in the first place.] for (6) secs
-    say [By considering the consequences of how we produce food...] for (5) secs
-    say [...we can do it in a more sustainable way that's better for everyone.] for (6) secs
     stop [all v]
 ```
 
@@ -47,7 +43,7 @@ Now you need to make sure all the sprites know what to do when the game is over,
     show
 ```
 
-### Stopping the farts
+### Stopping the stars
 
 Now, for something a little more tricky! If you look at the code for the `Collectable` sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="blockevents"} instructions. 
 

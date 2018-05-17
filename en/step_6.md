@@ -30,12 +30,12 @@ This doesn’t look like it should do much, but think about what’s happening d
             set [collectable-type v] to [1]
         end
         wait (collectable-frequency) secs
-        go to x: (pick random (-240) to (240)) y:(-179)
+        go to x: (pick random (-240) to (240)) y:(179)
         create clone of [myself v]
     end
 ```
 
-You can see that the `wait` block here pauses the code for the length of time set by `collectable-frequency`{:class="blockdata"}. So if the value of `collectable-frequency`{:class="blockdata"} changes to `0.000001`, the `wait` block only pauses for **one millionth** of a second, meaning that the loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="blockdata"} changes back `1`. Can you think of any problems that might cause? There’ll be a lot more super-farts…what if you kept catching them?
+You can see that the `wait` block here pauses the code for the length of time set by `collectable-frequency`{:class="blockdata"}. So if the value of `collectable-frequency`{:class="blockdata"} changes to `0.000001`, the `wait` block only pauses for **one millionth** of a second, meaning that the loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="blockdata"} changes back `1`. Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
 
 --- /collapse ---
 
