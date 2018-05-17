@@ -1,37 +1,87 @@
-## Powerups
+## Losing the game
 
-On the last card you saw the collectable I created. It’s a star that just adds one point when you grab it. That’s pretty boring.
+You may have noticed that the `lose`{:class="blockmoreblocks"} **More** block on the `Player Character` sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
 
-On this card, you’re going to create a new collectable, but you’re going to do it in a way that makes adding more collectables easy, so you can invent your own powers and bonuses and really make the game your own!
++ First, find the `lose` block and complete it with the following code: 
 
-+ Add a new costume to the `Collectable` sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+```blocks
+    define lose
+    stop [other scripts in sprite v] :: control stack
+    broadcast [game over v]
+    go to x:(0) y:(0)
+    say [Game over!] for (2) secs
+    say [It's pretty much impossible to catch all the methane, right?] for (5) secs
+    say [It would be better to reduce the amount produced in the first place.] for (6) secs
+    say [By considering the consequences of how we produce food...] for (5) secs
+    say [...we can do it in a more sustainable way that's better for everyone.] for (6) secs
+    stop [all v]
+```
 
-Notice that I’ve already included some pieces to make this easier for you with the `collectable-type` variable and the `pick costume` **more block**. You’re going to need to improve on them though. 
+--- collapse ---
+---
+title: What does the code do?
+---
 
-![](images/powerup1.png)
+Whenever the `lose`{:class="blockmoreblocks"} block runs, what it does is: 
 
-In the code above, `collectable-type` is **passed** to `pick-costume` when it’s **called**, where it becomes `type` and can be used inside the **more block**
+ 1. Stop the physics and other game scripts on the `Player Character`
+ 2. Tell all the other sprites that the game is over by **broadcasting** a message so they can change based on that
+ 3. Move the `Player Character` to the centre of the screen and have them tell the player that the game is over
+ 4. Stop all scripts in the game
 
-+ First, you need to set the collectable type. It’s just a number, used to tell the program what costume, rules etc. to use for the collectable. You’re going to want to pick it at random, to keep things interesting. This example gives a 1/50 chance: 
+--- /collapse ---
 
-![](images/powerup2.png)
+Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
 
-**Pro Tip!** 
-There can be a different value set as the `collectable-type` for each clone. Think of it like creating a new copy of the variable on the main `collectable` sprite with the value that was in `collectable-type` the instant that clone was created. One of the things that makes clones special is that they cannot change the values of any variables they start with. They are effectively **constant** values.
+### Hiding the platforms and edges
 
-Great! Now you’re setting a different value for the collectable type, but none of the code knows what to do with it yet! 
++ Start with the easy ones. The `Platforms` and `Edges` sprites both need code for appearing when the game starts and disappearing at 'Game over', so add this to each of them:
 
-+ First, just teach the `pick-costume` **more block** to set the new costume when it gets the new type, like this \(using whatever costume you picked\): 
+```blocks
+    when I receive [game over  v]
+    hide
+```
 
-![](images/powerup3.png)
+```blocks
+    when green flag clicked
+    show
+```
 
-Now you need to decide what the powerup will do. We’ll start with something simple: giving the player a new life. On the next card, you’ll make it do something cooler. 
+### Stopping the farts
 
-+ To create the powerup code, go into **more blocks** and **Make a Block**. Expand the **Options** section and add a **number input**. Name the block `react-to-player` and the number input `type`. Make the `react-to-player` block either give the same points prize that the star is already giving, or increase the player’s lives, depending on the `type` of powerup.  
+Now, for something a little more tricky! If you look at the code for the `Collectable` sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="blockevents"} instructions. 
 
-![](images/powerup4and5.png)
+We’ll talk more about what makes clones special when we get to the card about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="blockevents"} messages.
 
-+ Update the `when I start as a clone` code to replace the points increase with a **call** to `react-to-player`, **passing** `collectable-type`. Stars still boost points but the new powerup adds lives. 
++ Let’s look at how the `Collectable` sprite works. See if you can understand some of its code: 
 
-![](images/powerup6.png)
+```blocks
+    when green flag clicked
+    hide
+    set [collectable-value v] to [1]
+    set [collectable-speed v] to [1]
+    set [collectable-frequency v] to [1]
+    set [create-collectables v] to [true]
+    set [collectable-type v] to [1]
+    repeat until <not <(create-collectables) = [true]>>
+        wait (collectable-frequency) secs
+        go to x: (pick random (-240) to (240)) y: (179)
+        create clone of [myself v]
+    end
+```
 
+ 1. First it makes the original collectable invisible.
+ 2. Then it sets up the control variables. We’ll come back to these later.
+ 3. The `create-collectables`{:class="blockdata"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="blockdata"} is `true`, and does nothing if it’s not.
+
++ Now you need to set up a block on the `Collectable` sprite so that it reacts to the `game over` broadcast:
+
+```blocks
+    when I receive [game over v]
+    hide
+    set [create-collectables v] to [false]
+```
+
+This code is similar to the code controlling the `Edges` and `Platforms` sprites. The only difference is that you’re also setting the `create-collectables`{:class="blockdata"} variable to `false` so that no new clones are created when it's 'Game over'. 
+ 
++ Note that you can use this variable to pass messages from one part of your code to another! 

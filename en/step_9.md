@@ -1,50 +1,73 @@
-## What next?
+## Moving platforms
 
-You’ve got a game now! But there’s still a lot more you can do with it! Here’s a few ideas to get you started:
- 
-### High Scores
+The reason I asked you to use my version of level 2 is the gap you might have noticed in the middle of the layout. You’re going to create a platform that moves through this gap and that the player can jump on and ride. 
 
-+ Keep a list of the names and scores of people who’ve gotten high scores in the game! You’ll need to use the `ask` block to the get their name.
+![Another level with different platforms](images/movingPlatforms.png)
 
-### New Powerups!
- 
-+ Try adding some new powerups. For example:
-  * Immunity to enemies
-  * More lives
-  * Bigger player character
-  * Smaller player character
- 
-### Scrolling Levels!
++ First, you’ll need the sprite for the platform: add any sprite, name it `Moving-Platform`, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
 
-+ Can you figure out how to make the levels scroll along, so the player character can move through them from left to right? Or at least _look_ like that’s what’s happening?
- 
-### Completing Levels!
+Now let's adde some code! 
 
-+ Right now, the levels never end. What if, instead of pushing a button, you needed a certain number of points to get to the next level?
- 
-### Play With Physics!
- 
-+ Try changing some of the values in the physics engine, like the gravity, jump height, x-speed and y-speed. How do they change the game? 
- Can you use them to make powerups?
- 
-### More Levels
- 
-+ Add more levels! Make better art! By using the stage background, make the game look cooler while still keeping platforms easy to work with as a coder.
- 
-### Sound Effects!
++ Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked 4 seconds. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a variable called `create-platforms`{:class="blockdata"}. 
 
-+ This game is totally silent right now! Try adding background music and sound effects using the blocks in **sound**!
+Here's how my code looks so far for the new sprite:
+
+```blocks
+    when green flag clicked
+    hide
+    forever
+        wait (4) secs
+        if <(create-platforms) = [true]> then
+            create clone of [myself v]
+        end
+    end
+```
+
++ Then add the clone's code:
+
+```blocks
+    when I start as a clone
+    show
+    forever
+        if <(y position) < [180]> then
+            change y by (1)
+            wait (0.02) secs
+        else
+            delete this clone
+        end
+    end
+```
+
+This code is simple: it makes the clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear. 
+
++ You need to make the platforms disappear/reappear based on the broadcasts that change levels and the `game over` message. 
+
+```blocks
+    when I receive [level-1 v]
+    set [create-platforms v] to [false]
+    hide
+
+    when I receive [level-2 v]
+    set [create-platforms v] to [true]
+
+    when I receive [game over v]
+    hide
+    set [create-platforms v] to [false]
+```
+
++ Now, if you try to actually play the game, the player character falls through the platform! Any idea why? 
+
+It’s because the physics code doesn’t know about the platform. It’s actually an easy fix: on the `Player Character` sprite, replace every `touching “Platforms”`{:class="blocksensing"}  block with an `OR`{:class="blockoperators"} operator that checks for **either** `touching “Platforms”`{:class="blocksensing"}  **OR** `touching “Moving-Platform”`{:class="blocksensing"}.
  
-### Secrets!
++ Go through the code on the `Player Character` sprite and everywhere you see this block:
 
-+ Think of secret bonuses, cheat codes and other “easter eggs” you could hide in the game for players to discover. Try to code some of them!
- 
-### Different Characters!
+```blocks
+    <touching [Platforms v] ?>
+```
 
-+ Let the player pick a character. Make them different in things like size, how high they jump, maybe even how many lives they have and points they get from collectables! 
+replace it with this one:
 
-![](images/zero.png) 
+```blocks
+    <<touching [Platforms v] ?> or <touching [Moving-Platform v] ?>>
+```
 
-
-#### Tell us what you thought!
-Go to [dojo.soy/advanced-scratch-end](http://dojo.soy/advanced-scratch-end) and let us know if you had fun with these Sushi Cards and what you’d like to see in future!

@@ -1,46 +1,86 @@
-## Level 2
+## Adding some competition
 
-What you’re going to do on this card is add a new level to the game that the player can get to just by pressing a button. Later, you can change it so they need a certain number of points, or something else, to get there.
+Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition thoug — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platformer games \(like Super Mario\) that we’re being inspired by here.
 
-+ First, create a new button sprite by either adding it from the library or drawing your own. I did a bit of both and came up with this: 
++ First, pick a sprite to add as your enemy. Because our player character is in the sky, I chose a helicopter. There are lots of other sprites you could add though. I also renamed the sprite to `Enemy`, just to make things clearer for me.
 
-![](images/level1.png)
++ Resize the sprite to the right size and place it somewhere appropriate to start. Here’s what mine looks like: 
 
-Now, the code for this button is kinda clever; it’s designed so that every time you click it, it will take you to the next level, how ever many levels there are.
+![The helicopter enemy sprite](images/enemySprite.png)
 
-+ Add this to your button sprite: 
++ Write the easier code first: set up its block for the `game over` message to make the enemy disappear when the player loses the game. 
 
-![](images/level2and3.png)
+```blocks
+    when I receive [game-over v]
+    hide
+```
+
++ Now you need to write the code for what the enemy does. You can use mine from this card, but don’t be afraid to add more! (What if they teleport around to different platforms? Or what if there’s a power-up that makes them move faster, or slower?) 
+
+```blocks
+    when green flag clicked
+    show
+    set [enemy-move-steps v] to [5]
+    set rotation style [left-right v]
+    go to x: (1) y: (59)
+    forever
+        move (enemy-move-steps) steps
+        if <not <touching [Platforms v] ?>> then
+            set [enemy-move-steps v] to ((enemy-move-steps) * (-1))
+        end
+    end
+```
+
+**Note**: if you just drag the `go to`{:class="blockmotion"} block and don’t change the `x` and `y` values, they’ll be the values for the current location of the sprite!
  
-`max-level` is the highest level
-`min-level` is the lowest level
-`current-level` is the level the player is on right now
+The code in the `if...then`{:class="blockcontrol"} block will make the enemy turn around when they get to the end of the platform!
 
-+ These all need to be set by the programmer \(you!\), so if you add a third level, don’t forget to change `max-level`!
+The next thing you’ll need is for the player to lose a life when they touch the enemy. You need to make sure they **stop** touching really quickly, though, since otherwise the touching code will keep running and they’ll keep losing lives. 
 
-The code uses broadcasts to tell the other sprites which level to display, and to clear up the collectables.
++ Here's how I did it, but feel free to try to improve on this code! I modified the `Player Character` sprite’s main block. Add the code before the `if`{:class="blockcontrol"} block that checks if you're out of lives.
 
-+ Now you need to get the other sprites to respond to those broadcasts! Start with the easy one: clearing all the collectables. If you just tell them to `hide`, all the existing clones will. So add this to the `collectable` sprite: 
+```blocks
+    if <touching [Enemy v] ?> then
+        hide
+        go to x: (-187) y: (42)
+        change [lives v] by (-1)
+        wait (0.5) secs
+        show
+    end
+```
 
-![](images/level4.png)
+--- collapse ---
+---
+title: Show me the whole updated script
+---
 
-Since one of the first things any new clone already does is show itself, that means you don’t even have to worry about turning this off for them!
+My `Player Character` sprite's main block looks like this now:
 
-+ Now to switch the `platforms` sprite! You can design your own new level later, if you like, but for now let’s use the one I’ve already included \(you’ll see why on the next card!\). You just need this code to take the messages sent out by **joining** the `level-` and the `current-level` variable and use them to change the `platforms` costume. 
+```blocks
+    when green flag clicked
+    reset-game :: custom
+    forever
+        main-physics :: custom
+        if <(y position) < [-179]> then
+            hide
+            reset-character :: custom
+            change [lives v] by (-1)
+            wait (0.05) secs
+            show
+        end
+        if <touching [Enemy v] ?> then
+            hide
+            go to x: (-187) y: (42)
+            change [lives v] by (-1)
+            wait (0.5) secs
+            show
+        end
+        if <(lives) < [1]> then
+            lose :: custom
+        end
+    end
+```
 
-![](images/level5.png)
+--- /collapse ---
 
-+ For the `Enemy` sprite, you just need to make sure it disappears on level 2 \(or move it to another platform!\), like this: 
-
-![](images/level6.png)
-
-+ Finally, the player character needs to separate out the coordinates from the `reset character` **more block**, so the character goes to the right place, and call the first level when the game starts. 
-
-![](images/level7.png)
- 
-+ Notice the code blocks highlighted in boxes. Here's what they do:
- 1. Set starting coordinates and **call** `reset-character`
- 2. Use variable starting coordinates instead of fixed **x** and **y** cordinates
- 3. Use the broadcast of the `min-level` to reset the character and game
-
- 
+The new code hides the character, moves them back to their starting position, reduces `lives` by `1`, and after half a second makes them re-appear.

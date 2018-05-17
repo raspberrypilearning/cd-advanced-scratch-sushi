@@ -1,33 +1,27 @@
-## Losing the game
+## Setting things up
 
-You may have noticed that the `lose` **more block**  on the `Player Character` sprite is empty. You’re going to fill this in and setup all the pieces needed for a nice “Game Over” screen.
+Because you’re learning Scratch and not how to build a physics engine (code that makes things behave at least a little like the real world — e.g. not falling through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
 
-+ First, complete the `lose` block: 
+You should take a quick look at it including the details on this card, since you’ll be making some changes to it later, but you don’t need to understand everything it’s doing.
 
-![](images/losing1.png)
++ The first thing you’ll need to do is to get a copy of the code from [dojo.soy/platform-starter](http://dojo.soy/platform-starter){:target="_blank"} 
 
- 1. Stop the physics and other game scripts on the Player Character
- 2. Tell all the other sprites that the game is over, by **broadcasting** a message so they can change based on that
- 3. Move the Player Character to the centre of the screen and have them tell the player the game is over
++ To use it offline, download this code by clicking **See Inside**, then the **File** menu, and **Download to your computer**, and then open it in Scratch on your computer.
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add may need code for this too!**
++ You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
 
-+ Start with the easy ones, the `Platforms` and `Edges` sprites both need code for appearing when the game starts and disappearing at game over. 
+The physics engine of the game has a variety of pieces in it, some of which work right now and some of which don’t. You can find out which by running the game and trying to play it.
 
-![](images/losing2.png)
+You'll see that you can lose lives, but nothing happens when you run out. Also, the game has only got one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a bit more!
 
-Now, for something a little more tricky! If you look at the code for the `Collectable` sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself, which follow the special `when I start as a clone` instructions. 
++ For now, take a look at how the code is put together. It uses lots of **More** blocks, which are great for splitting your code up into pieces so you can manage it better. It’s like having a block made up of a lot of other blocks, which you can give some basic instructions to.
 
-We’ll talk more about what makes clones special when we get to the card about making new and different collectables, but for now what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast` messages.
+![](images/setup2and3.png)
 
-+ Let’s look at how the `Collectable` sprite works: 
+In the code above, the main game `forever`{:class="blockcontrol"} loop calls the `main-physics`{:class="blockmoreblocks"} block to do a whole lot of stuff! Keeping them separated like this makes it easy to read the main loop and understand what happens when, without worrying about **how** it happens.
  
- ![](images/losing3.png)
 
- 1. First it makes the original collectable invisible
- 2. Then it sets up the control variables. We’ll come back to these later.
- 3. The `create-collectables` variable is the on/off switch for cloning: the loop creates clones if `create-collectables` is `true`, and does nothing if it’s not
-
-+ Now what you need to do is setup a block like the ones you had on the `Edges` and `Platforms` sprites on the `Collectable` sprite. The only difference is you’re also setting the `create-collectables` variable to `false` so that no new clones are created. Notice how you can use the variable to pass messages from one part of your code to another! 
-
-![](images/losing4.png)
++ Now look at `reset game`{:class="blockmoreblocks"} and `reset character`{:class="blockmoreblocks"} blocks and notice:
+    1. They do pretty normal things, such as setting up variables and making sure the character rotates properly
+    2. `reset-game`{:class="blockmoreblocks"} **calls** `reset-character`{:class="blockmoreblocks"} — meaning you can use a **More** block inside another **More** block!
+    3. `reset-character`{:class="blockmoreblocks"} gets used in two different places, but to change it you only have to change the code of the **More** block in one! This can save you a lot of work and help you avoid mistakes.

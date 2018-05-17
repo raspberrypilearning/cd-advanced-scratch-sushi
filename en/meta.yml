@@ -1,26 +1,19 @@
-title: cd-advanced-scratch-sushi
+title: Advanced Scratch Sushi Cards
 hero_image: images/banner.png
-description: cd-advanced-scratch-sushi description
-theme: red # possible values: blue, green, navy, orange, red, turquoise, violet, yellow
-duration: 2
+description: Make a platform-style game and add your own levels, powers, and characters.
+theme: orange
+version: 1
 listed: false
-ingredient: false
 copyedit: false
-curriculum: 0, design-0, programming-0, phys-comp-0, manufacture-0, community-0
-interests: animals, art, humour, space, photography, outdoors, music, games
-technologies: electronic-components, sense-hat, html-css-javascript, scratch, python
-site_areas: coderdojo
-hardware: electronic-components, sense-hat
-software: html-css-javascript, scratch, python
-version: 3
-last_tested: 2017-01-01
-steps: 
-- title: Introduction
-- title: Setting things up
-- title: Losing the game
-- title: Powerups
-- title: Super powerups!
-- title: Adding some competition
-- title: Level 2
-- title: Moving platforms
-- title: What next?
+last_tested: "2018-04-23"
+steps:
+  - title: Introduction
+  - title: What you will need
+  - title: Setting things up
+  - title: Losing the game
+  - title: Power-ups
+  - title: Super power-ups!
+  - title: Adding some competition
+  - title: Level 2
+  - title: Moving platforms
+  - title: What next?
