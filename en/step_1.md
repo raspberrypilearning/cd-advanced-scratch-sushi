@@ -1,6 +1,6 @@
 ## Introduction
 
-These are the Advanced Scratch Sushi Cards, and in them you’ll be making a platform-style game to which you can later add your own levels, powers, and characters.
+These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
 
 ### What you will make
 
