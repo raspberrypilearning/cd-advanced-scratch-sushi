@@ -1,27 +1,32 @@
 ## Setting things up
 
-Because you’re learning Scratch and not how to build a physics engine (code that makes things behave at least a little like the real world — e.g. not falling through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
 
-You should take a quick look at it including the details on this card, since you’ll be making some changes to it later, but you don’t need to understand everything it’s doing.
+You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
 
-+ The first thing you’ll need to do is to get a copy of the code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} 
+### Get the project
 
-+ To use it offline, download this code by clicking **See Inside**, then the **File** menu, and **Download to your computer**, and then open it in Scratch on your computer.
++ The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
 
-+ You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
+To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
 
-The physics engine of the game has a variety of pieces in it, some of which work right now and some of which don’t. You can find out which by running the game and trying to play it.
+You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
 
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game has only got one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a bit more!
+### Take a look at the code
 
-+ For now, take a look at how the code is put together. It uses lots of **More** blocks, which are great for splitting your code up into pieces so you can manage it better. It’s like having a block made up of a lot of other blocks, which you can give some basic instructions to.
+The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
+
+You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a bit more!
+
++ For now, take a look at how the code is put together. It uses lots of **More** blocks, which are great for splitting your code up into pieces so you can manage it better. A **More** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming Card!
 
 ![](images/setup2and3.png)
 
-In the code above, the main game `forever`{:class="blockcontrol"} loop calls the `main-physics`{:class="blockmoreblocks"} block to do a whole lot of stuff! Keeping them separated like this makes it easy to read the main loop and understand what happens when, without worrying about **how** it happens.
- 
+### 'More' blocks are really useful
 
-+ Now look at `reset game`{:class="blockmoreblocks"} and `reset character`{:class="blockmoreblocks"} blocks and notice:
-    1. They do pretty normal things, such as setting up variables and making sure the character rotates properly
-    2. `reset-game`{:class="blockmoreblocks"} **calls** `reset-character`{:class="blockmoreblocks"} — meaning you can use a **More** block inside another **More** block!
-    3. `reset-character`{:class="blockmoreblocks"} gets used in two different places, but to change it you only have to change the code of the **More** block in one! This can save you a lot of work and help you avoid mistakes.
+In the code above, the main game `forever`{:class="blockcontrol"} loop calls the `main-physics`{:class="blockmoreblocks"} **More** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+ 
++ Now look at the `reset game`{:class="blockmoreblocks"} and `reset character`{:class="blockmoreblocks"} **More** blocks:
+1. They do pretty normal things, such as setting up variables and making sure the character rotates properly
+1. `reset-game`{:class="blockmoreblocks"} **calls** `reset-character`{:class="blockmoreblocks"}, showing you that you can use a **More** block inside another **More** block
+1. The `reset-character`{:class="blockmoreblocks"} **More** block gets used in two different places in the main loop. This  means you can change two places in your main game loop by only changing the code inside of the **More** block, which saves you a lot of work and helps you avoid mistakes.
