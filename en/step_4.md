@@ -1,8 +1,10 @@
 ## Losing the game
 
-You may have noticed that the `lose`{:class="blockmoreblocks"} **More** block on the `Player Character` sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+First things first! You need a way to make the game end when the player has run out of lives. At the moment that doesn't happen.
 
-+ First, find the `lose` block and complete it with the following code: 
+You may have noticed that the `lose`{:class="blockmoreblocks"} **More** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+
++ First, find the `lose`{:class="blockmoreblocks"} block and complete it with the following code: 
 
 ```blocks
     define lose
@@ -15,15 +17,15 @@ You may have noticed that the `lose`{:class="blockmoreblocks"} **More** block on
 
 --- collapse ---
 ---
-title: What does the code do?
+title: What does this code do?
 ---
 
-Whenever the `lose`{:class="blockmoreblocks"} block runs, what it does is: 
+Whenever the `lose`{:class="blockmoreblocks"} block runs now, what it does is: 
 
- 1. Stop the physics and other game scripts on the `Player Character`
- 2. Tell all the other sprites that the game is over by **broadcasting** a message so they can change based on that
- 3. Move the `Player Character` to the centre of the screen and have them tell the player that the game is over
- 4. Stop all scripts in the game
+1. Stop the physics and other game scripts acting on the **Player Character**
+1. Tell all the other sprites that the game is over by **broadcasting** a `game over` message they can respond to and change what they're doing
+1. Move the **Player Character** to the centre of the Stage and have them tell the player that the game is over
+1. Stop all scripts in the game
 
 --- /collapse ---
 
@@ -31,7 +33,7 @@ Now you need to make sure all the sprites know what to do when the game is over,
 
 ### Hiding the platforms and edges
 
-+ Start with the easy ones. The `Platforms` and `Edges` sprites both need code for appearing when the game starts and disappearing at 'Game over', so add this to each of them:
++ Start with the easiest sprites ones. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over` broadcast, so add these blocks to each of them:
 
 ```blocks
     when I receive [game over  v]
@@ -45,11 +47,11 @@ Now you need to make sure all the sprites know what to do when the game is over,
 
 ### Stopping the stars
 
-Now, for something a little more tricky! If you look at the code for the `Collectable` sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="blockevents"} instructions. 
+Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="blockevents"} instructions. 
 
-We’ll talk more about what makes clones special when we get to the card about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="blockevents"} messages.
+We’ll talk more about what makes clones special when we get to the Card about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="blockevents"} messages.
 
-+ Let’s look at how the `Collectable` sprite works. See if you can understand some of its code: 
++ Let’s look at how the **Collectable** sprite works. See if you can understand some of its code: 
 
 ```blocks
     when green flag clicked
@@ -66,11 +68,11 @@ We’ll talk more about what makes clones special when we get to the card about 
     end
 ```
 
- 1. First it makes the original collectable invisible.
- 2. Then it sets up the control variables. We’ll come back to these later.
- 3. The `create-collectables`{:class="blockdata"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="blockdata"} is `true`, and does nothing if it’s not.
+1. First it makes the original **Collectable** sprite invisible by hiding it
+1. Then it sets up the control variables — we’ll come back to these later
+1. The `create-collectables`{:class="blockdata"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="blockdata"} is `true`, and does nothing if it’s not
 
-+ Now you need to set up a block on the `Collectable` sprite so that it reacts to the `game over` broadcast:
++ Now you need to set up a block for the **Collectable**  sprite so that it reacts to the `game over` broadcast:
 
 ```blocks
     when I receive [game over v]
@@ -78,6 +80,6 @@ We’ll talk more about what makes clones special when we get to the card about 
     set [create-collectables v] to [false]
 ```
 
-This code is similar to the code controlling the `Edges` and `Platforms` sprites. The only difference is that you’re also setting the `create-collectables`{:class="blockdata"} variable to `false` so that no new clones are created when it's 'Game over'. 
+This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="blockdata"} variable to `false` so that no new clones get created when it's 'Game over'. 
  
-+ Note that you can use this variable to pass messages from one part of your code to another! 
++ Note that you can use the `create-collectables`{:class="blockdata"} variable to pass messages from one part of your code to another! 
