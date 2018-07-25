@@ -16,7 +16,7 @@ title: High scores
 title: New power-ups!
 ---
 
-+ Try adding some new power-ups, for example:
++ Try adding some new power-ups, for example for:
   * Immunity to enemies
   * More lives
   * Bigger player character
@@ -85,7 +85,7 @@ title: Secrets!
 title: Different characters!
 ---
 
-+ Let the player pick a character. Make them different in attributes like size, how high they jump, maybe even how many lives they have and how many points they get from collectables! 
++ Add more character sprites and let the player pick one. Make the characters different in attributes like size, how high they jump, maybe even how many lives they have, and how many points they get from collectables! 
 
 --- /collapse ---
 
