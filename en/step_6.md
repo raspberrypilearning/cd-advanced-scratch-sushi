@@ -2,9 +2,23 @@
 
 Now that you have a new power-up collectable working, it’s time to make it do something really cool! Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
  
-For this, you need to create a new piece of code inside the **Collectable** sprite scripts that will start while the `react-to-player`{:class="blockmoreblocks"} block is running. To make that happen, you'll use a `receive`{:class="blockevents"} block to listen out for a broadcast from another piece of code inside the sprite. 
+For this, you're going to use another `broadcast`{:class="blockevents"} message.
 
-+ Add this code for the **Collectable** sprite. Let’s call the broadcast it's listening out for `collectable-rain`{:class="blockevents"}.
++ First, change the `react-to-player`{:class="blockmoreblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="blockevents"}.
+
+```blocks
+    define react-to-player (type)
+    if <(type) = [1]> then
+        change [points v] by (collectable-value)
+    end
+    if <(type) = [2]> then
+        broadcast [collectable-rain v]
+    end
+```
+ 
+Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="blockevents"} is broadcast.
+
++ Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="blockevents"} broadcast.
 
 ```blocks
     when I receive [collectable-rain v]
@@ -18,11 +32,11 @@ For this, you need to create a new piece of code inside the **Collectable** spri
 title: What does the new code do?
 ---
 
+All this code does is wait to receive a broadcast, and then respond by setting the `collectable-frequency`{:class="blockdata"} variable to a very small number \(change it to different values and see what happens!\), then waiting for one second, and then changing the variable back to `1`.
+
+To understand what's going on here, let's look at how the `collectable-frequency`{:class="blockdata"} variable is used.
+
 In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="blockdata"} variable how long to wait between making one clone and the next.
-
-All the code does is wait to receive a broadcast, and then respond by setting the `collectable-frequency`{:class="blockdata"} variable to a very small number \(change it to different values and see what happens!\), then waiting for one second, and then changing the variable back to `1`.
-
-Think about what’s happening during the second when `collectable-frequency`{:class="blockdata"} is very small: the `when green flag clicked`{:class="blockevents"} code is still running, and the `repeat until`{:class="blockcontrol"} loop in it is looping. Look at the code in that loop: 
 
 ```blocks
     repeat until <not <(create-collectables) = [true]>>
@@ -37,25 +51,13 @@ Think about what’s happening during the second when `collectable-frequency`{:c
     end
 ```
 
-You can see that the `wait` block here pauses the code for the length of time set by `collectable-frequency`{:class="blockdata"}. So if the value of `collectable-frequency`{:class="blockdata"} changes to `0.000001`, the `wait` block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="blockcontrol"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="blockdata"} changes back `1`.
+You can see that the `wait` block here pauses the code for the length of time set by `collectable-frequency`{:class="blockdata"}. 
+
+If the value of `collectable-frequency`{:class="blockdata"} is `0.000001`, the `wait` block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="blockcontrol"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="blockdata"} changes back `1`.
 
 Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
 
 --- /collapse ---
-
-Now you have the **Collectable** sprite ready to receive a `collectable-rain`{:class="blockevents"} broadcast, but you haven't made code for sending that broadcast yet!
-
-+ This is very easy: inside the **Collectable** sprite scripts, update the `react-to-player`{:class="blockmoreblocks"} block to  broadcast the `collectable-rain`{:class="blockevents"} message when the player character touches a type `2` collectable. 
-
-```blocks
-    define react-to-player (type)
-    if <(type) = [1]> then
-        change [points v] by (collectable-value)
-    end
-    if <(type) = [2]> then
-        broadcast [collectable-rain v]
-    end
-```
 
 ### Challenge: get creative!
  
