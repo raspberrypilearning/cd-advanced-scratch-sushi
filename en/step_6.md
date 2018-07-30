@@ -16,7 +16,7 @@ For this, you're going to use another `broadcast`{:class="blockevents"} message.
     end
 ```
  
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="blockevents"} is broadcast.
+Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="blockevents"} message is broadcast.
 
 + Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="blockevents"} broadcast.
 
@@ -32,11 +32,11 @@ Now you need to create a new piece of code inside the **Collectable** sprite scr
 title: What does the new code do?
 ---
 
-All this code does is wait to receive a broadcast, and then respond by setting the `collectable-frequency`{:class="blockdata"} variable to a very small number \(change it to different values and see what happens!\), then waiting for one second, and then changing the variable back to `1`.
+This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="blockdata"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
 
-To understand what's going on here, let's look at how the `collectable-frequency`{:class="blockdata"} variable is used.
+Let's look at how the `collectable-frequency`{:class="blockdata"} variable is used to find out why this makes it rain collectables.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="blockdata"} variable how long to wait between making one clone and the next.
+In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="blockdata"} variable how long to wait between making one clone and the next:
 
 ```blocks
     repeat until <not <(create-collectables) = [true]>>
@@ -53,7 +53,7 @@ In the main game loop, the part of the code that makes **Collectable** sprite cl
 
 You can see that the `wait` block here pauses the code for the length of time set by `collectable-frequency`{:class="blockdata"}. 
 
-If the value of `collectable-frequency`{:class="blockdata"} is `0.000001`, the `wait` block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="blockcontrol"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="blockdata"} changes back `1`.
+If the value of `collectable-frequency`{:class="blockdata"} is `0.000001`, the `wait` block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="blockcontrol"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="blockdata"} is changed back `1`.
 
 Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
 
