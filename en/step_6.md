@@ -1,64 +1,86 @@
-## Super power-ups!
+## Adding some competition
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool! Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
- 
-For this, you're going to use another `broadcast`{:class="blockevents"} message.
+Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platform games like Super Mario that we’re inspired by here.
 
-+ First, change the `react-to-player`{:class="blockmoreblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="blockevents"}.
++ First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+
++ Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like: 
+
+![The dog enemy sprite](images/enemySprite.png)
+
++ Write the easiest code first: set up its block for reacting to the `game over` message to make the enemy disappear when the player loses the game. 
 
 ```blocks
-    define react-to-player (type)
-    if <(type) = [1]> then
-        change [points v] by (collectable-value)
-    end
-    if <(type) = [2]> then
-        broadcast [collectable-rain v]
+    when I receive [game-over v]
+    hide
+```
+
++ Now you need to write the code for what the enemy does. You can use mine from this card, but don’t be afraid to add extra bits! (What if they can teleport around to different platforms? Or what if there’s a power-up that makes them move faster, or slower?) 
+
+```blocks
+    when green flag clicked
+    show
+    set [enemy-move-steps v] to [5]
+    set rotation style [left-right v]
+    go to x: (-25) y: (-9)
+    forever
+        move (enemy-move-steps) steps
+        if <not <touching [Platforms v] ?>> then
+            set [enemy-move-steps v] to ((enemy-move-steps) * (-1))
+        end
     end
 ```
- 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="blockevents"} message is broadcast.
 
-+ Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="blockevents"} broadcast.
+**Note**: if you just drag the `go to`{:class="blockmotion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
+ 
+The code in the `if...then`{:class="blockcontrol"} block will make the sprite turn around when they get to the end of the platform!
+
+The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. And you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives. 
+
++ Here's how I did it, but feel free to try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="blockcontrol"} block that checks if you're out of lives.
 
 ```blocks
-    when I receive [collectable-rain v]
-    set [collectable-frequency v] to [0.000001]
-    wait (1) secs
-    set [collectable-frequency v] to [1]
+    if <touching [Enemy v] ?> then
+        hide
+        go to x: (-187) y: (42)
+        change [lives v] by (-1)
+        wait (0.5) secs
+        show
+    end
 ```
 
 --- collapse ---
 ---
-title: What does the new code do?
+title: Show me the whole updated script
 ---
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="blockdata"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
-
-Let's look at how the `collectable-frequency`{:class="blockdata"} variable is used to find out why this makes it rain collectables.
-
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="blockdata"} variable how long to wait between making one clone and the next:
+My **Player Character** sprite's main block looks like this now:
 
 ```blocks
-    repeat until <not <(create-collectables) = [true]>>
-        if < [50] = (pick random (1) to (50))> then
-            set [collectable-type v] to [2]
-        else
-            set [collectable-type v] to [1]
+    when green flag clicked
+    reset-game :: custom
+    forever
+        main-physics :: custom
+        if <(y position) < [-179]> then
+            hide
+            reset-character :: custom
+            change [lives v] by (-1)
+            wait (0.05) secs
+            show
         end
-        wait (collectable-frequency) secs
-        go to x: (pick random (-240) to (240)) y:(179)
-        create clone of [myself v]
+        if <touching [Enemy v] ?> then
+            hide
+            go to x: (-187) y: (42)
+            change [lives v] by (-1)
+            wait (0.5) secs
+            show
+        end
+        if <(lives) < [1]> then
+            lose :: custom
+        end
     end
 ```
 
-You can see that the `wait` block here pauses the code for the length of time set by `collectable-frequency`{:class="blockdata"}. 
-
-If the value of `collectable-frequency`{:class="blockdata"} is `0.000001`, the `wait` block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="blockcontrol"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="blockdata"} is changed back `1`.
-
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
-
 --- /collapse ---
 
-### Challenge: get creative!
- 
-+ Based on this card and the previous one, you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with some cool power-ups and see if you can make them!
+The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="blockdata"} variable by `1`, and after half a second makes the sprite re-appear.
