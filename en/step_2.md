@@ -24,9 +24,9 @@ You'll see that you can lose lives, but nothing happens when you run out. Also, 
 
 ### 'More' blocks are really useful
 
-In the code above, the main game `forever`{:class="blockcontrol"} loop calls the `main-physics`{:class="blockmoreblocks"} **More** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **More** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
  
-+ Now look at the `reset game`{:class="blockmoreblocks"} and `reset character`{:class="blockmoreblocks"} **More** blocks:
++ Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **More** blocks:
 1. They do pretty normal things, such as setting up variables and making sure the character rotates properly
-1. `reset-game`{:class="blockmoreblocks"} **calls** `reset-character`{:class="blockmoreblocks"}, showing you that you can use a **More** block inside another **More** block
-1. The `reset-character`{:class="blockmoreblocks"} **More** block gets used in two different places in the main loop. This  means you can change two places in your main game loop by only changing the code inside of the **More** block, which saves you a lot of work and helps you avoid mistakes.
+1. `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **More** block inside another **More** block
+1. The `reset-character`{:class="block3myblocks"} **More** block gets used in two different places in the main loop. This  means you can change two places in your main game loop by only changing the code inside of the **More** block, which saves you a lot of work and helps you avoid mistakes.
