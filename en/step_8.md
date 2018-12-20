@@ -57,7 +57,7 @@ This code is simple: it makes the **Moving-Platform** clone move up to the top o
 
 + Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why? 
 
-It’s because the physics code doesn’t know about the platform. It’s actually an easy fix: inn the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"}  block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"}  **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+It’s because the physics code doesn’t know about the platform. It’s actually an easy fix: in the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"}  block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"}  **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
  
 + Go through the code for the **Player Character** sprite and everywhere you see this block:
 

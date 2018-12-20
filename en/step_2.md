@@ -16,17 +16,17 @@ You can also use it directly in Scratch in your browser by just clicking **See I
 
 The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
 
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a bit more!
+You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a bit My blocks!
 
-+ For now, take a look at how the code is put together. It uses lots of **More** blocks, which are great for splitting your code up into pieces so you can manage it better. A **More** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming Card!
++ For now, take a look at how the code is put together. It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming Card!
 
 ![](images/setup2and3.png)
 
-### 'More' blocks are really useful
+### 'My blocks' blocks are really useful
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **More** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
  
-+ Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **More** blocks:
++ Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks:
 1. They do pretty normal things, such as setting up variables and making sure the character rotates properly
-1. `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **More** block inside another **More** block
-1. The `reset-character`{:class="block3myblocks"} **More** block gets used in two different places in the main loop. This  means you can change two places in your main game loop by only changing the code inside of the **More** block, which saves you a lot of work and helps you avoid mistakes.
+1. `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
+1. The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This  means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.

@@ -91,7 +91,7 @@ If you prefer, you can make the enemy move to another platform instead. In that 
 
 Whenever a new level starts, the **Player Character** sprite needs to go to the right place for that level. To make this happen, you need to change where the sprite gets its coordinates from when it first appears on the Stage. At the moment, there are fixed `x` and `y` values in its code.
 
-+ Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **More** block instead of the fixed `x` and `y` values:
++ Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
 
 ```blocks3
     define reset-character
@@ -140,9 +140,9 @@ You also need to make sure that every time someone starts the game, the first le
 title: Resetting the **Player Character** versus resetting the game
 ---
 
-Notice that the first block in the **Player Character** sprite's main green flag script is a call to the `reset-game`{:class="block3myblocks"} **More** block. 
+Notice that the first block in the **Player Character** sprite's main green flag script is a call to the `reset-game`{:class="block3myblocks"} **My blocks** block. 
 
-This block sets up all the variables for a new game and then calls the `reset-character`{:class="block3myblocks"} **More** block, which places the character back in its correct starting position.
+This block sets up all the variables for a new game and then calls the `reset-character`{:class="block3myblocks"} **My blocks** block, which places the character back in its correct starting position.
 
 Having the `reset-character`{:class="block3myblocks"} code in its own block separate from `reset-game`{:class="block3myblocks"} allows you to reset the character to different positions **without** having to reset the whole game.
 

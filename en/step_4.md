@@ -80,13 +80,9 @@ Of course, right now the **Collectable** sprite only has one costume, since ther
 
 Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. On the next card, you’ll make it do something cooler. 
 
-+ Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"}.
++ Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`.
 
 ![Type in the name for the block](images/powerupMakeName.png)
-
-+ Expand the **Options** section and add a **number input**. Name it `type`.
-
-![Adding a number input to the block](images/powerupMakeInput.png)
 
 + Click **OK**. 
 

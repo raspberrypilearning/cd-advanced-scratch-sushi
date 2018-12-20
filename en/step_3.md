@@ -2,7 +2,7 @@
 
 First things first! You need a way to make the game end when the player has run out of lives. At the moment that doesn't happen.
 
-You may have noticed that the `lose`{:class="block3myblocks"} **More** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
 
 + First, find the `lose`{:class="block3myblocks"} block and complete it with the following code: 
 
