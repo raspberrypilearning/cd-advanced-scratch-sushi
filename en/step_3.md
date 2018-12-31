@@ -6,14 +6,7 @@ You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** bloc
 
 + First, find the `lose`{:class="block3myblocks"} block and complete it with the following code: 
 
-```blocks3
-    define lose
-    stop [other scripts in sprite v] :: control stack
-    broadcast [game over v]
-    go to x:(0) y:(0)
-    say [Game over!] for (2) secs
-    stop [all v]
-```
+![blocks_1546298722_611725](images/blocks_1546298722_611725.png)
 
 --- collapse ---
 ---
@@ -35,15 +28,9 @@ Now you need to make sure all the sprites know what to do when the game is over,
 
 + Start with the easiest sprites ones. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over` broadcast, so add these blocks to each of them:
 
-```blocks3
-    when I receive [game over  v]
-    hide
-```
+![blocks_1546298725_630257](images/blocks_1546298725_630257.png)
 
-```blocks3
-    when green flag clicked
-    show
-```
+![blocks_1546298726_7044969](images/blocks_1546298726_7044969.png)
 
 ### Stopping the stars
 
@@ -53,20 +40,7 @@ We’ll talk more about what makes clones special when we get to the Card about 
 
 + Let’s look at how the **Collectable** sprite works. See if you can understand some of its code: 
 
-```blocks3
-    when green flag clicked
-    hide
-    set [collectable-value v] to [1]
-    set [collectable-speed v] to [1]
-    set [collectable-frequency v] to [1]
-    set [create-collectables v] to [true]
-    set [collectable-type v] to [1]
-    repeat until <not <(create-collectables) = [true]>>
-        wait (collectable-frequency) secs
-        go to x: (pick random (-240) to (240)) y: (179)
-        create clone of [myself v]
-    end
-```
+![blocks_1546298727_767671](images/blocks_1546298727_767671.png)
 
 1. First it makes the original **Collectable** sprite invisible by hiding it
 1. Then it sets up the control variables — we’ll come back to these later
@@ -74,11 +48,7 @@ We’ll talk more about what makes clones special when we get to the Card about 
 
 + Now you need to set up a block for the **Collectable**  sprite so that it reacts to the `game over` broadcast:
 
-```blocks3
-    when I receive [game over v]
-    hide
-    set [create-collectables v] to [false]
-```
+![blocks_1546298728_940563](images/blocks_1546298728_940563.png)
 
 This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'. 
  

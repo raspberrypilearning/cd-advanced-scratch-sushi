@@ -6,26 +6,13 @@ For this, you're going to use another `broadcast`{:class="block3events"} message
 
 + First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
 
-```blocks3
-    define react-to-player (type)
-    if <(type) = [1]> then
-        change [points v] by (collectable-value)
-    end
-    if <(type) = [2]> then
-        broadcast [collectable-rain v]
-    end
-```
+![blocks_1546298738_9555871](images/blocks_1546298738_9555871.png)
  
 Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
 
 + Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
 
-```blocks3
-    when I receive [collectable-rain v]
-    set [collectable-frequency v] to [0.000001]
-    wait (1) secs
-    set [collectable-frequency v] to [1]
-```
+![blocks_1546298740_0631511](images/blocks_1546298740_0631511.png)
 
 --- collapse ---
 ---
@@ -38,18 +25,7 @@ Let's look at how the `collectable-frequency`{:class="block3variables"} variable
 
 In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
 
-```blocks3
-    repeat until <not <(create-collectables) = [true]>>
-        if < [50] = (pick random (1) to (50))> then
-            set [collectable-type v] to [2]
-        else
-            set [collectable-type v] to [1]
-        end
-        wait (collectable-frequency) secs
-        go to x: (pick random (-240) to (240)) y:(179)
-        create clone of [myself v]
-    end
-```
+![blocks_1546298741_152204](images/blocks_1546298741_152204.png)
 
 You can see that the `wait` block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}. 
 
