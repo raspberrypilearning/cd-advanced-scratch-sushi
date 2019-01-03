@@ -1,85 +1,97 @@
-## Losing the game
+## Power-ups
 
-First things first! You need a way to make the game end when the player has run out of lives. At the moment that doesn't happen.
+At the moment you have just one type of collectable: a star that gains you one point when you grab it. On this card, you’re going to create a new type of collectable, and you'll do it in a way that will make adding other types of collectables easy. Then you can invent your own power-ups and bonuses and really make the game your own!
 
-You may have noticed that the `lose`{:class="blockmoreblocks"} **More** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+I’ve already included some pieces to do this with the `collectable-type`{:class="block3variables"} variable and the `pick-costume`{:class="block3myblocks"} **My blocks** block. You’re going to need to improve on them though. 
 
-+ First, find the `lose`{:class="blockmoreblocks"} block and complete it with the following code: 
+Let's have a look at how the collectable works right now.
 
-```blocks
-    define lose
-    stop [other scripts in sprite v] :: control stack
-    broadcast [game over v]
-    go to x:(0) y:(0)
-    say [Game over!] for (2) secs
-    stop [all v]
-```
++ In the scripts for the **Collectable** sprite, find the `when I start as a clone`{:class="block3events"} code. The blocks you should look at are the ones that give you points for collecting a star:
+
+![blocks_1546298730_020032](images/blocks_1546298730_020032.png)
+
+ and this one that selects a costume for the clone:
+
+![blocks_1546298731_1270301](images/blocks_1546298731_1270301.png)
 
 --- collapse ---
 ---
-title: What does this code do?
+title: How does picking a costume work?
 ---
 
-Whenever the `lose`{:class="blockmoreblocks"} block runs now, what it does is: 
+The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:class="block3myblocks"} block, but it has something extra: it takes an **input** variable called `type`.
 
-1. Stop the physics and other game scripts acting on the **Player Character**
-1. Tell all the other sprites that the game is over by **broadcasting** a `game over` message they can respond to and change what they're doing
-1. Move the **Player Character** to the centre of the Stage and have them tell the player that the game is over
-1. Stop all scripts in the game
+![blocks_1546298732_192975](images/blocks_1546298732_192975.png)
+    
+When the `pick-costume`{:class="block3myblocks"} block runs, what it does is this:
+
+1. It looks at the `type` input variable
+1. If the value of `type` is equal to `1`, it switches to the `star1` costume
+
+Take a look at the part of the script that uses the block:
+
+![blocks_1546298733_268781](images/blocks_1546298733_268781.png)
+
+You can see that the `collectable-type`{:class="block3variables"} variable gets **passed** to the `pick-costume`{:class="block3myblocks"} block. Inside the code for `pick-costume`{:class="block3myblocks"}, `collectable-type`{:class="block3variables"} is then used as the input variable (`type`).
+
+This means that the value of `collectable-type`{:class="block3variables"} decides which costume the sprite clone gets.
 
 --- /collapse ---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+### Add a costume for the new power-up
 
-### Hiding the platforms and edges
+Of course, right now the **Collectable** sprite only has one costume, since there's only one type of collectable. You're about to change that!
 
-+ Start with the easiest sprites ones. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over` broadcast, so add these blocks to each of them:
++ Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
 
-```blocks
-    when I receive [game over  v]
-    hide
-```
++ Next you need to tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`, like this \(using whatever costume name you picked\): 
 
-```blocks
-    when green flag clicked
-    show
-```
+![blocks_1546298734_395675](images/blocks_1546298734_395675.png)
 
-### Stopping the stars
+### Create the power-up code
 
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="blockevents"} instructions. 
+Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. On the next card, you’ll make it do something cooler. 
 
-We’ll talk more about what makes clones special when we get to the Card about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="blockevents"} messages.
++ Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`.
 
-+ Let’s look at how the **Collectable** sprite works. See if you can understand some of its code: 
+![Type in the name for the block](images/powerupMakeName.png)
 
-```blocks
-    when green flag clicked
-    hide
-    set [collectable-value v] to [1]
-    set [collectable-speed v] to [1]
-    set [collectable-frequency v] to [1]
-    set [create-collectables v] to [true]
-    set [collectable-type v] to [1]
-    repeat until <not <(create-collectables) = [true]>>
-        wait (collectable-frequency) secs
-        go to x: (pick random (-240) to (240)) y: (179)
-        create clone of [myself v]
-    end
-```
++ Click **OK**. 
 
-1. First it makes the original **Collectable** sprite invisible by hiding it
-1. Then it sets up the control variables — we’ll come back to these later
-1. The `create-collectables`{:class="blockdata"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="blockdata"} is `true`, and does nothing if it’s not
++ Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`.  
 
-+ Now you need to set up a block for the **Collectable**  sprite so that it reacts to the `game over` broadcast:
+![blocks_1546298735_487815](images/blocks_1546298735_487815.png)
 
-```blocks
-    when I receive [game over v]
-    hide
-    set [create-collectables v] to [false]
-```
++ Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
+![blocks_1546298736_5950131](images/blocks_1546298736_5950131.png)
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="blockdata"} variable to `false` so that no new clones get created when it's 'Game over'. 
- 
-+ Note that you can use the `create-collectables`{:class="blockdata"} variable to pass messages from one part of your code to another! 
+By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life. 
+
+### Using `collectable-type`{:class="block3variables"} to make different collectables appear at random
+
+Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
+
+You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc., to use for the collectable. 
+
+--- collapse ---
+---
+title: Working with variables in a clone
+---
+
+For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}. 
+
+Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created. 
+
+You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. But that doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game.
+
+--- /collapse ---
+
+You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, let's pick between the numbers at random to make a random collectable every time. 
+
++ Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
+
+![blocks_1546298737_8291872](images/blocks_1546298737_8291872.png)
+
+This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy!
+
+Great! Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it.
