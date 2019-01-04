@@ -12,17 +12,17 @@ Now let's adde some code to the sprite!
 
 Here's how my code looks so far for the new sprite:
 
-![blocks_1546298758_79596](images/blocks_1546298758_79596.png)
+![blocks_1546563714_8613892](images/blocks_1546563714_8613892.png)
 
 + Then add the clone's code:
 
-![blocks_1546298759_896009](images/blocks_1546298759_896009.png)
+![blocks_1546563715_981292](images/blocks_1546563715_981292.png)
 
 This code is simple: it makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear. 
 
-+ You need to make the platforms disappear/reappear based on the broadcasts that change levels, and the `game over` message. 
++ You need to make the platforms disappear/reappear based on the broadcasts that change levels, and the `game over`{:class="block3events"} message. 
 
-![blocks_1546298761_000135](images/blocks_1546298761_000135.png)
+![blocks_1546563717_0902479](images/blocks_1546563717_0902479.png)
 
 + Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why? 
 
@@ -30,8 +30,8 @@ It’s because the physics code doesn’t know about the platform. It’s actual
  
 + Go through the code for the **Player Character** sprite and everywhere you see this block:
 
-![blocks_1546298762_124668](images/blocks_1546298762_124668.png)
+![blocks_1546563718_224854](images/blocks_1546563718_224854.png)
 
 replace it with this one:
 
-![blocks_1546298763_190994](images/blocks_1546298763_190994.png)
+![blocks_1546563719_288863](images/blocks_1546563719_288863.png)

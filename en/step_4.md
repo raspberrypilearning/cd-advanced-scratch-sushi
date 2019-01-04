@@ -8,31 +8,31 @@ Let's have a look at how the collectable works right now.
 
 + In the scripts for the **Collectable** sprite, find the `when I start as a clone`{:class="block3events"} code. The blocks you should look at are the ones that give you points for collecting a star:
 
-![blocks_1546298730_020032](images/blocks_1546298730_020032.png)
+![blocks_1546563686_109886](images/blocks_1546563686_109886.png)
 
  and this one that selects a costume for the clone:
 
-![blocks_1546298731_1270301](images/blocks_1546298731_1270301.png)
+![blocks_1546563687_204181](images/blocks_1546563687_204181.png)
 
 --- collapse ---
 ---
 title: How does picking a costume work?
 ---
 
-The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:class="block3myblocks"} block, but it has something extra: it takes an **input** variable called `type`.
+The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:class="block3myblocks"} block, but it has something extra: it takes an **input** variable called `type`{:class="block3myblocks"}.
 
-![blocks_1546298732_192975](images/blocks_1546298732_192975.png)
+![blocks_1546563688_2774558](images/blocks_1546563688_2774558.png)
     
 When the `pick-costume`{:class="block3myblocks"} block runs, what it does is this:
 
-1. It looks at the `type` input variable
-1. If the value of `type` is equal to `1`, it switches to the `star1` costume
+1. It looks at the `type`{:class="block3myblocks"} input variable
+1. If the value of `type`{:class="block3myblocks"} is equal to `1`, it switches to the `star1` costume
 
 Take a look at the part of the script that uses the block:
 
-![blocks_1546298733_268781](images/blocks_1546298733_268781.png)
+![blocks_1546563689_370481](images/blocks_1546563689_370481.png)
 
-You can see that the `collectable-type`{:class="block3variables"} variable gets **passed** to the `pick-costume`{:class="block3myblocks"} block. Inside the code for `pick-costume`{:class="block3myblocks"}, `collectable-type`{:class="block3variables"} is then used as the input variable (`type`).
+You can see that the `collectable-type`{:class="block3variables"} variable gets **passed** to the `pick-costume`{:class="block3myblocks"} block. Inside the code for `pick-costume`{:class="block3myblocks"}, `collectable-type`{:class="block3variables"} is then used as the input variable (`type`{:class="block3myblocks"}).
 
 This means that the value of `collectable-type`{:class="block3variables"} decides which costume the sprite clone gets.
 
@@ -44,26 +44,26 @@ Of course, right now the **Collectable** sprite only has one costume, since ther
 
 + Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
 
-+ Next you need to tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`, like this \(using whatever costume name you picked\): 
++ Next you need to tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\): 
 
-![blocks_1546298734_395675](images/blocks_1546298734_395675.png)
+![blocks_1546563690_4987059](images/blocks_1546563690_4987059.png)
 
 ### Create the power-up code
 
 Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. On the next card, you’ll make it do something cooler. 
 
-+ Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`.
++ Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
 
 ![Type in the name for the block](images/powerupMakeName.png)
 
 + Click **OK**. 
 
-+ Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`.  
++ Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.  
 
-![blocks_1546298735_487815](images/blocks_1546298735_487815.png)
+![blocks_1546563691_613684](images/blocks_1546563691_613684.png)
 
 + Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
-![blocks_1546298736_5950131](images/blocks_1546298736_5950131.png)
+![blocks_1546563692_7281122](images/blocks_1546563692_7281122.png)
 
 By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life. 
 
@@ -90,7 +90,7 @@ You're going to set the `collectable-type`{:class="block3variables"} to either `
 
 + Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
 
-![blocks_1546298737_8291872](images/blocks_1546298737_8291872.png)
+![blocks_1546563693_812396](images/blocks_1546563693_812396.png)
 
 This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy!
 

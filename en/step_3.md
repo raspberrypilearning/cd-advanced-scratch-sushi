@@ -6,7 +6,7 @@ You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** bloc
 
 + First, find the `lose`{:class="block3myblocks"} block and complete it with the following code: 
 
-![blocks_1546298722_611725](images/blocks_1546298722_611725.png)
+![blocks_1546563678_576742](images/blocks_1546563678_576742.png)
 
 --- collapse ---
 ---
@@ -16,7 +16,7 @@ title: What does this code do?
 Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is: 
 
 1. Stop the physics and other game scripts acting on the **Player Character**
-1. Tell all the other sprites that the game is over by **broadcasting** a `game over` message they can respond to and change what they're doing
+1. Tell all the other sprites that the game is over by **broadcasting** a `game over`{:class="block3events"} message they can respond to and change what they're doing
 1. Move the **Player Character** to the centre of the Stage and have them tell the player that the game is over
 1. Stop all scripts in the game
 
@@ -26,11 +26,11 @@ Now you need to make sure all the sprites know what to do when the game is over,
 
 ### Hiding the platforms and edges
 
-+ Start with the easiest sprites ones. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over` broadcast, so add these blocks to each of them:
++ Start with the easiest sprites ones. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
 
-![blocks_1546298725_630257](images/blocks_1546298725_630257.png)
+![blocks_1546563681_704952](images/blocks_1546563681_704952.png)
 
-![blocks_1546298726_7044969](images/blocks_1546298726_7044969.png)
+![blocks_1546563682_784093](images/blocks_1546563682_784093.png)
 
 ### Stopping the stars
 
@@ -40,7 +40,7 @@ We’ll talk more about what makes clones special when we get to the Card about 
 
 + Let’s look at how the **Collectable** sprite works. See if you can understand some of its code: 
 
-![blocks_1546298727_767671](images/blocks_1546298727_767671.png)
+![blocks_1546563683_8478878](images/blocks_1546563683_8478878.png)
 
 1. First it makes the original **Collectable** sprite invisible by hiding it
 1. Then it sets up the control variables — we’ll come back to these later
@@ -48,7 +48,7 @@ We’ll talk more about what makes clones special when we get to the Card about 
 
 + Now you need to set up a block for the **Collectable**  sprite so that it reacts to the `game over` broadcast:
 
-![blocks_1546298728_940563](images/blocks_1546298728_940563.png)
+![blocks_1546563685_0278988](images/blocks_1546563685_0278988.png)
 
 This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'. 
  
