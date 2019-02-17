@@ -8,11 +8,17 @@ Let's have a look at how the collectable works right now.
 
 + In the scripts for the **Collectable** sprite, find the `when I start as a clone`{:class="block3events"} code. The blocks you should look at are the ones that give you points for collecting a star:
 
-![blocks_1546563686_109886](images/blocks_1546563686_109886.png)
+```blocks3
+    if <touching [Player Character v]?> then
+        change [points v] by (collectable-value ::variables)
+        delete this clone
+```
 
  and this one that selects a costume for the clone:
 
-![blocks_1546563687_204181](images/blocks_1546563687_204181.png)
+```blocks3
+    pick-costume (collectable-type ::variables) :: custom
+```
 
 --- collapse ---
 ---
@@ -21,7 +27,12 @@ title: How does picking a costume work?
 
 The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:class="block3myblocks"} block, but it has something extra: it takes an **input** variable called `type`{:class="block3myblocks"}.
 
-![blocks_1546563688_2774558](images/blocks_1546563688_2774558.png)
+```blocks3
+    define pick-costume (type)
+    if <(type ::variables) = [1]> then
+        switch costume to [star1 v]
+    end
+```
     
 When the `pick-costume`{:class="block3myblocks"} block runs, what it does is this:
 
@@ -30,7 +41,16 @@ When the `pick-costume`{:class="block3myblocks"} block runs, what it does is thi
 
 Take a look at the part of the script that uses the block:
 
-![blocks_1546563689_370481](images/blocks_1546563689_370481.png)
+```blocks3
+    when I start as a clone
+    pick-costume (collectable-type ::variables) :: custom
+    show
+    repeat until <(y position) < [-170]>
+        change y by (collectable-speed ::variables)
+        if <touching [Player Character v]?> then
+            change [points v] by (collectable-value ::variables)
+            delete this clone
+```
 
 You can see that the `collectable-type`{:class="block3variables"} variable gets **passed** to the `pick-costume`{:class="block3myblocks"} block. Inside the code for `pick-costume`{:class="block3myblocks"}, `collectable-type`{:class="block3variables"} is then used as the input variable (`type`{:class="block3myblocks"}).
 
@@ -46,7 +66,15 @@ Of course, right now the **Collectable** sprite only has one costume, since ther
 
 + Next you need to tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\): 
 
-![blocks_1546563690_4987059](images/blocks_1546563690_4987059.png)
+```blocks3
+    define pick-costume (type)
+    if <(type ::variable) = [1]> then
+        switch costume to [star1 v]
+    end
+    if <(type ::variable) = [2]> then
+        switch costume to [lightning v]
+    end
+```
 
 ### Create the power-up code
 
@@ -60,10 +88,23 @@ Now you need to decide what the new collectable will do! We’ll start with some
 
 + Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.  
 
-![blocks_1546563691_613684](images/blocks_1546563691_613684.png)
+```blocks3
+    define react-to-player (type)
+    if <(type ::variable) = [1]> then
+        change [points v] by (collectable-value ::variables)
+    end
+    if <(type ::variable) = [2]> then
+        change [lives v] by [1]
+    end
+```
 
 + Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
-![blocks_1546563692_7281122](images/blocks_1546563692_7281122.png)
+```blocks3
+    if <touching [Player Character v] ?> then
+        react-to-player (collectable-type ::variables) :: custom
+        delete this clone
+    end
+```
 
 By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life. 
 
@@ -90,7 +131,17 @@ You're going to set the `collectable-type`{:class="block3variables"} to either `
 
 + Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
 
-![blocks_1546563693_812396](images/blocks_1546563693_812396.png)
+```blocks3
+    repeat until <not <(create-collectables ::variables) = [true]>>
+        if <[50] = (pick random (1) to (50))> then
+            set [collectable-type v] to [2]
+        else
+            set [collectable-type v] to [1]
+        end
+        wait (collectable-frequency ::variables) secs
+        go to x: (pick random (-240) to (240)) y: (179)
+        create clone of [myself v]
+```
 
 This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy!
 
