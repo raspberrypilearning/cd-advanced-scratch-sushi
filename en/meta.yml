@@ -17,6 +17,8 @@ steps:
   - title: Losing the game
   - title: Power-ups
   - title: Super power-ups!
+  - title: "Challenge: get creative!"
+    challenge: true
   - title: Adding some competition
   - title: Level 2
   - title: Moving platforms
