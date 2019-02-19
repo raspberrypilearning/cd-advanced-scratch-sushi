@@ -1,18 +1,37 @@
 ## Super power-ups!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool! Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
  
 For this, you're going to use another `broadcast`{:class="block3events"} message.
 
-+ First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+--- task ---
+First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
 
-![blocks_1546563694_952301](images/blocks_1546563694_952301.png)
+```blocks3
+    define react-to-player (type)
+    if <(type ::variable) = [1]> then
+        change [points v] by (collectable-value ::variables)
+    end
+    if <(type ::variable) = [2]> then
+-        change [lives v] by [1]    
++        broadcast [collectable-rain v]
+    end
+```
+--- /task ---
+
  
 Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
 
-+ Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+--- task ---
+Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
 
-![blocks_1546563696_0639381](images/blocks_1546563696_0639381.png)
+```blocks3
++    when I receive [collectable-rain v]
++    set [collectable-frequency v] to [0.000001]
++    wait (1) secs
++    set [collectable-frequency v] to [1]
+```
+--- /task ---
 
 --- collapse ---
 ---
@@ -25,7 +44,18 @@ Let's look at how the `collectable-frequency`{:class="block3variables"} variable
 
 In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
 
-![blocks_1546563697_154111](images/blocks_1546563697_154111.png)
+```blocks3
+    repeat until <not <(create-collectables ::variables) = [true]>>
+        if < [50] = (pick random (1) to (50))> then
+            set [collectable-type v] to [2]
+        else
+            set [collectable-type v] to [1]
+        end
+        wait (collectable-frequency ::variables) secs
+        go to x: (pick random (-240) to (240)) y:(179)
+        create clone of [myself v]
+    end
+```
 
 You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}. 
 
@@ -34,7 +64,3 @@ If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`,
 Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
 
 --- /collapse ---
-
-### Challenge: get creative!
- 
-+ Based on this card and the previous one, you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with some cool power-ups and see if you can make them!
