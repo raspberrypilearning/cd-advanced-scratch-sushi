@@ -1,3 +1,3 @@
-## Challenge: get creative!
+## Uitdaging: wees creatief!
 
-Based on the previous two cards you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with two cool power-ups and see if you can make them!
+Op basis van de vorige twee kaarten kun je nu zoveel verschillende power-ups en prijzen maken als je wilt! Bijvoorbeeld een die 20 keer het gebruikelijke aantal punten geeft, of drie levens toevoegt, of ervoor zorgt dat de speler geen levens kan verliezen gedurende een bepaalde periode? Bedenk twee coole power-ups en kijk of je ze kunt maken!
