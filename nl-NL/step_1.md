@@ -1,46 +1,46 @@
 \--- no-print \---
 
-This is the **Scratch 3** version of the project. There is also a [Scratch 2 version of the project](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
+Dit is de **Scratch 3** versie van het project. Er is ook een [Scratch 2 versie van het project](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
 
 \--- /no-print \---
 
-## Introduction
+## Inleiding
 
-These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
+Dit zijn de Gevorderden Scratch Sushi Kaarten, en hiermee maak je een platform-achtige game waaraan je later je eigen levels, power-ups en personages kunt toevoegen!
 
-### What you will make
+### Wat ga je maken
 
-Here is an example of the game you will build. Feel free to improve on my "art".
+Hier is een voorbeeld van de game die je gaat bouwen. Voel je vrij om mijn "kunst" te verbeteren.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
 </div>
 
-Use the arrow keys to move the cat around. Watch out for the dog!
+Gebruik de pijltjestoetsen om de kat te laten bewegen. Pas op voor de hond!
 
 ## \--- collapse \---
 
-## title: What you will learn
+## title: Wat ga je leren
 
-+ Cloning sprites
-+ Using variables inside cloned sprites
-+ Creating and using **My blocks** blocks
-+ Reusing code in several places with **My blocks** blocks
-+ Messages to trigger behaviours across sprites
-+ Using variables to configure your program
++ Sprites klonen
++ Variabelen binnen gekloonde sprites gebruiken
++ Maken en gebruiken van de **Mijn blokken** blokken
++ Hergebruik code op verschillende plaatsen met **Mijn blokken** blokken
++ Berichten om het gedrag van sprites te activeren
++ Variabelen gebruiken om je programma te configureren
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: What you will need
+## title: Wat heb je nodig
 
 ### Hardware
 
-+ A computer capable of running Scratch 3
++ Een computer die Scratch 3 kan uitvoeren
 
 ### Software
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} or [offline](https://scratch.mit.edu/download/){:target="_blank"})
++ Scratch 3 ([online](https://scratch.mit.edu/projects/editor/){:target="_ blank"} of [offline](https://scratch.mit.edu/download/){:target="_ blank"})
 
 \--- /collapse \---
