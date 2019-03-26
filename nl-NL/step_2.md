@@ -1,36 +1,36 @@
-## Setting things up
+## De voorbereidingen
 
-Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+Omdat je in Scratch leert programmeren en niet hoe je een natuurkundige machine moet bouwen (code die dingen in een computergame doet voorkomen als objecten uit de echte wereld, bijvoorbeeld dat ze niet door vloeren vallen), begin je met een project dat ik heb gemaakt en dat al de basis heeft voor bewegingen, springen en het zien van platforms.
 
-You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
+Werp een blik op het project, inclusief de details op deze kaart, want je zult er later een aantal wijzigingen in aanbrengen, maar je hoeft niet alles te begrijpen wat het doet!
 
-### Get the project
+### Ga naar het project
 
-\--- task \--- The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
+\--- task \--- Het eerste wat je moet doen is een kopie van de Scratch code maken van [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_ blank"}.
 
-To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
+Als je het project offline wilt gebruiken, downloadt je het door te klikken op **Bekijk van binnen**, klik vervolgens op **Bestand** en op **Opslaan op je computer**. Vervolgens kun je het gedownloade bestand in Scratch op je computer openen.
 
-You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**. \--- /task \---
+Je kunt het ook rechtstreeks in Scratch in je browser gebruiken door op **Bekijk van binnen** en dan op **Bewerk** te klikken. \--- /task \---
 
-### Take a look at the code
+### Bekijk de code
 
-The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
+De natuurkundige machine van het spel bevat een aantal verschillende onderdelen, waarvan sommige al werken en sommige nog niet. Je kunt dit uitproberen door het spel uit te voeren en het proberen te spelen.
 
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
+Je zult zien dat je levens kunt verliezen, maar er gebeurt niets wanneer je geen levens meer hebt. Bovendien heeft de game maar één level, één soort ding om te verzamelen en geen vijanden. Je gaat dit allemaal oplossen, en een beetje meer doen!
 
-\--- task \--- Take a look at how the code is put together. \--- /task \---
+\--- task \--- Bekijk hoe de code is samengesteld. \--- /task \---
 
-It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
+Het gebruikt veel blokken van **Mijn blokken**, die ideaal zijn om je code in stukken te splitsen, zodat je ze beter kunt beheren. Een **Mijn blokken** blok is een blok dat je uit een heleboel andere blokken opmaakt, en je kunt er instructies aan geven. Je zult zien hoe het werkt in een volgende stap!
 
 ![](images/setup2and3.png)
 
-### 'My blocks' blocks are really useful
+### 'Mijn blokken' blokken zijn erg handig
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+In de bovenstaande code, roept de hoofdgame `herhaal`{:class="block3control"} lus de `natuurkunde`{:class="block3myblocks"} **Mijn blokken** blokken op om heel veel dingen te doen! Door de blokken op deze manier gescheiden te houden, is het makkelijk om de belangrijkste lus te lezen en te begrijpen wat er gebeurt in het spel, zonder dat je je zorgen maakt over **hoe** het gebeurt.
 
-\--- task \--- Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks. \--- /task \---
+\--- task \--- Kijk nu naar de `reset-spel`{:class="block3myblocks"} en `reset-speler`{:class="block3myblocks"} **Mijn blokken** blokken. \--- /task \---
 
-They do pretty normal things, such as setting up variables and making sure the character rotates properly
+Ze doen behoorlijk normale dingen, zoals het instellen van variabelen en ervoor zorgen dat het personage op de juiste manier ronddraait
 
-- `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
-- The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
+- `reset-spel`{:class="block3myblocks"} **roept** `reset-speler`{:class="block3myblocks"} **op**, en laat zien dat je een **Mijn blokken** blok kunt gebruiken binnen een andere <1>Mijn blokken</1> blok
+- Het `reset-speler`{:class="block3myblocks"} **Mijn blokken** blok wordt op twee verschillende plaatsen in de hoofdlus gebruikt. Dit betekent dat je twee plaatsen in je hoofdgame-loop kunt wijzigen door alleen de code in het blok **Mijn blokken** te wijzigen. Dit bespaart je veel werk en helpt je fouten te voorkomen.
