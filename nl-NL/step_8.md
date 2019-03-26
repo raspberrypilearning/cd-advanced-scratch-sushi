@@ -1,163 +1,163 @@
 ## Level 2
 
-With this step, you're going to add a new level to the game that the player can get to by just pressing a button. Later, you can change your code to make it so they need a certain number of points, or something else, to get there.
+Met deze stap voeg je een nieuw level toe aan het spel dat de speler kan bereiken door eenvoudig op een knop te drukken. Later kun je jouw code wijzigen zodat een bepaald aantal punten of iets anders nodig zijn om daar te komen.
 
-### Moving to the next level
+### Op naar het volgende level
 
-\--- task \--- First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
+\--- task \--- Maak eerst een nieuwe knop-sprite door er een toe te voegen uit de bibliotheek of door er zelf een te tekenen. Ik deed een beetje van beide en maakte dit:
 
-![The button sprite to switch levels](images/levelButton.png) \--- /task \---
+![De knop-sprite om van level te wisselen](images/levelButton.png) \--- /task \---
 
-\--- task \--- Now, the code for this button is clever: it’s designed so that every time you click it it will take you to the next level, no matter how many levels there are.
+\--- task \--- Nu is de code voor deze knop slim: hij is zo ontworpen dat elke keer dat je erop klikt, hij naar het volgende level gaat, ongeacht hoeveel levels zijn.
 
-Add these scripts to your **Button** sprite. You will need to create some variables as you do so.
+Voeg deze scripts toe aan je **Knop** sprite. Je moet een aantal variabelen maken.
 
 ```blocks3
-+    when green flag clicked
-+    set [max-level v] to [2]
-+    set [min-level v] to [1]
-+    set [current-level v] to [1]
++ wanneer op groene vlag wordt geklikt
++ maak [max-level v] [2]
++ maak [min-level v] [1]
++ maak [huidig niveau v] [1]
 ```
 
 ```blocks3
-+    when this sprite clicked
-+    change [current-level v] by (1)
-+    if <(current-level) > (max-level ::variables)> then
-        set [current-level v] to (min-level ::variables)
++ wanneer op deze deze sprite wordt geklikt
++ verander [huidig-level v] met (1)
++ als <(huidig-level) > (max-level ::variables)> dan
+        maak [huidig-level v] (min-level ::variables)
     end
-+    broadcast [collectable-cleanup v]
-+    broadcast (join [level-](current-level))
++ zend signaal [prijzen-schoonmaak v]
++ zend signaal (voeg [level-] en (huidig-level) samen)
 ```
 
-\--- /task \--- Can you see how the program will use the variables you created?
+\--- /task \--- Kun je zien hoe het programma de variabelen gebruikt die je hebt gemaakt?
 
-+ `max-level`{:class="block3variables"} stores the highest level
-+ `min-level`{:class="block3variables"} stores the lowest level
-+ `current-level`{:class="block3variables"} stores the level the player is on right now
++ `max-level`{:class="block3variables"} slaat het hoogste level op
++ `min-level`{:class="block3variables"} slaat het laagste level op
++ `huidig-level`{:class="block3variables"} slaat het level op waar de speler nu is
 
-These all need to be set by the programmer \(you!\), so if you add a third level, don’t forget to change the value of `max-level`{:class="block3variables"}! `min-level`{:class="block3variables"} will never need to change, of course.
+Deze moeten allemaal worden ingesteld door de programmeur \(jij!\), dus als je een derde level toevoegt, vergeet dan niet om de waarde van `max-level`{:class="block3variables"} te wijzigen! `min-level`{:class="block3variables"} zal natuurlijk nooit veranderen.
 
-The broadcasts are used to tell the other sprites which level to display, and to clear up the collectables when a new level starts.
+De signalen worden gebruikt om aan de andere sprites te vertellen welk level moet worden weergegeven en om de prijzen op te ruimen wanneer een nieuw level begint.
 
-### Make the sprites react
+### Laat de sprites reageren
 
-#### The **Collectable** sprite
+#### De **Prijs** sprite
 
-Now you need to get the other sprites to respond to these broadcasts! Start with the easiest one: clearing all the collectables.
+Nu moet je de andere sprites laten reageren op deze signalen! Begin met de makkelijkste: alle prijzen opruimen.
 
-\--- task \--- Add the following code to the **Collectable** sprite scripts to tell all its clones to `hide`{:class="block3vlooks"} when they receive the cleanup broadcast:
-
-```blocks3
-+    when I receive [collectable-cleanup v]
-+    hide
-```
-
-\--- /task \---
-
-Since one of the first things any new clone does is show itself, you don't have to worry about unhiding collectables!
-
-#### The **Platforms** sprite
-
-Now to switch the **Platforms** sprite. You can design your own new level later if you like, but for now let’s use the one I’ve already included — you’ll see why on the next step!
-
-\--- task \--- Add this code to the **Platforms** sprite:
+\--- task \--- Voeg de volgende code toe aan de **Prijs** sprite scripts om al zijn klonen te vertellen om te `verdwijnen`{:class="block3vlooks"} wanneer ze het schoonmaaksignaal ontvangen:
 
 ```blocks3
-+    when I receive [level-1 v]
-+    switch costume to [Level 1 v]
-+    show
-```
-
-```blocks3
-+    when I receive [level-2 v]
-+    switch costume to [Level 2 v]
-+    show
++ wanneer ik signaal [prijzen-schoonmaak v] ontvang
++ verdwijn
 ```
 
 \--- /task \---
 
-It receives the `joined`{:class="block3operators"} messages of `level-`{:class="block3variables"} and `current-level`{:class="block3variables"} that the **Button** sprite sends out, and responds by changing the **Platforms** costume.
+Omdat een van de eerste dingen die elke nieuwe kloon doet is zichzelf laten zien, hoef je je geen zorgen te maken over het zichtbaar maken van prijzen!
 
-#### The **Enemy** sprite
+#### De **Platforms** sprite
 
-\--- task \--- In the **Enemy** sprite scripts, just make sure the sprite disappears when the player enters level 2, like this:
+Nu het schakelen van de **Platforms** sprite. Je kunt later je eigen nieuwe level ontwerpen als je wilt, maar laten we nu degene gebruiken dat ik al heb toegevoegd. In de volgende stap zie je waarom!
+
+\--- task \--- Voeg deze code toe aan de **platforms** sprite:
 
 ```blocks3
-+    when I receive [level-1 v]
-+    show
++ wanneer ik signaal [level-1 v] ontvang
++ verander uiterlijk naar [Level 1 v]
++ verschijn
 ```
 
 ```blocks3
-+    when I receive [level-2 v]
-+    hide
-```
-
-\--- /task \---
-
-If you prefer, you can make the enemy move to another platform instead. In that case, you would use a `go to`{:class="block3motion"} block instead of the `show`{:class="block3looks"} and `hide`{:class="block3looks"} blocks.
-
-### Make the **Player Character** appear in the right place
-
-Whenever a new level starts, the **Player Character** sprite needs to go to the right place for that level. To make this happen, you need to change where the sprite gets its coordinates from when it first appears on the Stage. At the moment, there are fixed `x` and `y` values in its code.
-
-\--- task \--- Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
-
-```blocks3
-    define reset-character
-    set [can-jump v] to [true]
-    set [x-velocity v] to [0]
-    set [y-velocity v] to [-0]
-+    go to x: (start-x) y: (start-y)
++ wanneer ik signaal [level-2 v] ontvang
++ verander uiterlijk naar [Level 2 v]
++ verschijn
 ```
 
 \--- /task \---
 
-\--- task \--- Then for each broadcast announcing the start of a level, set the right `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"} coordinates in response, and add a **call** to `reset-character`{:class="block3myblocks"}:
+Het ontvangt de `samengevoegde`{:class="block3operators"} signalen van `level-`{:class="block3variables"} en `huidig-level`{:class="block3variables"} die de sprite **Knop** verzendt, en antwoordt door het uiterlijk van **Platforms** te veranderen.
+
+#### De **Vijand** sprite
+
+\--- task \--- Zorg er in de **Vijand** sprite script voor dat de sprite verdwijnt wanneer de speler level 2 binnengaat, zoals dit:
 
 ```blocks3
-+    when I receive [level-1 v]
-+    set [start-x v] to [-183]
-+    set [start-y v] to [42]
-+    reset-character :: custom
++ wanneer ik signaal [level-1 v] ontvang
++ verschijn
 ```
 
 ```blocks3
-+    when I receive [level-2 v]
-+    set [start-x v] to [-218]
-+    set [start-y v] to [-143]
-+    reset-character :: custom
++ wanneer ik signaal [level-2 v] ontvang
++ verdwijn
 ```
 
 \--- /task \---
 
-### Starting at Level 1
+Als je wilt, kun je ervoor zorgen dat de vijand in plaats daarvan naar een ander platform gaat. In dat geval zou je een blok `ga naar`{:class="block3motion"} kunnen gebruiken in plaats van de blokken `verschijn`{:class="block3looks"} en `verdwijn`{:class="block3looks"}.
 
-You also need to make sure that every time someone starts the game, the first level they play is level 1.
+### Laat de **Speler** op de juiste plaats verschijnen
 
-\--- task \--- Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
+Wanneer een nieuw level begint, moet **Speler** sprite naar de juiste plaats gaan voor dat level. Om dit te laten gebeuren, moet je wijzigen waar de sprite zijn coördinaten krijgt vanaf het moment dat het voor het eerst in het werkgebied verschijnt. Op dit moment zijn er vaste waarden voor `x` en `y` in de code.
+
+\--- task \--- Begin met het maken van variabelen voor de startcoördinaten: `start-x`{:class="block3variables"} en `start-y`{:class="block3variables"}. Zet ze vervolgens in het blok `ga naar`{:class="block3motion"} blok in het `reset-speler`{:class="block3myblocks"} **Mijn blokken** blok in plaats van de vaste `x` en `y` waarden:
 
 ```blocks3
-    define reset-game
-    set rotation style [left-right v]
-    set [jump-height v] to [15]
-    set [gravity v] to [2]
-    set [x-speed v] to [1]
-    set [y-speed v] to [1]
-    set [lives v] to [3]
-    set [points v] to [0]
-+    broadcast (join [level-](min-level ::variables))
+    definieer reset-speler
+    maak [kan-springen v] [true]
+    maak [x-vaart v] [0]
+    maak [y-vaart v] [-0]
++ ga naar x: (start-x) y: (start- y)
+```
+
+\--- /task \---
+
+\--- task \--- Stel vervolgens voor elk signaal die het begin van een level aankondigt, de juiste `start-x`{:class="block3variables"} en `start-y`{:class="block3variables"} coördinaten in als antwoord en voeg een **signaal** voor `reset-speler`{:class="block3myblocks"} toe:
+
+```blocks3
++ wanneer ik signaal [level-1 v] ontvang
++ maak [start-x v] [-183]
++ maak [start-y v] [42]
++ reset-speler :: custom
+```
+
+```blocks3
++ wanneer ik signaal [level-2 v] ontvang
++ maak [start-x v] [-218]
++ maak [start-y v] [-143]
++ reset-speler :: custom
+```
+
+\--- /task \---
+
+### Beginnen op Level 1
+
+Je moet er ook voor zorgen dat telkens wanneer iemand het spel start, het eerste level dat ze spelen level 1 is.
+
+\--- task \--- Ga naar het script `reset-spel`{:class="block3myblocks"} en verwijder het signaal van `reset-speler`{:class="block3myblocks"}. Zend in plaats daarvan het signaal `min-level`{:class="block3variables"} uit. De code die je al met deze kaart hebt toegevoegd zal dan dan de juiste startcoördinaten instellen voor de **Speler** sprite en roept ook `reset-speler`{:class="block3myblocks"} aan.
+
+```blocks3
+    definieer reset-spel
+    maak draaistijl [links-rechts v]
+    maak [sprong-hoogte v] [15]
+    maak [zwaartekracht v] [2]
+    maak [x-snelheid v] [1]
+    maak [y-snelheid v] [1]
+    maak [levens v] [3]
+    maak [punten v] [0]
++ zend signaal (voeg [level-] en (min-level ::variables) samen)
 ```
 
 \--- /task \---
 
 ## \--- collapse \---
 
-## title: Resetting the Player Character versus resetting the game
+## title: Het personage van de speler of de game resetten
 
-Notice that the first block in the **Player Character** sprite's main green flag script is a call to the `reset-game`{:class="block3myblocks"} **My blocks** block.
+Merk op dat het eerste blok in het belangrijkste groene vlagscript van de **Speler** sprite een signaal is naar het `reset-spel`{:class="block3myblocks"} **Mijn blokken** blok.
 
-This block sets up all the variables for a new game and then calls the `reset-character`{:class="block3myblocks"} **My blocks** block, which places the character back in its correct starting position.
+Dit blok stelt alle variabelen voor een nieuw spel in en roept vervolgens het `reset-speler`{:class="block3myblocks"} **Mijn blokken** blok op, waardoor het personage terug in de juiste beginpositie wordt geplaatst.
 
-Having the `reset-character`{:class="block3myblocks"} code in its own block separate from `reset-game`{:class="block3myblocks"} allows you to reset the character to different positions **without** having to reset the whole game.
+Als je de code `reset-speler`{:class= block3myblocks"} in een eigen blok apart van `reset-spel`{:class="block3myblocks"} hebt, kun je de speler opnieuw instellen op verschillende posities **zonder dat** het hele spel herstart hoeft te worden.
 
 \--- /collapse \---
