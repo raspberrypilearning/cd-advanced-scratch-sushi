@@ -4,7 +4,8 @@ Nu je een nieuwe power-up prijs hebt, is het tijd om het iets heel cools te make
 
 Hiervoor gebruik je een ander `signaal`{:class="block3events"} bericht.
 
---- task --- Wijzig eerst het blok `reageer-op-speler`{:class="block3myblocks"} om een bericht uit te zenden wanneer het personage van de speler een type `2` prijs raakt. Roep het bericht `prijzen-regen`{:class="block3events"} op.
+--- task --- 
+Wijzig eerst het blok `reageer-op-speler`{:class="block3myblocks"} om een bericht uit te zenden wanneer het personage van de speler een type `2` prijs raakt. Roep het bericht `prijzen-regen`{:class="block3events"} op.
 
 ```blocks3
     definieer reageer-op-speler (type)
@@ -21,7 +22,8 @@ Hiervoor gebruik je een ander `signaal`{:class="block3events"} bericht.
 
 Nu moet je een nieuw stuk code maken in de **Prijs** sprite-scripts die worden gestart wanneer het bericht `prijzen-regen`{:class="block3events"} wordt uitgezonden.
 
---- task --- Voeg deze code toe voor de **Prijs** sprite om hem te laten luisteren naar het `prijzen-regen`{:class="block3events"} signaal.
+--- task --- 
+Voeg deze code toe voor de **Prijs** sprite om hem te laten luisteren naar het `prijzen-regen`{:class="block3events"} signaal.
 
 ```blocks3
 + wanneer ik signaal [prijzen-regen v] ontvang

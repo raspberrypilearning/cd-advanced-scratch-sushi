@@ -62,9 +62,12 @@ Dit betekent dat de waarde van `prijs-type`{:class="block3variables"} bepaalt we
 
 Natuurlijk heeft de sprite van **Prijs** maar één uiterlijk, omdat er maar één type prijs is. Je staat op het punt om dat te veranderen.
 
---- task --- Voeg een nieuw uiterlijk toe aan de **Prijs** sprite voor je nieuwe power-up. Ik hou van de bliksemschicht, maar kies wat je maar wilt. --- /task ---
+--- task --- 
+Voeg een nieuw uiterlijk toe aan de **Prijs** sprite voor je nieuwe power-up. Ik hou van de bliksemschicht, maar kies wat je maar wilt. 
+--- /task ---
 
---- task --- Vertel vervolgens het `kies-uiterlijk`{:class="block3myblocks"} **Mijn blokken** blok om het nieuwe uiterlijk in te stellen wanneer het de nieuwe waarde krijgt voor `type`{:class=" block3myblocks "}, zoals dit \(gebruik de uiterlijknaam die je hebt gekozen\):
+--- task --- 
+Vertel vervolgens het `kies-uiterlijk`{:class="block3myblocks"} **Mijn blokken** blok om het nieuwe uiterlijk in te stellen wanneer het de nieuwe waarde krijgt voor `type`{:class=" block3myblocks "}, zoals dit \(gebruik de uiterlijknaam die je hebt gekozen\):
 
 ```blocks3
     definieer kies-uiterlijk (type)
@@ -86,9 +89,11 @@ Nu moet je beslissen wat de nieuwe prijs zal doen! We beginnen met iets eenvoudi
 
 ![Typ de naam voor het blok](images/powerupMakeName.png)
 
-Klik **OK**. --- /task ---
+Klik **OK**. 
+--- /task ---
 
---- task --- Laat de `reageer-op-speler`{:class="block3myblocks"} **Mijn blokken** blok de punten of de levensduur van de speler verhogen, afhankelijk van de waarde van `type`{:class="block3myblocks"}.
+--- task --- 
+Laat de `reageer-op-speler`{:class="block3myblocks"} **Mijn blokken** blok de punten of de levensduur van de speler verhogen, afhankelijk van de waarde van `type`{:class="block3myblocks"}.
 
 ```blocks3
 + definieer reageer-op-speler (type)
@@ -102,7 +107,8 @@ Klik **OK**. --- /task ---
 
 --- /task ---
 
---- task --- Werk de `wanneer ik als kloon start`{:class="block3events"} code bij om het blok te vervangen dat een punt toevoegt met een **aanroep** naar `reageer-op-speler`{:class="block3myblocks"}, waarmee `prijs-type`{: class = "block3variables"} **doorgegeven** wordt.
+--- task --- 
+Werk de `wanneer ik als kloon start`{:class="block3events"} code bij om het blok te vervangen dat een punt toevoegt met een **aanroep** naar `reageer-op-speler`{:class="block3myblocks"}, waarmee `prijs-type`{: class = "block3variables"} **doorgegeven** wordt.
 
 ```blocks3
 + als <touching [Player Character v] ?> dan
@@ -130,11 +136,14 @@ Voor elke kloon van de **Prijs** sprite kun je een andere waarde instellen voor 
 
 Zie het als het creëren van een nieuw exemplaar van de **Prijs** sprite met behulp van de waarde die is opgeslagen in `prijs-type`{:class="block3variables"} op het moment dat de **Prijs** kloon wordt gemaakt.
 
-Je vraagt je misschien af of het veranderen van de waarde van `prijs-type`{:class="block3variables"} alle prijzen in het werkgebied in hetzelfde type verandert. Dat gebeurt niet, want een van de dingen die klonen speciaal maken, is dat ze de waarden van de variabelen waarmee ze beginnen niet kunnen veranderen. Sprite-klonen hebben eigenlijk **constante** waarden. Dat betekent dat wanneer je de waarde van `prijs-type`{:class="block3variables"} wijzigt, dit niet van invloed is op de **Prijs** sprite-klonen die al in het spel aanwezig zijn. --- /collapse ---
+Je vraagt je misschien af of het veranderen van de waarde van `prijs-type`{:class="block3variables"} alle prijzen in het werkgebied in hetzelfde type verandert. Dat gebeurt niet, want een van de dingen die klonen speciaal maken, is dat ze de waarden van de variabelen waarmee ze beginnen niet kunnen veranderen. Sprite-klonen hebben eigenlijk **constante** waarden. Dat betekent dat wanneer je de waarde van `prijs-type`{:class="block3variables"} wijzigt, dit niet van invloed is op de **Prijs** sprite-klonen die al in het spel aanwezig zijn. 
+
+--- /collapse ---
 
 Je gaat het `prijs-type`{:class="block3variables"} instellen op `1` of `2` voor elke nieuwe kloon die je maakt. Om het spel interessant te houden, kun je willekeurig tussen de nummers kiezen om telkens een willekeurige prijs te maken.
 
---- task --- Zoek de `herhaal tot`{:class="block3control"} lus in de groene vlag code voor de **Prijs** sprite, en voeg de `als... anders`{:class="block3control"} code toe zoals hieronder weergegeven.
+--- task --- 
+Zoek de `herhaal tot`{:class="block3control"} lus in de groene vlag code voor de **Prijs** sprite, en voeg de `als... anders`{:class="block3control"} code toe zoals hieronder weergegeven.
 
 ```blocks3
     herhaal tot <not <(create-collectables ::variables) = [true]>>

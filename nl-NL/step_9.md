@@ -6,13 +6,16 @@ De reden waarom ik je heb gevraagd om mijn versie van level 2 te gebruiken, is d
 
 Ten eerste heb je de sprite voor het platform nodig.
 
---- task --- Voeg een nieuwe sprite toe, noem deze **Bewegend-Platform**, en gebruik de uiterlijkgereedschappen in Uiterlijken om het op de andere platforms te laten lijken \(gebruik de vectormodus\). --- /task ---
+--- task --- 
+Voeg een nieuwe sprite toe, noem deze **Bewegend-Platform**, en gebruik de uiterlijkgereedschappen in Uiterlijken om het op de andere platforms te laten lijken \(gebruik de vectormodus\). 
+--- /task ---
 
 Laten we nu wat code toevoegen aan de sprite.
 
 Begin met de basis: om een nooit eindigende set platforms op het scherm te laten bewegen, moet je het platform regelmatig klonen. Ik koos `4` seconden als mijn interval. Je moet ook zorgen dat er een aan-/uit-schakelaar is om de platforms te maken, zodat ze niet op niveau 1 verschijnen. Ik gebruik een nieuwe variabele genaamd `maak-platforms`{:class="block3variables"}.
 
---- task --- Voeg code toe om klonen van je platformsprite te maken.
+--- task --- 
+Voeg code toe om klonen van je platformsprite te maken.
 
 Dit is hoe de mijne er nu uitziet:
 
@@ -29,7 +32,8 @@ Dit is hoe de mijne er nu uitziet:
 
 --- /task ---
 
---- task --- Voeg vervolgens de klooncode toe:
+--- task --- 
+Voeg vervolgens de klooncode toe:
 
 ```blocks3
 + wanneer ik als kloon start
@@ -48,7 +52,8 @@ Dit is hoe de mijne er nu uitziet:
 
 Deze code zorgt ervoor dat de kloon van **Bewegend-Platform** naar de bovenkant van het scherm wordt verplaatst, langzaam genoeg zodat de speler erop en eraf kan springen, en vervolgens verdwijnt.
 
---- task --- Laat nu de platforms verdwijnen/verschijnen op basis van de signalen die levels veranderen (dus ze zijn alleen op het level waar ruimte voor hen is), en het `game over`{:class="block3events"} bericht.
+--- task --- 
+Laat nu de platforms verdwijnen/verschijnen op basis van de signalen die levels veranderen (dus ze zijn alleen op het level waar ruimte voor hen is), en het `game over`{:class="block3events"} bericht.
 
 ```blocks3
 + wanneer ik signaal [level-1 v] ontvang
@@ -69,7 +74,8 @@ Als je nu probeert om het spel daadwerkelijk te spelen, valt de **Speler** door 
 
 Het is omdat de natuurkunde code nog van niets weet over het platform. Er is een snelle oplossing:
 
---- task --- Vervang in de **Speler** spritescripts elk `aanrakende "Platforms"`{:class="block3sensing"} blok met een `OF`{:class="block3operators"}functie die controleert **of** `"Platforms" aangeraakt`{: class = "block3sensing"} worden **OF** `"Bewegende-Platform" aangeraakt`{:class="block3sensing"} worden.
+--- task --- 
+Vervang in de **Speler** spritescripts elk `aanrakende "Platforms"`{:class="block3sensing"} blok met een `OF`{:class="block3operators"}functie die controleert **of** `"Platforms" aangeraakt`{: class = "block3sensing"} worden **OF** `"Bewegende-Platform" aangeraakt`{:class="block3sensing"} worden.
 
 Doorloop de code voor de **Speler** sprite en overal waar je dit blok ziet:
 

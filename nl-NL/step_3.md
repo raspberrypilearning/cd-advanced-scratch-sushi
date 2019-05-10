@@ -4,7 +4,8 @@ Ten eerste! Je hebt een manier nodig om het spel te laten eindigen als de speler
 
 Je hebt misschien gemerkt dat het `verlies`{:class="block3myblocks"} **Mijn blokken** blok in het script voor de **Speler** sprite leeg is. Je gaat dit invullen en alle stukken instellen die nodig zijn voor een leuk 'Game over' scherm.
 
---- task --- Zoek eerst het blok `verlies`{:class="block3myblocks"} en vul het aan met de volgende code:
+--- task --- 
+Zoek eerst het blok `verlies`{:class="block3myblocks"} en vul het aan met de volgende code:
 
 ```blocks3
     definieer verlies
@@ -35,7 +36,8 @@ Nu moet je ervoor zorgen dat alle sprites weten wat ze moeten doen als het spel 
 
 ### De platforms en randen verbergen
 
---- task --- Begin met de makkelijkste sprites. De **Platform** en **Randen** sprites hebben beide code nodig om te verschijnen wanneer het spel start en om te verdwijnen wanneer ze het `game over`{:class= "block3events"} bericht ontvangen, dus voeg deze blokken toe aan beide sprites:
+--- task --- 
+Begin met de makkelijkste sprites. De **Platform** en **Randen** sprites hebben beide code nodig om te verschijnen wanneer het spel start en om te verdwijnen wanneer ze het `game over`{:class= "block3events"} bericht ontvangen, dus voeg deze blokken toe aan beide sprites:
 
 ```blocks3
 + wanneer ik signaal [game over v] ontvang
@@ -76,7 +78,8 @@ Kijk hoe de **Prijs** sprite werkt. Kijk of je een deel van de code kunt begrijp
 2. Vervolgens worden de besturingsvariabelen ingesteld - we komen hier later op terug
 3. De variabele `maak-prijzen`{:class="block3variables"} is de aan/uit schakelaar voor klonen: de lus maakt klonen als `maak-prijzen`{:class="block3variables"} `waar` is en doet niets als het niet waar is
 
---- task --- Stel nu een blok in voor de **Prijs** sprite, zodat deze reageert op het `game over` signaal:
+--- task --- 
+Stel nu een blok in voor de **Prijs** sprite, zodat deze reageert op het `game over` signaal:
 
 ```blocks3
 + wanneer ik signaal [game over v] ontvang
