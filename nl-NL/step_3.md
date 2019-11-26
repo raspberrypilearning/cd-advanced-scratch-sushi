@@ -11,7 +11,7 @@ Je hebt misschien gemerkt dat het `verlies`{:class="block3myblocks"} **Mijn blok
 + stop [andere scripts in sprite v] :: control stack
 + zend signaal [game over v]
 + ga naar x: (0) y: (0)
-+ zeg [Game over!] (2) sec
++ zeg [Game over!] voor (2) sec
 + stop [alle v]
 ```
 
@@ -34,7 +34,7 @@ Nu moet je ervoor zorgen dat alle sprites weten wat ze moeten doen als het spel 
 
 ### De platforms en randen verbergen
 
-\--- task \--- Begin met de makkelijkste sprites. De **Platform** en **Randen** sprites hebben beide code nodig om te verschijnen wanneer het spel start en om te verdwijnen wanneer ze het `game over`{:class= "block3events"} bericht ontvangen, dus voeg deze blokken toe aan beide sprites:
+\--- task \--- Begin met de makkelijkste sprites. De **Platform** en **Randen** sprites hebben beide code nodig om te verschijnen wanneer het spel start en om te verdwijnen wanneer ze het `game over`{:class="block3events"} bericht ontvangen, dus voeg deze blokken toe aan beide sprites:
 
 ```blocks3
 + wanneer ik signaal [game over v] ontvang
@@ -64,14 +64,14 @@ Kijk hoe de **Prijs** sprite werkt. Kijk of je een deel van de code kunt begrijp
     maak [prijs-frequentie v] [1]
     maak [maak-prijzen v] [true]
     maak [prijs-type v] [1]
-    herhaal <not <(create-collectables) = [true]>>
+    herhaal tot < niet <(maak-prijzen) = [waar]>>
         wacht (prijs-frequentie) sec
         ga naar x: (willekeurig getal tussen (-240) tot (240)) y: (179)
         maak een kloon van [mijzelf v]
     end
 ```
 
-1. Eerst maakt de originele **Prijs** sprite onzichtbaar door deze te verbergen
+1. Eerst maakt het de originele **Prijs** sprite onzichtbaar door deze te verbergen
 2. Vervolgens worden de besturingsvariabelen ingesteld - we komen hier later op terug
 3. De variabele `maak-prijzen`{:class="block3variables"} is de aan/uit schakelaar voor klonen: de lus maakt klonen als `maak-prijzen`{:class="block3variables"} `waar` is en doet niets als het niet waar is
 
