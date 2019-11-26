@@ -27,7 +27,7 @@ Verklein de sprite naar de juiste maat en plaats hem ergens om te starten. Dit i
 + ga naar x: (-25) y: (-9)
 + herhaal
         neem (vijand-zet-stappen) stappen
-        als <not <touching [Platforms v] ?>> dan
+        als <niet <raak ik [platforms v]>> dan
             maak [vijand-zet-stappen v] ((vijand-zet-stappen) * (-1))
         end
      end
@@ -53,7 +53,7 @@ Het volgende wat je nodig hebt is dat de speler een leven verliest wanneer hun *
             wacht (0.05) sec
             verschijn
         end
-+ als <touching [Enemy v] ?> dan
++ als <raak ik [Vijand v] ?> dan
             verdwijn
             ga naar x: (-187) y: (42)
             verander [levens v] met (-1)
