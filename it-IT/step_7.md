@@ -1,71 +1,71 @@
-## Adding some competition
+## Aggiungiamo un po' di difficoltà
 
-Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platform games like Super Mario that we’re inspired by here.
+Il tuo gioco funziona e ora puoi raccogliere punti, ottenere poteri speciali dai potenziamenti e anche perdere. Stiamo arrivando da qualche parte! Forse sarebbe divertente aggiungere un po' di concorrenza - che dici di includere un personaggio che si muove un po', ma che non dovresti toccare? Sarà simile ai nemici nei tradizionali giochi come Super Mario da cui ci siamo ispirati.
 
-\--- task \--- First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+\--- task \--- Prima cosa, scegli uno sprite da aggiungere come tuo nemico. Poiché il nostro personaggio è un gatto, ho scelto un cane. Ci sono molti altri sprite che potresti aggiungere. Ho anche ribattezzato lo sprite nemico **Nemico**, giusto per rendere le cose più chiare per me.
 
-Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
+Ridimensiona lo sprite alla giusta dimensione e posizionalo in un punto appropriato per iniziare. Ecco come appare il mio:
 
-![The dog enemy sprite](images/enemySprite.png) \--- /task \---
+![Lo sprite nemico del cane](images/enemySprite.png) \--- /task \---
 
-\--- task \--- Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
+\--- task \--- Scrivi prima il codice più semplice: imposta il blocco per reagire al messaggio `game over`{:class="events"} che fa sparire il nemico quando il giocatore perde la partita.
 
 ```blocks3
-+    when I receive [game over v]
-+    hide
++ quando ricevo [game over v]
++ nascondi
 ```
 
 \--- /task \---
 
-\--- task \--- Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
+\--- task \--- Ora devi scrivere il codice per ciò che deve fare il nemico. Usa il mio codice, ma valuta l'aggiunta di qualcosa extra! (Cosa succede se possono teletrasportarsi su piattaforme diverse? Cosa succede se c'è un potenziamento che li fa muovere più velocemente, o più lentamente?)
 
 ```blocks3
-+    when green flag clicked
-+    show
-+    set [enemy-move-steps v] to [5]
-+    set rotation style [left-right v]
-+    go to x: (-25) y: (-9)
-+    forever
-        move (enemy-move-steps) steps
-        if <not <touching [Platforms v] ?>> then
-            set [enemy-move-steps v] to ((enemy-move-steps) * (-1))
-        end
-     end
++ quando si clicca sulla bandiera verde
++ mostra
++ porta [nemico-moto-passi v] a [5]
++ usa stile rotazione [sinistra-destra v]
++ vai a x: (-25) y: (-9)
++ per sempre 
+fai (nemico-moto-passi) passi
+  if <not <touching [Platforms v] ?>> then
+  porta [nemico-moto-passi v] a ((nemico-moto-passi) * (-1))
+end
+end
 ```
 
-**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
+**Nota**: se trascini il blocco `vai a`{:class="block3motion"} nel pannello sprite e non cambi i valori `x` e `y`, questi saranno anche i valori per la posizione corrente dello sprite del **Nemico**!
 
-The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform! \--- /task \---
+Il codice nel blocco `se... allora`{:class="block3control"} farà tornare lo sprite indietro quando arriva alla fine della piattaforma! \--- /task \---
 
-The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+La prossima cosa di cui hai bisogno è far perdere una vita al giocatore quando il loro sprite **Personaggio-giocatore** tocca lo sprite **Nemico**. Inoltre, è necessario assicurarsi che gli sprite si **fermino** molto velocemente dopo il tocco, poiché altrimenti il codice che controlla il tocco continuerà a funzionare e il giocatore continuerà a perdere vite.
 
-\--- task \--- Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
+\--- task \--- Ecco come l'ho fatto, ma puoi provare a migliorare questo codice! Ho modificato il blocco principale dello sprite **Personaggio-giocatore**. Aggiungi il nuovo codice prima del blocco `se`{:class="block3control"} che controlla se hai terminato le vite.
 
 ```blocks3
-    when green flag clicked
-    reset-game :: custom
-    forever
-        main-physics :: custom
-        if <(y position) < [-179]> then
-            hide
-            reset-character :: custom
-            change [lives v] by (-1)
-            wait (0.05) secs
-            show
-        end
-+        if <touching [Enemy v] ?> then
-            hide
-            go to x: (-187) y: (42)
-            change [lives v] by (-1)
-            wait (0.5) secs
-            show
-+        end
-        if <(lives) < [1]> then
-            lose :: custom
-        end
-    end
+    quando si clicca sulla bandiera verde
+reset-partita :: custom
+per sempre 
+  mondo-reale :: custom
+  se <(posizione y) <[-179]> allora 
+    nascondi
+    reset-personaggio :: custom
+    cambia [vite v] di (-1)
+    attendi (0.05) secondi
+    mostra
+  end
+  + se <touching [Enemy v] ?> allora 
+  +   nascondi
+  +   vai a x: (-187) y: (42)
+  +   cambia [vite v] di (-1)
+  +   attendi (0.5) secondi
+  +   mostra
+  + end
+  se <(vite) <[1]> allora 
+    perso :: custom
+  end
+end
 ```
 
 \--- /task \---
 
-The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
+Il nuovo codice nasconde lo sprite **Personaggio-giocatore**, lo riporta alla sua posizione di partenza, riduce la variabile `vite`{:class="block3variables"} di `1`, e dopo mezzo secondo fa riapparire lo sprite.
