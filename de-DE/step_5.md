@@ -1,64 +1,64 @@
-## Super power-ups!
+## Super Power-Ups!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+Nun, da das neue sammelbare Power-Up funktioniert, ist es an der Zeit, etwas wirklich Cooles zu machen: Lass es einige Sekunden lang Power-Ups "regnen", anstatt nur ein zusätzliches Leben auszugeben.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+Dazu verwendest du eine weitere `Sendung an alle`{:class="block3events"}-Nachricht.
 
-\--- task \--- First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+\--- task \--- Ändere zunächst den Block `reagiere-auf-Spieler`{:class="block3myblocks"}, um eine Nachricht an alle zu senden, wenn der Spielercharacter ein Typ-`2`-Sammelobjekt berührt. Rufe die Nachricht `Sammelobjekt-Regen`{:class="block3events"} auf.
 
 ```blocks3
-    define react-to-player (type)
-    if <(type ::variable) = [1]> then
-        change [points v] by (collectable-value ::variables)
-    end
-    if <(type ::variable) = [2]> then
--        change [lives v] by [1]    
-+        broadcast [collectable-rain v]
-    end
+    Definiere reagiere-auf-Spieler (typ)
+    falls <(typ ::variable) = [1]>, dann
+       ändere [Punkte v] um (Sammelobjekt-Wert ::variables)
+    Ende
+    falls <(typ ::variable) = [2]>, dann 
+     - ändere [Leben v] um [1]    
+     + sende [Sammelobjekt-Regen v] an alle
+    Ende
 ```
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+Jetzt musst du einen neuen Code im **Sammelobjekt**-Figur-Skript erstellen, der jedes Mal gestartet wird, wenn die Meldung `Sammelobjekt-Regen`{:class="block3events"} gesendet wird.
 
-\--- task \--- Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+\--- task \--- Füge diesen Code für die **Sammelobjekt**-Figur hinzu, damit sie auf die `Sammelobjekt-Regen`{:class="block3events"}-Sendung lauscht.
 
 ```blocks3
-+    when I receive [collectable-rain v]
-+    set [collectable-frequency v] to [0.000001]
-+    wait (1) secs
-+    set [collectable-frequency v] to [1]
++ Wenn ich [Sammelobjekt-Regen v] empfange
++ setze [Sammelobjekt-Häufigkeit v] auf [0.000001]
++ warte (1) Sekunden
++ setze [Sammelobjekt-Häufigkeit v] auf [1]
 ```
 
 \--- /task \---
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: Was macht der neue Code?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+Dieses Stück Code wartet darauf, eine Nachricht zu empfangen und setzt `Sammelobjekt-Häufigkeit`{:class="block3variables"} auf eine sehr kleine Zahl, wartet dann eine Sekunde lang, und setzt dann die Variable zurück auf `1`.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+Lass uns einen Blick darauf werfen, wie die Variable `Sammelobjekt-Häufigkeit`{:class="block3variables"} verwendet wird, um herauszufinden, warum diese Sammelobjekte regnen lassen kann.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+In der Hauptspielschleife erhält der Teil des Codes, der die **Sammelobjekt**-Figur-Klone erzeugt, von der Variablen `Sammelobjekt-Häufigkeit`{:class="block3variables"} die Information, wie lange bis zum Erzeugen eines Klons gewartet werden soll:
 
 ```blocks3
-    repeat until <not <(create-collectables ::variables) = [true]>>
-        if < [50] = (pick random (1) to (50))> then
-            set [collectable-type v] to [2]
-        else
-            set [collectable-type v] to [1]
-        end
-        wait (collectable-frequency ::variables) secs
-        go to x: (pick random (-240) to (240)) y:(179)
-        create clone of [myself v]
-    end
+    wiederhole bis <nicht <(erzeuge-Sammeobjekte ::variables) = [wahr]>>
+        falls < [50] = (Zufallszahl von (1) bis (50))>, dann
+            setze [Sammelobjekt-Typ v] auf [2]
+        sonst
+            setze [Sammelobjekt-Typ v] auf [1]
+        Ende
+        warte (Sammelobjekt-Häufigkeit ::variables) Sekunden
+        gehe zu x: (Zufallszahl von (-240) bis (240)) y: (179)
+        erzeuge  Klon von [mir selbst v]
+ Ende
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+Du kannst sehen, dass der `warte`{:class="block3control"}-Block den Code für die Dauer der Zeit pausiert, die von `Sammelobjekt-Häufigkeit`{:class="block3variables"} gegeben wird.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+Wenn der Wert von `Sammelobjekt-Häufigkeit`{:class="block3variables"} `0,000001` ist, pausiert der `warte`{:class="block3control"} - Block nur für **Millionstel** Sekunden, was bedeutet, dass die `Wiederholen bis`{:class="block3control"}-Schleife viel öfter ausgeführt wird als normal. Als Ergebnis wird der Code **eine Menge** mehr Power-Ups erstellen, als er es normalerweise tun würde, bis `Sammelobjekt-Häufigkeit`{:class="block3variables"} wieder auf `1` geändert wird.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+Fällt dir ein Problem ein was möglicherweise auftreten könnte? Es wird viel mehr Power-Ups geben..., was wenn du sie weiter fängst?
 
 \--- /collapse \---
