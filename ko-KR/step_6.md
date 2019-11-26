@@ -1,3 +1,3 @@
-## Challenge: get creative!
+## 과제: 창의력을 발휘하자!
 
-Based on the previous two cards you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with two cool power-ups and see if you can make them!
+앞에서 수행한 내용을 기반으로 이제 원하는 만큼 다양한 파워 업 수집품을 만들 수 있습니다! 평소 포인트 점수의 20배를 주거나 목숨을 세 번 추가하거나, 플레이어가 일정 기간 동안 목숨을 잃을 수 없도록 만드는 것은 어떻습니까? 멋진 파워 업 두 개를 생각해내서 만들어 보세요!
