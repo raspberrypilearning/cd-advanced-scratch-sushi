@@ -6,9 +6,9 @@ Dit is de **Scratch 3** versie van het project. Er is ook een [Scratch 2 versie 
 
 ## Inleiding
 
-Dit zijn de Gevorderden Scratch Sushi Kaarten, en hiermee maak je een platform-achtige game waaraan je later je eigen levels, power-ups en personages kunt toevoegen!
+Dit zijn de Gevorderden Scratch Sushi kaarten, en hiermee maak je een platform-achtige game waaraan je later je eigen levels, power-ups en personages kunt toevoegen!
 
-### Wat ga je maken
+### Wat je gaat maken
 
 Hier is een voorbeeld van de game die je gaat bouwen. Voel je vrij om mijn "kunst" te verbeteren.
 
@@ -33,7 +33,7 @@ Gebruik de pijltjestoetsen om de kat te laten bewegen. Pas op voor de hond!
 
 ## \--- collapse \---
 
-## title: Wat heb je nodig
+## title: Wat je nodig hebt
 
 ### Hardware
 
