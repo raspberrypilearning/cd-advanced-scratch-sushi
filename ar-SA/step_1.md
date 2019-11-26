@@ -1,10 +1,10 @@
 \--- no-print \---
 
-This is the **Scratch 3** version of the project. There is also a [Scratch 2 version of the project](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
+هذا هو الإصدار **Scratch 3** من المشروع. يوجد أيضًا إصدار [Scratch 2 من المشروع](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
 
 \--- /no-print \---
 
-## Introduction
+## المقدمة
 
 These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
 
