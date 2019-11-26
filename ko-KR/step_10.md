@@ -1,81 +1,81 @@
-## What next?
+## 더 나아가기
 
-You’ve got a complete game now, but there’s a whole lot more you can do with it! Here are a few ideas to get you started:
+당신은 지금 완전한 게임을 가지고 있지만, 당신이 할 수 있는 일은 더 있습니다! 시작하는 데 도움이 되는 몇 가지 아이디어는 다음과 같습니다.
 
 ## \--- collapse \---
 
-## title: High scores
+## title: 높은 점수
 
-+ Keep a list of the names and scores of people who’ve gotten high scores in the game! You’ll need to use the `ask`{:class="block3looks"} block to the get their name.
++ 게임에서 높은 점수를 얻은 사람들의 이름과 점수 목록을 기록하십시오! 그들의 이름을 얻으려면 `묻고 기다리기`{: class = "block3looks"} 블록을 사용해야 합니다.
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: New power-ups
+## title: 새로운 파워 업
 
-+ Try adding some new power-ups, for example for: 
-  + Immunity to enemies
-  + More lives
-  + Bigger player character
-  + Smaller player character
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Scrolling levels
-
-+ Can you figure out how to make the levels scroll along, so the player character can move through them from left to right? Or at least make it *look* like that’s what’s happening?
++ 다음과 같은 몇 가지 새로운 파워 업을 추가해보십시오. 
+  + 적에 대한 면역성
+  + 더 많은 목숨
+  + 더 큰 플레이어 캐릭터
+  + 더 작은 플레이어 캐릭터
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Completing levels
+## title: 스크롤링 레벨
 
-+ Right now, the levels never end. What if, instead of pushing a button, you needed a certain number of points to get to the next level?
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Play With physics
-
-+ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, and `y-speed`{:class="block3variables"}. How do they change the game?
-
-+ Can you use the physics to make power-ups?
++ 플레이어 캐릭터가 왼쪽에서 오른쪽으로 움직일 수 있도록 레벨을 스크롤하는 방법을 알아낼 수 있습니까? 아니면 적어도 그런 것처럼 *보이게* 할 수 있나요?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: More levels
+## title: 레벨 완료
 
-+ Add more levels! Make better art! Use the Stage background to make the game look cooler while still keeping platforms easy to work with for you as the coder.
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Sound effects
-
-+ This game is totally silent right now! Try adding background music and sound effects using the blocks in the **Sound** section!
++ 지금은 레벨이 끝나지 않습니다. 버튼을 누르는 대신 다음 단계로 넘어 가기 위해 특정 포인트 점수가 필요한 경우 어떻게 해야 합니까?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Secrets
+## title: 물리학으로 놀기
 
-+ Think of secret bonuses, cheat codes, and other 'easter eggs' you can hide in the game for players to discover. Try to code some of them!
++ `중력`{CLASS = "block3variables"} `점프 높이`{CLASS = "block3variables"}, `X 속도`{CLASS = "block3variables" } 및 `y- 속력`{: class = "block3variables"} 같은 물리 엔진의 값을 변경해 보세요. 게임이 어떻게 달라지나요?
+
++ 물리학을 사용하여 파워 업을 할 수 있습니까?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Different characters
+## title: 더 많은 레벨
 
-+ Add more character sprites and let the player pick one. Make the characters different in attributes like size, how high they jump, maybe even how many lives they have, and how many points they get from collectables! 
++ 더 많은 레벨을 추가하십시오! 더 나은 예술을 만드십시오! 스테이지 배경을 사용하여 게임을 더욱 멋지게 만들면서 플랫폼을 코더가 사용하기 쉽도록 유지하십시오.
 
 \--- /collapse \---
+
+## \--- collapse \---
+
+## title: 음향 효과
+
++ 이 게임은 지금 완전히 조용합니다! **소리** 섹션의 블록을 사용하여 배경 음악과 사운드 효과를 추가하십시오!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: 비밀
+
++ 비밀 보너스, 속임수 코드 등 플레이어가 발견 할 수 있도록 게임에 숨길 수 있는 다른 '이스터 에그'를 생각해보십시오. 그들 중 일부를 코딩하십시오!
+
+-- /collapse \---
+
+## \--- collapse \---
+
+## title: 다른 캐릭터
+
++ 더 많은 캐릭터 스프라이트를 추가하고 플레이어가 하나를 선택하도록하십시오. 크기, 높이뛰기, 심지어 얼마나 많은 목숨을 가지고 있는지, 수집품에서 얼마나 많은 점수를 받는지와 같은 속성으로 캐릭터들을 다르게 만드세요! 
+
+\--- / collapse \---
