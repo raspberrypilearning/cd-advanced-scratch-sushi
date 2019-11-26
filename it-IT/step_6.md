@@ -1,3 +1,3 @@
-## Challenge: get creative!
+## Sfida: diventa creativo!
 
-Based on the previous two cards you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with two cool power-ups and see if you can make them!
+Basandoti sulle due precedenti schede, ora puoi accumulare quanti più potenziamenti catturabili vuoi! Che ne dici di uno che regala 20 volte il normale punteggio, o aggiunge tre vite, o fa in modo che il giocatore non possa rimanere senza vite per un po' di tempo? Inventa due fantastici potenziamenti e vedi se riesci a farli!
