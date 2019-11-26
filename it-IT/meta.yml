@@ -1,12 +1,12 @@
 ---
-title: Advanced Scratch Sushi Cards
+title: Falling stars
 hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
-theme: orange
+description: Crea un gioco in stile piattaforma e aggiungi i tuoi livelli, poteri e personaggi.
+theme: arancio
 listed: true
 copyedit: true
 curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
-interests: games
+interests: giochi
 technologies: scratch
 site_areas: coderdojo
 software: scratch
@@ -14,23 +14,23 @@ version: 4.0.0
 last_tested: "2018-04-23"
 steps:
   - 
-    title: Introduction
+    title: Introduzione
   - 
-    title: Setting things up
+    title: Impostare il tutto
   - 
-    title: Losing the game
+    title: Perdere al gioco
   - 
-    title: Power-ups
+    title: Potenziamenti
   - 
-    title: Super power-ups!
+    title: Super potenziamenti!
   - 
-    title: "Challenge: get creative!"
+    title: "Sfida: diventa creativo!"
     challenge: true
   - 
-    title: Adding some competition
+    title: Aggiungiamo un po' di competizione
   - 
-    title: Level 2
+    title: Livello 2
   - 
-    title: Moving platforms
+    title: Piattaforme mobili
   - 
-    title: What next?
+    title: E adesso?
