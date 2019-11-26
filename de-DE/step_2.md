@@ -1,36 +1,36 @@
-## Setting things up
+## Vorbereitungen
 
-Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+Du lernst, wie man in Scratch programmiert, und nicht wie man eine Physik-Engine erstellt (Code, der bewirkt, dass sich Dinge in einem Computerspiel wie realistische Objekte verhalten, z. B. fallen sie nicht durch Böden). Deswegen beginnst du mit einem Projekt, das ich erstellt habe und das bereits die Grundlagen für das Verschieben, Springen und Erkennen von Plattformen enthält.
 
-You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
+Du solltest dir das Projekt einschließlich der Details auf dieser Karte kurz ansehen, da du später einige Änderungen daran vornehmen wirst, aber du musst nicht alles verstehen, was es tut!
 
-### Get the project
+### Das Projekt bekommen
 
-\--- task \--- The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
+\--- task \--- Als erstes musst du eine Kopie des Scratch-Codes von [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_ blank"} machen.
 
-To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
+Um das Projekt offline zu verwenden, lade es herunter, indem du auf **Schau hinein** klickst und dann weiter auf **Datei** und **Auf deinem Computer speichern**. Dann kannst du die heruntergeladene Datei in Scratch auf deinem Computer öffnen.
 
-You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**. \--- /task \---
+Du kannst es auch direkt in Scratch in deinem Browser verwenden, indem du auf **Schau hinein** und dann auf **Remix** klickst. \--- /task \---
 
-### Take a look at the code
+### Schaue dir den Code an
 
-The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
+Die Physik-Engine des Spiels enthält eine Vielzahl von Teilen, von denen einige bereits funktionieren und andere noch nicht. Du kannst dies testen, indem du das Spiel ausführst und versuchst, es zu spielen.
 
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
+Du wirst sehen, dass du Leben verlieren kannst, aber nichts passiert, wenn die Leben ausgehen. Außerdem hat das Spiel nur eine Ebene, eine Art von Dingen zu sammeln und keine Gegner. Du wirst all das reparieren und dann noch ein bisschen mehr tun!
 
-\--- task \--- Take a look at how the code is put together. \--- /task \---
+\--- task \--- Sie dir an, wie der Code zusammengesetzt wird. \--- /task \---
 
-It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
+Es verwendet viele **Mein Blöcke**-Blöcke, die sich hervorragend dazu eignen, deinen Code in Teile zu zerlegen, damit du ihn besser verwalten kannst. Ein **Meine Blöcke**-Block ist ein Block, den du aus vielen anderen Blöcken zusammenstellen und dem du einige Anweisungen geben kannst. Du wirst in einem nächsten Schritt sehen, wie es funktioniert!
 
 ![](images/setup2and3.png)
 
-### 'My blocks' blocks are really useful
+### "Meine Blöcke"-Blöcke sind wirklich nützlich
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+Im obigen Code ruft das Hauptspiel in der `wiederhole fortlaufend`{:class="block3control"}-Schleife den `Hauptphysik`{:class="block3myblocks"}-**Meine Blöcke**-Block auf, um eine ganze Menge Sachen zu machen! Die Blöcke getrennt zu halten, macht es leicht, die Hauptschleife zu lesen und verstehen, was im Spiel passiert, ohne sich Gedanken zu machen **wie** es passiert.
 
-\--- task \--- Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks. \--- /task \---
+\--- task \--- Nun schau dir die `Spiel-zurücksetzen`{:class="block3myblocks"} und `Spieler-zurücksetzen`{:class="block3myblocks"}-**Meine Blöcke**-Blöcke an. \--- /task \---
 
-They do pretty normal things, such as setting up variables and making sure the character rotates properly
+Sie machen ziemlich normale Dinge, zum Beispiel richten Sie Variablen ein und stellen sicher, dass sich der Charakter richtig dreht
 
-- `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
-- The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
+- `Spiel-zurücksetzen`{:class="block3myblocks"} **ruft** `Spieler-zurücksetzen`{:class="block3myblocks"} auf und zeigt, dass du einen **Meine Blöcke**-Block innerhalb eines weiteren **Meine Blöcke**-Blocks verwenden kannst
+- Der `Spieler-zurücksetzen`{:class="block3myblocks"} **Meine Blöcke**-Block wird an zwei verschiedenen Stellen in der Hauptschleife verwendet. Dies bedeutet, dass du zwei Stellen in deiner Hauptspielschleife ändern kannst, indem du nur den Code innerhalb des **Meine Blöcke**-Blocks änderst. Dies erspart dir viel Arbeit und hilft, Fehler zu vermeiden.
