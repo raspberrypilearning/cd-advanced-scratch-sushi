@@ -9,7 +9,7 @@ Laten we eens kijken hoe de prijs nu werkt.
 Zoek in de scripts voor de **Prijs** sprite de `wanneer ik als kloon start`{:class="block3events"} code. De blokken waar je naar moet kijken zijn degenen die je punten geven voor het verzamelen van een ster:
 
 ```blocks3
-    als <touching [Player Character v]?> dan
+    als <raak ik [Speler v]?> dan
         verander [punten v] met (prijs-waarde ::variables)
         verwijder deze kloon
 ```
@@ -63,7 +63,7 @@ Natuurlijk heeft de sprite van **Prijs** maar één uiterlijk, omdat er maar é�
 
 \--- task \--- Voeg een nieuw uiterlijk toe aan de **Prijs** sprite voor je nieuwe power-up. Ik hou van de bliksemschicht, maar kies wat je maar wilt. \--- /task \---
 
-\--- task \--- Vertel vervolgens het `kies-uiterlijk`{:class="block3myblocks"} **Mijn blokken** blok om het nieuwe uiterlijk in te stellen wanneer het de nieuwe waarde krijgt voor `type`{:class=" block3myblocks "}, zoals dit \(gebruik de uiterlijknaam die je hebt gekozen\):
+\--- task \--- Vertel vervolgens het `kies-uiterlijk`{:class="block3myblocks"} **Mijn blokken** blok om het nieuwe uiterlijk in te stellen wanneer het de nieuwe waarde krijgt voor `type`{:class=" block3myblocks "}, zoals dit \(gebruik de naam van het uiterlijk die je hebt gekozen\):
 
 ```blocks3
     definieer kies-uiterlijk (type)
@@ -81,7 +81,7 @@ Natuurlijk heeft de sprite van **Prijs** maar één uiterlijk, omdat er maar é�
 
 Nu moet je beslissen wat de nieuwe prijs zal doen! We beginnen met iets eenvoudigs: de speler een nieuw leven geven. In de volgende stap zorg je ervoor dat het iets gavers doet.
 
-\--- task \--- Ga naar het gedeelte **Mijn blokken** en klik op **Maak een blok**. Noem het nieuwe blok `reageer-op-speler`{:class="block3myblocks"} en voeg een **nummerinvoer** genaamd `type`{:class="block3myblocks"} toe.
+\--- task \--- Ga naar het gedeelte **Mijn blokken** en klik op **Maak een blok**. Noem het nieuwe blok `reageer-op-speler`{:class="block3myblocks"} en voeg een **getalinvoer** genaamd `type`{:class="block3myblocks"} toe.
 
 ![Typ de naam voor het blok](images/powerupMakeName.png)
 
@@ -101,10 +101,10 @@ Klik **OK**. \--- /task \---
 
 \--- /task \---
 
-\--- task \--- Werk de `wanneer ik als kloon start`{:class="block3events"} code bij om het blok te vervangen dat een punt toevoegt met een **aanroep** naar `reageer-op-speler`{:class="block3myblocks"}, waarmee `prijs-type`{: class = "block3variables"} **doorgegeven** wordt.
+\--- task \--- Werk de `wanneer ik als kloon start`{:class="block3events"} code bij om het blok te vervangen dat een punt toevoegt met een **aanroep** naar `reageer-op-speler`{:class="block3myblocks"}, waarmee `prijs-type`{:class="block3variables"} **doorgegeven** wordt.
 
 ```blocks3
-+ als <touching [Player Character v] ?> dan
++ als <raak ik [Speler v] ?> dan
 + reageer-op-speler (prijs-type ::variables) :: custom
 + verwijder deze kloon
 + end
