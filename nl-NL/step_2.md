@@ -26,11 +26,11 @@ Het gebruikt veel blokken van **Mijn blokken**, die ideaal zijn om je code in st
 
 ### 'Mijn blokken' blokken zijn erg handig
 
-In de bovenstaande code, roept de hoofdgame `herhaal`{:class="block3control"} lus de `natuurkunde`{:class="block3myblocks"} **Mijn blokken** blokken op om heel veel dingen te doen! Door de blokken op deze manier gescheiden te houden, is het makkelijk om de belangrijkste lus te lezen en te begrijpen wat er gebeurt in het spel, zonder dat je je zorgen maakt over **hoe** het gebeurt.
+In de bovenstaande code, roept de hoofdgame `herhaal`{:class="block3control"} lus de `natuurkunde`{:class="block3myblocks"} **Mijn blokken** blok op om heel veel dingen te doen! Door de blokken op deze manier gescheiden te houden, is het makkelijk om de belangrijkste lus te lezen en te begrijpen wat er gebeurt in het spel, zonder dat je je zorgen maakt over **hoe** het gebeurt.
 
 \--- task \--- Kijk nu naar de `reset-spel`{:class="block3myblocks"} en `reset-speler`{:class="block3myblocks"} **Mijn blokken** blokken. \--- /task \---
 
 Ze doen behoorlijk normale dingen, zoals het instellen van variabelen en ervoor zorgen dat het personage op de juiste manier ronddraait
 
-- `reset-spel`{:class="block3myblocks"} **roept** `reset-speler`{:class="block3myblocks"} **op**, en laat zien dat je een **Mijn blokken** blok kunt gebruiken binnen een andere <1>Mijn blokken</1> blok
+- `reset-spel`{:class="block3myblocks"} **roept** `reset-speler`{:class="block3myblocks"} **aan**, en laat zien dat je een **Mijn blokken** blok kunt gebruiken binnen een ander <1>Mijn blokken</1> blok
 - Het `reset-speler`{:class="block3myblocks"} **Mijn blokken** blok wordt op twee verschillende plaatsen in de hoofdlus gebruikt. Dit betekent dat je twee plaatsen in je hoofdgame-loop kunt wijzigen door alleen de code in het blok **Mijn blokken** te wijzigen. Dit bespaart je veel werk en helpt je fouten te voorkomen.
