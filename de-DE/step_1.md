@@ -1,46 +1,46 @@
 \--- no-print \---
 
-This is the **Scratch 3** version of the project. There is also a [Scratch 2 version of the project](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
+Dies ist die **Scratch 3** Version des Projekts. Es gibt auch eine [Scratch 2-Version des Projekts](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
 
 \--- /no-print \---
 
-## Introduction
+## Einleitung
 
-These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
+Dies sind die erweiterten Scratch Sushi Karten, mit denen du ein Plattform-Spiel erstellen und zu dem du später eigene Level, Fähigkeiten und Charaktere hinzufügen kannst!
 
-### What you will make
+### Was du machen wirst
 
-Here is an example of the game you will build. Feel free to improve on my "art".
+Hier ist ein Beispiel für das Spiel, das du bauen wirst. Fühl dich frei und verbessere meine "Kunst".
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
 </div>
 
-Use the arrow keys to move the cat around. Watch out for the dog!
+Bewege die Katze mit den Pfeiltasten. Pass auf den Hund auf!
 
 ## \--- collapse \---
 
-## title: What you will learn
+## title: Was du lernen wirst
 
-+ Cloning sprites
-+ Using variables inside cloned sprites
-+ Creating and using **My blocks** blocks
-+ Reusing code in several places with **My blocks** blocks
-+ Messages to trigger behaviours across sprites
-+ Using variables to configure your program
++ Figuren klonen
++ Verwenden von Variablen in geklonten Figuren
++ **Meine Blöcke**-Blöcke erstellen und verwenden
++ Wiederverwenden von Code an mehreren Stellen mit **Mein Blöcke**-Blöcken
++ Nachrichten, die ein Verhalten bei Figuren auslösen
++ Verwenden von Variablen zum Konfigurieren deines Programms
 
-\--- /collapse \---
+\--- /collapse\---
 
 ## \--- collapse \---
 
-## title: What you will need
+## title: Was du benötigst
 
 ### Hardware
 
-+ A computer capable of running Scratch 3
++ Ein Computer, auf dem Scratch 3 ausgeführt werden kann
 
 ### Software
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} or [offline](https://scratch.mit.edu/download/){:target="_blank"})
++ Scratch 3 (entweder [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} oder [offline](https://scratch.mit.edu/download/){:target="_blank"})
 
 \--- /collapse \---
