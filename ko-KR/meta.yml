@@ -1,36 +1,36 @@
 ---
-title: Advanced Scratch Sushi Cards
+title: Falling stars
 hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
+description: 플랫폼 스타일의 게임을 만들고 레벨, 파워 및 캐릭터를 추가하십시오.
 theme: orange
 listed: true
 copyedit: true
-curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
-interests: games
-technologies: scratch
-site_areas: coderdojo
-software: scratch
+curriculum: 2, 디자인 -0, 프로그래밍 -2, phys-comp-0, 제조 -0, 커뮤니티 -0
+interests: 게임
+technologies: 스크래치
+site_areas: 코도 도조
+software: 스크래치
 version: 4.0.0
 last_tested: "2018-04-23"
 steps:
   - 
-    title: Introduction
+    title: 소개
   - 
-    title: Setting things up
+    title: 물건 정리하기
   - 
-    title: Losing the game
+    title: 게임에서 지다
   - 
-    title: Power-ups
+    title: 파워 업
   - 
-    title: Super power-ups!
+    title: 슈퍼 파워 업!
   - 
-    title: "Challenge: get creative!"
+    title: "과제: 창의력을 발휘하십시오!"
     challenge: true
   - 
-    title: Adding some competition
+    title: 경쟁 추가
   - 
-    title: Level 2
+    title: 레벨 2
   - 
-    title: Moving platforms
+    title: 이동 플랫폼
   - 
-    title: What next?
+    title: 더 나아가기
