@@ -1,36 +1,36 @@
-## Setting things up
+## Impostare il tutto
 
-Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+Siccome stai imparando a scrivere codice in Scratch e non a costruire un motore fisico (codice che fa in modo che le cose in un gioco per computer si comportino come oggetti del mondo reale, ad esempio non cadano attraverso i pavimenti), inizierai con un progetto che ho creato che ha già le basi per spostare, saltare e rilevare le piattaforme integrate.
 
-You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
+Dovresti dare una rapida occhiata al progetto, inclusi i dettagli su questa scheda, perché in seguito dovrai apportare alcune modifiche, ma non devi capire tutto ciò che sta facendo!
 
-### Get the project
+### Prendi il progetto
 
-\--- task \--- The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
+\--- task \--- La prima cosa che devi fare è ottenere una copia del codice di Scratch da [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_ blank"}.
 
-To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
+Per utilizzare il progetto offline, scaricalo facendo clic su **Guarda Dentro**, quindi vai al menu **File** e fai clic su **Scarica sul tuo computer**. Dopodiché potrai aprire il file scaricato in Scratch sul tuo computer.
 
-You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**. \--- /task \---
+Puoi anche usarlo direttamente in Scratch nel tuo browser semplicemente cliccando su **Vedi Inside** e poi **Remix**. \--- /task \---
 
-### Take a look at the code
+### Dai un'occhiata al codice
 
-The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
+Il motore fisico del gioco ha una quantità di mattoncini, alcuni dei quali funzionano già e alcuni non ancora. Puoi testarlo eseguendo il gioco e provando a giocarci.
 
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
+Vedrai che puoi perdere delle vite, ma non succede nulla quando le esaurisci. Inoltre, il gioco ha solo un livello, un solo tipo di oggetto da raccogliere e nessun nemico. Stai per sistemare le cose, e farai anche di più!
 
-\--- task \--- Take a look at how the code is put together. \--- /task \---
+\--- task \--- Dai un'occhiata a come è stato creato il codice. \--- /task \---
 
-It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
+In esso si utilizzano un sacco di **I Miei blocchi**, che sono fantastici per dividere il codice in più parti in modo da poterlo gestire meglio. Un blocco de **I Miei Blocchi** è un blocco che crei combinando molti altri blocchi e al quale puoi passare anche delle istruzioni. Vedrai come funziona nel prossimo passo!
 
 ![](images/setup2and3.png)
 
-### 'My blocks' blocks are really useful
+### I blocchi "I miei blocchi" sono davvero utili
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+Nel codice qui sopra, il ciclo principale del gioco `per sempre`{:class="block3control"} chiama `mondo-reale`{:class="block3myblocks"} da **I Miei Blocchi** per fare un sacco di cose! Mantenere i blocchi separati come questo rende più facile leggere il ciclo principale e capire ciò che accade nel gioco, senza preoccuparsi di **come** accade.
 
-\--- task \--- Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks. \--- /task \---
+\--- task \--- Ora guarda il `reset game`{: class = "block3myblocks"} e `reset character`{: class = "block3myblocks"} ne **I Miei Blocchi**. \--- /task \---
 
-They do pretty normal things, such as setting up variables and making sure the character rotates properly
+Fanno cose piuttosto normali, come impostare variabili e assicurarsi che il personaggio ruoti correttamente
 
-- `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
-- The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
+- `reset-partita`{:class="block3myblocks"} **chiama** `reset-personaggio`{:class="block3myblocks"}, mostrandoti che puoi usare un blocco de **I Miei Blocchi** all'interno di un altro blocco de **I Miei Blocchi**
+- Il `reset-personaggio`{:class="block3myblocks"} de **I Miei Blocchi** viene utilizzato in due diversi punti del ciclo principale. Ciò significa che puoi modificare due posizioni nel tuo ciclo di gioco principale cambiando solo il codice all'interno del blocco ne **I Miei blocchi**, il che ti consente di risparmiare molto lavoro e ti aiuta a evitare errori.
