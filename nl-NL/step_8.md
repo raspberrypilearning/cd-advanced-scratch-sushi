@@ -8,7 +8,7 @@ Met deze stap voeg je een nieuw level toe aan het spel dat de speler kan bereike
 
 ![De knop-sprite om van level te wisselen](images/levelButton.png) \--- /task \---
 
-\--- task \--- Nu is de code voor deze knop slim: hij is zo ontworpen dat elke keer dat je erop klikt, hij naar het volgende level gaat, ongeacht hoeveel levels zijn.
+\--- task \--- Nu is de code voor deze knop slim: hij is zo ontworpen dat elke keer dat je erop klikt, hij naar het volgende level gaat, ongeacht hoeveel levels er zijn.
 
 Voeg deze scripts toe aan je **Knop** sprite. Je moet een aantal variabelen maken.
 
@@ -45,7 +45,7 @@ De signalen worden gebruikt om aan de andere sprites te vertellen welk level moe
 
 Nu moet je de andere sprites laten reageren op deze signalen! Begin met de makkelijkste: alle prijzen opruimen.
 
-\--- task \--- Voeg de volgende code toe aan de **Prijs** sprite scripts om al zijn klonen te vertellen om te `verdwijnen`{:class="block3vlooks"} wanneer ze het schoonmaaksignaal ontvangen:
+\--- task \--- Voeg de volgende code toe aan de **Prijs** sprite scripts om al zijn klonen te vertellen om te `verdwijnen`{:class="block3looks"} wanneer ze het schoonmaaksignaal ontvangen:
 
 ```blocks3
 + wanneer ik signaal [prijzen-schoonmaak v] ontvang
@@ -56,11 +56,11 @@ Nu moet je de andere sprites laten reageren op deze signalen! Begin met de makke
 
 Omdat een van de eerste dingen die elke nieuwe kloon doet is zichzelf laten zien, hoef je je geen zorgen te maken over het zichtbaar maken van prijzen!
 
-#### De **Platforms** sprite
+#### De **Platform** sprite
 
-Nu het schakelen van de **Platforms** sprite. Je kunt later je eigen nieuwe level ontwerpen als je wilt, maar laten we nu degene gebruiken dat ik al heb toegevoegd. In de volgende stap zie je waarom!
+Nu het schakelen van de **Platform** sprite. Je kunt later je eigen nieuwe level ontwerpen als je wilt, maar laten we nu degene gebruiken dat ik al heb toegevoegd. In de volgende stap zie je waarom!
 
-\--- task \--- Voeg deze code toe aan de **platforms** sprite:
+\--- task \--- Voeg deze code toe aan de **Platform** sprite:
 
 ```blocks3
 + wanneer ik signaal [level-1 v] ontvang
@@ -76,7 +76,7 @@ Nu het schakelen van de **Platforms** sprite. Je kunt later je eigen nieuwe leve
 
 \--- /task \---
 
-Het ontvangt de `samengevoegde`{:class="block3operators"} signalen van `level-`{:class="block3variables"} en `huidig-level`{:class="block3variables"} die de sprite **Knop** verzendt, en antwoordt door het uiterlijk van **Platforms** te veranderen.
+Het ontvangt de `samengevoegde`{:class="block3operators"} signalen van `level-`{:class="block3variables"} en `huidig-level`{:class="block3variables"} die de sprite **Knop** verzendt, en antwoordt door het uiterlijk van **Platform** te veranderen.
 
 #### De **Vijand** sprite
 
@@ -98,7 +98,7 @@ Als je wilt, kun je ervoor zorgen dat de vijand in plaats daarvan naar een ander
 
 ### Laat de **Speler** op de juiste plaats verschijnen
 
-Wanneer een nieuw level begint, moet **Speler** sprite naar de juiste plaats gaan voor dat level. Om dit te laten gebeuren, moet je wijzigen waar de sprite zijn coördinaten krijgt vanaf het moment dat het voor het eerst in het werkgebied verschijnt. Op dit moment zijn er vaste waarden voor `x` en `y` in de code.
+Wanneer een nieuw level begint, moet de **Speler** sprite naar de juiste plaats gaan voor dat level. Om dit te laten gebeuren, moet je wijzigen waar de sprite zijn coördinaten krijgt vanaf het moment dat het voor het eerst in het werkgebied verschijnt. Op dit moment zijn er vaste waarden voor `x` en `y` in de code.
 
 \--- task \--- Begin met het maken van variabelen voor de startcoördinaten: `start-x`{:class="block3variables"} en `start-y`{:class="block3variables"}. Zet ze vervolgens in het blok `ga naar`{:class="block3motion"} blok in het `reset-speler`{:class="block3myblocks"} **Mijn blokken** blok in plaats van de vaste `x` en `y` waarden:
 
@@ -158,6 +158,6 @@ Merk op dat het eerste blok in het belangrijkste groene vlagscript van de **Spel
 
 Dit blok stelt alle variabelen voor een nieuw spel in en roept vervolgens het `reset-speler`{:class="block3myblocks"} **Mijn blokken** blok op, waardoor het personage terug in de juiste beginpositie wordt geplaatst.
 
-Als je de code `reset-speler`{:class= block3myblocks"} in een eigen blok apart van `reset-spel`{:class="block3myblocks"} hebt, kun je de speler opnieuw instellen op verschillende posities **zonder dat** het hele spel herstart hoeft te worden.
+Als je de code `reset-speler`{:class=block3myblocks"} in een eigen blok apart van `reset-spel`{:class="block3myblocks"} hebt, kun je de speler opnieuw instellen op verschillende posities **zonder dat** het hele spel herstart hoeft te worden.
 
 \--- /collapse \---
