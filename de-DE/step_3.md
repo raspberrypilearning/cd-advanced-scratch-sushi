@@ -1,90 +1,90 @@
-## Losing the game
+## Das Spiel verlieren
 
-First things first! You need a way to make the game end when the player has run out of lives. At the moment that doesn't happen.
+Das Wichtigste zuerst! Du brauchst eine Möglichkeit, das Spiel zu beenden, wenn der Spieler keine Leben mehr hat. Im Moment passiert das nicht.
 
-You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+Du hast vielleicht bemerkt, dass der `verlieren`{:class="block3myblocks"}-**Meine Blöcke**-Block im Skript für die Figur **Spieler-Character** leer ist. Du wirst diese ausfüllen und alle Teile zusammenstellen, die für einen schönen 'Game over'-Bildschirm benötigt werden.
 
-\--- task \--- First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+\--- task \--- Suche zunächst den Block `verlieren`{:class="block3myblocks"} und ergänze ihn mit folgendem Code:
 
 ```blocks3
-    define lose
-+    stop [other scripts in sprite v] :: control stack
-+    broadcast [game over v]
-+    go to x:(0) y:(0)
-+    say [Game over!] for (2) secs
-+    stop [all v]
+    Definiere verlieren
++ stoppe [andere Skripte der Figur v] :: control stack
++ Sende [Game Over v] an alle
++ gehe zu x: (0) y: (0)
++ sage [Game over!] für (2) Sekunden
++ stoppe [alles v]
 ```
 
 \--- /task \---
 
 ## \--- collapse \---
 
-## title: What does this code do?
+## title: Was macht dieser Code?
 
-Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
+Wann immer der `verlieren`{:class="block3myblocks"}-Block jetzt läuft, wird Folgendes ausgeführt:
 
-1. Stop the physics and other game scripts acting on the **Player Character**
-2. Tell all the other sprites that the game is over by **broadcasting** a `game over`{:class="block3events"} message they can respond to and change what they're doing
-3. Move the **Player Character** to the centre of the Stage and have them tell the player that the game is over
-4. Stop all scripts in the game
+1. Stoppe die Physik und andere Spielskripte, die den **Spieler-Charakter** beeinflussen
+2. Sage alle anderen Figuren, das das Spiel vorbei ist und **sende** eine `Game Over`{:class="block3events"}-Botschaft, auf die sie reagieren und ändern können, was sie tun
+3. Bewege den **Spieler-Charakter** in die Mitte der Bühne und lasse ihn den Spieler darüber informieren, dass das Spiel beendet ist
+4. Stoppe alle Skripte im Spiel
 
 \--- /collapse \---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+Jetzt musst du sicherstellen, dass alle Figuren wissen, was zu tun ist, wenn das Spiel vorbei ist, und wie sie sich zurücksetzen, wenn der Spieler ein neues Spiel startet. **Vergiss nicht, dass alle neuen Figuren, die du hinzufügst, möglicherweise Code dafür benötigen!**
 
-### Hiding the platforms and edges
+### Plattformen und Kanten verstecken
 
-\--- task \--- Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+\--- task \--- Beginne mit den einfachsten Figuren. Die Figuren **Plattformen** und **Ecken** benötigen beide Code, um angezeigt zu werden, wenn das Spiel beginnt, und um zu verschwinden, wenn sie die Sendung `Game Over`{:class="block3events"} empfangen:
 
 ```blocks3
-+    when I receive [game over  v]
-+    hide
++ wenn ich [Game Over v] empfange
++ verstecke dich
 ```
 
 ```blocks3
-+    when green flag clicked
-+    show
-```
-
-\--- /task \---
-
-### Stopping the stars
-
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
-
-We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
-
-Look at how the **Collectable** sprite works. See if you can understand some of its code:
-
-```blocks3
-    when green flag clicked
-    hide
-    set [collectable-value v] to [1]
-    set [collectable-speed v] to [1]
-    set [collectable-frequency v] to [1]
-    set [create-collectables v] to [true]
-    set [collectable-type v] to [1]
-    repeat until <not <(create-collectables) = [true]>>
-        wait (collectable-frequency) secs
-        go to x: (pick random (-240) to (240)) y: (179)
-        create clone of [myself v]
-    end
-```
-
-1. First it makes the original **Collectable** sprite invisible by hiding it
-2. Then it sets up the control variables — we’ll come back to these later
-3. The `create-collectables`{:class="block3variables"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="block3variables"} is `true`, and does nothing if it’s not
-
-\--- task \--- Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
-
-```blocks3
-+    when I receive [game over v]
-+    hide
-+    set [create-collectables v] to [false]
++ Wenn grüne Flagge angeklickt wird
++ zeige dich
 ```
 
 \--- /task \---
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
+### Die Sterne stoppen
 
-Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
+Wenn du dir nun den Code für die **Sammelobjekt**-Figur ansiehst, wirst du feststellen, dass es funktioniert in dem es **Klone** von sich selbst erstellt. Das heißt, es macht Kopien von sich selbst, die der speziellen `Wenn ich als Klon entstehe`{:class="block3events"}-Anweisung folgen.
+
+Wir werden mehr darüber sprechen, was Klone so besonders macht, wenn wir neue und andere Sammlerstücke erstellen. Was du jetzt wissen musst, ist, dass Klone **fast** alles tun können, was eine normale Figur kann, einschließlich `Sendung an alle`{:class="block3events"} - Nachrichten empfangen.
+
+Schau dir an, wie die **Sammelobjekt**-Figur funktioniert. Schau ob du einen Teil des Codes verstehen kannst:
+
+```blocks3
+    wenn grüne Fahne angeklickt wird
+    verstecke dich
+    setze [sammelobjekt-wert v] zu [1]
+    setze [sammelobjekt-geschwindigkeit v] zu [1]
+    setze [sammelobjekt-häufigkeit v] zu [1]
+    setze [erzeuge-sammelobjekt v] zu [wahr]
+    setze [sammelobjekt-typ v] auf [1]
+    wiederholen bis <nicht <(create-collectables) = [wahr]>> 
+        warten (sammelobjekt-häufigkeit) Sekunden
+        gehe zu x: (Wähle zufällig (-240) bis (240)) y: (179)
+        erzeuge einen Klon von [mir selbst]
+    Ende
+```
+
+1. Zuerst wird die ursprüngliche **Sammelobjekt**-Figur durch das Ausblenden unsichtbar
+2. Dann werden die Steuervariablen festgelegt - wir kommen später darauf zurück
+3. Die Variable `erzeuge-sammelobjekt`{:class="block3variables"} ist der Ein-/Ausschalter für das Klonen: Die Schleife erstellt Klone, wenn `erzeuge-sammelobjekt`{:class="block3variables"} `wahr` ist und nichts wenn sie nicht wahr ist
+
+\--- task \--- Richte jetzt einen Block für die **Sammelobjekt**-Figur ein, sodass es auf die `Game Over` Sendung an alle reagiert:
+
+```blocks3
++ Wenn ich [Game Over v] empfange
++ verstecke dich
++ setze [erzeuge-sammelobjekt v] auf [falsch]
+```
+
+\--- /task \---
+
+Dieser Code ähnelt dem Code, der die **Plattform**- und **Ecken**-Figuren steuert. Der einzige Unterschied ist, dass du auch die `erzeuge-sammelobjekt`{:class="block3variables"} Variable auf `falsch` setzt, sodass keine neuen Klone erstellt werden, wenn ‚Game over‘ gesendet wurde.
+
+Beachte, dass du die `erzeuge-sammelobjekt`{:class=„block3variables“}-Variable benutzen kannst, um Nachrichten von einem Teil des Codes zu einem anderen zu übergeben!
