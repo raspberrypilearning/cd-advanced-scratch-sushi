@@ -6,7 +6,7 @@ Je hebt nu een compleet spel, maar er is nog veel meer dat je ermee kunt doen! H
 
 ## title: Hoogste score
 
-+ Houd een lijst bij van de namen en scores van mensen die hoge scores hebben behaald in het spel! Je moet het blok `zeg`{:class="block3looks"} gebruiken om hun naam te verkrijgen.
++ Houd een lijst bij van de namen en scores van mensen die hoge scores hebben behaald in het spel! Je moet het blok `zeg`{:class="block3looks"} gebruiken om hun naam te krijgen.
 
 \--- /collapse \---
 
@@ -60,7 +60,7 @@ Je hebt nu een compleet spel, maar er is nog veel meer dat je ermee kunt doen! H
 
 ## title: Geluidseffecten
 
-+ Deze game is nu helemaal geluidloos! Probeer achtergrondmuziek en geluidseffecten toe te voegen met behulp van de blokken in het gedeelte **Geluid**!
++ Deze game is nu helemaal geluidloos! Probeer achtergrondmuziek en geluidseffecten toe te voegen met behulp van de blokken in het **Geluid** gedeelte!
 
 \--- /collapse \---
 
