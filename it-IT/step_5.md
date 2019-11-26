@@ -1,64 +1,64 @@
-## Super power-ups!
+## Super potenziamento!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+Ora che hai un nuovo potenziamento funzionante da raccogliere, è il momento di fargli fare qualcosa di veramente interessante: facciamo in modo che piovano potenziamenti per alcuni secondi, invece di dare una vita extra.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+Per questo, si andrà ad utilizzare un altro messaggio `invia a tutti`{:class="block3events"}.
 
-\--- task \--- First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+\--- task \--- Innanzitutto, modifica il blocco `reazione-al-giocatore`{:class="block3myblocks"} per trasmettere un messaggio quando il personaggio del giocatore tocca uno sprite catturabile di tipo `2`. Chiama il messaggio `catturabili-pioggia`{:class="block3events"}.
 
 ```blocks3
-    define react-to-player (type)
-    if <(type ::variable) = [1]> then
-        change [points v] by (collectable-value ::variables)
-    end
-    if <(type ::variable) = [2]> then
--        change [lives v] by [1]    
-+        broadcast [collectable-rain v]
-    end
+    definisci reazione-al-giocatore (tipo :: custom-arg)
+se <(tipo :: custom-arg) = [1]> allora 
+  cambia [punteggio v] di (catturabili-valore :: variables)
+end
+se <(tipo :: custom-arg) = [2]> allora 
+- cambia [vite v] di [1]
++ invia a tutti [catturabili-pioggia v]
+end
 ```
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+Ora devi creare una nuova porzione di codice all'interno dello script dello sprite **Catturabili** che verrà avviati ogni volta che viene trasmesso il messaggio `catturabili-pioggia` {:class="block3events"}.
 
-\--- task \--- Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+\--- task \--- Aggiungi questo codice nello sprite **Catturabili** per fargli ascoltare il messaggio `catturabili-pioggia`{:class="block3events"}.
 
 ```blocks3
-+    when I receive [collectable-rain v]
-+    set [collectable-frequency v] to [0.000001]
-+    wait (1) secs
-+    set [collectable-frequency v] to [1]
++ quando ricevo [catturabili-pioggia v]
++ porta [catturabili-frequenza v] a [0.000001]
++ attendi (1) secondi
++ porta [catturabili-frequenza v] a [1]
 ```
 
 \--- /task \---
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: Cosa fa il nuovo codice?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+Questo pezzo di codice attende di ricevere un messaggio, e risponde impostando la variabile della frequenza di raccolta `catturabili-frequenza`{:class="block3variables"} ad un numero molto piccolo, attende un secondo, e poi riporta la variabile di nuovo a `1`.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+Diamo un'occhiata a come la variabile `catturabili-frequenza`{:class="block3variables"} è usata per capire come riesce a far piovere oggetti da raccogliere.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+Nel ciclo di gioco principale, la parte del codice che crea gli sprite cloni **Catturabili** viene istruita dalla variabile `catturabili-frequenza`{:class="block3variables"}per sapere quanto attendere tra un clone e il successivo:
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
-        if < [50] = (pick random (1) to (50))> then
-            set [collectable-type v] to [2]
-        else
-            set [collectable-type v] to [1]
-        end
-        wait (collectable-frequency ::variables) secs
-        go to x: (pick random (-240) to (240)) y:(179)
-        create clone of [myself v]
-    end
+se <[50] = (numero a caso tra (1) e (50))> allora 
+  porta [catturabili-tipo v] a [2]
+altrimenti 
+  porta [catturabili-tipo v] a [1]
+end
+attendi (catturabili-frequenza :: variables) secondi
+vai a x: (numero a caso tra (-240) e (240)) y: (179)
+crea clone di [me stesso v]
+end
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+Puoi vedere che il blocco `aspetta`{:class="block3control"} qui mette in pausa il codice per la durata del tempo impostata da `catturabili-frequenza`{:class="block3variables"}.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+Se il valore di `catturabili-frequenza`{:class="block3variables"} è `0.000001`, il blocco `aspetta`{:class="block3control"} si interrompe soltanto per un **milionesimo** di secondo, il che significa che il ciclo `ripeti fino o quando`{:class="block3control"} verrà eseguito molte più volte del normale. Di conseguenza, il codice crea **tanti più** potenziamenti del normale, fino a che `catturabili-frequenza`{:class="block3variables"} torna di nuovo a `1`.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+Riesci a pensare a eventuali problemi che ciò potrebbe causare? Ci saranno molti più potenziamenti…se continuassi a prenderli?
 
 \--- /collapse \---
