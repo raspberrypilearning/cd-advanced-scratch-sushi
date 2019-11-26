@@ -1,7 +1,7 @@
 ---
-title: Advanced Scratch Sushi Cards
+title: Falling stars
 hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
+description: Erstelle ein Spiel im Plattform-Stil und füge deine eigenen Levels, Fähigkeiten und Charaktere hinzu.
 theme: orange
 listed: true
 copyedit: true
@@ -14,23 +14,23 @@ version: 4.0.0
 last_tested: "2018-04-23"
 steps:
   - 
-    title: Introduction
+    title: Einleitung
   - 
-    title: Setting things up
+    title: Vorbereitungen
   - 
-    title: Losing the game
+    title: Das Spiel verlieren
   - 
-    title: Power-ups
+    title: Power-Up
   - 
-    title: Super power-ups!
+    title: Super Power-Ups!
   - 
-    title: "Challenge: get creative!"
+    title: "Herausforderung: Werde kreativ!"
     challenge: true
   - 
-    title: Adding some competition
+    title: Die Schwierigkeit erhöhen
   - 
     title: Level 2
   - 
-    title: Moving platforms
+    title: Bewegliche Plattformen
   - 
-    title: What next?
+    title: Wie geht es weiter?
