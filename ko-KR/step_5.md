@@ -1,64 +1,64 @@
-## Super power-ups!
+## 슈퍼 파워 업!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+새로운 파워 업 수집 작업을 했으므로 이제는 정말 멋진 작업을 수행 할 시간입니다. 단순히 추가 목숨을 제공하는 대신 잠깐 동안 '비 오는' 파워 업을 만들어 보겠습니다.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+이를 위해 새로운 `신호 보내기`{: class = "block3events"} 메시지를 사용할 것입니다.
 
-\--- task \--- First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+\--- task \--- 먼저, `react-to-player`{: class = "block3myblocks"} 블록에서 플레이어 캐릭터가 타입 `2` 수집품에 닿았을 때 부분을 메시지 신호 보내기로 변경합니다. `collectable-rain`{:class="block3events"} 신호 보내기를 하십시오.
 
 ```blocks3
-    define react-to-player (type)
-    if <(type ::variable) = [1]> then
-        change [points v] by (collectable-value ::variables)
-    end
-    if <(type ::variable) = [2]> then
--        change [lives v] by [1]    
-+        broadcast [collectable-rain v]
-    end
+    react-to-player (type) 정의하기
+    만약 <(type ::variable) = [1]> 이라면
+       [points v] 를 (collectable-value ::variables) 로 변경하기
+    끝
+    만약 <(type ::variable) = [2]> 이라면
+-        [lives v] 를 [1] 로 변경하기   
++        신호 보내기 [collectable-rain v]
+    끝
 ```
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+이제 **Collectable** 스프라이트 스크립트 내에`collectable-rain`{: class = "block3events"} 신호가 보내질 때마다 시작되는 새로운 코드를 작성해야 합니다.
 
-\--- task \--- Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+\--- task \--- 아래 코드를 **Collectable** 스프라이트에 추가하여 `collectable-rain`{:class="block3events"} 메시지 신호를 받을 수 있도록 하세요.
 
 ```blocks3
-+    when I receive [collectable-rain v]
-+    set [collectable-frequency v] to [0.000001]
-+    wait (1) secs
-+    set [collectable-frequency v] to [1]
++    [collectable-rain v] 신호를 받았을 때
++    [collectable-frequency v] 를 [0.000001] 로 설정
++    (1) 초 기다리기
++    [collectable-frequency v] 를 [1] 로 설정
 ```
 
 \--- /task \---
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: 새로운 코드가 하는 일은 무엇입니까?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+이 코드는 메시지 신호 받기를 기다렸다가 `collectable-frequency`{: class = "block3variables"} 변수 값을 매우 작은 숫자로 설정 한 다음, 1 초를 기다린 후 다시 `1`로 변경합니다.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+`collectable-frequency`{:class="block3variables"} 변수가 어떻게 비 수집품 생성을 가능하게 하는지 살펴 보겠습니다.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+**Collectable** 스프라이트의 메인 루프에서 복제본 만드는 코드 부분을 보면, 하나의 복제본과 다음 복제본 사이의 대기 시간이 `collectable-frequency`{:class="block3variables"} 변수 값에 의해 정해지는 것을 알 수 있습니다.
 
 ```blocks3
-    repeat until <not <(create-collectables ::variables) = [true]>>
-        if < [50] = (pick random (1) to (50))> then
-            set [collectable-type v] to [2]
-        else
-            set [collectable-type v] to [1]
-        end
-        wait (collectable-frequency ::variables) secs
-        go to x: (pick random (-240) to (240)) y:(179)
-        create clone of [myself v]
-    end
+    <not <(create-collectables ::variables) = [true]>> 까지 반복
+        만약 < [50] = (pick random (1) to (50))> 이라면
+           [collectable-type v] 를 [2] 로 설정
+        아니면
+            [collectable-type v] 를 [1] 로 설정
+        끝
+        (collectable-frequency ::variables) 초 기다리기
+        x: ((-240) 부터 (240) 사이의 난수) y:(179) 로 이동
+        [myself v] 복제하기
+    끝
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+`기다리기`{:class="block3control"} 블록을 보면`collectable-frequency`{:class="block3variables"} 변수 값에 따라 설정된 시간 동안 일시 중지 됨을 알 수 있습니다.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+만약 `collectable-frequency`{:class="block3variables"} 의 값이 `0.000001`이라면, `기다리기`{:class="block3control"} 블록은 **백만분의 1**초 기다리기가 됩니다. 즉, `..까지 반복하기`{:class="block3control"} 블록이 평소보다 더 많이 실행된다는 것입니다. 결과적으로, 이 코드는 평상시보다 훨씬 ** 많은** 파워 업을 생성하게 됩니다. `collectable-frequency`{:class="block3variables"} 가 다시 `1`로 변경될 때 까지요.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+어떤 문제가 생길 수 있을까요? 더 많은 파워 업이 생길 것입니다.…계속해서 잡으면 어떨까요?
 
 \--- /collapse \---
