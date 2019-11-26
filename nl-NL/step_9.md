@@ -69,18 +69,18 @@ Als je nu probeert om het spel daadwerkelijk te spelen, valt de **Speler** door 
 
 Het is omdat de natuurkunde code nog van niets weet over het platform. Er is een snelle oplossing:
 
-\--- task \--- Vervang in de **Speler** spritescripts elk `aanrakende "Platforms"`{:class="block3sensing"} blok met een `OF`{:class="block3operators"}functie die controleert **of** `"Platforms" aangeraakt`{: class = "block3sensing"} worden **OF** `"Bewegende-Platform" aangeraakt`{:class="block3sensing"} worden.
+\--- task \--- Vervang in de **Speler** sprite scripts elk `aanrakende "Platform"`{:class="block3sensing"} blok met een `OF`{:class="block3operators"} functie die controleert **of** `"Platform" aangeraakt`{:class="block3sensing"} worden **OF** `"Bewegend-Platform" aangeraakt`{:class="block3sensing"} worden.
 
 Doorloop de code voor de **Speler** sprite en overal waar je dit blok ziet:
 
 ```blocks3
-    <touching [Platforms v] ?>
+    <raak ik [Platform v] ?>
 ```
 
 vervang het door deze:
 
 ```blocks3
-    <<touching [Platforms v] ?> of <touching [Moving-Platform v] ?>>
+    <<raak ik [Platform v] ?> of <raak ik [Bewegend-Platform v] ?>>
 ```
 
 \--- /task \---
