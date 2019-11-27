@@ -6,11 +6,11 @@
 
 ## المقدمة
 
-These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
+هذه هي بطاقات Advanced Scratch Sushi Cards ، ومعها ستقوم بصنع لعبة على غرار النظام الأساسي يمكنك من خلالها إضافة المستويات والقوى والشخصيات الخاصة بك لاحقًا!
 
-### What you will make
+### ما الذي ستصنعه
 
-Here is an example of the game you will build. Feel free to improve on my "art".
+إليك مثال على اللعبة التي ستقوم ببنائها. Feel free to improve on my "art".
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
