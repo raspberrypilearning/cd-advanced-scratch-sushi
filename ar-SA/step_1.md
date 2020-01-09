@@ -10,37 +10,37 @@
 
 ### ما الذي ستصنعه
 
-إليك مثال على اللعبة التي ستقوم ببنائها. Feel free to improve on my "art".
+إليك مثال على اللعبة التي ستقوم ببنائها. لا تتردد في تحسين "الفن" الخاص بي.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
 </div>
 
-Use the arrow keys to move the cat around. Watch out for the dog!
+استخدم مفاتيح الأسهم لتحريك القطة. احترس من الكلب!
 
 ## \--- collapse \---
 
-## title: What you will learn
+## title: ما الذي ستتعلمه
 
-+ Cloning sprites
-+ Using variables inside cloned sprites
-+ Creating and using **My blocks** blocks
-+ Reusing code in several places with **My blocks** blocks
-+ Messages to trigger behaviours across sprites
-+ Using variables to configure your program
++ استنساخ الاشباح
++ استخدام المتغيرات داخل الكائنات المستنسخة
++ إنشاء واستخدام **كتل البرمجة ** الخاصة بي
++ إعادة استخدام التعليمات البرمجية في عدة أماكن مع **كتل البرمجة** الخاصة بي
++ رسائل لإثارة السلوكيات عبر الاشباح
++ استخدام المتغيرات لتهيئة برنامجك
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: What you will need
+## title: ما ستحتاج إليه
 
-### Hardware
+### الأجهزة
 
-+ A computer capable of running Scratch 3
++ جهاز كمبيوتر يدعم تشغيل برنامج Scratch 3
 
-### Software
+### البرامج
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} or [offline](https://scratch.mit.edu/download/){:target="_blank"})
++ برنامج Scratch 3 (سواء أكان [عبر الإنترنت](https://scratch.mit.edu/projects/editor/){:target="_blank"} أو [دون اتصال بالإنترنت](https://scratch.mit.edu/download/){:target="_blank"})
 
 \--- /collapse \---
