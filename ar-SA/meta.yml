@@ -1,7 +1,7 @@
 ---
-title: Falling stars
+title: النجوم المتساقطة
 hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
+description: اصنع لعبة على غرار المنصة وأضف المستويات والقوى والشخصيات الخاصة بك.
 theme: orange
 listed: true
 copyedit: true
@@ -20,9 +20,9 @@ steps:
   - 
     title: خسارة اللعبة
   - 
-    title: Power-ups
+    title: امدادات الطاقة
   - 
-    title: Super power-ups!
+    title: امدادات طاقة خارقة!
   - 
     title: "تحدي: كن مبدعا!"
     challenge: true
