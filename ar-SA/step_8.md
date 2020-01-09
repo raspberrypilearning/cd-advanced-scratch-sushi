@@ -1,143 +1,143 @@
-## Level 2
+## المستوى ٢
 
-With this step, you're going to add a new level to the game that the player can get to by just pressing a button. Later, you can change your code to make it so they need a certain number of points, or something else, to get there.
+مع هذه الخطوة ، ستقوم بإضافة مستوى جديد إلى اللعبة يمكن للاعب الوصول إليها بمجرد الضغط على الزر. في وقت لاحق ، يمكنك تغيير الكود الخاص بك لجعله يحتاج إلى عدد معين من النقاط ، أو أي شيء آخر ، للوصول إلى هناك.
 
-### Moving to the next level
+### الانتقال إلى المستوى التالي
 
-\--- task \--- First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
+\--- task \--- أولاً ، قم بإنشاء كائن جديد مثل زر عن طريق إضافة واحد من المكتبة أو رسم كائن خاص بك. لقد فعلت شيئًا من الاثنين وخرجت بهذا:
 
-![The button sprite to switch levels](images/levelButton.png) \--- /task \---
+![كائن الزر لتبديل المستويات](images/levelButton.png) \--- /task \---
 
-\--- task \--- Now, the code for this button is clever: it’s designed so that every time you click it it will take you to the next level, no matter how many levels there are.
+\---task \--- الآن ، التعليمات البرمجية لهذا الزر ذكية: تم تصميمها بحيث في كل مرة تقوم بالنقر فوق الزر، سينقلك إلى المستوى التالي ، بغض النظر عن عدد المستويات الموجودة.
 
-Add these scripts to your **Button** sprite. You will need to create some variables as you do so.
+أضف هذه البرامج النصية إلى كائن ** الزر ** الخاص بك. سوف تحتاج إلى إنشاء بعض المتغيرات بينما تفعل ذلك.
 
 ```blocks3
-+    when green flag clicked
++    عند النقر على العلم الاخضر
 +    set [max-level v] to [2]
 +    set [min-level v] to [1]
 +    set [current-level v] to [1]
 ```
 
 ```blocks3
-+    when this sprite clicked
-+    change [current-level v] by (1)
-+    if <(current-level) > (max-level ::variables)> then
-        set [current-level v] to (min-level ::variables)
-    end
-+    broadcast [collectable-cleanup v]
-+    broadcast (join [level-](current-level))
++ عند النقر فوق هذا الكائن
++ قم بتغيير [المستوى-الحالي v] بمقدار (1)
++ إذا <(المستوى الحالي) > (المستوى الأعلى :: المتغيرات)> ثم
+      set [current-level v] to (min-level ::variables)
+    end  
++ نشر [تحصيل-الربح]
++ نشر (انضمام [level-](المستوى الحالي))
 ```
 
-\--- /task \--- Can you see how the program will use the variables you created?
+\--- / task \--- هل تستطيع أن ترى كيف سيستخدم البرنامج المتغيرات التي قمت بإنشائها؟
 
-+ `max-level`{:class="block3variables"} stores the highest level
-+ `min-level`{:class="block3variables"} stores the lowest level
-+ `current-level`{:class="block3variables"} stores the level the player is on right now
++ `المستوى الأقصى ` {: class = "block3variables"} يخزن أعلى مستوى
++ `المستوى الادنى` {: class = "block3variables"} يخزن أقل مستوى
++ ` المستوى الحالي ` {: class = "block3variables"} يخزن المستوى الذي يكون عليه اللاعب الآن
 
-These all need to be set by the programmer \(you!\), so if you add a third level, don’t forget to change the value of `max-level`{:class="block3variables"}! `min-level`{:class="block3variables"} will never need to change, of course.
+كل هذه الأشياء تحتاج إلى ضبطها بواسطة المبرمج \(أنت!\)، لذلك إذا أضفت مستوى ثالثًا، فلا تنسَ تغيير قيمة ا`المستوى الأقصى` {:class="block3variables"}! وبالطبع فان ` المستوى الادنى ` {: class = "block3variables"} لن تحتاج إلى تغييره أبداً.
 
-The broadcasts are used to tell the other sprites which level to display, and to clear up the collectables when a new level starts.
+تستخدم عمليات البث لإخبار الكائنات الأخرى اي مستوى مطلوب عرضه، ومسح المقتنيات عند بدء مستوى جديد.
 
-### Make the sprites react
+### اجعل الكائنات تتفاعل
 
-#### The **Collectable** sprite
+#### كائنات الـ**مقتنيات**
 
-Now you need to get the other sprites to respond to these broadcasts! Start with the easiest one: clearing all the collectables.
+أنت الآن بحاجة إلى الحصول على كائنات اخرى للرد على هذا البث! ابدأ بأسهلها: مسح جميع المقتنيات.
 
-\--- task \--- Add the following code to the **Collectable** sprite scripts to tell all its clones to `hide`{:class="block3vlooks"} when they receive the cleanup broadcast:
-
-```blocks3
-+    when I receive [collectable-cleanup v]
-+    hide
-```
-
-\--- /task \---
-
-Since one of the first things any new clone does is show itself, you don't have to worry about unhiding collectables!
-
-#### The **Platforms** sprite
-
-Now to switch the **Platforms** sprite. You can design your own new level later if you like, but for now let’s use the one I’ve already included — you’ll see why on the next step!
-
-\--- task \--- Add this code to the **Platforms** sprite:
+\--- task \--- أضف الكود التالي إلى البرامج النصية للكائن **المقتنيات** لإخبار جميع النسخ لـ`تختفي` {:class="block3vlooks"} عندما يتلقون بث المسح:
 
 ```blocks3
-+    when I receive [level-1 v]
-+    switch costume to [Level 1 v]
-+    show
-```
-
-```blocks3
-+    when I receive [level-2 v]
-+    switch costume to [Level 2 v]
-+    show
++ عندما أتلقى [collectable-cleanup v]
++ اخفاء
 ```
 
 \--- /task \---
 
-It receives the `joined`{:class="block3operators"} messages of `level-`{:class="block3variables"} and `current-level`{:class="block3variables"} that the **Button** sprite sends out, and responds by changing the **Platforms** costume.
+نظرًا أن أحد الأشياء الأولى التي يقوم بها أي استنساخ جديد هو إظهار نفسه ، فلا داعي للقلق بشأن إظهار المقتنيات!
 
-#### The **Enemy** sprite
+#### كائنات الـ**منصات**
 
-\--- task \--- In the **Enemy** sprite scripts, just make sure the sprite disappears when the player enters level 2, like this:
+الآن لتبديل كائنات الـ** منصات**. يمكنك تصميم مستواك الجديد في وقت لاحق إذا أردت ، ولكن الآن دعونا نستخدم المستوى الذي قمت بتضمينه بالفعل - سترى السبب في الخطوة التالية!
+
+\--- task \--- أضف هذا الرمز إلى كائن الـ**منصات **:
 
 ```blocks3
-+    when I receive [level-1 v]
-+    show
++ عندما أتلقى [المستوى 1 v]
++ بدل الزي إلى [المستوى 1 v]
++ العرض
 ```
 
 ```blocks3
-+    when I receive [level-2 v]
-+    hide
++ عندما أتلقى [المستوى-2 v]
++ بدل الزي إلى [المستوى 2 v]
++ العرض
 ```
 
 \--- /task \---
 
-If you prefer, you can make the enemy move to another platform instead. In that case, you would use a `go to`{:class="block3motion"} block instead of the `show`{:class="block3looks"} and `hide`{:class="block3looks"} blocks.
+يتلقى رسائل ` انضم ` {: class = "block3operators"} للـ ` مستوى- ` {: class = "block3variables"} و ` المستوى الحالي ` {: class = "block3variables"} التي ارسلها كائن **الزر **، ويستجيب عن طريق تغيير شكل ** المنصات **.
 
-### Make the **Player Character** appear in the right place
+#### كائن **العدو**
 
-Whenever a new level starts, the **Player Character** sprite needs to go to the right place for that level. To make this happen, you need to change where the sprite gets its coordinates from when it first appears on the Stage. At the moment, there are fixed `x` and `y` values in its code.
-
-\--- task \--- Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
+\--- task \--- في النصوص البرمجية للكائن ** العدو **، فقط تأكد من اختفاء الكائن عندما يدخل اللاعب المستوى 2 ، مثل هذا:
 
 ```blocks3
-    define reset-character
++ عندما أتلقى [المستوى-1 v]
++ العرض
+```
+
+```blocks3
++ عندما أتلقى [المستوى-2 v]
++ إخفاء
+```
+
+\--- /task \---
+
+إذا كنت تفضل ذلك ، يمكنك نقل العدو إلى منصة أخرى بدلاً من ذلك. في هذه الحالة ، يمكنك استخدام ` انتقل إلى ` {: class = "block3motion"} block بدلاً من ` العرض ` {: class = "block3looks"} و ` إخفاء ` {: class = "block3looks"} الكتل.
+
+### اجعل ** شخصية اللاعب** تظهر في المكان المناسب
+
+كلما بدأ مستوى جديد، كائن ** شخصية اللاعب ** يحتاج إلى الذهاب إلى المكان المناسب لهذا المستوى. لتحقيق ذلك، تحتاج إلى تغيير من أين يحصل الكائن على إحداثياته عندما يظهر لأول مرة على المسرح. في الوقت الحالي ، فان قيم المحورين `س ` و ` ص` مثبتة في التعليمات البرمجية.
+
+\--- task \--- ابدأ بإنشاء متغيرات لإحداثيات البداية: ` start-x ` {: class = "block3variables"} و ` start-y ` {: class= "block3variables"}. ثم قم بتوصيلها في كتلة ` انتقل إلى ` {: class = "block3motion"} في كتل `إعادة تعيين الشخصية` {: class = "block3myblocks"} الموجودة في كتل **لبناتي** بدلا من القيم الثابتة لـ `س` و `ص`:
+
+```blocks3
+    حدد إعادة تعيين الشخصية
     set [can-jump v] to [true]
     set [x-velocity v] to [0]
     set [y-velocity v] to [-0]
-+    go to x: (start-x) y: (start-y)
++ انتقل إلى  x: (start-x) y: (start-y)
 ```
 
 \--- /task \---
 
-\--- task \--- Then for each broadcast announcing the start of a level, set the right `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"} coordinates in response, and add a **call** to `reset-character`{:class="block3myblocks"}:
+\--- task \--- ثم لكل بث يعلن بداية المستوى ، اضبط قيم المحاور ` start-x ` {:class = "block3variables"} و ` start-y ` {:class = "block3variables"} الصحيحة في الاستجابة، وإضافة ** استدعاء ** إلى ` إعادة تعيين الشخصية`{:class="block3myblocks"}:
 
 ```blocks3
-+    when I receive [level-1 v]
-+    set [start-x v] to [-183]
-+    set [start-y v] to [42]
-+    reset-character :: custom
++ عندما أتلقى [level-1 v]
++ اضبط [start-x v] الى [-183]
++ set [start-y v] إلى [42]
++اعادة الشخصية :: الزي
 ```
 
 ```blocks3
-+    when I receive [level-2 v]
-+    set [start-x v] to [-218]
-+    set [start-y v] to [-143]
-+    reset-character :: custom
++ عندما أتلقى [level-2 v]
++ set [start-x v] إلى [-218]
++ set [start-y v] إلى [-143]
++ اعادة الشخصية :: الزي
 ```
 
 \--- /task \---
 
-### Starting at Level 1
+### بدءا من المستوى 1
 
-You also need to make sure that every time someone starts the game, the first level they play is level 1.
+تحتاج أيضًا إلى التأكد من أنه في كل مرة يبدأ فيها شخص ما اللعبة ، يكون المستوى الأول الذي يلعبه هو المستوى 1.
 
-\--- task \--- Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
+\--- task \--- انتقل إلى النص البرمجي الخاص بـ` اعادة اللعبة` {: class = "block3myblocks"} وإزالة الاستدعاء ` إعادة تعيين الشخصية ` {: class = "block3myblocks"} منه. بدلا عنها، قم ببث ` المستوى الادنى ` {:class="block3variables"}. سيقوم الكود الذي أضفته بالفعل مع هذه البطاقة بإعداد إحداثيات البداية الصحيحة لكائن ** شخصية اللاعب **، وأيضا استدعاء ` إعادة تعيين الشخصية` {: class = "block3myblocks"}.
 
 ```blocks3
-    define reset-game
+    تحديد اعادة تعيين اللعبة
     set rotation style [left-right v]
     set [jump-height v] to [15]
     set [gravity v] to [2]
@@ -145,19 +145,19 @@ You also need to make sure that every time someone starts the game, the first le
     set [y-speed v] to [1]
     set [lives v] to [3]
     set [points v] to [0]
-+    broadcast (join [level-](min-level ::variables))
++ النشر (انضم [level-] (المستوى-المتوسط::المتغيرات))
 ```
 
 \--- /task \---
 
 ## \--- collapse \---
 
-## title: Resetting the Player Character versus resetting the game
+## title: إعادة تعيين شخصية اللاعب مقابل إعادة تعيين اللعبة
 
-Notice that the first block in the **Player Character** sprite's main green flag script is a call to the `reset-game`{:class="block3myblocks"} **My blocks** block.
+لاحظ أن الكتلة الأولى في النص الرئيسي لكائن** شخصية اللاعب ** للعلم الأخضر هو استدعاء لـ `إعادة تعيين اللعبة` {:class="block3myblocks"} كتل **لبناتي**.
 
-This block sets up all the variables for a new game and then calls the `reset-character`{:class="block3myblocks"} **My blocks** block, which places the character back in its correct starting position.
+تقوم هذه الكتلة بإعداد جميع المتغيرات الخاصة بلعبة جديدة ثم تقوم باستدعاء `إعادة تعيين الشخصية`{:class="block3myblocks"} في كتل **لبناتي**، والذي يضع الشخصية مرة أخرى في وضع البداية الصحيح.
 
-Having the `reset-character`{:class="block3myblocks"} code in its own block separate from `reset-game`{:class="block3myblocks"} allows you to reset the character to different positions **without** having to reset the whole game.
+وجود الكود البرمجي لـ ` إعادة تعيين الشخصية ` {: class = "block3myblocks"} في كتلة خاصة به منفصلة عن ` إعادة ضبط اللعبة ` {: class = "block3myblocks"} يسمح لك بإعادة تعيين الشخصية إلى مواضع مختلفة ** بدون ** الحاجة إلى إعادة تعيين اللعبة بأكملها.
 
 \--- /collapse \---
