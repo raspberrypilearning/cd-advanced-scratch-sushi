@@ -1,81 +1,81 @@
-## What next?
+## ما التالي؟
 
-You’ve got a complete game now, but there’s a whole lot more you can do with it! Here are a few ideas to get you started:
+لديك لعبة كاملة الآن ، ولكن هناك الكثير مما يمكنك القيام به! إليك بعض ألافكار لمساعدتك على البدأ:
 
 ## \--- collapse \---
 
-## title: High scores
+## title: درجات عالية
 
-+ Keep a list of the names and scores of people who’ve gotten high scores in the game! You’ll need to use the `ask`{:class="block3looks"} block to the get their name.
++ الاحتفاظ بقائمة بأسماء الأشخاص ودرجات الذين حصلوا على درجات عالية في اللعبة! ستحتاج إلى استخدام `اسال`{: class = "block3looks"} للحصول على اسمائهم.
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: New power-ups
+## title: امدادات طاقة جديدة
 
-+ Try adding some new power-ups, for example for: 
-  + Immunity to enemies
-  + More lives
-  + Bigger player character
-  + Smaller player character
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Scrolling levels
-
-+ Can you figure out how to make the levels scroll along, so the player character can move through them from left to right? Or at least make it *look* like that’s what’s happening?
++ حاول إضافة بعض امدادات الطاقة الجديدة ، على سبيل المثال: 
+  + حصانة للأعداء
+  + المزيد من الأرواح
+  + شخصية أكبر لاعب
+  + شخصية أصغر لاعب
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Completing levels
+## title: التنقل بين المستويات
 
-+ Right now, the levels never end. What if, instead of pushing a button, you needed a certain number of points to get to the next level?
++ يمكنك معرفة كيفية جعل المستويات تتحرك ، بحيث يمكن للشخصية التنقل من خلالها من اليسار إلى اليمين؟ أو على الأقل جعلها *تبدو* كأن هذا ما يحدث؟
+
+\--- /collapse \---
+
+## \--- /collapse \---
+
+## title: اكمال المستويات
+
++ حالياً، فإن المستويات لا تنتهي أبدا. ماذا لو كنت بحاجة إلى عدد معين من النقاط للوصول إلى المستوى التالي بدلاً من الضغط على زر؟
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Play With physics
+## title: العب مع الفيزياء
 
-+ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, and `y-speed`{:class="block3variables"}. How do they change the game?
++ حاول تغيير بعض القيم في محرك الفيزياء ، مثل `الجاذبية`{: class="block3variables"} ، ارتفاع القفز ``{: class="block3variables"}، `x-speed`{: class="block3variables"} ، و `y-speed`{: class="block3variables"}. كيف يغيرون اللعبة؟
 
-+ Can you use the physics to make power-ups?
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: More levels
-
-+ Add more levels! Make better art! Use the Stage background to make the game look cooler while still keeping platforms easy to work with for you as the coder.
++ هل يمكنك استخدام الفيزياء لصنع امدادات الطاقة؟
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Sound effects
+## title: المزيد من المستويات
 
-+ This game is totally silent right now! Try adding background music and sound effects using the blocks in the **Sound** section!
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Secrets
-
-+ Think of secret bonuses, cheat codes, and other 'easter eggs' you can hide in the game for players to discover. Try to code some of them!
++ إضافة المزيد من المستويات! اصنع فنًا أفضل! استخدم خلفية المسرح لتبدو اللعبة رائعة اكثر مع الحفاظ على المنصات سهلة العمل من أجلك كمبرمج.
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Different characters
+## title: المؤثرات الصوتية
 
-+ Add more character sprites and let the player pick one. Make the characters different in attributes like size, how high they jump, maybe even how many lives they have, and how many points they get from collectables! 
++ هذه اللعبة صامتة تماما الآن! حاول إضافة الموسيقى الخلفية والمؤثرات الصوتية باستخدام القوائم الموجودة في قسم **الصوت**!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: أسرار
+
++ فكر في المكافآت السرية وأكواد الغش وغيرها من "بيض عيد الفصح" التي يمكنك إخفاءها في اللعبة حتى يكتشفها اللاعبون. حاول أن تبرمج بعض منهم!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: شخصيات مختلفة
+
++ أضف المزيد من كائنات الشخصيات ودع اللاعب يختار واحدة. اجعل الشخصيات مختلفة في سمات مثل الحجم ، ومدى ارتفاع قفزها ، وربما حتى عدد الحياة التي لديهم ، وعدد النقاط التي تحصل عليها من المقتنيات! 
 
 \--- /collapse \---
