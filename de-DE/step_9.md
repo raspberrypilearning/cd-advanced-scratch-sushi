@@ -8,7 +8,7 @@ Zunächst benötigst du die Figur für die Plattform.
 
 \--- task \--- Füge eine neue Figur hinzu, nenne sie **mobile-plattform**und benutze die Kostümanpassungs-Tools auf der Registerkarte Kostüme, damit sie wie die anderen Plattformen aussieht \(Vektormodus verwenden\). \--- /task \---
 
-Nun fügen wir der Figur etwas Code hinzu.
+Now, let's add some code to the sprite.
 
 Beginne mit den Grundlagen: Um eine unendliche Anzahl von Plattformen, die sich auf dem Bildschirm nach oben bewegen, zu machen, musst du die Plattform in regelmäßigen Abständen klonen. Ich habe `4` Sekunden als Intervall ausgewählt. Du musst auch sicherstellen, dass es einen Ein/Aus-Schalter für die Herstellung der Plattformen gibt, damit sie nicht in Level 1 angezeigt werden. Ich verwende eine neue Variable mit dem Namen `erstelle-Plattform`{:class="block3variables"}.
 
