@@ -8,7 +8,7 @@ Innanzitutto, avrai bisogno dello sprite per la piattaforma.
 
 \--- task \--- Aggiungi un nuovo sprite, chiamalo **Piattaforme-mobili** e usa gli strumenti di personalizzazione del costume nella scheda Costumi per renderlo simile alle altre piattaforme \ (usa la modalità vettoriale \). \--- /task \---
 
-Ora aggiungiamo del codice allo sprite.
+Now, let's add some code to the sprite.
 
 Inizia con le basi: per creare un insieme infinito di piattaforme che si muovono sullo schermo, dovrai clonare la piattaforma a intervalli regolari. Ho scelto `4` secondi come intervallo. Devi anche assicurarti che ci sia un interruttore on/off per creare le piattaforme, in modo che non vengano visualizzate nel livello 1. Sto usando una nuova variabile chiamata `crea-piattaforma`{:class="block3variables"}.
 
