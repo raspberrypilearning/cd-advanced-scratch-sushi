@@ -1,64 +1,64 @@
-## Super power-ups!
+## امدادات طاقة خارقة!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+الآن بعد أن أصبح لديك عمل جديد قابل للتحصيل ، فقد حان الوقت لجعله يفعل شيئًا رائعًا حقًا: دعنا نجعله ينطلق من طاقة من الكهرباء لبضع ثوانٍ ، بدلاً من مجرد إعطاء حياة إضافية.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+لهذا، ستقوم باستخدام رسالة `بث`{:class="block3events"} آخرى.
 
-\--- task \--- First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
-
-```blocks3
-    define react-to-player (type)
-    if <(type ::variable) = [1]> then
-        change [points v] by (collectable-value ::variables)
-    end
-    if <(type ::variable) = [2]> then
--        change [lives v] by [1]    
-+        broadcast [collectable-rain v]
-    end
-```
-
-\--- /task \---
-
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
-
-\--- task \--- Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+\--- task\--- أولاً ، قم بتغيير كتلة `react-to-player`{:class="block3myblocks"} لبث رسالة عندما تلمس شخصية اللاعب النوع `2` تحصيل. استدعي الرسالة ` collectable-rain ` {:class="block3events"}.
 
 ```blocks3
-+    when I receive [collectable-rain v]
-+    set [collectable-frequency v] to [0.000001]
-+    wait (1) secs
-+    set [collectable-frequency v] to [1]
+    حدد رد الفعل على اللاعب (النوع)
+    إذا كان <(type::variable) = [1]> ثم
+        [point v] بواسطة (قيم-المقتنيات::variables)
+    end
+    if <(type::variable) = [2]> ثم
+- تغيير [lives v] بحلول [1]    
++ البث [تحصيل-المطر v]
+    نهاية
 ```
 
-\--- /task \---
+\---/task--
+
+أنت الآن بحاجة إلى إنشاء جزء جديد من التعليمات البرمجية داخل البرامج النصية العفوية **مقتنيات** التي ستبدأ كلما تم بث الرسالة `collectable-rain`{:class="block3events"}.
+
+\--- task\--- أضف هذا الرمز للعنصر **المقتنيات** لجعله يستمع إلى بث `collectable-rain`{:class="block3events"}.
+
+```blocks3
++ عندما أتلقى [collectable-rain v]
++ مجموعة [collectable-frequency v] إلى [0.000001]
++ انتظر (1) ثوانٍ
++ مجموعة [collectable-frequency v] إلى [1]
+```
+
+\---/task\---
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: ماذا تفعل المقاطع الجديدة؟
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+ينتظر جزء الكود هذا تلقي بث ، ويستجيب عن طريق تعيين المتغير `collectable-frequency`{:class="block3variables"} على رقم صغير جدًا ، ثم الانتظار لثانية واحدة ، ثم تغيير المتغير إلى `1`.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+دعونا نلقي نظرة على كيفية استخدام المتغير `collectable-frequency`{:class="block3variables"} لمعرفة سبب جعله أمطارًا قابلة للتحصيل.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+في حلقة اللعبة الرئيسية ، يتم إخبار جزء الكود الذي يجعل نسخ الكائن **مقتنيات** بواسطة المتغير `collectable-frequency`{:class="block3variables"} كم من الوقت يجب الانتظار بين عمل نسخة والاخرى:
 
 ```blocks3
-    repeat until <not <(create-collectables ::variables) = [true]>>
-        if < [50] = (pick random (1) to (50))> then
-            set [collectable-type v] to [2]
-        else
-            set [collectable-type v] to [1]
-        end
-        wait (collectable-frequency ::variables) secs
-        go to x: (pick random (-240) to (240)) y:(179)
-        create clone of [myself v]
-    end
+    كرر حتى <not <(create-collectables ::variables) = [true]>>
+        إذا < [50] = (pick random (1) to (50))> ثم
+            مجموعة [collectable-type v] إلى [2]
+        آخر
+            مجموعة [collectable-type v] إلى [1]
+        نهاية
+        الانتظار (collectable-frequency ::variables) بالثواني
+        انتقل إلى x: (pick random (-240) to (240)) y:(179)
+        بإنشاء استنساخ لـ [myself v]
+    النهاية
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+يمكنك أن ترى أن `الكتلة هنا `{:class="block3control"} تتوقف مؤقتًا عن الكود طول المدة المحددة بواسطة `collectable-frequency`{:class="block3variables"}.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+إذا كانت قيمة `collectable-frequency`{:class="block3variables"} هي `0.000001`، و كتلة `الانتظار`{:class="block3control"} تتوقف لمدة **1000000** من الثانية، وهذا يعني أنه سيتم تشغيل الحلقة `كرر حتى`{:class="block3control"} مرات أكثر من المعتاد. ونتيجة لذلك، سيؤدي الى صنع **الكثير** والكثير من زيادة الطاقات ، حتى يتغير `collectable-frequency`{:class= "block3variables"} مجدداً الى `1`.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+هل يمكنك التفكير في أي مشاكل قد تحدث؟ سيكون هناك الكثير من امدادات الطاقة…ماذا لو واصلت الإمساك بها؟
 
 \--- /collapse \---
