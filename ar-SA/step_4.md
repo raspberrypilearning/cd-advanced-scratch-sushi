@@ -1,20 +1,20 @@
-## Power-ups
+## امدادات الطاقة
 
-At the moment you have just one type of collectable: a star that gains you one point when you grab it. On this card, you’re going to create a new type of collectable, and you'll do it in a way that will make adding other types of collectables easy. Then you can invent your own power-ups and bonuses and really make the game your own!
+في الوقت الحالي ، لديك نوع واحد فقط من الألعاب القابلة للجمع: وهو نجمة تعطيك نقطة واحدة عند الحصول عليها. في هذه البطاقة ، ستنشئ نوعًا جديدًا من الاشياء القابلة للجمع، وستقوم بذلك بطريقة تجعل إضافة أنواع أخرى من المقتنيات أمرًا سهلاً. ثم يمكنك اختراع امدادات طاقة ومكافآت وبذلك تجعل اللعبة فعلاً خاصة بك!
 
-I’ve already included some pieces to do this with the `collectable-type`{:class="block3variables"} variable and the `pick-costume`{:class="block3myblocks"} **My blocks** block. You’re going to need to improve on them though.
+لقد قمت بالفعل بتضمين بعض القطع للقيام بذلك باستخدام المتغير `collectable-type<` {:class="block3variables"} والمتغير `pick-costume`{:class="block3myblocks"} في كتل **لبناتي**. سوف تحتاج إلى تحسينها بالرغم من ذلك.
 
-Let's have a look at how the collectable works right now.
+دعونا نلقي نظرة على كيفية عمل المقتنيات الآن
 
-In the scripts for the **Collectable** sprite, find the `when I start as a clone`{:class="block3events"} code. The blocks you should look at are the ones that give you points for collecting a star:
+في البرامج النصية للكائن **تجميع** ، ابحث عن الكود `عندما أبدأ كنسخة clone`{: class = "block3events"}. الكتل التي يجب إلقاء نظرة عليها هي الكتل التي تعطيك نقاطًا لجمع النجم
 
 ```blocks3
-    if <touching [Player Character v]?> then
-        change [points v] by (collectable-value ::variables)
-        delete this clone
+    اذا <touching [Player Character v]?> 
+        غيّر [points v] بمقدار (collectable-value ::variables)
+        احذف هذه النسخة
 ```
 
-and this one that selects a costume for the clone:
+وهذا الذي يختار شكل للنسخة:
 
 ```blocks3
     pick-costume (collectable-type ::variables) :: custom
@@ -22,132 +22,132 @@ and this one that selects a costume for the clone:
 
 ## \--- collapse \---
 
-## title: How does picking a costume work?
+## title: كيف يعمل اختيار الشكل؟
 
-The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:class="block3myblocks"} block, but it has something extra: it takes an **input** variable called `type`{:class="block3myblocks"}.
+تعمل الكتلة `pick-costume`{:class="block3myblocks"} تمامًا مثل الكتلة `اخسر`{: class = "block3myblocks"} ، لكنها تحتوي على شيء إضافي: وهو متغير **مدخلات** يسمى `type` {:class="block3myblocks"}.
 
 ```blocks3
-    define pick-costume (type)
-    if <(type ::variables) = [1]> then
-        switch costume to [star1 v]
+    حدد pick-costume (type)
+    if <(type :: variables) = [1]> ثم
+        بدّل الزي إلى [star1 v]
     end
 ```
 
-When the `pick-costume`{:class="block3myblocks"} block runs, what it does is this:
+عندما تعمل الكتلة `pick-costume`{: class = "block3myblocks"} ، فإن ما تقوم به هو:
 
-1. It looks at the `type`{:class="block3myblocks"} input variable
-2. If the value of `type`{:class="block3myblocks"} is equal to `1`, it switches to the `star1` costume
+1. يبحث في متغير الإدخال `type`{: class = "block3myblocks"}
+2. إذا كانت قيمة `type`{: class = "block3myblocks"} تساوي `1`، فستتحول إلى زي `star1`
 
-Take a look at the part of the script that uses the block:
+ألق نظرة على جزء البرنامج النصي الذي يستخدم الكتلة:
 
 ```blocks3
-    when I start as a clone
-    pick-costume (collectable-type ::variables) :: custom
+    عندما أبدأ كاختيار
+    clone (نوع قابل للتجميع :: المتغيرات) :: custom
     show
-    repeat until <(y position) < [-170]>
-        change y by (collectable-speed ::variables)
-        if <touching [Player Character v]?> then
-            change [points v] by (collectable-value ::variables)
-            delete this clone
+    كرر حتى <(موضع y) < [-170]>
+        تغيير y بواسطة (collectable-speed :: variables)
+        if <touching [Player Character v]?>
+            تغيير [النقاط v] بواسطة (collectable-value :: variables)
+            احذف هذا الاستنساخ
 ```
 
-You can see that the `collectable-type`{:class="block3variables"} variable gets **passed** to the `pick-costume`{:class="block3myblocks"} block. Inside the code for `pick-costume`{:class="block3myblocks"}, `collectable-type`{:class="block3variables"} is then used as the input variable (`type`{:class="block3myblocks"}).
+يمكنك أن ترى أن المتغير `collectable-type`{: class = "block3variables"} **يمرر** الى الكتلة `pick-costume`{: class = "block3myblocks"}. داخل الكودر البرمجي لـ `pick-costume`{:class="block3myblocks"} فان مدخلات `collectable-type`{:class="block3variables"} تستعمل بعد ذلك كمدخل للمتغير (`type`{:class="block3myblocks"}).
 
-This means that the value of `collectable-type`{:class="block3variables"} decides which costume the sprite clone gets.
+هذا يعني أن قيمة `collectable-type`{: class = "block3variables"} هي التي تحدد الشكل الذي تحصل عليه نسخة الكائن.
 
 \--- /collapse \---
 
-### Add a costume for the new power-up
+### أضف شكلا إلى امدادات الطاقة الجديدة
 
-Of course, right now the **Collectable** sprite only has one costume, since there's only one type of collectable. You're about to change that.
+بطبيعة الحال ، فإن الكائن **تجميع** لها شكل واحد فقط، حيث يوجد نوع واحد فقط من القطع القابلة للتجميع. أنت على وشك تغيير ذلك.
 
-\--- task \--- Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like. \--- /task \---
+\--- task \--- أضف شكلاً جديدًا إلى الكائن **تجميع** لامدادات الطاقة الجديدة الخاصة بك. أنا أحب صاعقة البرق ، ولكن اختر ما تريد. \--- /task \---
 
-\--- task \--- Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
+\--- task \--- بعد ذلك، قل لكتلة `pick-costume`{:class="block3myblocks"} من كتل **لبناتي** لضبط شكل جديد كلما حصل على قيمة جديدة للمتغير `type`{:class="block3myblocks"}، مثل هذا \(باستخدام اي اسم للشكل الذي اخترته \):
 
 ```blocks3
-    define pick-costume (type)
-    if <(type ::variable) = [1]> then
-        switch costume to [star1 v]
+    حدد pick-costume (type)
+    if <(type :: variable) = [1]> ثم
+        بدل زي إلى [star1 v]
     end
-+    if <(type ::variable) = [2]> then
-+        switch costume to [lightning v]
-+    end
++ if <(type :: variable) = [2]> ثم
++ بدل البرق الخامس]
++ نهاية
 ```
 
 \--- /task \---
 
-### Create the power-up code
+### إنشاء الكتل البرمجية لامدادات الطاقة
 
-Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
+الآن عليك أن تقرر ما الذي ستقوم به المجموعة الجديدة سنبدأ بشيء بسيط: إعطاء اللاعب حياة جديدة. في الخطوة التالية ، ستجعلها تفعل شيئًا أكثر روعة.
 
-\--- task \--- Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
+\---task \--- اذهب إلى القسم **لبناتي** وانقر فوق **إنشاء لبنة**. سمِّ الكتلة الجديدة `react-to-player`{:class="block3myblocks"} وإضف **عدد المدخلات** بالاسم `type`{:class="block3myblocks"}.
 
-![Type in the name for the block](images/powerupMakeName.png)
+![اكتب اسم الكتلة](images/powerupMakeName.png)
 
-Click **OK**. \--- /task \---
+انقر فوق **موافق**. \--- /task \---
 
-\--- task \--- Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
+\--- task \--- اجعل `react-to-player`{:class="block3myblocks"} في كتلة **لبناتي** إما يعمل على زيادة النقاط أو زيادة حياة اللاعب، اعتمادًا على قيمة المتغير `type`{:class="block3myblocks"}.
 
 ```blocks3
-+    define react-to-player (type)
-+    if <(type ::variable) = [1]> then
-+        change [points v] by (collectable-value ::variables)
-+    end
-+    if <(type ::variable) = [2]> then
-+        change [lives v] by [1]
-+    end
++ حدد رد الفعل على اللاعب (النوع)
++ إذا <(النوع :: متغير) = [1]> ثم
++ تغيير [النقاط v] بواسطة (collectable-value :: variables)
++ end
++ if <(type: : متغير) = [2]> ثم
++ تغيير [حياة الخامس] بحلول نهاية [1]
++
 ```
 
 \--- /task \---
 
-\--- task \--- Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
+\--- task \--- قم بتحديث التعليمات البرمجية في `عندما أبدأ كنسخة` {:class="block3events"} لاستبدال الكتلة التي تضيف نقطة من خلال **الاستدعاء** الى `react-to-player`{:class="block3myblocks"}، **ومرر** `collectable-type`{:class="block3variables"} له.
 
 ```blocks3
-+    if <touching [Player Character v] ?> then
-+        react-to-player (collectable-type ::variables) :: custom
-+        delete this clone
-+    end
++ if <touching [Player Character v] ?> +
++ رد فعل على اللاعب (من النوع القابل للتحصيل :: المتغيرات) :: custom
++ احذف هذا clone
++ end
 ```
 
 \--- /task \---
 
-By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life.
+من خلال استخدام `react-to-player`{:class="block3myblocks"} في كتلة **لبناتي** ، لا تزال النجوم تضيف نقطة، لكن القوة الجديدة التي أنشأتها تضيف حياة.
 
-### Using `collectable-type`{:class="block3variables"} to make different collectables appear at random
+### باستخدام `collectable-type`{:class="block3variables"} لجعل مقتنيات مختلفة تظهر بشكل عشوائي
 
-Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
+في الوقت الحالي ، قد تتساءل كيف ستخبر كل لعبة تحصيلها بأنواعها.
 
-You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. to use for the collectable.
+يمكنك القيام بذلك عن طريق تعيين قيمة لـ `collectable-type`{:class="block3variables"}. هذا المتغير مجرد رقم. كما رأيت ، يتم استخدامه لإخبار كتل `pick-costume`{: class = "block3myblocks"} و`react-to-player`{:class="block3myblocks"} أي زي ، قواعد وغيرها. لاستخدامها للتحصيل.
 
 ## \--- collapse \---
 
-## title: Working with variables in a clone
+## title: العمل مع المتغيرات في النسخة
 
-For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}.
+لكل نسخة من كائنات **تجميع**، يمكنك تعيين قيمة مختلفة من `collectable-type`{:class="block3variables"}.
 
-Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created.
+فكر في الأمر مثل إنشاء نسخة جديدة من الكائن **تجميع** بمساعدة القيمة المخزنة في `collectable-type`{: class = "block3variables"} في الوقت الذي يتم فيه إنشاء نسخة من الكائن **تجميع**.
 
-You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game. \--- /collapse \---
+قد تتساءل عما إذا كان تغيير قيمة `collectable-type`{: class = "block3variables"} سيحول جميع المقتنيات على المسرح إلى نفس النوع. لا يحدث هذا ، لأن أحد الأشياء التي تجعل المستنسخ مميز هو أنه لا يستطيع تغيير قيم أي متغيرات تبدأ بها. تحتوي نسخ الكائنات على **قيم ثابتة**. هذا يعني أنه عند تغيير قيمة `collectable-type ` {:class="block3variables"} ، فإن هذا لا يؤثر على نسخ الكائن **تجميع** الموجودة بالفعل في اللعبة. \--- /collapse \---
 
-You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, pick between the numbers at random to make a random collectable every time.
+ستقوم بتعيين `collectable-type`{:class= "block3variables"} على إما `1` أو `2` لكل عملية نسخ جديدة تقوم بها. للحفاظ على اللعبة مثيرة للاهتمام ، اختر بين الأرقام بشكل عشوائي لجعل تحصيل عشوائي في كل مرة.
 
-\--- task \--- Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
+\--- task \--- ابحث عن حلقة ` تكرار حتى `{:class="block3control"} داخل رمز العلم الأخضر للعنصر **تجميع** ، وأضف `إذا... else`{:class= "block3control "} الكود الموضح أدناه.
 
 ```blocks3
-    repeat until <not <(create-collectables ::variables) = [true]>>
-+        if <[50] = (pick random (1) to (50))> then
-+            set [collectable-type v] to [2]
-+        else
-+            set [collectable-type v] to [1]
-+        end
-        wait (collectable-frequency ::variables) secs
-        go to x: (pick random (-240) to (240)) y: (179)
-        create clone of [myself v]
+    كرر حتى <not <(create-collectables ::variables) = [true]>>
++ إذا <[50] = (اختر عشوائي (1) إلى (50))> ثم
++ اضبط [تحصيل من النوع الخامس] إلى [2]
++ آخر
++ مجموعة [قابل للتحصيل من النوع الخامس] إلى [1]
++ انتظر نهاية
+        (تحصيل تردد :: المتغيرات) ثانية
+        انتقل إلى س: (اختر عشوائي (-240) إلى (240)) ذ: (179)
+        إنشاء استنساخ من [نفسي الخامس]
 ```
 
 \--- /task \---
 
-This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy.
+يمنح هذا الرمز فرصة 1 الى 50 لتعيين `collectable-type`{":class="block3variables"} إلى `2`. بعد كل شيء ، لا ترغب في منح اللاعب فرصة جمع حياة إضافية كثيرًا ، وإلا ستكون اللعبة سهلة للغاية.
 
-Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it.
+الآن لديك نوع جديد من المجموعات القابلة للتحصيل التي تظهر أحيانًا بدلاً من النجمة ، وهذا يمنحك حياة إضافية بدلاً من نقطة عند جمعها.
