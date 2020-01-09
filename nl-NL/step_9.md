@@ -8,7 +8,7 @@ Ten eerste heb je de sprite voor het platform nodig.
 
 \--- task \--- Voeg een nieuwe sprite toe, noem deze **Bewegend-Platform**, en gebruik de uiterlijkgereedschappen in Uiterlijken om het op de andere platforms te laten lijken \(gebruik de vectormodus\). \--- /task \---
 
-Now, let's add some code to the sprite.
+Laten we nu wat code toevoegen aan de sprite.
 
 Begin met de basis: om een nooit eindigende set platforms op het scherm te laten bewegen, moet je het platform regelmatig klonen. Ik koos `4` seconden als mijn interval. Je moet ook zorgen dat er een aan-/uit-schakelaar is om de platforms te maken, zodat ze niet op niveau 1 verschijnen. Ik gebruik een nieuwe variabele genaamd `maak-platforms`{:class="block3variables"}.
 
