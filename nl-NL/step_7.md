@@ -2,13 +2,19 @@
 
 Je game werkt en nu kun je punten verzamelen, speciale power-ups verdienen en verliezen. Het wordt wat! Misschien is het leuk om een wedstrijdelement toe te voegen - zoals bijvoorbeeld een personage dat een beetje beweegt, maar dat je niet hoort aan te raken? Dit zal vergelijkbaar zijn met vijanden in de traditionele platformgames zoals Super Mario, waar we ons hier door laten inspireren.
 
-\--- task \--- Kies eerst een sprite om toe te voegen als je vijand. Omdat onze speler een kat is, koos ik een hond. Er zijn echter nog veel andere sprites die je zou kunnen gebruiken. Ik hernoemde de sprite **Vijand**, gewoon om dingen voor mij duidelijker te maken.
+\--- task \---
 
-Verklein de sprite naar de juiste maat en plaats hem ergens om te starten. Dit is hoe de mijne eruit ziet:
+First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
 
-![The dog enemy sprite](images/enemySprite.png) \--- /task \---
+Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
 
-\--- task \--- Schrijf de makkelijkste code eerst: stel het blok in om te reageren op het bericht `game over`{:class="events"} om de vijand te laten verdwijnen als de speler het spel verliest.
+![The dog enemy sprite](images/enemySprite.png)
+
+\--- /task \---
+
+\--- task \---
+
+Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
 
 ```blocks3
 + wanneer ik signaal [game over v] ontvang
@@ -17,7 +23,9 @@ Verklein de sprite naar de juiste maat en plaats hem ergens om te starten. Dit i
 
 \--- /task \---
 
-\--- task \--- Nu moet je de code schrijven voor wat de vijand doet. Gebruik mijn code, maar je kunt extra dingen toevoegen! (Wat als ze zich kunnen verplaatsen naar verschillende platforms? Wat als er een power-up is waardoor ze sneller of langzamer bewegen?)
+\--- task \---
+
+Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
 
 ```blocks3
 + wanneer op groene vlag wordt geklikt
@@ -33,13 +41,17 @@ Verklein de sprite naar de juiste maat en plaats hem ergens om te starten. Dit i
      end
 ```
 
-**Opmerking**: als je het blok `ga naar`{:class="block3motion"} sleept naar het sprite-paneel en de waarden `x` en `y` niet wijzigt, zijn dit de waarden voor de huidige locatie van de **Vijand** sprite!
+**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
 
-De code in het blok `als...dan`{:class="block3control"} zorgt ervoor dat de sprite zich omdraait wanneer ze het einde van het platform bereiken! \--- /task \---
+The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
 
-Het volgende wat je nodig hebt is dat de speler een leven verliest wanneer hun **Speler** sprite de **Vijand** sprite raakt. Ook moet je ervoor zorgen dat de sprites snel **stoppen** met elkaar aanraken, omdat anders de code die controleert of er wordt aangeraakt, blijft draaien en de speler levens zal blijven verliezen.
+\--- /task \---
 
-\--- task \--- Zo heb ik het gedaan, maar je kunt proberen deze code te verbeteren! Ik heb het hoofdblok van **Speler** sprite aangepast. Voeg de nieuwe code toe vóór het `als`{:class="block3control"} blok dat controleert of je geen levens meer hebt.
+The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+
+\--- task \---
+
+Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
 
 ```blocks3
     wanneer op groene vlag wordt geklikt
@@ -68,4 +80,4 @@ Het volgende wat je nodig hebt is dat de speler een leven verliest wanneer hun *
 
 \--- /task \---
 
-De nieuwe code verbergt de sprite van de **Speler**, zet deze terug naar de beginpositie, verkleint de `levens`{:class="block3variables"} variabele met `1`, en na een halve seconde verschijnt de sprite weer.
+The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
