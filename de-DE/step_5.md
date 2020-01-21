@@ -4,7 +4,9 @@ Nun, da das neue sammelbare Power-Up funktioniert, ist es an der Zeit, etwas wir
 
 Dazu verwendest du eine weitere `Sendung an alle`{:class="block3events"}-Nachricht.
 
-\--- task \--- Ändere zunächst den Block `reagiere-auf-Spieler`{:class="block3myblocks"}, um eine Nachricht an alle zu senden, wenn der Spielercharacter ein Typ-`2`-Sammelobjekt berührt. Rufe die Nachricht `Sammelobjekt-Regen`{:class="block3events"} auf.
+\--- task \---
+
+First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
 
 ```blocks3
     Definiere reagiere-auf-Spieler (typ)
@@ -19,9 +21,11 @@ Dazu verwendest du eine weitere `Sendung an alle`{:class="block3events"}-Nachric
 
 \--- /task \---
 
-Jetzt musst du einen neuen Code im **Sammelobjekt**-Figur-Skript erstellen, der jedes Mal gestartet wird, wenn die Meldung `Sammelobjekt-Regen`{:class="block3events"} gesendet wird.
+Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
 
-\--- task \--- Füge diesen Code für die **Sammelobjekt**-Figur hinzu, damit sie auf die `Sammelobjekt-Regen`{:class="block3events"}-Sendung lauscht.
+\--- task \---
+
+Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
 
 ```blocks3
 + Wenn ich [Sammelobjekt-Regen v] empfange
@@ -36,11 +40,11 @@ Jetzt musst du einen neuen Code im **Sammelobjekt**-Figur-Skript erstellen, der 
 
 ## title: Was macht der neue Code?
 
-Dieses Stück Code wartet darauf, eine Nachricht zu empfangen und setzt `Sammelobjekt-Häufigkeit`{:class="block3variables"} auf eine sehr kleine Zahl, wartet dann eine Sekunde lang, und setzt dann die Variable zurück auf `1`.
+This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
 
-Lass uns einen Blick darauf werfen, wie die Variable `Sammelobjekt-Häufigkeit`{:class="block3variables"} verwendet wird, um herauszufinden, warum diese Sammelobjekte regnen lassen kann.
+Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
 
-In der Hauptspielschleife erhält der Teil des Codes, der die **Sammelobjekt**-Figur-Klone erzeugt, von der Variablen `Sammelobjekt-Häufigkeit`{:class="block3variables"} die Information, wie lange bis zum Erzeugen eines Klons gewartet werden soll:
+In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
 
 ```blocks3
     wiederhole bis <nicht <(erzeuge-Sammeobjekte ::variables) = [wahr]>>
@@ -55,10 +59,10 @@ In der Hauptspielschleife erhält der Teil des Codes, der die **Sammelobjekt**-F
  Ende
 ```
 
-Du kannst sehen, dass der `warte`{:class="block3control"}-Block den Code für die Dauer der Zeit pausiert, die von `Sammelobjekt-Häufigkeit`{:class="block3variables"} gegeben wird.
+You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
 
-Wenn der Wert von `Sammelobjekt-Häufigkeit`{:class="block3variables"} `0,000001` ist, pausiert der `warte`{:class="block3control"} - Block nur für **Millionstel** Sekunden, was bedeutet, dass die `Wiederholen bis`{:class="block3control"}-Schleife viel öfter ausgeführt wird als normal. Als Ergebnis wird der Code **eine Menge** mehr Power-Ups erstellen, als er es normalerweise tun würde, bis `Sammelobjekt-Häufigkeit`{:class="block3variables"} wieder auf `1` geändert wird.
+If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
 
-Fällt dir ein Problem ein was möglicherweise auftreten könnte? Es wird viel mehr Power-Ups geben..., was wenn du sie weiter fängst?
+Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
 
 \--- /collapse \---
