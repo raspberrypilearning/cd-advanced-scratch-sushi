@@ -6,15 +6,21 @@
 
 먼저 플랫폼 용 스프라이트가 필요합니다.
 
-\--- task \--- 새로운 스프라이트를 생성하고, 이름을 **이동 플랫폼**이라 합니다. 코스튬 탭의 커스터마이징 툴을 사용하여 다른 플랫폼과 유사하게 만듭니다. \(벡터 모드 사용\). \--- /task \---
+\--- task \---
+
+Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+
+\--- /task \---
 
 Now, let's add some code to the sprite.
 
-기본 사항부터 시작하십시오. 끝없는 플랫폼 세트를 화면 위로 이동하려면 일정한 간격으로 플랫폼을 복제해야 합니다. 저는 ` 4`초 간격으로 정했습니다. 또한 레벨 1에 나타나지 않도록 하기 위해, 플랫폼 만들기 용 켜기 / 끄기 스위치가 있어야 합니다. 저는 `create-platforms`{:class="block3variables"} 라는 이름의 새 변수를 추가하였습니다.
+Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
 
-\--- task \--- 플랫폼 스프라이트의 복제본을 생성하는 코드를 추가합니다.
+\--- task \---
 
-아래와 같이 작성합니다:
+Add code to create clones of your platform sprite.
+
+Here's how mine looks so far:
 
 ```blocks3
 +    녹색 깃발이 클릭되었을 때
@@ -29,7 +35,9 @@ Now, let's add some code to the sprite.
 
 \--- /task \---
 
-\--- task \--- 그런 다음 복제 코드를 추가하십시오.
+\--- task \---
+
+Then add the clone's code:
 
 ```blocks3
 +    복제되었을 때
@@ -46,9 +54,11 @@ Now, let's add some code to the sprite.
 
 \--- /task \---
 
-이 코드는 ** 이동 플랫폼 ** 복제본이 화면 상단으로 올라가도록 합니다. 플레이어가 점프할 수 있도록 천천히 움직입니다.
+This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
 
-\--- task \--- 이제 레벨을 변경하는 신호 보내기와 `game over`{:class="block3events"} 메시지를 기반으로 플랫폼이 사라지거나 다시 나타나게 만듭니다. 
+\--- task \---
+
+Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
 
 ```blocks3
 +    [level-1 v] 신호를 받았을 때
@@ -65,19 +75,21 @@ Now, let's add some code to the sprite.
 
 \--- /task \---
 
-이제 실제로 게임을 하려고 하면, **플레이어 캐릭터** 가 플랫폼을 통과합니다.! 왜 그럴까요?
+Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
 
-왜냐하면 물리 코드가 플랫폼에 대해 알지 못하기 때문입니다. 빠른 해결책입니다:
+It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
 
-\--- task \--- **플레이어 캐릭터** 스프라이트 스크립트에서, 모든 `“Platforms”에 닿았는가?`{:class="block3sensing"} 블록을 `또는`{:class="block3operators"} 연산자를 사용하여 `“Platforms”에 닿았는가?`{:class="block3sensing"} **또는** ` “Moving-Platform”에 닿았는가?`{:class="block3sensing"} 로 바꾸면 됩니다.
+\--- task \---
 
-** 플레이어 캐릭터** 스프라이트에서 아래와 같은 블록이 보이는 모든 곳을 살펴보십시오.
+In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+
+Go through the code for the **Player Character** sprite and everywhere you see this block:
 
 ```blocks3
     <touching [Platforms v] ?>
 ```
 
-이것으로 교체하십시오:
+replace it with this one:
 
 ```blocks3
     <<touching [Platforms v] ?> or <touching [Moving-Platform v] ?>>
