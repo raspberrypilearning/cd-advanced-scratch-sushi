@@ -4,7 +4,9 @@ Now that you have a new power-up collectable working, it’s time to make it do 
 
 For this, you're going to use another `broadcast`{:class="block3events"} message.
 
-\--- task \--- First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+\--- task \---
+
+First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
 
 ```blocks3
     define react-to-player (type)
@@ -21,7 +23,9 @@ For this, you're going to use another `broadcast`{:class="block3events"} message
 
 Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
 
-\--- task \--- Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+\--- task \---
+
+Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
 
 ```blocks3
 +    when I receive [collectable-rain v]
