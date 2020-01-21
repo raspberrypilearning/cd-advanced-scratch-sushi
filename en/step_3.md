@@ -5,6 +5,7 @@ First things first! You need a way to make the game end when the player has run 
 You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
 
 --- task ---
+
 First, find the `lose`{:class="block3myblocks"} block and complete it with the following code: 
 
 ```blocks3
@@ -15,6 +16,7 @@ First, find the `lose`{:class="block3myblocks"} block and complete it with the f
 +    say [Game over!] for (2) secs
 +    stop [all v]
 ```
+
 --- /task ---
 
 --- collapse ---
@@ -36,6 +38,7 @@ Now you need to make sure all the sprites know what to do when the game is over,
 ### Hiding the platforms and edges
 
 --- task ---
+
 Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
 
 ```blocks3
@@ -47,6 +50,7 @@ Start with the easiest sprites. The **Platforms** and **Edges** sprites both nee
 +    when green flag clicked
 +    show
 ```
+
 --- /task ---
 
 ### Stopping the stars
@@ -77,6 +81,7 @@ Look at how the **Collectable** sprite works. See if you can understand some of 
 3. The `create-collectables`{:class="block3variables"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="block3variables"} is `true`, and does nothing if it’s not
 
 --- task ---
+
 Now set up a block for the **Collectable**  sprite so that it reacts to the `game over` broadcast:
 
 ```blocks3
@@ -84,6 +89,7 @@ Now set up a block for the **Collectable**  sprite so that it reacts to the `gam
 +    hide
 +    set [create-collectables v] to [false]
 ```
+
 --- /task ---
 
 This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'. 
