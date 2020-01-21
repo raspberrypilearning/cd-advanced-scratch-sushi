@@ -4,13 +4,19 @@ Seguendo questa scheda, aggiungerai un nuovo livello al gioco a cui il giocatore
 
 ### Passaggio al livello successivo
 
-\--- task \--- Innanzitutto, crea un nuovo sprite che serva da pulsante aggiungendone uno dalla libreria o disegnando il tuo. Io ho fatto un po' di entrambi e mi sono inventato questo:
+\--- task \---
 
-![Il pulsante sprite per cambiare i livelli](images/levelButton.png) \--- /task \---
+First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
 
-\--- task \--- Ora, il codice per questo pulsante è ingegnoso: è progettato in modo che ogni volta che lo premi ti porterà al livello successivo, indipendentemente da quanti livelli ci siano.
+![The button sprite to switch levels](images/levelButton.png)
 
-Aggiungi questi script allo sprite **Pulsante**. Dovrai creare alcune variabili mentre lo fai.
+\--- /task \---
+
+\--- task \---
+
+Now, the code for this button is clever: it’s designed so that every time you click it it will take you to the next level, no matter how many levels there are.
+
+Add these scripts to your **Button** sprite. You will need to create some variables as you do so.
 
 ```blocks3
 + quando si clicca sulla bandiera verde
@@ -29,23 +35,27 @@ end
 + invia a tutti (unione di [livello-] e (livello-attuale))
 ```
 
-\--- / task \--- Riesci a capire come il programma userà le variabili che hai creato?
+\--- /task \---
+
+Can you see how the program will use the variables you created?
 
 + `max-livello`{:class="block3variables"} memorizza il livello più alto
 + `min-livello`{:class="block3variables"} memorizza il livello più basso
 + `livello-attuale`{:class="block3variables"} memorizza il livello al quale il giocatore si trova in questo momento
 
-Questi devono essere tutti impostati dal programmatore \(tu! \), quindi se aggiungi un terzo livello, non dimenticare di cambiare il valore di `max-livello`{:class="block3variables"}! `min-livello`{:class="block3variables"} non avrà mai bisogno di cambiare, ovviamente.
+These all need to be set by the programmer \(you!\), so if you add a third level, don’t forget to change the value of `max-level`{:class="block3variables"}! `min-level`{:class="block3variables"} will never need to change, of course.
 
-Le trasmissioni dei messaggi broadcast sono utilizzate per indicare agli altri sprite quale livello visualizzare, e per azzerare gli oggetti da raccogliere all'avvio di un nuovo livello.
+The broadcasts are used to tell the other sprites which level to display, and to clear up the collectables when a new level starts.
 
 ### Fai reagire gli sprite
 
 #### Lo sprite **Catturabili**
 
-Ora devi convincere gli altri sprite a rispondere a queste trasmissioni! Inizia con quello più semplice: azzerare tutti gli oggetti da raccogliere.
+Now you need to get the other sprites to respond to these broadcasts! Start with the easiest one: clearing all the collectables.
 
-\--- task \--- Aggiungi il seguente codice agli script dello sprite **Catturabili** per dire a tutti i suoi cloni `nascondi`{:class="block3vlooks"} quando ricevono il messaggio broadcast di ripulitura:
+\--- task \---
+
+Add the following code to the **Collectable** sprite scripts to tell all its clones to `hide`{:class="block3vlooks"} when they receive the cleanup broadcast:
 
 ```blocks3
 + quando ricevo [catturabili-ripulisci v]
@@ -54,13 +64,15 @@ Ora devi convincere gli altri sprite a rispondere a queste trasmissioni! Inizia 
 
 \--- /task \---
 
-Dal momento che una delle prime cose che fa un nuovo clone è mostrarsi, non devi preoccuparti di mostrare gli oggetti da raccogliere!
+Since one of the first things any new clone does is show itself, you don't have to worry about unhiding collectables!
 
 #### Gli sprite **Piattaforme**
 
-Ora vediamo come cambiare lo sprite **Piattaforme**. Puoi progettare il tuo nuovo livello più tardi se lo desideri, ma per ora utilizziamo quello che ho già incluso - vedrai il perché nella prossima scheda!
+Now to switch the **Platforms** sprite. You can design your own new level later if you like, but for now let’s use the one I’ve already included — you’ll see why on the next step!
 
-\--- task \--- Aggiungi questo codice allo sprite **Piattaforme**:
+\--- task \---
+
+Add this code to the **Platforms** sprite:
 
 ```blocks3
 + quando ricevo [livello-1 v]
@@ -76,11 +88,13 @@ Ora vediamo come cambiare lo sprite **Piattaforme**. Puoi progettare il tuo nuov
 
 \--- /task \---
 
-Riceve i messaggi `composti`{:class="block3operators"} da `livello-`{:class="block3variables"} e `livello-attuale`{:class="block3variables"} inviati dallo sprite **Pulsante**, e risponde cambiando il costume **Piattaforme**.
+It receives the `joined`{:class="block3operators"} messages of `level-`{:class="block3variables"} and `current-level`{:class="block3variables"} that the **Button** sprite sends out, and responds by changing the **Platforms** costume.
 
 #### Lo sprite nemico **Nemico**
 
-\--- task \--- Negli script dello sprite **Nemico**, assicurati che lo sprite scompaia quando il giocatore entra nel livello 2, in questo modo:
+\--- task \---
+
+In the **Enemy** sprite scripts, just make sure the sprite disappears when the player enters level 2, like this:
 
 ```blocks3
 + quando ricevo [livello-1 v]
@@ -94,13 +108,15 @@ Riceve i messaggi `composti`{:class="block3operators"} da `livello-`{:class="blo
 
 \--- /task \---
 
-Se preferisci, puoi far spostare il nemico su un'altra piattaforma. In questo caso, useresti un blocco `vai a`{:class="block3motion"} invece dei blocchi `mostra`{:class="block3looks"} e `nascondi`{:class="block3looks"}.
+If you prefer, you can make the enemy move to another platform instead. In that case, you would use a `go to`{:class="block3motion"} block instead of the `show`{:class="block3looks"} and `hide`{:class="block3looks"} blocks.
 
 ### Fai apparire il personaggio **Personaggio-giocatore** nel posto giusto
 
-Ogni volta che inizia un nuovo livello, lo sprite di **Personaggio-giocatore** deve andare nel posto giusto per quel livello. Per fare in modo che ciò accada, è necessario cambiare il punto in cui lo sprite ottiene le sue coordinate dalla prima volta che appare sullo schermo. Al momento, ci sono valori fissi `x` e `y` nel suo codice.
+Whenever a new level starts, the **Player Character** sprite needs to go to the right place for that level. To make this happen, you need to change where the sprite gets its coordinates from when it first appears on the Stage. At the moment, there are fixed `x` and `y` values in its code.
 
-\--- task \--- Inizia creando variabili per le coordinate di partenza: `partenza-x`{:class="block3variables"} e `partenza-y`{:class="block3variables"}. Quindi inseriscili nel blocco `vai a`{:class="block3motion"} nel blocco `reset-personaggio`{:class="block3myblocks"} de **I Miei Blocchi** invece dei valori fissi di `x` e `y`:
+\--- task \---
+
+Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
 
 ```blocks3
     definisci reset-character
@@ -112,7 +128,9 @@ porta [y-velocita v] a [-0]
 
 \--- /task \---
 
-\--- task \--- Quindi per ogni trasmissione che annuncia l'inizio di un livello, imposta le coordinate `partenza-x`{:class= "block3variables"} e `partenza-y`{:class="block3variables"} in risposta, e aggiungi una **chiamata** a `reset-personaggio`{:class="block3myblocks"}:
+\--- task \---
+
+Then for each broadcast announcing the start of a level, set the right `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"} coordinates in response, and add a **call** to `reset-character`{:class="block3myblocks"}:
 
 ```blocks3
 + quando ricevo [livello-1 v]
@@ -132,9 +150,11 @@ porta [y-velocita v] a [-0]
 
 ### Partenza dal livello 1
 
-Devi anche assicurarti che ogni volta che qualcuno inizia il gioco, il primo livello che giocano sia il livello 1.
+You also need to make sure that every time someone starts the game, the first level they play is level 1.
 
-\--- task \--- Vai allo script `reset-partita`{:class="block3myblocks"} e rimuovi la chiamata a `reset-personaggio`{:class="block3myblocks"}. Al suo posto, trasmetti il `min-livello`{:class="block3variables"}. Il codice che hai già aggiunto con questa scheda imposterà quindi le coordinate iniziali corrette per lo sprite **Personaggio-giocatore**, e chiamerà anche `reset-personaggio`{:class="block3myblocks"}.
+\--- task \---
+
+Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
 
 ```blocks3
     definisci reset-partita
@@ -154,10 +174,10 @@ porta [punteggio v] a [0]
 
 ## title: Reset del personaggio del giocatore rispetto al reset della partita
 
-Si noti che il primo blocco nello script principale della bandiera verde dello sprite **Personaggio-giocatore** è una chiamata al `reset-partita`{:class="block3myblocks"} de **I Miei Blocchi**.
+Notice that the first block in the **Player Character** sprite's main green flag script is a call to the `reset-game`{:class="block3myblocks"} **My blocks** block.
 
-Questo blocco imposta tutte le variabili per un nuovo gioco e quindi chiama il blocco `reset-personaggio`{:class="block3myblocks"} de **I Miei Blocchi**, che riporta il personaggio nella sua posizione iniziale corretta.
+This block sets up all the variables for a new game and then calls the `reset-character`{:class="block3myblocks"} **My blocks** block, which places the character back in its correct starting position.
 
-Essendo il codice `reset-personaggio`{:class="block3myblocks"} separato da `reset-partita`{:class="block3myblocks"} ciò ti permette di reimpostare il personaggio in diverse posizioni **senza che** si debba reimpostare l'intero gioco.
+Having the `reset-character`{:class="block3myblocks"} code in its own block separate from `reset-game`{:class="block3myblocks"} allows you to reset the character to different positions **without** having to reset the whole game.
 
 \--- /collapse \---
