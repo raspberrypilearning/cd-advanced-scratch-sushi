@@ -61,9 +61,15 @@
 
 물론, 지금은 ** Collectable** 스프라이트는 모양이 한 종류밖에 없습니다. 이제 이를 바꾸려고 합니다.
 
-\--- task \--- 새로운 파워 업을 위해 **Collectable** 스프라이트에 새로운 모양을 추가하십시오. 저는 번개 화살을 좋아하지만, 당신이 좋아하는 것을 고르세요. \--- /task \---
+\--- task \---
 
-\--- task \--- 다음으로, `pick-costume`{:class=block3myblocks} **나만의 블록** 에서 새로운 `type`{:class="block3myblocks"}값을 받을 때마다 새로운 모양으로 바꾸는 블록을 사용합니다.
+Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+
+\--- /task \---
+
+\--- task \---
+
+Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
 
 ```blocks3
     pick-costume (type) 정의하기
@@ -79,15 +85,21 @@
 
 ### 파워 업 코드 생성
 
-이제 새로운 수집품이 할 일을 결정해야 합니다! 우리는 플레이어에게 목숨을 추가로 주는 간단한 것으로 시작합니다. 다음 단계에서는 더 멋진 작업을 수행하게 됩니다.
+Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
 
-\--- task \--- **나만의 블록** 섹션으로 가서 **블록 만들기를 **클릭하십시오. 새 블록의 이름을 `react-to-player`{:class = "block3myblocks"})로 입력하고 `type`{: class = "block3myblocks"}에 **숫자 입력값 추가하기**를 클릭합니다.
+\--- task \---
 
-![블록의 이름을 입력하십시오.](images/powerupMakeName.png)
+Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
 
-**확인**을 클릭하세요. \--- /task \---
+![Type in the name for the block](images/powerupMakeName.png)
 
-\--- task \--- `react-to-player`{:class="block3myblocks"} 블록을 **나만의 블록** 으로 만들고 `type`{:class= "block3myblocks"} 값에 따라 포인트나 플레이어의 목숨을 늘릴 수 있습니다.
+Click **OK**.
+
+\--- /task \---
+
+\--- task \---
+
+Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
 
 ```blocks3
 +    react-to-player (type) 정의하기
@@ -101,7 +113,9 @@
 
 \--- /task \---
 
-\--- task \--- `복제되었을 때`{:class="block3events"} 코드 부분을 업데이트하세요. 포인트 값을 증가하는 블록 대신에 `collectable-type`{:class="block3variables"}을 ** 전달** 받은 `react-to-player`{:class="block3myblocks"}블록을 **호출**하는 코드로 바꿔줍니다.
+\--- task \---
+
+Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
 
 ```blocks3
 +    만약 <touching [Player Character v] ?> 이라면
@@ -112,27 +126,31 @@
 
 \--- /task \---
 
-이 새로운 `react-to-player`{: class = "block3myblocks"} **나만의 블록** 을 사용함으로써, 여전히 별은 포인트를 추가하고, 당신이 만든 새로운 파워 업은 목숨을 추가합니다.
+By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life.
 
 ### 다른 수집품이 무작위로 나타나게 하기 위한 `collectable-type`{: class = "block3variables"} 사용하기
 
-지금 당신은 각 수집품들로 어떤 유형의 게임을 만들어야 할지 궁금할 것입니다.
+Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
 
-`collectable-type`{: class = "block3variables"}의 값을 설정하여 이 작업을 수행 할 수 있습니다. 이 변수는 숫자입니다. 앞에서 보았듯이, `pick-costume`{class = "block3myblocks"})과 `react-to-player`{: class = "block3myblocks"에서 수집품의 모양, 규칙 등 을 정하는 데 사용되었습니다.
+You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. to use for the collectable.
 
 ## \--- collapse \---
 
 ## title: 복제본에서 변수 작업
 
-**Collectable** 스프라이트의 각 복제본에 대해 `collectable-type`{:class="block3variables"} 변수 값을 다르게 설정 할 수 있습니다.
+For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}.
 
-**Collectable** 스프라이트가 복제될 때 `collectable-type`{: class = "block3variables"}에 저장되는 값을 사용하여 **Collectable** 스프라이트의 새 복제본을 만드는 것으로 생각하세요.
+Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created.
 
-`collectable-type`{: class = "block3variables"}의 값을 변경하면 스테이지의 모든 수집품들이 같은 유형으로 바뀌게 되는지 궁금할 것입니다. 그런 일은 일어나지 않습니다. 왜냐하면 복제하기를 특별하게 만드는 이유 중 하나는 시작하는 변수의 값을 변경할 수 없기 때문입니다. 스프라이트 복제본은 효과적으로 **일정한 값**을 갖습니다. 즉, `collectable-type`{:class="block3variables"}의 값을 변경할 때 이미 게임에 있는 **Collectable** 스프라이트 복제본에는 영향을 미치지 않습니다. \--- /collapse \---
+You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game.
 
-당신이 만드는 각각의 새로운 복제본에 대해 `collectable-type`{:class="block3variables"}을 `1` 또는 `2` 로 설정하려고 합니다. 게임을 재미있게 유지하려면 숫자를 무작위로 선택하여 매번 난수로 수집 할 수 있도록 하십시오.
+\--- /collapse \---
 
-\--- task \--- **Collectable** 스프라이트의 녹색 깃발을 클릭했을 때 블록 내용 중 `..까지 반복하기`{:class="block3control"}를 찾아 아래와 같이 `만약 이라면 ... 아니면`{:class=" block3control "} 코드를 추가하세요.
+You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, pick between the numbers at random to make a random collectable every time.
+
+\--- task \---
+
+Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
 
 ```blocks3
     <not <(create-collectables ::variables) = [true]>> 까지 반복
@@ -148,6 +166,6 @@
 
 \--- /task \---
 
-이 코드는 `collectable-type`{:class="block3variables"}을 `2`로 설정할 수 있는 기회가 1 부터 50 중에서 한번만 주어집니다. 결국, 플레이어에게 목숨 추가 기회를 너무 자주 주지 않으려고 합니다. 그렇지 않으면 게임이 너무 쉬울 것입니다.
+This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy.
 
-이제 별 대신 표시되는 새로운 유형의 수집품이 있습니다. 포인트가 아니라 추가 목숨을 주는 것입니다.
+Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it.
