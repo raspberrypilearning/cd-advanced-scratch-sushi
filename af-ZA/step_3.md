@@ -4,7 +4,9 @@ First things first! You need a way to make the game end when the player has run 
 
 You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
 
-\--- task \--- First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+\--- task \---
+
+First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
 
 ```blocks3
     define lose
@@ -34,7 +36,9 @@ Now you need to make sure all the sprites know what to do when the game is over,
 
 ### Hiding the platforms and edges
 
-\--- task \--- Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+\--- task \---
+
+Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
 
 ```blocks3
 +    when I receive [game over  v]
@@ -75,7 +79,9 @@ Look at how the **Collectable** sprite works. See if you can understand some of 
 2. Then it sets up the control variables — we’ll come back to these later
 3. The `create-collectables`{:class="block3variables"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="block3variables"} is `true`, and does nothing if it’s not
 
-\--- task \--- Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
+\--- task \---
+
+Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
 
 ```blocks3
 +    when I receive [game over v]
