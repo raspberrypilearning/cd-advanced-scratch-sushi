@@ -61,9 +61,15 @@ Dit betekent dat de waarde van `prijs-type`{:class="block3variables"} bepaalt we
 
 Natuurlijk heeft de sprite van **Prijs** maar één uiterlijk, omdat er maar één type prijs is. Je staat op het punt om dat te veranderen.
 
-\--- task \--- Voeg een nieuw uiterlijk toe aan de **Prijs** sprite voor je nieuwe power-up. Ik hou van de bliksemschicht, maar kies wat je maar wilt. \--- /task \---
+\--- task \---
 
-\--- task \--- Vertel vervolgens het `kies-uiterlijk`{:class="block3myblocks"} **Mijn blokken** blok om het nieuwe uiterlijk in te stellen wanneer het de nieuwe waarde krijgt voor `type`{:class=" block3myblocks "}, zoals dit \(gebruik de naam van het uiterlijk die je hebt gekozen\):
+Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+
+\--- /task \---
+
+\--- task \---
+
+Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
 
 ```blocks3
     definieer kies-uiterlijk (type)
@@ -79,15 +85,21 @@ Natuurlijk heeft de sprite van **Prijs** maar één uiterlijk, omdat er maar é�
 
 ### Maak de code voor de power-up
 
-Nu moet je beslissen wat de nieuwe prijs zal doen! We beginnen met iets eenvoudigs: de speler een nieuw leven geven. In de volgende stap zorg je ervoor dat het iets gavers doet.
+Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
 
-\--- task \--- Ga naar het gedeelte **Mijn blokken** en klik op **Maak een blok**. Noem het nieuwe blok `reageer-op-speler`{:class="block3myblocks"} en voeg een **getalinvoer** genaamd `type`{:class="block3myblocks"} toe.
+\--- task \---
 
-![Typ de naam voor het blok](images/powerupMakeName.png)
+Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
 
-Klik **OK**. \--- /task \---
+![Type in the name for the block](images/powerupMakeName.png)
 
-\--- task \--- Laat de `reageer-op-speler`{:class="block3myblocks"} **Mijn blokken** blok de punten of de levensduur van de speler verhogen, afhankelijk van de waarde van `type`{:class="block3myblocks"}.
+Click **OK**.
+
+\--- /task \---
+
+\--- task \---
+
+Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
 
 ```blocks3
 + definieer reageer-op-speler (type)
@@ -101,7 +113,9 @@ Klik **OK**. \--- /task \---
 
 \--- /task \---
 
-\--- task \--- Werk de `wanneer ik als kloon start`{:class="block3events"} code bij om het blok te vervangen dat een punt toevoegt met een **aanroep** naar `reageer-op-speler`{:class="block3myblocks"}, waarmee `prijs-type`{:class="block3variables"} **doorgegeven** wordt.
+\--- task \---
+
+Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
 
 ```blocks3
 + als <raak ik [Speler v] ?> dan
@@ -112,27 +126,31 @@ Klik **OK**. \--- /task \---
 
 \--- /task \---
 
-Door dit nieuwe `reageer-op-speler`{:class="block3myblocks"} **Mijn blokken** blok te gebruiken, voegen sterren nog steeds een punt toe, maar de nieuwe power-up die je hebt gemaakt voegt een leven toe.
+By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life.
 
 ### Gebruik `prijs-type`{:class="block3variables"} om verschillende prijzen willekeurig weer te geven
 
-Op dit moment vraag je je wellicht af hoe je elke prijs dat het spel maakt, kunt vertellen welk type het zou moeten zijn.
+Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
 
-Je doet dit door de waarde van `prijs-type`{:class="block3variables"} in te stellen. Deze variabele is slechts een getal. Zoals je hebt gezien, wordt het gebruikt om het `kies-uiterlijk`{:class="block3myblocks"} en `reageer-op-speler`{:class="block3myblocks"} te vertellen welk uiterlijk, regels etc. te gebruiken voor de prijs.
+You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. to use for the collectable.
 
 ## \--- collapse \---
 
 ## title: Werken met variabelen in een kloon
 
-Voor elke kloon van de **Prijs** sprite kun je een andere waarde instellen voor `prijs-type`{:class="block3variables"}.
+For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}.
 
-Zie het als het creëren van een nieuw exemplaar van de **Prijs** sprite met behulp van de waarde die is opgeslagen in `prijs-type`{:class="block3variables"} op het moment dat de **Prijs** kloon wordt gemaakt.
+Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created.
 
-Je vraagt je misschien af of het veranderen van de waarde van `prijs-type`{:class="block3variables"} alle prijzen in het werkgebied in hetzelfde type verandert. Dat gebeurt niet, want een van de dingen die klonen speciaal maken, is dat ze de waarden van de variabelen waarmee ze beginnen niet kunnen veranderen. Sprite-klonen hebben eigenlijk **constante** waarden. Dat betekent dat wanneer je de waarde van `prijs-type`{:class="block3variables"} wijzigt, dit niet van invloed is op de **Prijs** sprite-klonen die al in het spel aanwezig zijn. \--- /collapse \---
+You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game.
 
-Je gaat het `prijs-type`{:class="block3variables"} instellen op `1` of `2` voor elke nieuwe kloon die je maakt. Om het spel interessant te houden, kun je willekeurig tussen de nummers kiezen om telkens een willekeurige prijs te maken.
+\--- /collapse \---
 
-\--- task \--- Zoek de `herhaal tot`{:class="block3control"} lus in de groene vlag code voor de **Prijs** sprite, en voeg de `als... anders`{:class="block3control"} code toe zoals hieronder weergegeven.
+You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, pick between the numbers at random to make a random collectable every time.
+
+\--- task \---
+
+Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
 
 ```blocks3
     herhaal tot <not <(create-collectables ::variables) = [true]>>
@@ -148,6 +166,6 @@ Je gaat het `prijs-type`{:class="block3variables"} instellen op `1` of `2` voor 
 
 \--- /task \---
 
-Deze code geeft een kans van 1 op 50 om het `prijs-type`{:class="block3variables"} in te stellen op `2`. Je wilt de speler immers niet de kans geven om een extra leven te vaak te verzamelen, anders zou het spel te gemakkelijk zijn.
+This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy.
 
-Nu heb je een nieuw type prijs dat soms wordt weergegeven in plaats van de ster, en dat geeft je een extra leven in plaats van een punt wanneer je het verzamelt.
+Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it.
