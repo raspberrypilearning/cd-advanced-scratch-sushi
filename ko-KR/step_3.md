@@ -4,7 +4,9 @@
 
 플레이어 캐릭터 스프라이트의 `lose`{: 클래스 = "block3myblocks"} **나만의 블록**스크립트가 비어 있는 상태입니다. 이 부분을 채우고 멋진 '게임 오버'화면에 필요한 모든 부분을 설정합니다. 
 
-\--- task \--- 먼저 `lose`{:class="block3myblocks"} 블록을 찾아 다음 코드로 완성하십시오.
+\--- task \---
+
+First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
 
 ```blocks3
     lose 정의하기
@@ -21,7 +23,7 @@
 
 ## title: 이 코드는 무엇을 합니까?
 
-`lose`{:class="block3myblocks"} 블록이 실행될 때마다 수행하는 작업 은 다음과 같습니다.
+Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
 
 1. **플레이어 캐릭터**에 작용하는 물리 및 기타 게임 스크립트 중지
 2. `game over`{: 클래스 = "block3events"} **신호보내기**를 사용하여 다른 스프라이트들에게 게임이 끝났다고 알립니다.
@@ -30,11 +32,13 @@
 
 \--- /collapse \---
 
-이제 모든 스프라이트가 게임이 끝났을 때에 무엇을 해야 하는지, 그리고 플레이어가 새로운 게임을 시작할 때 어떻게 재설정 하는지 알아야 합니다. **추가한 새로운 스프라이트에도 이 코드가 필요할 수 있다는 것을 잊지 마세요.**
+Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
 
 ### 플랫폼과 가장자리 숨기기
 
-\--- task \--- 가장 쉬운 스프라이트로 시작하십시오. **플랫폼** 과 **엣지** 스프라이트는 게임이 시작될 때 나타나고, `game over`{:class="block3events"} 신호를 받았을 때 사라져야 하므로, 각각 아래와 같은 블록을 추가합니다:
+\--- task \---
+
+Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
 
 ```blocks3
 + [게임 오버 v] 신호를 받았을 때
@@ -50,11 +54,11 @@
 
 ### 별 멈추기
 
-이제 **Collectable** 스프라이트의 코드를 살펴보면 **나 자신 복제하기** 에 의해 동작하는 것을 알 수 있습니다 즉, `복제되었을 때`{:class="block3events"} 특별한 명령을 따르는 복제본이 생성됩니다.
+Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
 
-우리는 새롭운 수집품을 만드는 단계에 도달했을 때 복제를 특별하게 만드는 것에 대해 더 이야기 할 것입니다. 지금 당장 알아야 할 것은 복제본이 **신호보내기** 수신을 포함하여 일반적인 스프라이트가 할 수 있는 거의 모든 것을 할 수 있다는 것입니다.
+We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
 
-**Collectable** 스프라이트가 어떻게 작동하는지보십시오. 코드 일부를 이해할 수 있는지 확인하십시오.
+Look at how the **Collectable** sprite works. See if you can understand some of its code:
 
 ```blocks3
     녹색 깃발이 클릭되었을 때
@@ -75,7 +79,9 @@
 2. 그런 다음 제어 변수를 설정합니다. - 나중에 다시 돌아올 것입니다.
 3. `create-collectables`{:class="block3variables"} 변수는 복제본 생성을 위한 on/off 스위칭 변수입니다: 만약 `create-collectables`{:class="block3variables"} 가 `true`라면 클론을 생성하고, 아니라면 아무것도 하지 않습니다.
 
-\--- task \--- 이제 `게임 오버` 신호를 받았을 때 해당 동작을 하도록 **Collectable** 스프라이트에 대한 블록을 작성하세요.
+\--- task \---
+
+Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
 
 ```blocks3
 + [게임 오버 v] 신호를 받았을 때
@@ -85,6 +91,6 @@
 
 \--- /task \---
 
-이 코드는 **플랫폼** 및 **에지** 스프라이트를 제어하는 코드와 유사합니다. 유일한 차이점은 `create-collectables`{:class = "block3variables"} 변수를 `false`로 정하여 'Game Over'일 때 새 복제본이 생성되지 않도록 하는 것입니다.
+This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
 
-`create-collectables`{: class = "block3variables"} 변수를 사용하여 코드의 한 부분에서 다른 부분으로 메시지를 전달할 수 있습니다.
+Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
