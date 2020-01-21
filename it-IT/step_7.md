@@ -2,13 +2,19 @@
 
 Il tuo gioco funziona e ora puoi raccogliere punti, ottenere poteri speciali dai potenziamenti e anche perdere. Stiamo arrivando da qualche parte! Forse sarebbe divertente aggiungere un po' di concorrenza - che dici di includere un personaggio che si muove un po', ma che non dovresti toccare? Sarà simile ai nemici nei tradizionali giochi come Super Mario da cui ci siamo ispirati.
 
-\--- task \--- Prima cosa, scegli uno sprite da aggiungere come tuo nemico. Poiché il nostro personaggio è un gatto, ho scelto un cane. Ci sono molti altri sprite che potresti aggiungere. Ho anche ribattezzato lo sprite nemico **Nemico**, giusto per rendere le cose più chiare per me.
+\--- task \---
 
-Ridimensiona lo sprite alla giusta dimensione e posizionalo in un punto appropriato per iniziare. Ecco come appare il mio:
+First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
 
-![Lo sprite nemico del cane](images/enemySprite.png) \--- /task \---
+Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
 
-\--- task \--- Scrivi prima il codice più semplice: imposta il blocco per reagire al messaggio `game over`{:class="events"} che fa sparire il nemico quando il giocatore perde la partita.
+![The dog enemy sprite](images/enemySprite.png)
+
+\--- /task \---
+
+\--- task \---
+
+Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
 
 ```blocks3
 + quando ricevo [game over v]
@@ -17,7 +23,9 @@ Ridimensiona lo sprite alla giusta dimensione e posizionalo in un punto appropri
 
 \--- /task \---
 
-\--- task \--- Ora devi scrivere il codice per ciò che deve fare il nemico. Usa il mio codice, ma valuta l'aggiunta di qualcosa extra! (Cosa succede se possono teletrasportarsi su piattaforme diverse? Cosa succede se c'è un potenziamento che li fa muovere più velocemente, o più lentamente?)
+\--- task \---
+
+Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
 
 ```blocks3
 + quando si clicca sulla bandiera verde
@@ -33,13 +41,17 @@ end
 end
 ```
 
-**Nota**: se trascini il blocco `vai a`{:class="block3motion"} nel pannello sprite e non cambi i valori `x` e `y`, questi saranno anche i valori per la posizione corrente dello sprite del **Nemico**!
+**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
 
-Il codice nel blocco `se... allora`{:class="block3control"} farà tornare lo sprite indietro quando arriva alla fine della piattaforma! \--- /task \---
+The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
 
-La prossima cosa di cui hai bisogno è far perdere una vita al giocatore quando il loro sprite **Personaggio-giocatore** tocca lo sprite **Nemico**. Inoltre, è necessario assicurarsi che gli sprite si **fermino** molto velocemente dopo il tocco, poiché altrimenti il codice che controlla il tocco continuerà a funzionare e il giocatore continuerà a perdere vite.
+\--- /task \---
 
-\--- task \--- Ecco come l'ho fatto, ma puoi provare a migliorare questo codice! Ho modificato il blocco principale dello sprite **Personaggio-giocatore**. Aggiungi il nuovo codice prima del blocco `se`{:class="block3control"} che controlla se hai terminato le vite.
+The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+
+\--- task \---
+
+Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
 
 ```blocks3
     quando si clicca sulla bandiera verde
@@ -68,4 +80,4 @@ end
 
 \--- /task \---
 
-Il nuovo codice nasconde lo sprite **Personaggio-giocatore**, lo riporta alla sua posizione di partenza, riduce la variabile `vite`{:class="block3variables"} di `1`, e dopo mezzo secondo fa riapparire lo sprite.
+The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
