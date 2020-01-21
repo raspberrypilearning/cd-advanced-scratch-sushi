@@ -4,11 +4,17 @@ With this step, you're going to add a new level to the game that the player can 
 
 ### Moving to the next level
 
-\--- task \--- First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
+\--- task \---
 
-![The button sprite to switch levels](images/levelButton.png) \--- /task \---
+First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
 
-\--- task \--- Now, the code for this button is clever: it’s designed so that every time you click it it will take you to the next level, no matter how many levels there are.
+![The button sprite to switch levels](images/levelButton.png)
+
+\--- /task \---
+
+\--- task \---
+
+Now, the code for this button is clever: it’s designed so that every time you click it it will take you to the next level, no matter how many levels there are.
 
 Add these scripts to your **Button** sprite. You will need to create some variables as you do so.
 
@@ -29,7 +35,9 @@ Add these scripts to your **Button** sprite. You will need to create some variab
 +    broadcast (join [level-](current-level))
 ```
 
-\--- /task \--- Can you see how the program will use the variables you created?
+\--- /task \---
+
+Can you see how the program will use the variables you created?
 
 + `max-level`{:class="block3variables"} stores the highest level
 + `min-level`{:class="block3variables"} stores the lowest level
@@ -45,7 +53,9 @@ The broadcasts are used to tell the other sprites which level to display, and to
 
 Now you need to get the other sprites to respond to these broadcasts! Start with the easiest one: clearing all the collectables.
 
-\--- task \--- Add the following code to the **Collectable** sprite scripts to tell all its clones to `hide`{:class="block3vlooks"} when they receive the cleanup broadcast:
+\--- task \---
+
+Add the following code to the **Collectable** sprite scripts to tell all its clones to `hide`{:class="block3vlooks"} when they receive the cleanup broadcast:
 
 ```blocks3
 +    when I receive [collectable-cleanup v]
@@ -60,7 +70,9 @@ Since one of the first things any new clone does is show itself, you don't have 
 
 Now to switch the **Platforms** sprite. You can design your own new level later if you like, but for now let’s use the one I’ve already included — you’ll see why on the next step!
 
-\--- task \--- Add this code to the **Platforms** sprite:
+\--- task \---
+
+Add this code to the **Platforms** sprite:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -80,7 +92,9 @@ It receives the `joined`{:class="block3operators"} messages of `level-`{:class="
 
 #### The **Enemy** sprite
 
-\--- task \--- In the **Enemy** sprite scripts, just make sure the sprite disappears when the player enters level 2, like this:
+\--- task \---
+
+In the **Enemy** sprite scripts, just make sure the sprite disappears when the player enters level 2, like this:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -100,7 +114,9 @@ If you prefer, you can make the enemy move to another platform instead. In that 
 
 Whenever a new level starts, the **Player Character** sprite needs to go to the right place for that level. To make this happen, you need to change where the sprite gets its coordinates from when it first appears on the Stage. At the moment, there are fixed `x` and `y` values in its code.
 
-\--- task \--- Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
+\--- task \---
+
+Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
 
 ```blocks3
     define reset-character
@@ -112,7 +128,9 @@ Whenever a new level starts, the **Player Character** sprite needs to go to the 
 
 \--- /task \---
 
-\--- task \--- Then for each broadcast announcing the start of a level, set the right `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"} coordinates in response, and add a **call** to `reset-character`{:class="block3myblocks"}:
+\--- task \---
+
+Then for each broadcast announcing the start of a level, set the right `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"} coordinates in response, and add a **call** to `reset-character`{:class="block3myblocks"}:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -134,7 +152,9 @@ Whenever a new level starts, the **Player Character** sprite needs to go to the 
 
 You also need to make sure that every time someone starts the game, the first level they play is level 1.
 
-\--- task \--- Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
+\--- task \---
+
+Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
 
 ```blocks3
     define reset-game
