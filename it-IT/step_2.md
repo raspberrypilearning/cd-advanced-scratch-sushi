@@ -6,31 +6,43 @@ Dovresti dare una rapida occhiata al progetto, inclusi i dettagli su questa sche
 
 ### Prendi il progetto
 
-\--- task \--- La prima cosa che devi fare è ottenere una copia del codice di Scratch da [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_ blank"}.
+\--- task \---
 
-Per utilizzare il progetto offline, scaricalo facendo clic su **Guarda Dentro**, quindi vai al menu **File** e fai clic su **Scarica sul tuo computer**. Dopodiché potrai aprire il file scaricato in Scratch sul tuo computer.
+The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
 
-Puoi anche usarlo direttamente in Scratch nel tuo browser semplicemente cliccando su **Vedi Inside** e poi **Remix**. \--- /task \---
+To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
+
+You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
+
+\--- /task \---
 
 ### Dai un'occhiata al codice
 
-Il motore fisico del gioco ha una quantità di mattoncini, alcuni dei quali funzionano già e alcuni non ancora. Puoi testarlo eseguendo il gioco e provando a giocarci.
+The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
 
-Vedrai che puoi perdere delle vite, ma non succede nulla quando le esaurisci. Inoltre, il gioco ha solo un livello, un solo tipo di oggetto da raccogliere e nessun nemico. Stai per sistemare le cose, e farai anche di più!
+You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
 
-\--- task \--- Dai un'occhiata a come è stato creato il codice. \--- /task \---
+\--- task \---
 
-In esso si utilizzano un sacco di **I Miei blocchi**, che sono fantastici per dividere il codice in più parti in modo da poterlo gestire meglio. Un blocco de **I Miei Blocchi** è un blocco che crei combinando molti altri blocchi e al quale puoi passare anche delle istruzioni. Vedrai come funziona nel prossimo passo!
+Take a look at how the code is put together.
+
+\--- /task \---
+
+It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
 
 ![](images/setup2and3.png)
 
 ### I blocchi "I miei blocchi" sono davvero utili
 
-Nel codice qui sopra, il ciclo principale del gioco `per sempre`{:class="block3control"} chiama `mondo-reale`{:class="block3myblocks"} da **I Miei Blocchi** per fare un sacco di cose! Mantenere i blocchi separati come questo rende più facile leggere il ciclo principale e capire ciò che accade nel gioco, senza preoccuparsi di **come** accade.
+In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
 
-\--- task \--- Ora guarda il `reset game`{: class = "block3myblocks"} e `reset character`{: class = "block3myblocks"} ne **I Miei Blocchi**. \--- /task \---
+\--- task \---
 
-Fanno cose piuttosto normali, come impostare variabili e assicurarsi che il personaggio ruoti correttamente
+Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks.
+
+\--- /task \---
+
+They do pretty normal things, such as setting up variables and making sure the character rotates properly
 
 - `reset-partita`{:class="block3myblocks"} **chiama** `reset-personaggio`{:class="block3myblocks"}, mostrandoti che puoi usare un blocco de **I Miei Blocchi** all'interno di un altro blocco de **I Miei Blocchi**
 - Il `reset-personaggio`{:class="block3myblocks"} de **I Miei Blocchi** viene utilizzato in due diversi punti del ciclo principale. Ciò significa che puoi modificare due posizioni nel tuo ciclo di gioco principale cambiando solo il codice all'interno del blocco ne **I Miei blocchi**, il che ti consente di risparmiare molto lavoro e ti aiuta a evitare errori.
