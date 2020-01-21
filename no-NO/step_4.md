@@ -61,9 +61,15 @@ This means that the value of `collectable-type`{:class="block3variables"} decide
 
 Of course, right now the **Collectable** sprite only has one costume, since there's only one type of collectable. You're about to change that.
 
-\--- task \--- Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like. \--- /task \---
+\--- task \---
 
-\--- task \--- Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
+Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+
+\--- /task \---
+
+\--- task \---
+
+Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
 
 ```blocks3
     define pick-costume (type)
@@ -81,13 +87,19 @@ Of course, right now the **Collectable** sprite only has one costume, since ther
 
 Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
 
-\--- task \--- Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
+\--- task \---
+
+Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
 
 ![Type in the name for the block](images/powerupMakeName.png)
 
-Click **OK**. \--- /task \---
+Click **OK**.
 
-\--- task \--- Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
+\--- /task \---
+
+\--- task \---
+
+Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
 
 ```blocks3
 +    define react-to-player (type)
@@ -101,7 +113,9 @@ Click **OK**. \--- /task \---
 
 \--- /task \---
 
-\--- task \--- Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
+\--- task \---
+
+Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
 
 ```blocks3
 +    if <touching [Player Character v] ?> then
@@ -128,11 +142,15 @@ For each clone of the **Collectable** sprite, you can set a different value for 
 
 Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created.
 
-You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game. \--- /collapse \---
+You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game.
+
+\--- /collapse \---
 
 You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, pick between the numbers at random to make a random collectable every time.
 
-\--- task \--- Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
+\--- task \---
+
+Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
