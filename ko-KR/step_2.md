@@ -6,31 +6,43 @@
 
 ### 프로젝트 가져 오기
 
-\--- task \--- 먼저 [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch) {: target = "_ blank"}에서 스크래치 코드의 복사본을 가져와야 합니다.
+\--- task \---
 
-프로젝트를 오프라인으로 사용하려면 **스크립트 보기**를 클릭한 후 **파일** 메뉴로 가서 **컴퓨터에 저장하기**를 클릭하여 다운로드합니다. 그런 다음 컴퓨터에서 다운로드한 Scratch 파일을 불러올 수 있습니다.
+The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
 
-**스크립트 보기**, **리믹스** 를 클릭하여 브라우저에서 스크래치를 직접 사용할 수도 있습니다. \--- /task \---
+To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
+
+You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
+
+\--- /task \---
 
 ### 코드 살펴보기
 
-게임의 물리 엔진은 다양한 부분을 가지고 있으며, 그 중 일부는 이미 작동하고 일부는 아직 작동하지 않습니다. 게임을 실행하여 이를 테스트 할 수 있습니다.
+The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
 
-당신은 목숨이 줄어들 수도 있지만. 다 없어져도 아무 일도 일어나지 않는다는 것을 알수 있습니다. 또한 이 게임은 하나의 레벨, 한 가지 유형의 수집 할 물건, 그리고 적을 가지고 있지 않습니다. 이제 이 모든 것을 수정할 것입니다.
+You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
 
-\--- task \--- 코드가 어떻게 결합되어 있는지 살펴 봅니다. \--- /task \---
+\--- task \---
 
-코드를 여러 조각으로 나누기에 좋은 **나만의 블록** 블록들을 많이 사용하여 코드를 보다 잘 관리 할 수 있습니다. **나만의 블록** 블록은 여러 개의 다른 블록들로 구성된 블록이며, 몇 가지 지시 사항을 만들 수 있습니다. 다음 단계에서 어떻게 작동하는지 볼 수 있습니다!
+Take a look at how the code is put together.
+
+\--- /task \---
+
+It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
 
 ![](images/setup2and3.png)
 
 ### '나만의 블록' 블록은 정말 유용합니다.
 
-위의 코드에서, 메인 게임 속 `무한 반복하기`{: 클래스 = "block3control"} 루프는 `main-physics`{: 클래스 = "block3myblocks"} **나만의 블록** 을 호출합니다. 이 같이 분리된 블록은 쉽게 메인 루프를 읽고, 게임 내에서 무슨 일이 **일어나는지** 이해하기 수월하게 합니다.
+In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
 
-\--- task \--- 이제 `reset game`{: class = "block3myblocks"} 과 `reset character`{: class = "block3myblocks"} **나만의 블록** 을 봅시다. \--- /task \---
+\--- task \---
 
-이들은 변수를 설정하고 캐릭터가 제대로 회전하도록 하는 등의 일반적인 작업을 수행합니다.
+Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks.
+
+\--- /task \---
+
+They do pretty normal things, such as setting up variables and making sure the character rotates properly
 
 - `reset-game`{: class = "block3myblocks"} 은 `reset-character`{: class = "block3myblocks"}, **블록을 호출하고**, 이는 ** 나만의 블록 ** 안에 또 다른 **나만의 블록** 을 사용할 수 있음을 보여줍니다.
 - `reset-character`{: class = "block3myblocks"} **나만의 블록** 은 메인 루프의 두 곳에서 사용됩니다. 즉, **나만의 블록** 내부의 코드 만 변경하여 게임 메인 루프의 두 곳을 변경할 수 있으므로 많은 작업을 절약하고 실수를 피할 수 있습니다.
