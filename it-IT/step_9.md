@@ -6,15 +6,21 @@ La ragione per cui ti ho chiesto di usare la mia versione di livello 2 è la dif
 
 Innanzitutto, avrai bisogno dello sprite per la piattaforma.
 
-\--- task \--- Aggiungi un nuovo sprite, chiamalo **Piattaforme-mobili** e usa gli strumenti di personalizzazione del costume nella scheda Costumi per renderlo simile alle altre piattaforme \ (usa la modalità vettoriale \). \--- /task \---
+\--- task \---
+
+Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+
+\--- /task \---
 
 Now, let's add some code to the sprite.
 
-Inizia con le basi: per creare un insieme infinito di piattaforme che si muovono sullo schermo, dovrai clonare la piattaforma a intervalli regolari. Ho scelto `4` secondi come intervallo. Devi anche assicurarti che ci sia un interruttore on/off per creare le piattaforme, in modo che non vengano visualizzate nel livello 1. Sto usando una nuova variabile chiamata `crea-piattaforma`{:class="block3variables"}.
+Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
 
-\--- task \--- Aggiungi il codice per creare cloni dello sprite della tua piattaforma.
+\--- task \---
 
-Ecco come appare il mio a questo punto:
+Add code to create clones of your platform sprite.
+
+Here's how mine looks so far:
 
 ```blocks3
 + quando si clicca sulla bandiera verde
@@ -29,7 +35,9 @@ end
 
 \--- /task \---
 
-\--- task \--- Quindi aggiungi il codice del clone:
+\--- task \---
+
+Then add the clone's code:
 
 ```blocks3
 + quando vengo clonato
@@ -46,9 +54,11 @@ end
 
 \--- /task \---
 
-Questo codice fa muovere il clone **Piattaforme-mobili** fino alla parte superiore dello schermo, abbastanza lentamente da consentire al giocatore di saltare avanti e indietro e quindi scomparire.
+This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
 
-\--- task \--- Ora le piattaforme scompaiono/riappaiono in base ai messaggi che cambiano i livelli (quindi esistono solo nel livello che ha spazio per ospitarle), e al messaggio `game over`{:class="block3events"}.
+\--- task \---
+
+Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
 
 ```blocks3
 + quando ricevo [livello-1 v]
@@ -65,19 +75,21 @@ Questo codice fa muovere il clone **Piattaforme-mobili** fino alla parte superio
 
 \--- /task \---
 
-Ora, se si tenta di giocare, il **Personaggio-giocatore** cade attraverso la piattaforma! Qualche idea del perché?
+Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
 
-È perché il codice della fisica del mondo-reale non conosce la piattaforma. In realtà c'è una soluzione rapida:
+It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
 
-\--- task \--- Negli script dello sprite **Personaggio-giocatore**, sostituire ogni blocco `sta toccando “Piattaforme”`{:class="block3sensing"} con un operatore `O`{:class="block3operators"} che controlla **o** se `sto toccando “Piattaforme”`{:class="block3sensing"} **O** `sto toccando “Piattaforme-mobili”`{:class="block3sensing"}.
+\--- task \---
 
-Analizza il codice dello sprite **Personaggio-giocatore** e ovunque vedi questo blocco:
+In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+
+Go through the code for the **Player Character** sprite and everywhere you see this block:
 
 ```blocks3
     <touching [Platforms v] ?>
 ```
 
-sostituiscilo con questo:
+replace it with this one:
 
 ```blocks3
     <<touching [Platforms v] ?> o <touching [Moving-Platform v] ?>>
