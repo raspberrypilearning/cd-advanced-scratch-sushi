@@ -2,13 +2,19 @@
 
 Dein Spiel funktioniert und jetzt kannst du Punkte sammeln, besondere Kräfte von deinen Power-Ups erhalten und verlieren. Wir kommen weiter! Vielleicht wäre es Spaßig, ein wenig Konkurrenz hinzuzufügen - wie wäre es mit einer Figur, die sich ein wenig herum bewegt, die man aber nicht berühren sollte? Dies ist ähnlich zu Gegnern in traditionellen Plattformspielen wie Super Mario, die uns hier inspirieren.
 
-\--- task \--- Wähle zuerst eine Figur aus, die du als Feind hinzufügst. Da unsere Spielerfigur eine Katze ist, habe ich einen Hund ausgewählt. Es gibt viele andere Figuren, die du hinzufügen könntest. Ich habe auch die Figur in **Feind** umbenannt, nur um die Dinge für mich klarer zu machen.
+\--- task \---
 
-Verändere die Größe der Figur auf die richtige Größe und platziere sie an einem geeigneten Ort, um zu beginnen. So sieht meins aus:
+First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
 
-![Die Feindfigur Hund](images/enemySprite.png) \--- /task \---
+Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
 
-\--- task \--- Schreibe zuerst den einfachsten Code: Richte den Block ein, der auf die Meldung `Game Over`{:class="events"} reagiert, um den Feind verschwinden zu lassen, wenn der Spieler das Spiel verliert.
+![The dog enemy sprite](images/enemySprite.png)
+
+\--- /task \---
+
+\--- task \---
+
+Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
 
 ```blocks3
 + wenn ich [game over v] empfange
@@ -17,7 +23,9 @@ Verändere die Größe der Figur auf die richtige Größe und platziere sie an e
 
 \--- /task \---
 
-\--- task \--- Nun musst du den Code für das, was der Feind tut, schreiben. Verwende meinen Code, erwäge jedoch, ein paar zusätzliche Dinge hinzuzufügen! (Was, wenn er sich auf verschiedene Plattformen teleportieren könnte? Was, wenn es ein Power-Up gibt, das ihn schneller oder langsamer bewegt?)
+\--- task \---
+
+Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
 
 ```blocks3
 + Wenn die grüne Flagge angeklickt
@@ -34,13 +42,17 @@ end
 end
 ```
 
-**Hinweis**: Wenn du den `Gehe zu`{:class="block3motion"} - Block einfach in das Figur-Feld ziehst und die Werte für `x` und `y` nicht änderst, haben sie die Werte für den aktuellen Standort der **Feind** - Figur!
+**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
 
-Der Code im `wenn... dann`{:class="block3control"} - Block bewirkt, dass die Figur umkehrt, wenn sie das Ende der Plattform erreicht! \--- /task \---
+The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
 
-Als Nächstes musst du hinzufügen, dass der Spieler ein Leben verliert, wenn er mit seiner **Spielercharakter** -Figur einen **Feind** berührt. Außerdem musst du sicherstellen, dass die Figuren wirklich schnell **aufhören** sich zu berühren, da andernfalls der Code, der auf Berührungen überprüft, weiterhin ausgeführt wird und der Spieler weiterhin Leben verliert.
+\--- /task \---
 
-\--- task \--- So habe ich es gemacht, aber du kannst versuchen, diesen Code zu verbessern! Ich habe den Hauptblock der **Spielercharakter**-Figur geändert. Füge den neuen Code vor dem `wenn`{:class="block3control"} - Block hinzu, der überprüft, ob du kein Leben mehr hast.
+The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+
+\--- task \---
+
+Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
 
 ```blocks3
     Wenn die grüne Flagge angeklickt
@@ -69,4 +81,4 @@ ende
 
 \--- /task \---
 
-Mit dem neuen Code wird die **Spielercharakter**-Figur ausgeblendet, in die Ausgangsposition zurückbewegt, die `Leben`{:class="block3variables"}-Variable um `1` reduziert und nach einer halben Sekunde erscheint die Figur erneut.
+The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
