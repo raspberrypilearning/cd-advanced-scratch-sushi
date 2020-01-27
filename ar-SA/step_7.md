@@ -4,17 +4,17 @@
 
 \--- task \---
 
-First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+أولا ، اختيار كائن لإضافتة كعدوك. لأن شخصية اللاعب لدينا هي قطة ، فقد اخترت كلبًا. هناك الكثير من الكائنات الأخرى التي يمكنك إضافتها رغم ذلك. أنا أيضا قمت باعادة تسمية الكائن ** العدو ** ، فقط لجعل الأمور أكثر وضوحا بالنسبة لي.
 
-Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
+تغيير حجم الكائن إلى الحجم الصحيح ، ووضعه في مكان ما مناسب للبدء. إليك ما يبدو عليه الكائن الخاص بي:
 
-![The dog enemy sprite](images/enemySprite.png)
+![كائن العدو الكلب](images/enemySprite.png)
 
 \--- /task \---
 
 \--- task \---
 
-Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
+اكتب الكود الأسهل أولاً: قم بإعداد الكتلة الخاصة به للرد على رسالة ` اللعبة انتهت ` {:class="events"} لجعل العدو يختفي عندما يخسر اللاعب اللعبة.
 
 ```blocks3
 + عندما أتلقى [game over v]
@@ -25,7 +25,7 @@ Write the easiest code first: set up its block for reacting to the `game over`{:
 
 \--- task \---
 
-Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
+الآن تحتاج إلى كتابة كود لما يفعله العدو. استخدم الكود الخاص بي هنا ، لكن فكر في إضافة وحدات إضافية! (ماذا لو استطاعوا الانتقال الفوري إلى منصات مختلفة؟ ماذا لو كانت هناك قوة تجعلهم يتحركون بشكل أسرع أم أبطأ؟)
 
 ```blocks3
 +  عند الضغط على العلم الأخضر
@@ -41,17 +41,17 @@ Now you need to write the code for what the enemy does. Use my code here, but co
      end
 ```
 
-**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
+** ملاحظة **: إذا قمت فقط بسحب كتلة ` انتقل إلى ` {:class="block3motion"} في لوحة الكائن ولا تغير قيم ` س` و `ص`، سوف تكون قيم الموقع الحالي لكائن ** العدو **!
 
-The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
+التعليمات البرمجية في الكتلة ` إذا... ثم ` {: class = "block3control"} ستجعل الكائن يستدير عندما يصل إلى نهاية المنصة!
 
 \--- /task \---
 
-The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+الشيء التالي الذي ستحتاج إليه هو أن يفقد اللاعب حياته عندما يلامس كائن ** شخصية اللاعب الخاص به ** كائن ** العدو **. أيضا ، تحتاج إلى التأكد من الكائنات **توقف** لمس سريعًا حقًا ، حيث إن الكود الذي يبحث عن اللمس سيظل قيد التشغيل وسيظل اللاعب يفقد حياته.
 
 \--- task \---
 
-Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
+إليك كيف فعلت ذلك ، ولكن يمكنك محاولة تحسين هذا الكود! قمت بتعديل كتلة الكائن ** شخصية اللاعب ** الرئيسية. أضف الكود الجديد قبل كتلة ` if ` {: class = "block3control"} والتي تتحقق مما إذا كنت لا تملك حياة.
 
 ```blocks3
     عند الضغط على العلم الاخضر
@@ -80,4 +80,4 @@ if <(lives) < [1]> then
 
 \--- /task \---
 
-The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
+يخفي الرمز الجديد كائن ** شخصية اللاعب ** ، توحريكه مرة أخرى إلى موضع البداية ، ويقلل من متغير ` حياة ` {: class = "block3variables"} بمقدار ` 1 ` ، وبعد نصف ثانية يجعل الكائن يظهر مجددا.
