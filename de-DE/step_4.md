@@ -65,13 +65,13 @@ Natürlich hat die **Sammelobjekt** - Figur momentan nur ein Kostüm, da es nur 
 
 \--- task \---
 
-Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+Füge ein neues Kostüm zur **Sammelobjekt** - Figur für das neue Power-Up hinzu. Ich mag den Blitz, aber wähle, was du willst.
 
 \--- /task \---
 
 \--- task \---
 
-Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
+Als nächstes sage dem `wähle-Kostüm`{:class="block3myblocks"} **Meine Blöcke** - Block, dass er das neue Kostüm nutzen soll, wenn er einen neuen Wert für `typ`{:class="block3myblocks"} erhält, wie folgt \(nutze den Kostümnamen, den du gewählt hast\):
 
 ```blocks3
     Definiere wähle-Kostüm (typ)
@@ -87,21 +87,21 @@ Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to se
 
 ### Erstelle den Power-Up-Code
 
-Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
+Jetzt musst du entscheiden, was das neue Sammelobjekt tun wird! Wir beginnen mit etwas Einfachem: Dem Spieler ein neues Leben geben. Im nächsten Schritt musst du dafür sorgen, dass es etwas Cooleres macht.
 
 \--- task \---
 
-Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
+Wechsle in den Bereich **Meine Blöcke** und klicke auf **Neuer Block**. Benenne den neuen Block `reagiere-auf-Spieler` {:class="block3myblocks"} und füge ein **Zahl-Eingabefeld** mit dem Namen `Typ` {:class="block3myblocks"} hinzu.
 
-![Type in the name for the block](images/powerupMakeName.png)
+![Gebe den Namen für den Block ein](images/powerupMakeName.png)
 
-Click **OK**.
+Klicke auf **OK**.
 
 \--- /task \---
 
 \--- task \---
 
-Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
+Lasse den `reagiere-auf-spieler`{:class="block3myblocks"} **Meine Blöcke**-Block entweder die Punkte oder die Leben des Spielers erhöhen, abhängig vom Wert von `typ`{:class="block3myblocks"}.
 
 ```blocks3
 + Definiere reagiere-auf-Spieler (typ)
@@ -117,7 +117,7 @@ Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either i
 
 \--- task \---
 
-Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
+Aktualisiere den `Wenn ich als Klon entstehe`{:class="block3events"} Code, um den Block, der einen Punkt addiert, durch einen **Aufruf** von `reagiere-auf-Spieler`{:class="block3myblocks"}, dem du `Sammelobjekt-Typ`{:class="blocks3variables"} **übergibst**, zu ersetzten.
 
 ```blocks3
 + falls <wird [Spieler Character v] berührt?>, dann
@@ -128,31 +128,31 @@ Update the `when I start as a clone`{:class="block3events"} code to replace the 
 
 \--- /task \---
 
-By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life.
+Mit diesem neuen `reagiere-auf-Spieler`{:class="block3myblocks"} **Meine Blöcke**-Block fügen Sterne immer noch einen Punkt hinzu, aber das neu erstellte Power-Up fügt ein Leben hinzu.
 
 ### Verwende `Sammelobjekt-Typ`{:class="block3variables"}, um verschiedene Sammelobjekte zufällig erscheinen zu lassen
 
-Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
+Im Moment fragst du dich vielleicht, wie du jedem Sammelobjekt, das das Spiel erzeugt, sagst welchen Typ es haben sollte.
 
-You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. to use for the collectable.
+Das tust du, indem du den Wert von `Sammelobjekt-Typ`{:class="block3variables"} festlegst. Diese Variable ist nur eine Zahl. Wie du gesehen hast, wird es verwendet, um `wähle-Kostüm`{:class="block3myblocks"}- und `reagiere-auf-Spieler`{:class="block3myblocks"}-Blöcken zu sagen, welche Kostüme, Regeln usw. für das Sammelobjekt verwendet werden.
 
 ## \--- collapse \---
 
 ## title: Mit Variablen in einem Klon arbeiten
 
-For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}.
+Für jeden Klon der Figur **Sammelobjekt** kannst du einen anderen Wert für `Sammelobjekt-Typ`{:class="block3variables"} festlegen.
 
-Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created.
+Stell dir vor, du erstellst eine neue Kopie der **Sammelobjekt**-Figur mit Hilfe des Werts, der in `Sammelobjekt-Typ`{:class="block3variables"} gespeichert ist, wenn der **Sammelobjekt**-Klon erstellt wird.
 
-You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game.
+Du fragst dich vielleicht, ob durch das Ändern des Werts von `Sammelobjekt-Typ`{:class="block3variables"} alle Sammelobjekte auf der Bühne in denselben Typ umgewandelt werden. Das passiert nicht, weil ein Ding das Klone speziell macht ist, dass sie Werte von Variablen, mit denen sie beginnen, nicht ändern können. Figur-Klone haben tatsächlich **konstante** Werte. Das heißt, wenn du den Wert von `Sammelobjekt-Typ`{:class="block3variables"} änderst, hat dies keinen Einfluss auf die **Sammelobjekt**-Figur-Klone, die bereits im Spiel sind.
 
 \--- /collapse \---
 
-You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, pick between the numbers at random to make a random collectable every time.
+Du wirst den `Sammelobjekt-Typ`{:class="block3variables"} für jeden neuen Klon, den du erstellst, entweder auf `1` oder `2` setzen. Um das Spiel interessant zu halten, wähle zufällig eine Zahl aus, um jedes Mal ein zufälliges Sammelobjekt zu erstellen.
 
 \--- task \---
 
-Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
+Finde die `Wiederhole bis`{:class="block3control"} -Schleife im grünen Flagge-Code für die **Sammelobjekt**-Figur und füge den `wenn... dann `{:class="block3control"} Code, der unten angezeigt wird, ein.
 
 ```blocks3
     wiederhole bis <nicht <(erzeuge-Sammelobjekte ::variables) = [wahr]>>
@@ -167,6 +167,6 @@ ende
 
 \--- /task \---
 
-This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy.
+Dieser Code sorgt mit einer 1 zu 50-Chance dafür, das `Sammelobjekt-Typ`{:class="block3variables"} auf `2` gesetzt wird. Schließlich möchtest du dem Spieler nicht zu oft die Chance geben, ein zusätzliches Leben zu sammeln, sonst wäre das Spiel zu einfach.
 
-Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it.
+Jetzt hast du eine neue Art von Sammelobjekt, das manchmal anstelle des Sterns auftaucht und dem Spieler beim Sammeln ein zusätzliches Leben anstelle eines Punktes gibt.
