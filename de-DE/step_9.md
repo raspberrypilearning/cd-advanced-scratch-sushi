@@ -14,13 +14,13 @@ Füge eine neue Figur hinzu, nenne sie **mobile-plattform** und benutze die Kost
 
 Nun fügen wir der Figur etwas Code hinzu.
 
-Beginne mit den Grundlagen: Um eine unendliche Anzahl von Plattformen, die sich auf dem Bildschirm nach oben bewegen, zu machen, musst du die Plattform in regelmäßigen Abständen klonen. Ich habe `4` Sekunden als Intervall ausgewählt. Du musst auch sicherstellen, dass es einen Ein/Aus-Schalter für die Herstellung der Plattformen gibt, damit sie nicht in Level 1 angezeigt werden. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+Beginne mit den Grundlagen: Um eine unendliche Anzahl von Plattformen, die sich auf dem Bildschirm nach oben bewegen, zu machen, musst du die Plattform in regelmäßigen Abständen klonen. Ich habe `4` Sekunden als Intervall ausgewählt. Du musst auch sicherstellen, dass es einen Ein/Aus-Schalter für die Herstellung der Plattformen gibt, damit sie nicht in Level 1 angezeigt werden. Ich verwende eine neue Variable mit dem Namen `erstelle-Plattform`{:class="block3variables"}.
 
 \--- task \---
 
-Add code to create clones of your platform sprite.
+Füge Code hinzu, um Klone der Plattformfigur zu erstellen.
 
-Here's how mine looks so far:
+So sieht meiner bisher aus:
 
 ```blocks3
 + Wenn die grüne Flagge angeklickt 
@@ -37,7 +37,7 @@ Here's how mine looks so far:
 
 \--- task \---
 
-Then add the clone's code:
+Dann füge den Code des Klons hinzu:
 
 ```blocks3
 + Wenn ich als Klon entstehe
@@ -54,11 +54,11 @@ Then add the clone's code:
 
 \--- /task \---
 
-This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
+Dieser Code bewirkt, dass der **mobile-Plattform** - Klon sich langsam genug an den oberen Rand des Bildschirms bewegt, sodass der Spieler ein- und aussteigen kann und dann verschwindet.
 
 \--- task \---
 
-Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
+Nun lasse die Plattformen verschwinden/erscheinen, basierend auf den Nachrichten, die die Level ändern (dass sie also nur auf dem Level erscheinen auf dem Platz für sie ist), und die `Game Over`{:class="block3events"} Nachricht.
 
 ```blocks3
 + wenn ich [Level-1 v] empfange
@@ -75,21 +75,21 @@ Now make the platforms disappear/reappear based on the broadcasts that change le
 
 \--- /task \---
 
-Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
+Wenn du nun versuchst, das Spiel tatsächlich zu spielen, fällt der **Spieler-Charakter** durch die Plattform! Irgendeine Idee warum?
 
-It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
+Der Grund dafür ist, dass der Physikcode die Plattform nicht kennt. Es ist eigentlich eine schnelle Lösung:
 
 \--- task \---
 
-In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+Ersetze in den Figur-Skripten des **Spielercharakters** alle `berühre "Plattform"`{:class="block3sensing"}-Blöcke durch einen Operator `oder`{:class="block3operators"}, der prüft ob **entweder** `Berühre "Plattform"`{:class="block3sensing"} **ODER** `Berühre "mobile-Plattform"`{:class="block3sensing"} wahr ist.
 
-Go through the code for the **Player Character** sprite and everywhere you see this block:
+Durchsuche den Code für die Figur **Spielercharakter** und überall, wo du diesen Block siehst:
 
 ```blocks3
     <wird [Platform v] berührt?>
 ```
 
-replace it with this one:
+ersetze ihn durch diesen:
 
 ```blocks3
     <<wird [Platform v] berührt?> oder <wird [mobile-Platform v] berührt?>>
