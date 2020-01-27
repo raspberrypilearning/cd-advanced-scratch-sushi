@@ -6,7 +6,7 @@ Potresti aver notato che il blocco `perso`{:class="block3myblocks"} de **I Miei 
 
 \--- task \---
 
-First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+Per prima cosa, trova il blocco `perso`{:class="block3myblocks"} e completalo con il seguente codice:
 
 ```blocks3
     definisci perso
@@ -23,7 +23,7 @@ First, find the `lose`{:class="block3myblocks"} block and complete it with the f
 
 ## title: Cosa fa questo codice?
 
-Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
+Ogni volta che il blocco `perso`{:class="block3myblocks"} viene eseguito, ciò che fa è:
 
 1. Fermare le leggi fisiche e altri script di gioco che agiscono sul personaggio **Personaggio-giocatore**
 2. Dice a tutti gli altri sprite che il gioco è finito trasmettendo con il **broadcasting** a `game over`{:class="block3events"} un messaggio a cui tutti gli sprite possono reagire, cambiando il loro comportamento
@@ -32,13 +32,13 @@ Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
 
 \--- /collapse \---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+Ora devi assicurarti che tutti gli sprite sappiano cosa fare quando il gioco è finito e come resettarsi quando il giocatore inizia una nuova partita. **Non dimenticare che eventuali nuovi sprite che aggiungi potrebbero richiedere del codice a questo proposito!**
 
 ### Nascondere le piattaforme e i bordi
 
 \--- task \---
 
-Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+Inizia con gli sprite più semplici. Gli sprite **Piattaforme** e **Bordi** hanno entrambi bisogno di codice per apparire quando il gioco inizia e sparire quando ricevono il `game over`{:class="block3events"}, quindi aggiungi questi blocchi a ciascuno di essi:
 
 ```blocks3
 + quando ricevo [game over v]
@@ -54,11 +54,11 @@ Start with the easiest sprites. The **Platforms** and **Edges** sprites both nee
 
 ### Fermare le stelle
 
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
+Ora, se guardi il codice per lo sprite **Catturabili**, vedrai che funziona **clonando** se stesso. Cioè, fa copie di se stesso che seguono le istruzioni del blocco `quando vengo clonato`{:class="block3events"}.
 
-We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
+Parleremo nuovamente di cosa rende speciali i cloni quando arriveremo al punto di creare nuovi e diversi oggetti da raccogliere. Per ora, quello che devi sapere è che i cloni possono fare **quasi** tutto ciò che può fare un normale sprite, incluso ricevere i messaggi `broadcast`{:class="block3events"}.
 
-Look at how the **Collectable** sprite works. See if you can understand some of its code:
+Guarda come funziona lo sprite **Catturabili**. Vedi se riesci a capire un po' del suo codice:
 
 ```blocks3
     quando si clicca sulla bandiera verde
@@ -81,7 +81,7 @@ end
 
 \--- task \---
 
-Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
+Ora imposta un blocco per lo sprite **Catturabili** in modo che reagisca al messaggio broadcast `game over`:
 
 ```blocks3
 + quando ricevo [game over v]
@@ -91,6 +91,6 @@ Now set up a block for the **Collectable** sprite so that it reacts to the `game
 
 \--- /task \---
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
+Questo codice è simile al codice controllo degli sprite **Piattaforme** e **Bordi**. L'unica differenza è che stai anche impostando la variabile `crea-catturabili`{:class="block3variables"} su `false` in modo che nessun nuovo clone venga creato quando è "Game over".
 
-Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
+Nota che puoi usare la variabile `crea-catturabili`{:class="block3variables"} per passare messaggi da una parte del tuo codice a un'altra!
