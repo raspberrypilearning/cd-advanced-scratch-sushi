@@ -8,13 +8,13 @@ Zunächst benötigst du die Figur für die Plattform.
 
 \--- task \---
 
-Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+Füge eine neue Figur hinzu, nenne sie **mobile-plattform** und benutze die Kostümanpassungs-Tools auf der Registerkarte Kostüme, damit sie wie die anderen Plattformen aussieht \(Vektormodus verwenden\).
 
 \--- /task \---
 
-Now, let's add some code to the sprite.
+Nun fügen wir der Figur etwas Code hinzu.
 
-Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+Beginne mit den Grundlagen: Um eine unendliche Anzahl von Plattformen, die sich auf dem Bildschirm nach oben bewegen, zu machen, musst du die Plattform in regelmäßigen Abständen klonen. Ich habe `4` Sekunden als Intervall ausgewählt. Du musst auch sicherstellen, dass es einen Ein/Aus-Schalter für die Herstellung der Plattformen gibt, damit sie nicht in Level 1 angezeigt werden. I’m using a new variable called `create-platforms`{:class="block3variables"}.
 
 \--- task \---
 
