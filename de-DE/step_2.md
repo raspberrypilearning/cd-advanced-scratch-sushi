@@ -8,17 +8,17 @@ Du solltest dir das Projekt einschließlich der Details auf dieser Karte kurz an
 
 \--- task \---
 
-The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
+Als erstes musst du eine Kopie des Scratch-Codes von [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_ blank"} machen.
 
-To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
+Um das Projekt offline zu verwenden, lade es herunter, indem du auf **Schau hinein** klickst und dann weiter auf **Datei** und **Auf deinem Computer speichern**. Dann kannst du die heruntergeladene Datei in Scratch auf deinem Computer öffnen.
 
-You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
+Du kannst es auch direkt in Scratch in deinem Browser verwenden, indem du auf **Schau hinein** und dann auf **Remix** klickst.
 
 \--- /task \---
 
 ### Schaue dir den Code an
 
-The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
+Die Physik-Engine des Spiels enthält eine Vielzahl von Teilen, von denen einige bereits funktionieren und andere noch nicht. You can test this out by running the game and trying to play it.
 
 You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
 
