@@ -6,7 +6,7 @@
 
 \--- task \---
 
-First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+أولا، العثور على كتلة `اخسر` {:class="block3myblocks"} وملئه بالتعليمات البرمجية التالية:
 
 ```blocks3
     define اخسر
@@ -23,7 +23,7 @@ First, find the `lose`{:class="block3myblocks"} block and complete it with the f
 
 ## title: ماذا يفعل هذا الرمز؟
 
-Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
+عندما يتم تشغيل كتلة `اخسر`{: class = "block3myblocks"} ، فإن ما تقوم به هو:
 
 1. وقف الفيزياء وغيرها من النصوص البرمجية للعبة والتي تعمل على **شخصية اللاعب**
 2. تخبر كل الكائنات ألاخرى أن اللعبة قد انتهت عن طريق **بث** الرسالة `انتهت اللعبة` {:class="block3events"} والتي يستجيبوا لها ويغيروا ما كانوا يقومون به
@@ -32,13 +32,13 @@ Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
 
 \--- /collapse \---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+أنت الآن بحاجة للتأكد من أن جميع الكائنات يعرفون ما يجب فعله عندما تنتهي اللعبة ، وكيفية إعادة ضبط أنفسهم عندما يبدأ اللاعب في لعبة جديدة. **لا تنس أن أي نصوص جديدة تضيفها أيضًا قد تحتاج لهذا الكود البرمجي!**
 
 ### إخفاء المنصات والحواف
 
 \--- task \---
 
-Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+ابدأ باسهل الكائنات. كائنات **المنصات** و **الحواف** على حد سواء تحتاج نص برمجي لتظهر عند بدء تشغيل اللعبة وتختفي عندما تتلقى البث `انتهت اللعبة`{:class="block3events"}، لذلك قم باضافة هذه الكتل البرمجية إلى كل منها:
 
 ```blocks3
 + عندما أتلقى [انتهت اللعبة v]
@@ -54,11 +54,11 @@ Start with the easiest sprites. The **Platforms** and **Edges** sprites both nee
 
 ### وقف النجوم
 
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
+الآن، إذا نظرت الى الكتل البرمجية لكائن **تجميع**، سترى أنها تعمل من خلال **استنساخ** نفسه. أي أنه يُنشئ نسخًا من نفسه تتبع الإرشادات الخاصة بالكتلة `عندما أبدأ كنسخة `{: class = "block3events"}.
 
-We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
+سنتحدث أكثر عن ما الذي يجعل النسخ مميزة عندما ننتقل إلى خطوة إنشاء مقتنيات جديدة ومختلفة. في الوقت الراهن، ما تحتاج إلى معرفته هو أن النسخ يمكن ان تقوم **تقريبا** بكل ما يمكن للكائن العادي أن يقوم به، بما في ذلك تلقي رسائل `البث`{: فئة = "block3events"}.
 
-Look at how the **Collectable** sprite works. See if you can understand some of its code:
+انظر كيف يعمل كائن **تجميع**. انظر ما إذا كان بامكانك فهم بعض التعليمات البرمجية الخاصة به:
 
 ```blocks3
     when green flag clicked
@@ -81,7 +81,7 @@ Look at how the **Collectable** sprite works. See if you can understand some of 
 
 \--- task \---
 
-Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
+الآن قم بإنشاء الكتلة البرمجية للكائن **تجميع** بحيث تتفاعل مع البث `انتهت اللعبة`:
 
 ```blocks3
 + عندما أتلقى [انتهت اللعبة v]
@@ -91,6 +91,6 @@ Now set up a block for the **Collectable** sprite so that it reacts to the `game
 
 \--- /task \---
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
+هذه التعليمات البرمجية الكود تشبه التعليمات البرمجية الخاصة بالتحكم في كائنات **المنصات** و **الحواف**. الاختلاف الوحيد هو أنك تقوم أيضًا بتعيين المتغير `create-collectables`{: class = "block3variables"} على `false` بحيث لا يتم إنشاء أي نسخ جديدة عند انتهاء اللعبة.
 
-Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
+لاحظ أنه يمكنك استخدام المتغير `create-collectables`{: class = "block3variables"} لتمرير الرسائل من جزء من التعليمات البرمجية إلى آخر!
