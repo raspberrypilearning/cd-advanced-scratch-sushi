@@ -8,19 +8,19 @@
 
 \--- task \---
 
-Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+أضف كائناً جديدًا ، وقم بتسميته ** منصة متحركة ** ، واستخدام أدوات تخصيص المظاهر في علامة التبويب "المظاهر" لجعلها تبدو مثل المنصات الأخرى \(استخدم وضع المتجه \).
 
 \--- /task \---
 
-Now, let's add some code to the sprite.
+الآن ، دعونا نضيف بعض الكود إلى الكائن.
 
-Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+ابدأ بالأساسيات: لجعل مجموعة لا تنتهي من المنصات تتحرك على الشاشة ، ستحتاج إلى استنساخ المنصة على فترات منتظمة. لقد اخترت ` 4 ` ثواني كفترة لي. تحتاج أيضًا إلى التأكد من وجود مفتاح تشغيل / إيقاف لإنشاء المنصات ، بحيث لا تظهر في المستوى 1. أنا أستخدم متغيرًا جديدًا يسمى ` إنشاء-منصات ` {: class = "block3variables"}.
 
 \--- task \---
 
-Add code to create clones of your platform sprite.
+أضف رمزًا لإنشاء نسخ للكائن الأساسي الخاص بك.
 
-Here's how mine looks so far:
+إليك كيف تبدو لي حتى الآن:
 
 ```blocks3
 + عند نقر العلم الأخضر
@@ -37,7 +37,7 @@ Here's how mine looks so far:
 
 \--- task \---
 
-Then add the clone's code:
+ثم أضف التعليمات البرمجية للنسخة:
 
 ```blocks3
 + عندما أبدأ كـ نسخة
@@ -54,11 +54,11 @@ Then add the clone's code:
 
 \--- /task \---
 
-This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
+هذا الرمز يجعل نسخة ** المنصة المتحركة ** تتحرك لأعلى الشاشة، ببطء كافٍ يتيح للاعب القفز وإيقاف القفز، ثم يختفي.
 
 \--- task \---
 
-Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
+الآن اجعل المنصات تختفي / تعاود الظهور على أساس عمليات البث التي تغير المستويات (بحيث تكون موجودة فقط في المستوى الذي تتوفر فيه مساحة لهم) ، وفي رسالة `انتهت اللعبة` {: class = "block3events"}.
 
 ```blocks3
 + عندما أتلقى [level-1 v]
@@ -75,21 +75,21 @@ Now make the platforms disappear/reappear based on the broadcasts that change le
 
 \--- /task \---
 
-Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
+الآن ، إذا حاولت تشغيل اللعبة فعليًا ، ** شخصية اللاعب ** يقع من خلال المنصة! أي فكرة لماذا؟
 
-It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
+ذلك لأن كود الفيزياء لا يعرف عن المنصة. إنه في الواقع حل سريع:
 
 \--- task \---
 
-In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+في النصوص البرمجية لكائن** شخصية اللاعب **، استبدل كل كتلة بها ` لمس "المنصات" ` {:class="block3sensing"} بالعملية `أو` {:class="block3operators"} التي تبحث عن ** اما ** ` لمس "المنصات" ` {: class = "block3sensing"} ** أو ** ` لمس "منصة متحركة" ` {: class = "block3sensing"}.
 
-Go through the code for the **Player Character** sprite and everywhere you see this block:
+انتقل بين التعليمات البرمجية لكائن ** شخصية اللاعب ** وفي كل مكان ترى هذه الكتلة:
 
 ```blocks3
     <touching [Platforms v] ?>
 ```
 
-replace it with this one:
+استبدالها مع هذا:
 
 ```blocks3
     <<touching [Platforms v] ?> أو <touching [Moving-Platform v] ?>>
