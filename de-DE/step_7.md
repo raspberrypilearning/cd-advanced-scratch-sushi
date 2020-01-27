@@ -4,17 +4,17 @@ Dein Spiel funktioniert und jetzt kannst du Punkte sammeln, besondere Kräfte vo
 
 \--- task \---
 
-First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+Wähle zuerst eine Figur aus, die du als Feind hinzufügst. Da unsere Spielerfigur eine Katze ist, habe ich einen Hund ausgewählt. Es gibt viele andere Figuren, die du hinzufügen könntest. Ich habe auch die Figur in **Feind** umbenannt, nur um die Dinge für mich klarer zu machen.
 
-Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
+Verändere die Größe der Figur auf die richtige Größe und platziere sie an einem geeigneten Ort, um zu beginnen. So sieht meins aus:
 
-![The dog enemy sprite](images/enemySprite.png)
+![Die Feindfigur Hund](images/enemySprite.png)
 
 \--- /task \---
 
 \--- task \---
 
-Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
+Schreibe zuerst den einfachsten Code: Richte den Block ein, der auf die Meldung `Game Over`{:class="events"} reagiert, um den Feind verschwinden zu lassen, wenn der Spieler das Spiel verliert.
 
 ```blocks3
 + wenn ich [game over v] empfange
@@ -25,7 +25,7 @@ Write the easiest code first: set up its block for reacting to the `game over`{:
 
 \--- task \---
 
-Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
+Nun musst du den Code für das, was der Feind tut, schreiben. Verwende meinen Code, erwäge jedoch, ein paar zusätzliche Dinge hinzuzufügen! (Was, wenn er sich auf verschiedene Plattformen teleportieren könnte? What if there’s a power-up that makes them move faster, or slower?)
 
 ```blocks3
 + Wenn die grüne Flagge angeklickt
