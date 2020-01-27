@@ -25,7 +25,7 @@ Schreibe zuerst den einfachsten Code: Richte den Block ein, der auf die Meldung 
 
 \--- task \---
 
-Nun musst du den Code für das, was der Feind tut, schreiben. Verwende meinen Code, erwäge jedoch, ein paar zusätzliche Dinge hinzuzufügen! (Was, wenn er sich auf verschiedene Plattformen teleportieren könnte? What if there’s a power-up that makes them move faster, or slower?)
+Nun musst du den Code für das, was der Feind tut, schreiben. Verwende meinen Code, erwäge jedoch, ein paar zusätzliche Dinge hinzuzufügen! (Was, wenn er sich auf verschiedene Plattformen teleportieren könnte? Was, wenn es ein Power-Up gibt, das ihn schneller oder langsamer bewegt?)
 
 ```blocks3
 + Wenn die grüne Flagge angeklickt
@@ -42,17 +42,17 @@ end
 end
 ```
 
-**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
+**Hinweis**: Wenn du den `Gehe zu`{:class="block3motion"} - Block einfach in das Figur-Feld ziehst und die Werte für `x` und `y` nicht änderst, haben sie die Werte für den aktuellen Standort der **Feind** - Figur!
 
-The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
+Der Code im `wenn... dann`{:class="block3control"} - Block bewirkt, dass die Figur umkehrt, wenn sie das Ende der Plattform erreicht!
 
 \--- /task \---
 
-The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+Als Nächstes musst du hinzufügen, dass der Spieler ein Leben verliert, wenn er mit seiner **Spielercharakter** -Figur einen **Feind** berührt. Außerdem musst du sicherstellen, dass die Figuren wirklich schnell **aufhören** sich zu berühren, da andernfalls der Code, der auf Berührungen überprüft, weiterhin ausgeführt wird und der Spieler weiterhin Leben verliert.
 
 \--- task \---
 
-Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
+So habe ich es gemacht, aber du kannst versuchen, diesen Code zu verbessern! Ich habe den Hauptblock der **Spielercharakter**-Figur geändert. Füge den neuen Code vor dem `wenn`{:class="block3control"} - Block hinzu, der überprüft, ob du kein Leben mehr hast.
 
 ```blocks3
     Wenn die grüne Flagge angeklickt
@@ -81,4 +81,4 @@ ende
 
 \--- /task \---
 
-The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
+Mit dem neuen Code wird die **Spielercharakter**-Figur ausgeblendet, in die Ausgangsposition zurückbewegt, die `Leben`{:class="block3variables"}-Variable um `1` reduziert und nach einer halben Sekunde erscheint die Figur erneut.
