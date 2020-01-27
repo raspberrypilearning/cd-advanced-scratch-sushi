@@ -6,7 +6,7 @@ Du hast vielleicht bemerkt, dass der `verlieren`{:class="block3myblocks"}-**Mein
 
 \--- task \---
 
-First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+Suche zunächst den Block `verlieren`{:class="block3myblocks"} und ergänze ihn mit folgendem Code:
 
 ```blocks3
     Definiere verlieren
@@ -23,22 +23,22 @@ First, find the `lose`{:class="block3myblocks"} block and complete it with the f
 
 ## title: Was macht dieser Code?
 
-Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
+Wann immer der `verlieren`{:class="block3myblocks"}-Block jetzt läuft, wird Folgendes ausgeführt:
 
 1. Stoppe die Physik und andere Spielskripte, die den **Spieler-Charakter** beeinflussen
 2. Sage alle anderen Figuren, das das Spiel vorbei ist und **sende** eine `Game Over`{:class="block3events"}-Botschaft, auf die sie reagieren und ändern können, was sie tun
 3. Bewege den **Spieler-Charakter** in die Mitte der Bühne und lasse ihn den Spieler darüber informieren, dass das Spiel beendet ist
 4. Stoppe alle Skripte im Spiel
 
-\--- /collapse \---
+\--- /collapse\---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+Jetzt musst du sicherstellen, dass alle Figuren wissen, was zu tun ist, wenn das Spiel vorbei ist, und wie sie sich zurücksetzen, wenn der Spieler ein neues Spiel startet. **Vergiss nicht, dass alle neuen Figuren, die du hinzufügst, möglicherweise Code dafür benötigen!**
 
 ### Plattformen und Kanten verstecken
 
 \--- task \---
 
-Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+Beginne mit den einfachsten Figuren. Die Figuren **Plattformen** und **Ecken** benötigen beide Code, um angezeigt zu werden, wenn das Spiel beginnt, und um zu verschwinden, wenn sie die Sendung `Game Over`{:class="block3events"} empfangen:
 
 ```blocks3
 + wenn ich [Game Over v] empfange
@@ -54,11 +54,11 @@ Start with the easiest sprites. The **Platforms** and **Edges** sprites both nee
 
 ### Die Sterne stoppen
 
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
+Wenn du dir nun den Code für die **Sammelobjekt**-Figur ansiehst, wirst du feststellen, dass es funktioniert in dem es **Klone** von sich selbst erstellt. Das heißt, es macht Kopien von sich selbst, die der speziellen `Wenn ich als Klon entstehe`{:class="block3events"}-Anweisung folgen.
 
-We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
+Wir werden mehr darüber sprechen, was Klone so besonders macht, wenn wir neue und andere Sammlerstücke erstellen. Was du jetzt wissen musst, ist, dass Klone **fast** alles tun können, was eine normale Figur kann, einschließlich `Sendung an alle`{:class="block3events"} - Nachrichten empfangen.
 
-Look at how the **Collectable** sprite works. See if you can understand some of its code:
+Schau dir an, wie die **Sammelobjekt**-Figur funktioniert. Schau ob du einen Teil des Codes verstehen kannst:
 
 ```blocks3
     wenn grüne Fahne angeklickt wird
@@ -81,7 +81,7 @@ Look at how the **Collectable** sprite works. See if you can understand some of 
 
 \--- task \---
 
-Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
+Richte jetzt einen Block für die **Sammelobjekt**-Figur ein, sodass es auf die `Game Over` Sendung an alle reagiert:
 
 ```blocks3
 + Wenn ich [Game Over v] empfange
@@ -91,6 +91,6 @@ Now set up a block for the **Collectable** sprite so that it reacts to the `game
 
 \--- /task \---
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
+Dieser Code ähnelt dem Code, der die **Plattform**- und **Ecken**-Figuren steuert. Der einzige Unterschied ist, dass du auch die `erzeuge-sammelobjekt`{:class="block3variables"} Variable auf `falsch` setzt, sodass keine neuen Klone erstellt werden, wenn ‚Game over‘ gesendet wurde.
 
-Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
+Beachte, dass du die `erzeuge-sammelobjekt`{:class=„block3variables“}-Variable benutzen kannst, um Nachrichten von einem Teil des Codes zu einem anderen zu übergeben!
