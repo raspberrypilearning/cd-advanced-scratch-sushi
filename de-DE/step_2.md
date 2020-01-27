@@ -18,31 +18,31 @@ Du kannst es auch direkt in Scratch in deinem Browser verwenden, indem du auf **
 
 ### Schaue dir den Code an
 
-Die Physik-Engine des Spiels enthält eine Vielzahl von Teilen, von denen einige bereits funktionieren und andere noch nicht. You can test this out by running the game and trying to play it.
+Die Physik-Engine des Spiels enthält eine Vielzahl von Teilen, von denen einige bereits funktionieren und andere noch nicht. Du kannst dies testen, indem du das Spiel ausführst und versuchst, es zu spielen.
 
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
+Du wirst sehen, dass du Leben verlieren kannst, aber nichts passiert, wenn die Leben ausgehen. Außerdem hat das Spiel nur eine Ebene, eine Art von Dingen zu sammeln und keine Gegner. Du wirst all das reparieren und dann noch ein bisschen mehr tun!
 
 \--- task \---
 
-Take a look at how the code is put together.
+Sie dir an, wie der Code zusammengesetzt wird.
 
 \--- /task \---
 
-It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
+Es verwendet viele **Mein Blöcke**-Blöcke, die sich hervorragend dazu eignen, deinen Code in Teile zu zerlegen, damit du ihn besser verwalten kannst. Ein **Meine Blöcke**-Block ist ein Block, den du aus vielen anderen Blöcken zusammenstellen und dem du einige Anweisungen geben kannst. Du wirst in einem nächsten Schritt sehen, wie es funktioniert!
 
 ![](images/setup2and3.png)
 
 ### "Meine Blöcke"-Blöcke sind wirklich nützlich
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+Im obigen Code ruft das Hauptspiel in der `wiederhole fortlaufend`{:class="block3control"}-Schleife den `Hauptphysik`{:class="block3myblocks"}-**Meine Blöcke**-Block auf, um eine ganze Menge Sachen zu machen! Die Blöcke getrennt zu halten, macht es leicht, die Hauptschleife zu lesen und verstehen, was im Spiel passiert, ohne sich Gedanken zu machen **wie** es passiert.
 
 \--- task \---
 
-Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks.
+Nun schau dir die `Spiel-zurücksetzen`{:class="block3myblocks"} und `Spieler-zurücksetzen`{:class="block3myblocks"}-**Meine Blöcke**-Blöcke an.
 
 \--- /task \---
 
-They do pretty normal things, such as setting up variables and making sure the character rotates properly
+Sie machen ziemlich normale Dinge, zum Beispiel richten Sie Variablen ein und stellen sicher, dass sich der Charakter richtig dreht
 
 - `Spiel-zurücksetzen`{:class="block3myblocks"} **ruft** `Spieler-zurücksetzen`{:class="block3myblocks"} auf und zeigt, dass du einen **Meine Blöcke**-Block innerhalb eines weiteren **Meine Blöcke**-Blocks verwenden kannst
 - Der `Spieler-zurücksetzen`{:class="block3myblocks"} **Meine Blöcke**-Block wird an zwei verschiedenen Stellen in der Hauptschleife verwendet. Dies bedeutet, dass du zwei Stellen in deiner Hauptspielschleife ändern kannst, indem du nur den Code innerhalb des **Meine Blöcke**-Blocks änderst. Dies erspart dir viel Arbeit und hilft, Fehler zu vermeiden.
