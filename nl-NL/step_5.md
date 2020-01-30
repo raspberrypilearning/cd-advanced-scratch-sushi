@@ -6,7 +6,7 @@ Hiervoor gebruik je een ander `signaal`{:class="block3events"} bericht.
 
 \--- task \---
 
-First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+Wijzig eerst het blok `reageer-op-speler`{:class="block3myblocks"} om een bericht uit te zenden wanneer het personage van de speler een type `2` prijs raakt. Roep het bericht `prijzen-regen`{:class="block3events"} op.
 
 ```blocks3
     definieer reageer-op-speler (type)
@@ -21,11 +21,11 @@ First, change the `react-to-player`{:class="block3myblocks"} block to broadcast 
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+Nu moet je een nieuw stuk code maken in de **Prijs** sprite-scripts die worden gestart wanneer het bericht `prijzen-regen`{:class="block3events"} wordt uitgezonden.
 
 \--- task \---
 
-Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+Voeg deze code toe voor de **Prijs** sprite om hem te laten luisteren naar het `prijzen-regen`{:class="block3events"} signaal.
 
 ```blocks3
 + wanneer ik signaal [prijzen-regen v] ontvang
@@ -40,11 +40,11 @@ Add this code for the **Collectable** sprite to make it listen out for the `coll
 
 ## title: Wat doet de nieuwe code?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+Dit stukje code wacht tot het een signaal ontvangt, en reageert door de `prijs-frequentie`{:class="block3variables"} variabele zeer klein te maken, wacht dan een seconde, en verandert de variabele daarna naar `1`.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+Laten we eens kijken naar hoe de `prijs-frequentie`{:class="block3variables"} variabele wordt gebruikt om erachter te komen waarom het dan prijzen regent.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+In de hoofdgame-lus wordt het deel van de code dat **Prijs** sprite-klonen maakt verteld door de variabele `prijs-frequentie`{:class="block3variables"} hoe lang te wachten tussen het maken van een kloon en de volgende:
 
 ```blocks3
     herhaal tot <niet <(maak-prijzen ::variables)= [waar]>>
@@ -59,10 +59,10 @@ In the main game loop, the part of the code that makes **Collectable** sprite cl
     end
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+Je kunt zien dat het `wacht`{:class="block3control"} blok hier de code pauzeert gedurende de tijdsduur ingesteld door `prijs-frequentie`{:class="block3variables"}.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+Als de waarde van `prijs-frequentie`{:class="block3variables"} `0,000001` is, dan pauzeert het `wacht`{:class="block3control"} blok slechts **een miljoenste** van een seconde, wat betekent dat de `herhaal tot`{:class="block3control"} lus veel vaker dan normaal uitgevoerd zal worden. Daarom zal de code **veel** meer power-ups creëren dan normaal, tot `prijs-frequentie`{:class="block3variables"} terug veranderd wordt naar `1`.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+Kun je mogelijke problemen bedenken? Er zullen veel meer power-ups zijn…wat als je ze blijft vangen?
 
 \--- /collapse \---
