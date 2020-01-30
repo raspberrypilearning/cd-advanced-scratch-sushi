@@ -6,7 +6,7 @@ Je hebt misschien gemerkt dat het `verlies`{:class="block3myblocks"} **Mijn blok
 
 \--- task \---
 
-First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+Zoek eerst het blok `verlies`{:class="block3myblocks"} en vul het aan met de volgende code:
 
 ```blocks3
     definieer verlies
@@ -23,7 +23,7 @@ First, find the `lose`{:class="block3myblocks"} block and complete it with the f
 
 ## title: Wat doet deze code?
 
-Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
+Telkens wanneer het blok `verlies`{:class="block3myblocks"} wordt uitgevoerd, doet het het volgende:
 
 1. Stop de natuurkunde en andere spelscripts die de **Speler** aansturen
 2. Vertel alle andere sprites dat de game afgelopen is door een `game over`{:class="block3events"} bericht **uit te zenden**, waar ze op kunnen reageren en aanpassen wat ze doen
@@ -32,13 +32,13 @@ Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
 
 \--- /collapse \---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+Nu moet je ervoor zorgen dat alle sprites weten wat ze moeten doen als het spel is afgelopen en hoe ze zichzelf kunnen resetten als de speler een nieuw spel start. **Vergeet niet dat als je nieuwe sprites toevoegt, hier misschien ook code voor nodig is!**
 
 ### De platforms en randen verbergen
 
 \--- task \---
 
-Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+Begin met de makkelijkste sprites. De **Platform** en **Randen** sprites hebben beide code nodig om te verschijnen wanneer het spel start en om te verdwijnen wanneer ze het `game over`{:class="block3events"} bericht ontvangen, dus voeg deze blokken toe aan beide sprites:
 
 ```blocks3
 + wanneer ik signaal [game over v] ontvang
@@ -54,11 +54,11 @@ Start with the easiest sprites. The **Platforms** and **Edges** sprites both nee
 
 ### Stop de sterren
 
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
+Als je nu naar de code voor de sprite **Prijs** kijkt, zie je dat deze werkt door zichzelf te **klonen**. Dat wil zeggen dat het kopieën van zichzelf maakt die de speciale `wanneer ik als kloon start`{:class="block3events"} instructies volgen.
 
-We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
+We zullen meer vertellen over wat klonen speciaal maakt wanneer we de stap zetten over het maken van nieuwe en verschillende prijzen die je kunt verzamelen. Voor nu, wat je moet weten is dat klonen **bijna** alles kunnen doen wat een normale sprite kan, met inbegrip van het ontvangen van `signalen`{:class="block3events"}.
 
-Look at how the **Collectable** sprite works. See if you can understand some of its code:
+Kijk hoe de **Prijs** sprite werkt. Kijk of je een deel van de code kunt begrijpen:
 
 ```blocks3
     wanneer op de groene vlag wordt geklikt
@@ -81,7 +81,7 @@ Look at how the **Collectable** sprite works. See if you can understand some of 
 
 \--- task \---
 
-Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
+Stel nu een blok in voor de **Prijs** sprite, zodat deze reageert op het `game over` signaal:
 
 ```blocks3
 + wanneer ik signaal [game over v] ontvang
@@ -91,6 +91,6 @@ Now set up a block for the **Collectable** sprite so that it reacts to the `game
 
 \--- /task \---
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
+Deze code is gelijk aan de code die de **Platforms** en **Randen** sprites controleert. Het enige verschil is dat je ook de variabele `maak-prijzen`{:class="block3variables"} instelt op `false` zodat er geen nieuwe klonen worden aangemaakt als het 'Game over' is.
 
-Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
+Merk op dat je de variabele `maak-prijzen`{:class="block3variables"} kunt gebruiken om berichten van het ene deel van je code door te geven aan een ander deel!
