@@ -8,19 +8,19 @@ Ten eerste heb je de sprite voor het platform nodig.
 
 \--- task \---
 
-Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+Voeg een nieuwe sprite toe, noem deze **Bewegend-Platform**, en gebruik de uiterlijkgereedschappen in Uiterlijken om het op de andere platforms te laten lijken \(gebruik de vectormodus\).
 
 \--- /task \---
 
-Now, let's add some code to the sprite.
+Laten we nu wat code toevoegen aan de sprite.
 
-Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+Begin met de basis: om een nooit eindigende set platforms op het scherm te laten bewegen, moet je het platform regelmatig klonen. Ik koos `4` seconden als mijn interval. Je moet ook zorgen dat er een aan-/uit-schakelaar is om de platforms te maken, zodat ze niet op niveau 1 verschijnen. Ik gebruik een nieuwe variabele genaamd `maak-platforms`{:class="block3variables"}.
 
 \--- task \---
 
-Add code to create clones of your platform sprite.
+Voeg code toe om klonen van je platformsprite te maken.
 
-Here's how mine looks so far:
+Dit is hoe de mijne er nu uitziet:
 
 ```blocks3
 + wanneer op groene vlag wordt geklikt
@@ -37,7 +37,7 @@ Here's how mine looks so far:
 
 \--- task \---
 
-Then add the clone's code:
+Voeg vervolgens de klooncode toe:
 
 ```blocks3
 + wanneer ik als kloon start
@@ -54,11 +54,11 @@ Then add the clone's code:
 
 \--- /task \---
 
-This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
+Deze code zorgt ervoor dat de kloon van **Bewegend-Platform** naar de bovenkant van het scherm wordt verplaatst, langzaam genoeg zodat de speler erop en eraf kan springen, en vervolgens verdwijnt.
 
 \--- task \---
 
-Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
+Laat nu de platforms verdwijnen/verschijnen op basis van de signalen die levels veranderen (dus ze zijn alleen op het level waar ruimte voor hen is), en het `game over`{:class="block3events"} bericht.
 
 ```blocks3
 + wanneer ik signaal [level-1 v] ontvang
@@ -75,21 +75,21 @@ Now make the platforms disappear/reappear based on the broadcasts that change le
 
 \--- /task \---
 
-Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
+Als je nu probeert om het spel daadwerkelijk te spelen, valt de **Speler** door het platform! Enig idee waarom?
 
-It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
+Het is omdat de natuurkunde code nog van niets weet over het platform. Er is een snelle oplossing:
 
 \--- task \---
 
-In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+Vervang in de **Speler** sprite scripts elk `aanrakende "Platform"`{:class="block3sensing"} blok met een `OF`{:class="block3operators"} functie die controleert **of** `"Platform" aangeraakt`{:class="block3sensing"} worden **OF** `"Bewegend-Platform" aangeraakt`{:class="block3sensing"} worden.
 
-Go through the code for the **Player Character** sprite and everywhere you see this block:
+Doorloop de code voor de **Speler** sprite en overal waar je dit blok ziet:
 
 ```blocks3
     <raak ik [Platform v] ?>
 ```
 
-replace it with this one:
+vervang het door deze:
 
 ```blocks3
     <<raak ik [Platform v] ?> of <raak ik [Bewegend-Platform v] ?>>
