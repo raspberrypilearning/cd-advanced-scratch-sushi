@@ -1,0 +1,26 @@
+---
+title: Fallende Sterne
+hero_image: images/banner.png
+description: Erstelle ein Spiel im Plattform-Stil und füge deine eigenen Levels, Fähigkeiten und Charaktere hinzu.
+theme: orange
+listed: true
+copyedit: true
+curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
+interests: games
+technologies: scratch
+site_areas: coderdojo
+software: scratch
+version: 4.0.0
+last_tested: "2018-04-23"
+steps:
+  - title: Einleitung
+  - title: Vorbereitungen
+  - title: Das Spiel verlieren
+  - title: Power-Up
+  - title: Super Power-Ups!
+  - title: 'Aufgabe: Werde kreativ!'
+    challenge: true
+  - title: Wettbewerb hinzufügen
+  - title: Level 2
+  - title: Plattformen verschieben
+  - title: Wie geht es weiter?
