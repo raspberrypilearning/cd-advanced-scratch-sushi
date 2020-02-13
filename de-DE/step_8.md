@@ -41,7 +41,7 @@ Kannst du sehen, wie das Programm die von dir erstellten Variablen verwendet?
 
 + `max-Level`{:class="block3variables"} speichert den höchsten Level
 + `min-Level`{:class="block3variables"} speichert den untersten Level
-+ `aktuelles-Level`{:class"block3variables"} speichert das Level, auf dem sich der Spieler gerade befindet
++ `aktuelles-Level`{:class="block3variables"} speichert das Level, auf dem sich der Spieler gerade befindet
 
 Dies alles muss vom Programmierer \(dir!\) festgelegt werden. Wenn du ein drittes Level hinzufügst, vergiss nicht, den Wert von `max-Level`{:class="block3variables"} zu ändern! `min-Level`{:class="block3variables"} muss natürlich niemals geändert werden.
 
