@@ -1,0 +1,3 @@
+## Aufgabe: Werde kreativ!
+
+Basierend auf den beiden vorherigen Karten kannst du jetzt so viele verschiedene Power-Up-Sammelobjekte herstellen, wie du willst! Was ist mit einem, das 20 Mal so viele Punkte wie normal gibt oder drei Leben hinzufügt oder es dem Spieler ermöglicht, für eine bestimmte Zeit keine Leben verlieren zu können? Überlege dir zwei coole Power-Ups und schau, ob du sie erstellen kannst!
