@@ -35,10 +35,8 @@ Nun musst du den Code für das, was der Feind tut, schreiben. Verwende meinen Co
 + gehe zu x: (-25) y: (-9)
 + wiederhole fortlaufend 
   gehe (Feindzugschritte) er Schritt
-  falls <nicht <wird [Platforms v] berührt?>> dann
+  falls <nicht <wird [Platforms v] berührt?>> , dann
   setze [Feindzugschritte v] auf ((Feindzugschritte) * (-1))
-end
-
 end
 ```
 
@@ -56,27 +54,27 @@ So habe ich es gemacht, aber du kannst versuchen, diesen Code zu verbessern! Ich
 
 ```blocks3
     Wenn die grüne Flagge angeklickt
-Spiel-zurücksetzen :: custom
-wiederhole fortlaufend 
-  Hauptphysik :: custom
-  falls <(y-Position) < [-179]> , dann 
-    verstecke dich
-    Spieler-zurücksetzen:: custom
-    ändere [Leben v] um (-1)
-    warte (0.05) Sekunden
-    zeige dich
-  ende
-  + falls <wird [Feind v] berührt?> , dann 
-  +   verstecke dich
-  +   gehe zu x: (-187) y: (42)
-  +   ändere [Leben v] um (-1)
-  +   warte (0.5) Sekunden
-  +   zeige dich
-  + ende
-  falls <(Leben) < [1]> , dann 
-    verlieren :: custom
-  ende
-ende
+    Spiel-zurücksetzen :: custom
+    wiederhole fortlaufend 
+      Hauptphysik :: custom
+      falls <(y-Position) < [-179]> , dann 
+        verstecke dich
+        Spieler-zurücksetzen:: custom
+        ändere [Leben v] um (-1)
+        warte (0.05) Sekunden
+        zeige dich
+      ende
++      falls <wird [Feind v] berührt?> , dann 
+        verstecke dich
+        gehe zu x: (-187) y: (42)
+        ändere [Leben v] um (-1)
+        warte (0.5) Sekunden
+        zeige dich
++      ende
+      falls <(Leben) < [1]> , dann 
+        verlieren :: custom
+      ende
+    end
 ```
 
 --- /task ---

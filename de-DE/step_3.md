@@ -47,7 +47,7 @@ Beginne mit den einfachsten Figuren. Die Figuren **Plattformen** und **Ecken** b
 ```
 
 ```blocks3
-+ Wenn grüne Flagge angeklickt wird
++ Wenn die grüne Flagge angeklickt
 + zeige dich
 ```
 
@@ -62,18 +62,18 @@ Wir werden mehr darüber sprechen, was Klone so besonders macht, wenn wir neue u
 Schau dir an, wie die **Sammelobjekt**-Figur funktioniert. Schau ob du einen Teil des Codes verstehen kannst:
 
 ```blocks3
-    wenn grüne Fahne angeklickt wird
-    verstecke dich
-    setze [sammelobjekt-wert v] zu [1]
-    setze [sammelobjekt-geschwindigkeit v] zu [1]
-    setze [sammelobjekt-häufigkeit v] zu [1]
-    setze [erzeuge-sammelobjekt v] zu [wahr]
-    setze [sammelobjekt-typ v] auf [1]
-    wiederholen bis <nicht <(create-collectables) = [wahr]>> 
-        warten (sammelobjekt-häufigkeit) Sekunden
-        gehe zu x: (Wähle zufällig (-240) bis (240)) y: (179)
-        erzeuge einen Klon von [mir selbst]
-    Ende
+Wenn die grüne Flagge angeklickt
+verstecke dich
+setze [sammelobjekt-wert v] auf [1]
+setze [sammelobjekt-geschwindigkeit v] auf [1]
+setze [sammelobjekt-häufigkeit v] auf [1]
+setze [erzeuge-sammelobjekt v] auf [true]
+setze [sammelobjekt-typ v] auf [1]
+wiederhole bis <nicht <(erzeuge-sammelobjekt) = [true]>> 
+  warte (sammelobjekt-häufigkeit) Sekunden
+  gehe zu x: (Zufallszahl von (-240) bis (240)) y: (179)
+  erzeuge Klon von [mir selbst v]
+end
 ```
 
 1. Zuerst wird die ursprüngliche **Sammelobjekt**-Figur durch das Ausblenden unsichtbar
@@ -94,4 +94,4 @@ Richte jetzt einen Block für die **Sammelobjekt**-Figur ein, sodass es auf die 
 
 Dieser Code ähnelt dem Code, der die **Plattform**- und **Ecken**-Figuren steuert. Der einzige Unterschied ist, dass du auch die `erzeuge-sammelobjekt`{:class="block3variables"} Variable auf `falsch` setzt, sodass keine neuen Klone erstellt werden, wenn ‚Game over‘ gesendet wurde.
 
-Beachte, dass du die `erzeuge-sammelobjekt`{:class=„block3variables“}-Variable benutzen kannst, um Nachrichten von einem Teil des Codes zu einem anderen zu übergeben!
+Beachte, dass du die `erzeuge-sammelobjekt`{:class="block3variables"}-Variable benutzen kannst, um Nachrichten von einem Teil des Codes zu einem anderen zu übergeben!

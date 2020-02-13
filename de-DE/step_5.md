@@ -9,14 +9,14 @@ Dazu verwendest du eine weitere `Sendung an alle`{:class="block3events"}-Nachric
 Ändere zunächst den Block `reagiere-auf-Spieler`{:class="block3myblocks"}, um eine Nachricht an alle zu senden, wenn der Spielercharacter ein Typ-`2`-Sammelobjekt berührt. Rufe die Nachricht `Sammelobjekt-Regen`{:class="block3events"} auf.
 
 ```blocks3
-    Definiere reagiere-auf-Spieler (typ)
-    falls <(typ ::variable) = [1]>, dann
-       ändere [Punkte v] um (Sammelobjekt-Wert ::variables)
-    Ende
-    falls <(typ ::variable) = [2]>, dann 
-     - ändere [Leben v] um [1]    
-     + sende [Sammelobjekt-Regen v] an alle
-    Ende
+Definiere react-to-player (typ :: custom-arg)
+falls <(typ :: custom-arg) = [1]> , dann 
+  ändere [Punkte v] um (Sammelobjekt-Wert :: variables)
+end
+falls <(typ :: custom-arg) = [2]> , dann 
+  - ändere [Leben v] um [1]
+  + sende [Sammelobjekt-Regen v] an alle
+end
 ```
 
 --- /task ---

@@ -28,10 +28,10 @@ title: Wie funktioniert das Auswählen eines Kostüms?
 Der `wähle-Kostüm`{:class="block3myblocks"}-Block funktioniert ein bisschen wie der `verlieren`{:class="block3myblocks"}-Block, aber er kann etwas Besonderes: Er benötigt eine **Eingabe-**Variable mit der Bezeichnung `Typ`{:class="block3myblocks"}.
 
 ```blocks3
-    Definiere wähle-Kostüm (typ) 
-    falls <(typ ::variables) = [1]> dann
-        wechsle zu Kostüm [Stern1 v]
-    Ende
+Definiere wähle-Kostüm (typ :: custom-arg)
+falls <(typ :: variables) = [1]> , dann 
+  wechsle zu Kostüm [Stern1 v]
+end
 ```
 
 Wenn der Block `wähle-Kostüm`{:class="block3myblocks"} ausgeführt wird, macht er Folgendes:
@@ -92,7 +92,7 @@ Jetzt musst du entscheiden, was das neue Sammelobjekt tun wird! Wir beginnen mit
 
 --- task ---
 
-Wechsle in den Bereich **Meine Blöcke** und klicke auf **Neuer Block**. Benenne den neuen Block `reagiere-auf-Spieler` {:class="block3myblocks"} und füge ein **Zahl-Eingabefeld** mit dem Namen `Typ`{:class="block3myblocks"} hinzu.
+Wechsle in den Bereich **Meine Blöcke** und klicke auf **Neuer Block**. Benenne den neuen Block `reagiere-auf-Spieler`{:class="block3myblocks"} und füge ein **Zahl-Eingabefeld** mit dem Namen `Typ`{:class="block3myblocks"} hinzu.
 
 ![Gebe den Namen für den Block ein](images/powerupMakeName.png)
 
@@ -118,7 +118,7 @@ Lasse den `reagiere-auf-spieler`{:class="block3myblocks"} **Meine Blöcke**-Bloc
 
 --- task ---
 
-Aktualisiere den `Wenn ich als Klon entstehe`{:class="block3events"} Code, um den Block, der einen Punkt addiert, durch einen **Aufruf** von `reagiere-auf-Spieler`{:class="block3myblocks"}, dem du `Sammelobjekt-Typ`{:class="blocks3variables"} **übergibst**, zu ersetzten.
+Aktualisiere den `Wenn ich als Klon entstehe`{:class="block3events"} Code, um den Block, der einen Punkt addiert, durch einen **Aufruf** von `reagiere-auf-Spieler`{:class="block3myblocks"}, dem du `Sammelobjekt-Typ`{:class="block3variables"} **übergibst**, zu ersetzten.
 
 ```blocks3
 + falls <wird [Spieler Character v] berührt?>, dann
@@ -157,14 +157,15 @@ Du wirst den `Sammelobjekt-Typ`{:class="block3variables"} für jeden neuen Klon,
 Finde die `Wiederhole bis`{:class="block3control"} -Schleife im grünen Flagge-Code für die **Sammelobjekt**-Figur und füge den `wenn... dann `{:class="block3control"} Code, der unten angezeigt wird, ein.
 
 ```blocks3
-    wiederhole bis <nicht <(erzeuge-Sammelobjekte ::variables) = [wahr]>>
-+    falls <[50] = (Zufallszahl von (1) bis (50))>, dann
-+    setze [Sammelobjekt-Typ v] auf [2], sonst
+    wiederhole bis <nicht <(erzeuge-Sammelobjekte :: variables) = [wahr]>> 
++    falls <[50] = (Zufallszahl von (1) bis (50))> , dann 
++    setze [Sammelobjekt-Typ v] auf [2]
++    sonst 
 +    setze [Sammelobjekt-Typ v] auf [1]
-   Warte (Sammelobjekt-Häufigkeit ::variables) Sekunden
-        gehe zu x: (Zufallszahl von (-240) bis (240)) y: (179)
-        Erzeuge Klon von [mir selbst]
-ende
++    end
+    warte (Sammelobjekt-Häufigkeit :: variables) Sekunden
+    gehe zu x: (Zufallszahl von (-240) bis (240)) y: (179)
+    erzeuge Klon von [mir selbst v]
 ```
 
 --- /task ---

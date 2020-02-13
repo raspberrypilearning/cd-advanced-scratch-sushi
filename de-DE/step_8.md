@@ -28,11 +28,11 @@ Füge diese Skripte deiner **Taste** - Figur hinzu. Du musst dabei einige Variab
 ```blocks3
 + Wenn diese Figur angeklickt wird
 + ändere [aktuelles-Level v] um (1)
-+ falls <(aktuelles-Level) > (max-Level :: variables)>  dann 
++ falls <(aktuelles-Level) > (max-Level :: variables)> , dann 
   setze [aktuelles-Level v] auf (min-Level :: variables)
-ende
+end
 + sende [Sammelobjekte-aufräumen v] an alle
-+ sende (betrete [Level-] (aktuelles-Level)) an alle
++ sende (verbinde [Level-] und (aktuelles-Level)) an alle
 ```
 
 --- /task ---
@@ -41,7 +41,7 @@ Kannst du sehen, wie das Programm die von dir erstellten Variablen verwendet?
 
 + `max-Level`{:class="block3variables"} speichert den höchsten Level
 + `min-Level`{:class="block3variables"} speichert den untersten Level
-+ `aktuelles-Level`{:class = "block3variables"} speichert das Level, auf dem sich der Spieler gerade befindet
++ `aktuelles-Level`{:class"block3variables"} speichert das Level, auf dem sich der Spieler gerade befindet
 
 Dies alles muss vom Programmierer \(dir!\) festgelegt werden. Wenn du ein drittes Level hinzufügst, vergiss nicht, den Wert von `max-Level`{:class="block3variables"} zu ändern! `min-Level`{:class="block3variables"} muss natürlich niemals geändert werden.
 
@@ -55,7 +55,7 @@ Jetzt musst du die anderen Figuren dazu bringen, auf diese Nachrichten zu antwor
 
 --- task ---
 
-Füge den **Sammelobjekt**-Figur-Skripts den folgenden Code hinzu, um allen Klonen zu sagen, dass sie sich `verstecken`{:class="block3looks"} sollen, wenn sie die aufräumen Nachricht empfangen:
+Füge den **Sammelobjekt**-Figur-Skripts den folgenden Code hinzu, um allen Klonen zu sagen, dass sie sich `verstecken`{:class="block3vlooks"} sollen, wenn sie die aufräumen Nachricht empfangen:
 
 ```blocks3
 +    wenn ich [Sammelobjekte-aufräumen v] empfange   
@@ -165,7 +165,7 @@ Gehe zum Skript `Spiel-zurücksetzen`{:class="block3myblocks"} und entferne den 
     setze [Y-Geschwindigkeit v] auf [1]
     setze [Leben v] auf [3]
     setze [Punkte v] auf [0]
-+ Sende (betrete [Level-](min-Level ::variables)) an alle
++    sende (verbinde [Level-] und (min-Level :: variables)) an alle
 ```
 
 --- /task ---

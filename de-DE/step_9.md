@@ -40,16 +40,16 @@ So sieht meiner bisher aus:
 Dann füge den Code des Klons hinzu:
 
 ```blocks3
-+ Wenn ich als Klon entstehe
-+ zeige dich
-+ wiederhole fortlaufend
-        falls <(y - Position) < [180]>, dann
++   Wenn ich als Klon entstehe
++   zeige dich
++   wiederhole fortlaufend 
+        falls <(y-Position) < [180]> , dann 
             ändere y um (1)
-            warte (0,02) Sekunden
-        sonst
+            warte (0.02) Sekunden
+        sonst 
             lösche diesen Klon
-        Ende
-    Ende
+        end
+    end
 ```
 
 --- /task ---
