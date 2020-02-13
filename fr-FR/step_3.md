@@ -1,8 +1,8 @@
-## Losing the game
+## Perdre la partie
 
-First things first! You need a way to make the game end when the player has run out of lives. At the moment that doesn't happen.
+Premières choses d'abord ! Tu dois trouver un moyen de mettre fin au jeu lorsque le joueur est à court de vies. Pour le moment, cela ne se produit pas.
 
-You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+Tu as peut-être remarqué que le bloc `perdre`{: class = "block3myblocks"} de **Mes blocs** dans les scripts du sprite **Personnage du Joueur** est vide. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
 
 \--- task \---
 
