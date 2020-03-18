@@ -8,9 +8,9 @@ collectable-value
 
 collectable-speed
 
-collestable-frequency
+collectable-frequency
 
-create-collestables
+create-collectables
 
 collectable type
 
