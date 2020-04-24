@@ -9,9 +9,9 @@
 في البرامج النصية للكائن **تجميع** ، ابحث عن الكود `عندما أبدأ كنسخة clone`{:class="block3events"}. الكتل التي يجب إلقاء نظرة عليها هي الكتل التي تعطيك نقاطًا لجمع النجم
 
 ```blocks3
-    اذا <touching [Player Character v]?> 
-        غيّر [points v] بمقدار (collectable-value ::variables)
-        احذف هذه النسخة
+    if <touching [Player Character v]?> then
+        change [points v] by (collectable-value ::variables)
+        delete this clone
 ```
 
 وهذا الذي يختار شكل للنسخة:
