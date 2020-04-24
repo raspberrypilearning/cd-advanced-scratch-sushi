@@ -1,0 +1,26 @@
+---
+title: النجوم المتساقطة
+hero_image: images/banner.png
+description: اصنع لعبة على غرار المنصة وأضف المستويات والقوى والشخصيات الخاصة بك.
+theme: orange
+listed: true
+copyedit: true
+curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
+interests: games
+technologies: scratch
+site_areas: coderdojo
+software: scratch
+version: 4.0.0
+last_tested: "2018-04-23"
+steps:
+  - title: المقدمة
+  - title: ضبط الأمور
+  - title: خسارة اللعبة
+  - title: امدادات الطاقة
+  - title: امدادات طاقة خارقة!
+  - title: "تحدي: كن مبدعا!"
+    challenge: true
+  - title: إضافة بعض المنافسة
+  - title: المستوى ٢
+  - title: منصات متحركة
+  - title: ما التالي؟
