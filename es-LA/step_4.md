@@ -1,4 +1,4 @@
-## Power-ups
+## Potenciadores
 
 At the moment you have just one type of collectable: a star that gains you one point when you grab it. On this card, you’re going to create a new type of collectable, and you'll do it in a way that will make adding other types of collectables easy. Then you can invent your own power-ups and bonuses and really make the game your own!
 
@@ -22,7 +22,7 @@ and this one that selects a costume for the clone:
 
 ## \--- collapse \---
 
-## title: How does picking a costume work?
+## title: ¿Cómo funciona elegir un disfraz?
 
 The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:class="block3myblocks"} block, but it has something extra: it takes an **input** variable called `type`{:class="block3myblocks"}.
 
@@ -38,7 +38,7 @@ When the `pick-costume`{:class="block3myblocks"} block runs, what it does is thi
 1. It looks at the `type`{:class="block3myblocks"} input variable
 2. If the value of `type`{:class="block3myblocks"} is equal to `1`, it switches to the `star1` costume
 
-Take a look at the part of the script that uses the block:
+Echa un vistazo a la parte del script que utiliza el bloque:
 
 ```blocks3
     when I start as a clone
@@ -59,11 +59,11 @@ This means that the value of `collectable-type`{:class="block3variables"} decide
 
 ### Add a costume for the new power-up
 
-Of course, right now the **Collectable** sprite only has one costume, since there's only one type of collectable. You're about to change that.
+Of course, right now the **Collectable** sprite only has one costume, since there's only one type of collectable. Estás a punto de cambiar eso.
 
 \--- task \---
 
-Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+Add a new costume to the **Collectable** sprite for your new power-up. A mi me gusta el rayo, pero elige lo que tú quieras.
 
 \--- /task \---
 
@@ -85,13 +85,13 @@ Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to se
 
 ### Create the power-up code
 
-Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
+¡Ahora tienes que decidir qué hará el nuevo coleccionable! We’ll start with something simple: giving the player a new life. En el siguiente paso, harás que haga algo más genial.
 
 \--- task \---
 
 Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
 
-![Type in the name for the block](images/powerupMakeName.png)
+![Escribe el nombre del bloque](images/powerupMakeName.png)
 
 Click **OK**.
 
@@ -132,11 +132,11 @@ By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block
 
 Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
 
-You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. to use for the collectable.
+You do this by setting the value of `collectable-type`{:class="block3variables"}. Esta variable es solo un número. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. usar para el coleccionable.
 
 ## \--- collapse \---
 
-## title: Working with variables in a clone
+## title: Trabajando con variables en un clon
 
 For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}.
 
