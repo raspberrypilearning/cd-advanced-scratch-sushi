@@ -1,36 +1,36 @@
 ---
-title: Falling stars
-hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
+title: Estrelas cadentes
+hero_image: imagens/banner.png
+description: Faça um jogo no estilo plataforma e adicione seus próprios níveis, poderes e personagens.
 theme: orange
 listed: true
 copyedit: true
 curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
-interests: games
+interests: jogos
 technologies: scratch
 site_areas: coderdojo
 software: scratch
-version: 4.0.0
+version: 3
 last_tested: "2018-04-23"
 steps:
   - 
-    title: Introduction
+    title: Introdução
   - 
-    title: Setting things up
+    title: Configurando as coisas
   - 
-    title: Losing the game
+    title: Perdendo o jogo
   - 
     title: Power-ups
   - 
     title: Super power-ups!
   - 
-    title: "Challenge: get creative!"
+    title: "Desafio: seja criativo!"
     challenge: true
   - 
-    title: Adding some competition
+    title: Adicionando um pouco de competição
   - 
-    title: Level 2
+    title: Nível 2
   - 
-    title: Moving platforms
+    title: Plataformas móveis
   - 
-    title: What next?
+    title: E agora?
