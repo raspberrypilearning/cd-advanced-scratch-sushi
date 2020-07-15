@@ -1,71 +1,71 @@
-lose
+χάνει
 
-game over
+Τέλος Παιχνιδιού
 
-Game Over!
+Τέλος Παιχνιδιού!
 
-collectable-value
+αξία-βραβείου
 
-collectable-speed
+ταχύτητα-βραβείου
 
-collectable-frequency
+συχνότητα-βραβείου
 
-create-collectables
+δημιουργία-βραβείων
 
-collectable type
+τύπος-βραβείου
 
-pick costume
+επιλογή-ενδυμασία
 
-points
+πόντοι
 
-type
+τύπος
 
-react-to-player
+αντίδραση-σε-παίκτη
 
-collectable-rain
+βροχή-βραβείων
 
-Enemy
+Εχθρός
 
-enemy-move-steps
+βήματα-κίνησης-εχθρού
 
-Platforms
+Πλατφόρμες
 
-Edges
+Όρια
 
-Player Character
+Παίκτης
 
-reset-game
+επαναφορά-παιχνιδιού
 
-reset-character
+επαναφορά-χαρακτήρα
 
-main-physics
+βασική-φυσική
 
-lives
+ζωές
 
-max-level
+μέγιστο-επίπεδο
 
-min-level
+ελάχιστο-επίπεδο
 
-current-level
+τρέχον--επίπεδο
 
-collectable-cleanup
+καθαρισμός-βραβείων
 
-level-
+επίπεδο-
 
-level-1
+επίπεδο-1
 
-level-2
+επίπεδο-2
 
-start-x
+αρχή-x
 
-start-y
+αρχή-y
 
-can-jump
+μπορεί-να-πηδήξει
 
-jump-height
+ύψος-άλματος
 
-gravity
+βαρύτητα
 
-Moving-Platform
+Κινούμενη-Πλατφόρμα
 
-create-platforms
+δημιουργία-πλατφορμών
