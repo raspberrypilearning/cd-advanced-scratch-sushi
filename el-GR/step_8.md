@@ -1,22 +1,22 @@
-## Level 2
+## Επίπεδο 2
 
-With this step, you're going to add a new level to the game that the player can get to by just pressing a button. Later, you can change your code to make it so they need a certain number of points, or something else, to get there.
+Σε αυτό το βήμα, θα προσθέσεις ένα νέο επίπεδο στο παιχνίδι, στο οποίο μπορεί να πάει ο παίκτης απλά πατώντας ένα κουμπί. Αργότερα, μπορείς να αλλάξεις το πρόγραμμα, ώστε να χρειάζεται ένας ορισμένος αριθμός πόντων ή κάτι άλλο για να φτάνει σε αυτό.
 
-### Moving to the next level
+### Μετάβαση στο επόμενο επίπεδο
 
 \--- task \---
 
-First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
+Αρχικά, δημιούργησε ένα νέο αντικείμενο για κουμπί, είτε εισάγοντας ένα έτοιμο από τη βιβλιοθήκη, είτε σχεδιάζοντας το δικό σου. Έκανα λίγο κι από τα δύο και έβγαλα αυτό:
 
-![The button sprite to switch levels](images/levelButton.png)
+![Το αντικείμενο Κουμπί για εναλλαγή των επιπέδων](images/levelButton.png)
 
 \--- /task \---
 
 \--- task \---
 
-Now, the code for this button is clever: it’s designed so that every time you click it it will take you to the next level, no matter how many levels there are.
+Τώρα, ο κώδικας για αυτό το κουμπί είναι έξυπνος: έχει σχεδιαστεί έτσι ώστε κάθε φορά που κάνεις κλικ να σε μεταφέρει στο επόμενο επίπεδο, ανεξάρτητα από το πόσα επίπεδα υπάρχουν.
 
-Add these scripts to your **Button** sprite. You will need to create some variables as you do so.
+Πρόσθεσε αυτές τις εντολές στο αντικείμενο **Κουμπί**. Θα πρέπει να δημιουργήσεις μερικές μεταβλητές για να το κάνεις.
 
 ```blocks3
 +    when green flag clicked
@@ -37,25 +37,25 @@ Add these scripts to your **Button** sprite. You will need to create some variab
 
 \--- /task \---
 
-Can you see how the program will use the variables you created?
+Μπορείς να δεις πώς το πρόγραμμα θα χρησιμοποιήσει τις μεταβλητές που δημιούργησες;
 
-+ `max-level`{:class="block3variables"} stores the highest level
-+ `min-level`{:class="block3variables"} stores the lowest level
-+ `current-level`{:class="block3variables"} stores the level the player is on right now
++ Η μεταβλητή `μέγιστο-επίπεδο`{:class="block3variables"} αποθηκεύει το μέγιστο επίπεδο
++ Η μεταβλητή `ελάχιστο-επίπεδο`{:class="block3variables"} αποθηκεύει το ελάχιστο επίπεδο
++ Η μεταβλητή `τρέχον-επίπεδο`{:class="block3variables"} αποθηκεύει το επίπεδο στο οποίο βρίσκεται το πρόγραμμα αυτήν τη στιγμή
 
-These all need to be set by the programmer \(you!\), so if you add a third level, don’t forget to change the value of `max-level`{:class="block3variables"}! `min-level`{:class="block3variables"} will never need to change, of course.
+Όλα αυτά πρέπει να ρυθμιστούν από τον προγραμματιστή \(εσένα!\), οπότε αν προσθέσεις ένα τρίτο επίπεδο, μην ξεχάσεις να αλλάξεις την τιμή της `μέγιστο-επίπεδο`{:class="block3variables"}! Το `ελάχιστο-επίπεδο`{:class="block3variables"}, φυσικά, δεν θα χρειαστεί ποτέ να αλλάξει.
 
-The broadcasts are used to tell the other sprites which level to display, and to clear up the collectables when a new level starts.
+Τα μηνύματα χρησιμοποιούνται για να πουν στα άλλα αντικείμενα ποιο επίπεδο θα εμφανιστεί και για να εξαφανιστούν όλα τα βραβεία όταν ξεκινά ένα νέο επίπεδο.
 
-### Make the sprites react
+### Κάντε τα αντικείμενα να αντιδρούν
 
-#### The **Collectable** sprite
+#### Το αντικείμενο **Βραβείο**
 
-Now you need to get the other sprites to respond to these broadcasts! Start with the easiest one: clearing all the collectables.
+Τώρα πρέπει να κάνεις τα άλλα αντικείμενα να ανταποκρίνονται σε αυτά τα μηνύματα! Ξεκίνησε με το ευκολότερο: εξαφάνισε όλα τα βραβεία.
 
 \--- task \---
 
-Add the following code to the **Collectable** sprite scripts to tell all its clones to `hide`{:class="block3vlooks"} when they receive the cleanup broadcast:
+Πρόσθεσε τον ακόλουθο κώδικα στο **Βραβείο** για να πεις σε όλους τους κλώνους του να `εξαφανιστούν`{:class="block3vlooks"} όταν λαμβάνουν το μήνυμα εξαφάνισης:
 
 ```blocks3
 +    when I receive [collectable-cleanup v]
@@ -64,15 +64,15 @@ Add the following code to the **Collectable** sprite scripts to tell all its clo
 
 \--- /task \---
 
-Since one of the first things any new clone does is show itself, you don't have to worry about unhiding collectables!
+Δεδομένου ότι ένα από τα πρώτα πράγματα που κάνει κάθε νέος κλώνος είναι να εμφανίζεται, δεν χρειάζεται να ανησυχείς για την επαναφορά των βραβείων!
 
-#### The **Platforms** sprite
+#### Το αντικείμενο **Πλατφόρμες**
 
-Now to switch the **Platforms** sprite. You can design your own new level later if you like, but for now let’s use the one I’ve already included — you’ll see why on the next step!
+Τώρα για την εναλλαγή του αντικειμένου **Πλατφόρμες**. Μπορείς να σχεδιάσεις το δικό σου νέο επίπεδο αργότερα αν θέλεις, αλλά για τώρα ας χρησιμοποιήσουμε αυτό που έχω ήδη συμπεριλάβει - θα δεις γιατί στο επόμενο βήμα!
 
 \--- task \---
 
-Add this code to the **Platforms** sprite:
+Πρόσθεσε αυτόν τον κώδικα στο αντικείμενο **Πλατφόρμες**:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -88,13 +88,13 @@ Add this code to the **Platforms** sprite:
 
 \--- /task \---
 
-It receives the `joined`{:class="block3operators"} messages of `level-`{:class="block3variables"} and `current-level`{:class="block3variables"} that the **Button** sprite sends out, and responds by changing the **Platforms** costume.
+Λαμβάνει την `ένωση`{:class="block3operators"} των μηνυμάτων `επίπεδο-`{:class="block3variables"} και `τρέχον-επίπεδο`{:class="block3variables"} που το **Κουμπί** στέλνει, και ανταποκρίνεται αλλάζοντας τις ενδυμασίες για τις **Πλατφόρμες **.
 
-#### The **Enemy** sprite
+#### Το αντικείμενο **Εχθρός**
 
 \--- task \---
 
-In the **Enemy** sprite scripts, just make sure the sprite disappears when the player enters level 2, like this:
+Στις εντολές του αντικειμένου **Εχθρός**, απλώς βεβαιώσου ότι το αντικείμενο εξαφανίζεται όταν ο παίκτης μπαίνει στο επίπεδο 2, όπως αυτό:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -108,15 +108,15 @@ In the **Enemy** sprite scripts, just make sure the sprite disappears when the p
 
 \--- /task \---
 
-If you prefer, you can make the enemy move to another platform instead. In that case, you would use a `go to`{:class="block3motion"} block instead of the `show`{:class="block3looks"} and `hide`{:class="block3looks"} blocks.
+Αν προτιμάς, μπορείς να κάνεις τον εχθρό να μετακινηθεί σε άλλη πλατφόρμα. Σε αυτήν την περίπτωση, θα χρησιμοποιούσες το μπλοκ `πήγαινε σε θέση`{:class="block3motion"} αντί για τα μπλοκ `εμφανίσου`{:class="block3looks"} και `εξαφανίσου`{:class="block3looks"}.
 
-### Make the **Player Character** appear in the right place
+### Κάνε το αντικείμενο **Παίκτης** να εμφανίζεται στο σωστό μέρος
 
-Whenever a new level starts, the **Player Character** sprite needs to go to the right place for that level. To make this happen, you need to change where the sprite gets its coordinates from when it first appears on the Stage. At the moment, there are fixed `x` and `y` values in its code.
+Κάθε φορά που ξεκινά ένα νέο επίπεδο, το αντικείμενο **Παίκτης** πρέπει να πάει στο κατάλληλο μέρος για αυτό το επίπεδο. Για να συμβεί αυτό, πρέπει να αλλάξεις τον κώδικα όπου το αντικείμενο παίρνει τις συντεταγμένες του την πρώτη φορά που εμφανίζεται στη σκηνή. Προς το παρόν, υπάρχουν σταθερές τιμές `x` και `y` στον κώδικα.
 
 \--- task \---
 
-Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
+Ξεκίνησε δημιουργώντας μεταβλητές για τις αρχικές συντεταγμένες: `αρχή-x`{:class="block3variables"} και `αρχή-y`{:class="block3variables"}. Στη συνέχεια, βάλε τα στο μπλοκ `πήγαινε σε θέση`{:class="block3motion"} στην εντολή `επαναφορά-χαρακτήρα`{:class="block3myblocks"} στις **Εντολές μου ** αντί για τις σταθερές τιμές `x` και `y`:
 
 ```blocks3
     define reset-character
@@ -130,7 +130,7 @@ Begin by creating variables for the starting coordinates: `start-x`{:class="bloc
 
 \--- task \---
 
-Then for each broadcast announcing the start of a level, set the right `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"} coordinates in response, and add a **call** to `reset-character`{:class="block3myblocks"}:
+Στη συνέχεια, για κάθε μήνυμα που ανακοινώνει την έναρξη ενός επιπέδου, όρισε το σωστό ζευγάρι συντεταγμένων `αρχή-x`{:class="block3variables"} και `αρχή-y`{:class="block3variables"} και πρόσθεσε μια **κλήση** στο μπλοκ `επαναφορά-χαρακτήρα`{:class="block3myblocks"}:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -148,13 +148,13 @@ Then for each broadcast announcing the start of a level, set the right `start-x`
 
 \--- /task \---
 
-### Starting at Level 1
+### Ξεκινώντας από το Επίπεδο 1
 
-You also need to make sure that every time someone starts the game, the first level they play is level 1.
+Πρέπει επίσης να βεβαιωθείς ότι κάθε φορά που κάποιος ξεκινά το παιχνίδι, το πρώτο επίπεδο που εμφανίζεται είναι το επίπεδο 1.
 
 \--- task \---
 
-Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
+Πήγαινε στον κώδικα του μπλοκ `επαναφορά-παιχνιδιού`{:class="block3myblocks"} και σβήσε την κλήση στο μπλοκ `επαναφορά-χαρακτήρα`{:class="block3myblocks"}. Στη θέση του, μετάδωσε το μήνυμα `ελάχιστο-επίπεδο`{:class="block3variables"}. Ο κώδικας που έχεις ήδη προσθέσει με αυτήν την καρτέλα θα ρυθμίσει τις σωστές αρχικές συντεταγμένες για το αντικείμενο **Παίκτης**, και επίσης καλεί την `επαναφορά-χαρακτήρα`{:class="block3myblocks"}.
 
 ```blocks3
     define reset-game
@@ -172,12 +172,12 @@ Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `r
 
 ## \--- collapse \---
 
-## title: Resetting the Player Character versus resetting the game
+## title: Επαναφορά του χαρακτήρα παίκτη έναντι επαναφοράς του παιχνιδιού
 
-Notice that the first block in the **Player Character** sprite's main green flag script is a call to the `reset-game`{:class="block3myblocks"} **My blocks** block.
+Παρατήρησε ότι το πρώτο μπλοκ στο βασικό κώδικα της πράσινης σημαίας για το αντικείμενο **Παίκτης** καλεί το μπλοκ `επαναφορά-παιχνιδιού`{:class="block3myblocks"} από τις **Εντολές μου **.
 
-This block sets up all the variables for a new game and then calls the `reset-character`{:class="block3myblocks"} **My blocks** block, which places the character back in its correct starting position.
+Αυτό το μπλοκ ρυθμίζει όλες τις μεταβλητές για ένα νέο παιχνίδι και, στη συνέχεια, καλεί το μπλοκ `επαναφορά-χαρακτήρας`{:class="block3myblocks"} από τις **Εντολές μου **, το οποίο επαναφέρει τον χαρακτήρα στη σωστή αρχική του θέση.
 
-Having the `reset-character`{:class="block3myblocks"} code in its own block separate from `reset-game`{:class="block3myblocks"} allows you to reset the character to different positions **without** having to reset the whole game.
+Έχοντας τον κώδικα της `επαναφορά-χαρακτήρα`{:class="block3myblocks"} στο δικό του ξεχωριστό μπλοκ από το `επαναφορά-παιχνιδιού`{:class="block3myblocks"} σου επιτρέπει να επαναφέρεις το χαρακτήρα σε διαφορετικές θέσεις **χωρίς** να χρειάζεται να επαναφέρεις ολόκληρο το παιχνίδι.
 
 \--- /collapse \---
