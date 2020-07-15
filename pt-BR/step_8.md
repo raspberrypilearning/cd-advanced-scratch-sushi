@@ -175,6 +175,7 @@ Vá para o script `reiniciar-jogo`{:class="block3myblocks"} e remova a chamada p
 title: Reiniciando o personagem x reiniciando o jogo
 ---
 
+
 Observe que o primeiro bloco do script principal do ator **Personagem** é chamar o bloco `reiniciar-jogo`{:class="block3myblocks"} em **Meus Blocos**.
 
 Este bloco configura todas as variáveis para um novo jogo e então chama o bloco `reiniciar-personagem`{:class="block3myblocks"} em **Meus Blocos** que coloca o personagem de volta na sua posição inicial correta.
