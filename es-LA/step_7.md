@@ -1,14 +1,14 @@
-## Adding some competition
+## Añadiendo algo de competencia
 
-Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platform games like Super Mario that we’re inspired by here.
+Tu juego funciona y ahora puedes recoger puntos, obtener poderes especiales, y perder. ¡Estamos llegando a alguna parte! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platform games like Super Mario that we’re inspired by here.
 
 \--- task \---
 
-First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+Primero, elige un objeto para agregar como tu enemigo. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
 
-Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
+Resize the sprite to the right size, and place it somewhere appropriate to start. Así es como se ve el mío:
 
-![The dog enemy sprite](images/enemySprite.png)
+![El objeto enemigo del perro](images/enemySprite.png)
 
 \--- /task \---
 
@@ -25,7 +25,7 @@ Write the easiest code first: set up its block for reacting to the `game over`{:
 
 \--- task \---
 
-Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
+Ahora necesitas escribir el código de lo que hace el enemigo. Usa mi código aquí, ¡pero considera añadir bits extra! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
 
 ```blocks3
 +    when green flag clicked
@@ -51,7 +51,7 @@ The next thing you’ll need is for the player to lose a life when their **Playe
 
 \--- task \---
 
-Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
+Así es como lo hice, ¡pero puedes intentar mejorar este código! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
 
 ```blocks3
     when green flag clicked
