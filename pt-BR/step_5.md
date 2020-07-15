@@ -1,68 +1,68 @@
 ## Super power-ups!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+Agora que você tem um novo colecionável power-up funcionando, é hora de fazer algo realmente legal: vamos fazer 'chover' power-ups por alguns segundos ao invés de apenas dar uma vida extra.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+Para isso, você `transmitirá`{:class="block3events"} outra mensagem.
 
 \--- task \---
 
-First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+Primeiro, mude o bloco `reagir-ao-jogador`{:class="block3myblocks"} para transmitir uma mensagem quando o jogador tocar num colecionável tipo `2`. Chame a mensagem `collectable-rain`{:class="block3events"}.
 
 ```blocks3
-    define react-to-player (type)
-    if <(type ::variable) = [1]> then
-        change [points v] by (collectable-value ::variables)
+    define reagir-ao-jogador (tipo)
+    if <(tipo ::variable) = [1]> then
+        change [pontos v] by (colecionavel-valor ::variables)
     end
-    if <(type ::variable) = [2]> then
--        change [lives v] by [1]    
+    if <(tipo ::variable) = [2]> then
+-        change [vidas v] by [1]    
 +        broadcast [collectable-rain v]
     end
 ```
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+Agora você precisa criar um pedaço de código novo dentro dos scripts do ator **Colecionavel** que será iniciado sempre que a mensagem `collectable-rain`{:class="block3events"} for transmitida.
 
 \--- task \---
 
-Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+Adicione esse código no ator **Colecionavel** para fazer com que ele aguarde a transmissão da mensagem `collectable-rain`{:class="block3events"}.
 
 ```blocks3
 +    when I receive [collectable-rain v]
-+    set [collectable-frequency v] to [0.000001]
++    set [colecionavel-frequencia v] to [0.000001]
 +    wait (1) secs
-+    set [collectable-frequency v] to [1]
++    set [colecionavel-frequencia v] to [1]
 ```
 
 \--- /task \---
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: O que o novo código faz?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+Esse trecho de código aguarda a transmissão, e ao receber, define o valor da variável `colecionavel-frequencia`{:class="block3variables"} para um número muito pequeno, então espera por um segundo e em seguida muda o valor da variável novamente para `1`.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+Vamos ver como a variável `colecionavel-frequencia`{:class="block3variables"} é usada para descobrir porque isso faz chover colecionáveis.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+No loop principal do jogo, a parte do código que faz clones do ator **Colecionavel** é informada pela variável `colecionavel-frequencia`{:class="block3variables"} quanto tempo esperar novos clones:
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
         if < [50] = (pick random (1) to (50))> then
-            set [collectable-type v] to [2]
+            set [colecionavel-tipo v] to [2]
         else
-            set [collectable-type v] to [1]
+            set [colecionavel-tipo v] to [1]
         end
-        wait (collectable-frequency ::variables) secs
+        wait (colecionavel-frequencia ::variables) secs
         go to x: (pick random (-240) to (240)) y:(179)
         create clone of [myself v]
     end
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+Você pode ver que o bloco `espere`{:class="block3control"} pausa o código pelo período de tempo definido por `colecionavel-frequencia`{:class="block3variables"}.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+Se o valor de `colecionavel-frequencia`{:class="block3variables"} é `0.000001`, o bloco `espere`{:class="block3control"} só pausa por **um milionésimio** de segundo, o que significa que o loop `repita até que`{:class="block3control"} vai ser executado muito mais vezes que o normal. Como resultado, o código criará **muito** mais power-ups do que normalmente faria, até que `colecionavel-frequencia`{:class="block3variables"} seja alterado novamente para `1`.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+Você consegue pensar em algum problema que isso possa causar? Haverá muito mais power-ups…e se você continuasse pegando eles?
 
 \--- /collapse \---
