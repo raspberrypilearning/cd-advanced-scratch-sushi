@@ -1,46 +1,46 @@
 \--- no-print \---
 
-This is the **Scratch 3** version of the project. There is also a [Scratch 2 version of the project](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
+Αυτή είναι η έκδοση **Scratch 3** του έργου. Υπάρχει επίσης η [έκδοση Scratch 2 του έργου](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
 
 \--- /no-print \---
 
-## Introduction
+## Εισαγωγή
 
-These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
+Αυτές είναι οι καρτέλες Προχωρημένου Επιπέδου στο Scratch, και μαζί τους θα δημιουργήσεις ένα παιχνίδι σε στυλ πλατφόρμας (platform game), στο οποίο μπορείς αργότερα να προσθέσεις δικά σου επίπεδα, ζωές και χαρακτήρες!
 
-### What you will make
+### Τι θα φτιάξεις
 
-Here is an example of the game you will build. Feel free to improve on my "art".
+Εδώ είναι ένα παράδειγμα του παιχνιδιού που θα φτιάξεις. Μη διστάσεις να βελτιώσεις το δημιούργημά μου.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
 </div>
 
-Use the arrow keys to move the cat around. Watch out for the dog!
+Χρησιμοποίησε τα πλήκτρα βέλους για να μετακινήσεις τη γάτα. Πρόσεξε το σκύλο!
 
 ## \--- collapse \---
 
-## title: What you will learn
+## title: Τι θα μάθεις
 
-+ Cloning sprites
-+ Using variables inside cloned sprites
-+ Creating and using **My blocks** blocks
-+ Reusing code in several places with **My blocks** blocks
-+ Messages to trigger behaviours across sprites
-+ Using variables to configure your program
++ Κλωνοποίηση αντικειμένων
++ Χρήση μεταβλητών εντός κλωνοποιημένων αντικειμένων
++ Δημιουργία και χρήση του μενού **Οι Εντολές μου**
++ Επαναχρησιμοποίηση κώδικα μέσα από τις **Εντολές μου**
++ Μηνύματα για την πρόκληση συμπεριφορών σε όλα τα αντικείμενα
++ Χρήση μεταβλητών για παραμετροποίηση του προγράμματός σου
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: What you will need
+## title: Τι θα χρειαστείς
 
-### Hardware
+### Υλικό
 
-+ A computer capable of running Scratch 3
++ Ένας υπολογιστής ικανός να τρέχει το Scratch 3
 
-### Software
+### Λογισμικό
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} or [offline](https://scratch.mit.edu/download/){:target="_blank"})
++ Scratch 3 (είτε [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} είτε [offline](https://scratch.mit.edu/download/){:target="_blank"})
 
 \--- /collapse \---
