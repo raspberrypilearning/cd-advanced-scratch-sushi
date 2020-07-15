@@ -1,20 +1,20 @@
-## Adding some competition
+## Ajoute de la concurrence
 
-Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platform games like Super Mario that we’re inspired by here.
+Ton jeu fonctionne et tu peux maintenant accumuler des points, obtenir des pouvoirs spéciaux grâce à des power-ups, et perdre. Voilà qui est mieux ! Peut-être serait-il amusant d'ajouter un peu de compétition — qu'en est-il de l'ajout d'un personnage qui se déplace un peu, mais que tu n'es pas censé toucher ? Cela ressemblera aux ennemis des jeux de plateforme traditionnels comme Super Mario, qui nous inspirent ici.
 
 \--- task \---
 
-First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+Tout d'abord, choisis un sprite à ajouter comme ennemi. Parce que notre personnage joueur est un chat, j'ai choisi un chien. Il y a beaucoup d'autres sprites que tu pourrais ajouter. J'ai également renommé le sprite **Ennemi** , juste pour que les choses soient plus claires pour moi.
 
-Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
+Redimensionne le sprite à la bonne taille et place-le à un endroit approprié pour commencer. Voici à quoi ressemble le mien :
 
-![The dog enemy sprite](images/enemySprite.png)
+![Le sprite ennemi chien](images/enemySprite.png)
 
 \--- /task \---
 
 \--- task \---
 
-Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
+Écris d'abord le code le plus simple : configure son bloc pour réagir au message `partie terminée`{:class="events"} pour faire disparaître l'ennemi quand le joueur perd la partie.
 
 ```blocks3
 +    when I receive [game over v]
@@ -25,7 +25,7 @@ Write the easiest code first: set up its block for reacting to the `game over`{:
 
 \--- task \---
 
-Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
+Maintenant, tu dois écrire le code pour ce que fait l'ennemi. Utilise mon code ici, mais envisage d'ajouter des morceaux supplémentaires ! (Et s'ils peuvent se téléporter sur différentes plateformes ? Et s'il y a un power-up qui les rend plus rapides ou plus lents ?)
 
 ```blocks3
 +    when green flag clicked
@@ -41,17 +41,17 @@ Now you need to write the code for what the enemy does. Use my code here, but co
      end
 ```
 
-**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
+**Note** : si tu fais juste glisser le bloc `aller à`{:class="block3motion"} dans le panneau des sprites et ne change pas les valeurs `x` et `y` ce seront les valeurs pour l'emplacement actuel du sprite **Ennemi** !
 
-The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
+Le code dans le bloc `si...alors`{:class="block3control"} fera tourner les sprites quand ils arriveront à la fin de la plateforme !
 
 \--- /task \---
 
-The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+La prochaine chose dont tu auras besoin est que le joueur perde une vie quand son sprite **Joueur** touche le sprite **Ennemi**. En outre, tu dois t'assurer que les sprites **arrêtent** de toucher très rapidement, car autrement, le code qui vérifie le toucher continuera à fonctionner et le joueur continuera à perdre des vies.
 
 \--- task \---
 
-Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
+Voici comment je l'ai fait, mais tu peux essayer d'améliorer ce code ! J’ai modifié le bloc principal du sprite **Perso joueur**. Ajoute le nouveau code avant le bloc `si`{:class="block3control"} qui vérifie si tu n'as plus de vie.
 
 ```blocks3
     when green flag clicked
@@ -80,4 +80,4 @@ Here's how I did it, but you can try to improve on this code! I modified the **P
 
 \--- /task \---
 
-The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
+Le nouveau code cache le sprite **Perso joueur**, le déplace à sa position de départ. réduit la variable `vies`{:class="block3variables"} de `1`, et après une demi-seconde le sprite réapparaît.
