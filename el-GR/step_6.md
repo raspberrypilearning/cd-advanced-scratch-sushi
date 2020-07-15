@@ -1,3 +1,3 @@
-## Challenge: get creative!
+## Πρόκληση: γίνε δημιουργικός!
 
-Based on the previous two cards you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with two cool power-ups and see if you can make them!
+Με βάση τις δύο προηγούμενες καρτέλες, μπορείς τώρα να δημιουργήσεις όσα διαφορετικά είδη βραβείων θέλεις! Τι θα έλεγες για ένα βραβείο που δίνει 20 φορές τον συνηθισμένο αριθμό πόντων ή προσθέτει τρεις ζωές ή δίνει ανοσία στον εχθρό για ένα χρονικό διάστημα, χωρίς να μπορεί να χάσει; Σκέψου δύο εντυπωσιακά τέτοια βραβεία και δες αν μπορείς να τα φτιάξεις!
