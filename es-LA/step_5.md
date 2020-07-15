@@ -1,4 +1,4 @@
-## Super power-ups!
+## ¡Superpotenciadores!
 
 Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
 
@@ -38,7 +38,7 @@ Add this code for the **Collectable** sprite to make it listen out for the `coll
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: ¿Qué hace el nuevo bloque?
 
 This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
 
@@ -63,6 +63,6 @@ You can see that the `wait`{:class="block3control"} block here pauses the code f
 
 If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+¿Puedes pensar en algúnos problemas que eso pueda causar? Habrá muchos más potenciadores…¿qué pasaría si los siguieras atrapando?
 
 \--- /collapse \---
