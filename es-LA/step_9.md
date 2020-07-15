@@ -1,10 +1,10 @@
-## Moving platforms
+## Plataformas móviles
 
 The reason I asked you to use my version of level 2 is the gap you might have noticed in the middle of the layout. You’re going to create a platform that moves through this gap and that the player can jump on and ride!
 
-![Another level with different platforms](images/movingPlatforms.png)
+![Otro nivel con diferentes plataformas](images/movingPlatforms.png)
 
-First, you’ll need the sprite for the platform.
+Primero, necesitarás el objeto para la plataforma.
 
 \--- task \---
 
@@ -14,13 +14,13 @@ Add a new sprite, name it **Moving-Platform**, and using the costume customisati
 
 Now, let's add some code to the sprite.
 
-Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. Yo elegí `4` segundos como mi intervalo. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
 
 \--- task \---
 
 Add code to create clones of your platform sprite.
 
-Here's how mine looks so far:
+Así es como el mio se ve hasta ahora:
 
 ```blocks3
 +    when green flag clicked
@@ -37,7 +37,7 @@ Here's how mine looks so far:
 
 \--- task \---
 
-Then add the clone's code:
+Luego agregue el código del clon:
 
 ```blocks3
 +    when I start as a clone
@@ -75,9 +75,9 @@ Now make the platforms disappear/reappear based on the broadcasts that change le
 
 \--- /task \---
 
-Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
+Now, if you try to actually play the game, the **Player Character** falls through the platform! ¿Alguna idea de por qué?
 
-It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
+It’s because the physics code doesn’t know about the platform. En realidad es una solución rápida:
 
 \--- task \---
 
@@ -89,7 +89,7 @@ Go through the code for the **Player Character** sprite and everywhere you see t
     <touching [Platforms v] ?>
 ```
 
-replace it with this one:
+reemplazarlo con este:
 
 ```blocks3
     <<touching [Platforms v] ?> or <touching [Moving-Platform v] ?>>
