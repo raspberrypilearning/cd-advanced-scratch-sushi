@@ -1,81 +1,81 @@
-## What next?
+## ¿Qué sigue?
 
-You’ve got a complete game now, but there’s a whole lot more you can do with it! Here are a few ideas to get you started:
+Ahora tienes un juego completo, ¡pero aún hay mucho más que puedes hacer con él! Aquí tienes algunas ideas para empezar:
 
 ## \--- collapse \---
 
-## title: High scores
+## title: Puntuaciones altas
 
-+ Keep a list of the names and scores of people who’ve gotten high scores in the game! You’ll need to use the `ask`{:class="block3looks"} block to the get their name.
++ ¡Mantén una lista de los nombres y puntajes de las personas que obtuvieron puntajes altos en el juego! Necesitarás usar el bloque `preguntar`{:class="block3looks"} para obtener su nombre.
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: New power-ups
+## title: Nuevos potenciadores
 
-+ Try adding some new power-ups, for example for: 
-  + Immunity to enemies
-  + More lives
-  + Bigger player character
-  + Smaller player character
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Scrolling levels
-
-+ Can you figure out how to make the levels scroll along, so the player character can move through them from left to right? Or at least make it *look* like that’s what’s happening?
++ Intenta añadir algunos nuevos potenciadores; por ejemplo para: 
+  + Inmunidad a enemigos
+  + Más vidas
+  + Personaje de juego más grande
+  + Personaje de juego más pequeño
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Completing levels
+## title: Niveles de desplazamiento
 
-+ Right now, the levels never end. What if, instead of pushing a button, you needed a certain number of points to get to the next level?
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Play With physics
-
-+ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, and `y-speed`{:class="block3variables"}. How do they change the game?
-
-+ Can you use the physics to make power-ups?
++ ¿Puedes averiguar cómo hacer que los niveles se desplacen a lo largo, de modo que el personaje de juego pueda moverse a través de ellos, de izquierda a derecha? ¿O al menos hazlo *observar* como si eso fuese lo que está pasando?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: More levels
+## title: Completando niveles
 
-+ Add more levels! Make better art! Use the Stage background to make the game look cooler while still keeping platforms easy to work with for you as the coder.
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Sound effects
-
-+ This game is totally silent right now! Try adding background music and sound effects using the blocks in the **Sound** section!
++ Ahora, los niveles nunca terminan. ¿Qué pasaría si, en lugar de presionar un botón, necesitaras un cierto número de puntos para llegar al siguiente nivel?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Secrets
+## title: Jugar con la física
 
-+ Think of secret bonuses, cheat codes, and other 'easter eggs' you can hide in the game for players to discover. Try to code some of them!
++ Intenta cambiar algunos de los valores en el motor de física, como la `gravedad`{:class="block3variables"}, `altura de salto`{:class="block3variables"}, `x-velocidad`{:class="block3variables"}, y `y-velocidad`{:class="block3variables"}. ¿Cómo cambian el juego?
+
++ ¿Puedes utilizar la física para hacer potenciadores?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Different characters
+## title: Más niveles
 
-+ Add more character sprites and let the player pick one. Make the characters different in attributes like size, how high they jump, maybe even how many lives they have, and how many points they get from collectables! 
++ ¡Agrega más niveles! ¡Haz un mejor arte! Usa el fondo del escenario para hacer que el juego se vea más genial mientras mantienes las plataformas fáciles de trabajar para ti como codificador.
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: Efectos de sonido
+
++ ¡Este juego está en silencio total ahora mismo! ¡Intenta añadir música de fondo y efectos de sonido usando los bloques en la sección **Sonido**!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: Secretos
+
++ Piensa en bonos secretos, códigos de trucos y otros 'huevos de pascua' que puedes esconder en el juego para que los jugadores los descubran. ¡Intenta codificar algunos de ellos!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: Diferentes personajes
+
++ Añade más objetos de personaje y deja que el jugador escoja uno. ¡Haz que los personajes sean diferentes en atributos como el tamaño, cuán alto saltan, tal vez incluso cuántas vidas tienen y cuántos puntos obtienen de los coleccionables! 
 
 \--- /collapse \---
