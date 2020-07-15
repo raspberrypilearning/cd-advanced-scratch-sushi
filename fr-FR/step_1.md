@@ -10,7 +10,7 @@ Ceci est le projet Cartes Sushi Scratch (avancé), avec lequel tu construiras un
 
 ### Ce que tu feras
 
-Voici un exemple du jeu que tu vas construire. N'hésite pas à améliorer mon "art".
+Voici un exemple du jeu que tu vas construire. N'hésite pas à améliorer mon « art ».
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
@@ -33,14 +33,14 @@ Utilise les touches fléchées pour déplacer le chat. Attention au chien !
 
 ## \--- collapse \---
 
-## title: Ce dont tu vas avoir besoin
+## title: Ce dont tu auras besoin
 
 ### Matériel informatique
 
 + Un ordinateur capable d'exécuter Scratch 3
 
-### Logiciels
+### Logiciel
 
-+ Scratch 3 (soit [en ligne](https://scratch.mit.edu/projects/editor/){:target="_blank"} ou [hors ligne](https://scratch.mit.edu/download/){:target="_blank"})
++ Scratch 3 (soit [en ligne](https://scratch.mit.edu/projects/editor/){:target="_blank"} ou [hors-ligne](https://scratch.mit.edu/download/){:target="_blank"})
 
 \--- /collapse \---
