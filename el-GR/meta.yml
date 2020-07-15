@@ -1,7 +1,7 @@
 ---
-title: Falling stars
+title: Αστέρια που πέφτουν
 hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
+description: Δημιούργησε ένα παιχνίδι σε στυλ πλατφόρμας και πρόσθεσε τα δικά σου επίπεδα, δυνάμεις και χαρακτήρες.
 theme: orange
 listed: true
 copyedit: true
@@ -14,23 +14,23 @@ version: 4.0.0
 last_tested: "2018-04-23"
 steps:
   - 
-    title: Introduction
+    title: Εισαγωγή
   - 
-    title: Setting things up
+    title: Ρύθμιση των πραγμάτων
   - 
-    title: Losing the game
+    title: Χάνοντας το παιχνίδι
   - 
-    title: Power-ups
+    title: Βραβεία
   - 
-    title: Super power-ups!
+    title: Σούπερ Βραβεία!
   - 
-    title: "Challenge: get creative!"
+    title: "Πρόκληση: γίνε δημιουργικός!"
     challenge: true
   - 
-    title: Adding some competition
+    title: Περισσότερος ανταγωνισμός
   - 
-    title: Level 2
+    title: Επίπεδο 2
   - 
-    title: Moving platforms
+    title: Κινούμενες πλατφόρμες
   - 
-    title: What next?
+    title: Τι υπάρχει μετά;
