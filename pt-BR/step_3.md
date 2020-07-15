@@ -1,19 +1,19 @@
-## Losing the game
+## Perdendo o jogo
 
-First things first! You need a way to make the game end when the player has run out of lives. At the moment that doesn't happen.
+Começando pelo início! Você precisa fazer com que o jogo termine quando o jogador ficar sem vidas. No momento isso não acontece.
 
-You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+Você deve ter notado que o bloco `perder`{:class="block3myblocks"} em **Meus Blocos** nos scripts para o ator **Personagem** está vazio. Você vai preencher isso e configurar todas as peças necessárias para uma boa tela de 'Fim de Jogo'.
 
 \--- task \---
 
-First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+Primeiro ache o bloco `lose`{:class="block3myblocks"} e o complete com o seguinte código:
 
 ```blocks3
-    define lose
+    define perder
 +    stop [other scripts in sprite v] :: control stack
 +    broadcast [game over v]
 +    go to x:(0) y:(0)
-+    say [Game over!] for (2) secs
++    say [Fim de Jogo!] for (2) secs
 +    stop [all v]
 ```
 
@@ -21,24 +21,24 @@ First, find the `lose`{:class="block3myblocks"} block and complete it with the f
 
 ## \--- collapse \---
 
-## title: What does this code do?
+## title: O que esse código faz?
 
-Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
+Sempre que o bloco `perder`{:class="block3myblocks"} roda agora, o que ele faz é:
 
-1. Stop the physics and other game scripts acting on the **Player Character**
-2. Tell all the other sprites that the game is over by **broadcasting** a `game over`{:class="block3events"} message they can respond to and change what they're doing
-3. Move the **Player Character** to the centre of the Stage and have them tell the player that the game is over
-4. Stop all scripts in the game
+1. Parar a física e outros scripts de jogo agindo no **Personagem**
+2. Dizer a todos os outros sprites que o jogo acabou fazendo o **transmissão** da mensagem `game over`{:class="block3events"} que eles podem responder e mudar o que estão fazendo
+3. Moer o **Personagem** para o centro da tela e pedir que ele avise o jogador que o jogo acabou
+4. Parar todos os scripts do jogo
 
 \--- /collapse \---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+Agora você precisa ter certeza de que todos os atores sabem o que fazer quando o jogo terminar, e como se reiniciarem quando o jogador iniciar um novo jogo. **Não se esqueça de que qualquer novo ator que você adicionar pode também precisar de código para isso!**
 
-### Hiding the platforms and edges
+### Ocultando plataformas e bordas
 
 \--- task \---
 
-Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+Comece com os atores mais fáceis. Ambos os atores de **Plataformas** e **Lados** precisam de código para aparecerem quando o jogo iniciar, e de desaparecer quando receberem a mensagem de `game over`{:class="block3events"}, então adicione esse blocos a cada um deles:
 
 ```blocks3
 +    when I receive [game over  v]
@@ -52,45 +52,45 @@ Start with the easiest sprites. The **Platforms** and **Edges** sprites both nee
 
 \--- /task \---
 
-### Stopping the stars
+### Parando as estrelas
 
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
+Agora, se você olhar o código para o ator **Colecionavel**, você verá que ele funciona **clonando** a si mesmo. Ou seja, ele faz cópias de si mesmo que seguem as instruções em `quando eu começar como um clone`{:class="block3events"}.
 
-We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
+Falaremos mais sobre o que torna os clones especiais quando chegarmos no passo de criar novos colecionáveis. Por enquanto, o que você precisa saber é que os clones podem fazer **quase** tudo o que um ator normal pode, inclusive receber mensagens `transmitidas`{:class="block3events"}.
 
-Look at how the **Collectable** sprite works. See if you can understand some of its code:
+Veja como o ator **Colecionavel** funciona. Veja se você pode entender algo do seu código:
 
 ```blocks3
     when green flag clicked
     hide
-    set [collectable-value v] to [1]
-    set [collectable-speed v] to [1]
-    set [collectable-frequency v] to [1]
-    set [create-collectables v] to [true]
-    set [collectable-type v] to [1]
+    set [colecionavel-valor v] to [1]
+    set [colecionavel-aceleracao v] to [1]
+    set [colecionavel-frequencia v] to [1]
+    set [criar-colecionaveis v] to [true]
+    set [colecionavel-tipo v] to [1]
     repeat until <not <(create-collectables) = [true]>>
-        wait (collectable-frequency) secs
+        wait (colecionavel-frequencia) secs
         go to x: (pick random (-240) to (240)) y: (179)
         create clone of [myself v]
     end
 ```
 
-1. First it makes the original **Collectable** sprite invisible by hiding it
-2. Then it sets up the control variables — we’ll come back to these later
-3. The `create-collectables`{:class="block3variables"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="block3variables"} is `true`, and does nothing if it’s not
+1. Primeiramente ele faz com que o ator **Colecionavel** original fique invisível ao escondê-lo
+2. Então ele cria as variáveis de controle — nós voltaremos para elas mais tarde
+3. A variável `criar-colecionaveis`{:class="block3variables"} é uma chave liga/desliga para clonagem: o loop cria clones somente se `criar-colecionaveis`{:class="block3variables"} for `true`
 
 \--- task \---
 
-Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
+Agora configure um bloco para o ator **Colecionavel** para que ele reaja a mensagem de `game over`:
 
 ```blocks3
 +    when I receive [game over v]
 +    hide
-+    set [create-collectables v] to [false]
++    set [criar-colecionaveis v] to [false]
 ```
 
 \--- /task \---
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
+Esse código é parecido com o código que controla os atores **Platformas** e **Bordas**. A única diferença é que você também está configurando a variável `criar-colecionaveis`{:class="block3variables"} para `false` para que nenhum novo clone seja criado quando o jogo estiver terminado.
 
-Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
+Note que você pode usar a variável `criar-colecionaveis`{:class="block3variáveis"} para passar mensagens de uma parte do seu código para outra!
