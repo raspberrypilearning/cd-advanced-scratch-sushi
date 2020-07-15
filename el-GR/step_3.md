@@ -1,12 +1,12 @@
-## Losing the game
+## Χάνοντας το παιχνίδι
 
-First things first! You need a way to make the game end when the player has run out of lives. At the moment that doesn't happen.
+Καταρχάς! Χρειάζεσαι έναν τρόπο για να τερματίσεις το παιχνίδι όταν ο παίκτης χάσει όλες τις ζωές. Αυτή τη στιγμή αυτό δεν συμβαίνει.
 
-You may have noticed that the `lose`{:class="block3myblocks"} **My blocks** block in the scripts for the **Player Character** sprite is empty. You’re going to fill this in and set up all the pieces needed for a nice 'Game over' screen.
+Μπορεί να έχεις παρατηρήσει ότι το μπλοκ `χάνει`{:class="block3myblocks"} από τις **Εντολές μου** στο σενάριο του αντικειμένου **Παίκτης** είναι άδειο. Θα το συμπληρώσεις και θα δημιουργήσεις όλα τα κομμάτια που χρειάζεται για εμφανίζεται μια ωραία οθόνη «Τέλος Παιχνιδιού».
 
 \--- task \---
 
-First, find the `lose`{:class="block3myblocks"} block and complete it with the following code:
+Αρχικά, βρες το μπλοκ `χάνει`{:class="block3myblocks"} και συμπλήρωσε τον ακόλουθο κώδικα:
 
 ```blocks3
     define lose
@@ -21,24 +21,24 @@ First, find the `lose`{:class="block3myblocks"} block and complete it with the f
 
 ## \--- collapse \---
 
-## title: What does this code do?
+## title: Τι κάνουν αυτές οι εντολές;
 
-Whenever the `lose`{:class="block3myblocks"} block runs now, what it does is:
+Όποτε εκτελείται το μπλοκ `χάνει`{:class="block3myblocks"}, αυτό που κάνει είναι:
 
-1. Stop the physics and other game scripts acting on the **Player Character**
-2. Tell all the other sprites that the game is over by **broadcasting** a `game over`{:class="block3events"} message they can respond to and change what they're doing
-3. Move the **Player Character** to the centre of the Stage and have them tell the player that the game is over
-4. Stop all scripts in the game
+1. Σταματάει τη φυσική και άλλα σενάρια παιχνιδιού που ενεργούν στο αντικείμενο **Παίκτης**
+2. Λέει σε όλα τα άλλα αντικείμενα ότι το παιχνίδι τελείωσε **μεταδίδοντας** ένα μήνυμα `τέλος παιχνιδιού`{:class="block3events"}, στο οποίο μπορούν να αντιδράσουν και να αλλάξουν αυτό που κάνουν
+3. Μετακινεί το **Παίκτη** στο κέντρο της σκηνής και να του λέει ότι το παιχνίδι τελείωσε
+4. Σταματάει όλα τα σενάρια στο παιχνίδι
 
 \--- /collapse \---
 
-Now you need to make sure all the sprites know what to do when the game is over, and how to reset themselves when the player starts a new game. **Don’t forget that any new sprites you add also might need code for this!**
+Τώρα πρέπει να βεβαιωθείς ότι όλα τα αντικείμενα ξέρουν τι να κάνουν όταν τελειώσει το παιχνίδι και πώς να επαναφέρουν τον εαυτό τους όταν ο παίκτης ξεκινά ένα νέο παιχνίδι. **Μην ξεχνάς ότι τυχόν νέα αντικείμενα που προσθέτεις ενδέχεται να χρειάζονται επιπλέον κώδικα για αυτό!**
 
-### Hiding the platforms and edges
+### Απόκρυψη των πλατφορμών και των ορίων
 
 \--- task \---
 
-Start with the easiest sprites. The **Platforms** and **Edges** sprites both need code for appearing when the game starts and disappearing when they receive the `game over`{:class="block3events"} broadcast, so add these blocks to each of them:
+Ξεκίνησε με τα ευκολότερα αντικείμενα. Τα αντικείμενα **Πλατφόρμες** και **Όρια** χρειάζονται κώδικα για να εμφανίζονται όταν ξεκινά το παιχνίδι και να εξαφανίζονται όταν λαμβάνουν το μήνυμα `Τέλος Παιχνιδιού`{:class="block3events"}, οπότε πρόσθεσε αυτά τα μπλοκ σε καθένα από αυτά:
 
 ```blocks3
 +    when I receive [game over  v]
@@ -52,13 +52,13 @@ Start with the easiest sprites. The **Platforms** and **Edges** sprites both nee
 
 \--- /task \---
 
-### Stopping the stars
+### Σταματώντας τα αστέρια
 
-Now, if you look at the code for the **Collectable** sprite, you’ll see it works by **cloning** itself. That is, it makes copies of itself that follow the special `when I start as a clone`{:class="block3events"} instructions.
+Τώρα, αν κοιτάξεις τον κώδικα για το αντικείμενο **Βραβείο**, θα δεις ότι λειτουργεί με δημιουργία **κλώνων** του εαυτού του. Δηλαδή δημιουργεί αντίγραφα που εκτελούν τις εντολές του μπλοκ `όταν ξεκινήσω ως κλώνος`{:class="block3events"}.
 
-We’ll talk more about what makes clones special when we get to the step about making new and different collectables. For now, what you need to know is that clones can do **almost** everything a normal sprite can, including receiving `broadcast`{:class="block3events"} messages.
+Θα μιλήσουμε περισσότερο για το τι κάνει τους κλώνους ξεχωριστούς όταν φτάσουμε στο βήμα για τη δημιουργία νέων και διαφορετικών βραβείων. Προς το παρόν, αυτό που πρέπει να γνωρίζεις είναι ότι οι κλώνοι μπορούν να κάνουν **σχεδόν** όλα όσα μπορεί να κάνει ένα κανονικό αντικείμενο, συμπεριλαμβανομένης και της `λήψης μηνυμάτων`{:class="block3events"}.
 
-Look at how the **Collectable** sprite works. See if you can understand some of its code:
+Δες πώς δουλεύει το αντικείμενο **Βραβείο**. Δες αν μπορείς να καταλάβεις μέρος του κώδικά του:
 
 ```blocks3
     when green flag clicked
@@ -75,13 +75,13 @@ Look at how the **Collectable** sprite works. See if you can understand some of 
     end
 ```
 
-1. First it makes the original **Collectable** sprite invisible by hiding it
-2. Then it sets up the control variables — we’ll come back to these later
-3. The `create-collectables`{:class="block3variables"} variable is the on/off switch for cloning: the loop creates clones if `create-collectables`{:class="block3variables"} is `true`, and does nothing if it’s not
+1. Πρώτα κάνει το αρχικό αντικείμενο **Βραβείο** αόρατο, εξαφανίζοντάς το
+2. Στη συνέχεια, ρυθμίζει τις μεταβλητές ελέγχου - θα επανέλθουμε σε αυτές αργότερα
+3. Η μεταβλητή `δημιουργία-βραβείων`{:class="block3variables"} αποτελεί ένα διακόπτης on / off για κλωνοποίηση: ο βρόχος δημιουργεί κλώνους εάν η `δημιουργία-βραβείων`{:class="block3variables"} είναι `αληθής (true)`, και δεν κάνει τίποτα αν είναι ψευδής (false)
 
 \--- task \---
 
-Now set up a block for the **Collectable** sprite so that it reacts to the `game over` broadcast:
+Τώρα δημιούργησε ένα μπλοκ για το αντικείμενο **Βραβείο**, έτσι ώστε να ανταποκρίνεται στη μήνυμα `Τέλος Παιχνιδιού`:
 
 ```blocks3
 +    when I receive [game over v]
@@ -91,6 +91,6 @@ Now set up a block for the **Collectable** sprite so that it reacts to the `game
 
 \--- /task \---
 
-This code is similar to the code controlling the **Platforms** and **Edges** sprites. The only difference is that you’re also setting the `create-collectables`{:class="block3variables"} variable to `false` so that no new clones get created when it's 'Game over'.
+Αυτός ο κώδικάς είναι παρόμοιος με τον κώδικα που ελέγχει τα αντικείμενα **Πλατφόρμες** και **Όρια**. Η μόνη διαφορά είναι ότι ρυθμίζεις και τη μεταβλητή `δημιουργία-βραβείων`{:class="block3variables"} σε `ψευδές (false)`, έτσι ώστε να μην δημιουργούνται νέοι κλώνοι όταν τελειώσει το παιχνίδι.
 
-Note that you can use the `create-collectables`{:class="block3variables"} variable to pass messages from one part of your code to another!
+Έχε στο νου ότι μπορείς να χρησιμοποιήσεις τη μεταβλητή `δημιουργία-βραβείων`{:class="block3variables"} για τη μετάδοση μηνυμάτων από ένα μέρος του κώδικα σε ένα άλλο!
