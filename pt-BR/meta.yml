@@ -1,0 +1,26 @@
+---
+title: Estrelas cadentes
+hero_image: imagens/banner.png
+description: Faça um jogo no estilo plataforma e adicione seus próprios níveis, poderes e personagens.
+theme: orange
+listed: true
+copyedit: true
+curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
+interests: games
+technologies: scratch
+site_areas: coderdojo
+software: scratch
+version: 3
+last_tested: "2018-04-23"
+steps:
+  - title: Introdução
+  - title: Configurando as coisas
+  - title: Perdendo o jogo
+  - title: Power-ups
+  - title: Super power-ups!
+  - title: "Desafio: seja criativo!"
+    challenge: true
+  - title: Adicionando alguma competição
+  - title: Nível 2
+  - title: Plataformas móveis
+  - title: E agora?
