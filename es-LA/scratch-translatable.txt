@@ -1,71 +1,71 @@
-lose
+perder
 
-game over
+fin del juego
 
-Game Over!
+¡Fin del juego!
 
-collectable-value
+valor coleccionable
 
-collectable-speed
+velocidad coleccionable
 
-collectable-frequency
+frecuencia coleccionable
 
-create-collectables
+crear coleccionables
 
-collectable type
+tipo coleccionable
 
-pick costume
+elegir disfraz
 
-points
+puntos
 
-type
+tipo
 
-react-to-player
+reaccionar al jugador
 
-collectable-rain
+lluvia coleccionable
 
-Enemy
+Enemigo
 
-enemy-move-steps
+pasos de movimiento enemigo
 
-Platforms
+Plataformas
 
-Edges
+Bordes
 
-Player Character
+Personaje del jugador
 
-reset-game
+reiniciar juego
 
-reset-character
+reiniciar personaje
 
-main-physics
+física principal
 
-lives
+vidas
 
-max-level
+nivel máximo
 
-min-level
+nivel mínimo
 
-current-level
+nivel actual
 
-collectable-cleanup
+limpieza coleccionable
 
-level-
+nivel-
 
-level-1
+nivel 1
 
-level-2
+nivel 2
 
-start-x
+iniciar x
 
-start-y
+iniciar y
 
-can-jump
+puede saltar
 
-jump-height
+altura del salto
 
-gravity
+gravedad
 
-Moving-Platform
+Plataforma móvil
 
-create-platforms
+crear plataformas
