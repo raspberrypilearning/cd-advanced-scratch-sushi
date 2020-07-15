@@ -1,12 +1,12 @@
 ---
-title: Falling stars
+title: Estrellas fugaces
 hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
+description: Crea un juego de plataforma y agrega tus propios niveles, poderes y personajes.
 theme: orange
 listed: true
 copyedit: true
 curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
-interests: games
+interests: juegos
 technologies: scratch
 site_areas: coderdojo
 software: scratch
@@ -14,23 +14,23 @@ version: 4.0.0
 last_tested: "2018-04-23"
 steps:
   - 
-    title: Introduction
+    title: Introducción
   - 
-    title: Setting things up
+    title: Preparando todo
   - 
-    title: Losing the game
+    title: Perdiendo el juego
   - 
-    title: Power-ups
+    title: Potenciadores
   - 
-    title: Super power-ups!
+    title: '¡Superpotenciadores!'
   - 
-    title: "Challenge: get creative!"
+    title: "Desafío: ¡sé creativo!"
     challenge: true
   - 
-    title: Adding some competition
+    title: Agregando un poco de competencia
   - 
-    title: Level 2
+    title: Nivel 2
   - 
-    title: Moving platforms
+    title: Plataformas móviles
   - 
-    title: What next?
+    title: '¿Qué sigue?'
