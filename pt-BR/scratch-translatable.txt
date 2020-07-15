@@ -12,9 +12,9 @@ colecionavel-frequencia
 
 criar-colecionaveis
 
-tipo do colecionável
+colecionavel-tipo
 
-selecione fantasia
+selecionar-fantasia
 
 pontos
 
