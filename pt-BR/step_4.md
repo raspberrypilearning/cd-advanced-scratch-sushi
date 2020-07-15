@@ -75,10 +75,10 @@ Em seguida, informe o bloco `selecionar-fantasia`{:class="block3myblocks"} em **
 ```blocks3
     define selecionar-fantasia (tipo)
     if <(tipo ::variable) = [1]> then
-        switch fantasia to [star1 v]
+        switch costume to [star1 v]
     end
 +    if <(tipo ::variable) = [2]> then
-+        switch fantasia to [lightning v]
++        switch costume to [lightning v]
 +    end
 ```
 
