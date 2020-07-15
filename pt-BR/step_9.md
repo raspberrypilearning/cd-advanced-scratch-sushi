@@ -1,33 +1,33 @@
-## Moving platforms
+## Plataformas móveis
 
-The reason I asked you to use my version of level 2 is the gap you might have noticed in the middle of the layout. You’re going to create a platform that moves through this gap and that the player can jump on and ride!
+A razão pela qual eu te pedi para usar minha versão do nível 2 é a lacuna que você pode ter notado no meio do layout. Você vai criar uma plataforma que se move através dessa lacuna e que o jogador pode pular e montar!
 
-![Another level with different platforms](images/movingPlatforms.png)
+![Outro nível com plataformas diferentes](images/movingPlatforms.png)
 
-First, you’ll need the sprite for the platform.
+Primeiro, você precisará de um ator para a plataforma.
 
 \--- task \---
 
-Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+Adicione um novo ator e o chame de **Plataforma-Movel**, e usando as ferramentas de personalização de fantasias na guia Fantasias para parecer com as outras plataformas \(use o modo vetorial\).
 
 \--- /task \---
 
-Now, let's add some code to the sprite.
+Agora, vamos adicionar algum código no ator.
 
-Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+Comece com o básico: para criar um conjunto interminável de plataformas subindo na tela, você precisará clonar a plataforma em intervalos regulares. Eu escolhi `4` segundos para o meu intervalo. Você também precisa ter certeza de que há um botão liga/desliga para fazer as plataformas, para que elas não apareçam no nível 1. Estou usando uma nova variável chamada `criar-plataformas`{:class="block3variables"}.
 
 \--- task \---
 
-Add code to create clones of your platform sprite.
+Adicione código para criar clones do seu ator de plataforma.
 
-Here's how mine looks so far:
+Aqui está como o meu se parece está até agora:
 
 ```blocks3
 +    when green flag clicked
 +    hide
 +    forever
         wait (4) secs
-        if <(create-platforms ::variables) = [true]> then
+        if <(criar-plataformas ::variables) = [true]> then
             create clone of [myself v]
         end
     end
@@ -37,7 +37,7 @@ Here's how mine looks so far:
 
 \--- task \---
 
-Then add the clone's code:
+Em seguida, adicione o código no clone:
 
 ```blocks3
 +    when I start as a clone
@@ -54,42 +54,42 @@ Then add the clone's code:
 
 \--- /task \---
 
-This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
+Este código faz com que o clone da **Plataforma-Movel** mova para cima do topo da tela, devagar o suficiente para o jogador pular nela e sair e depois desaparecer.
 
 \--- task \---
 
-Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
+Agora faça as plataformas sumirem/aparecerem com base nas transmissões que mudam de nível (para que elas estejam apenas no nível com espaço para elas) e na mensagem de `game over`{:class="block3events"}.
 
 ```blocks3
-+    when I receive [level-1 v]
-+    set [create-platforms v] to [false]
++    when I receive [nivel-1 v]
++    set [criar-plataformas v] to [false]
 +    hide
 
-+    when I receive [level-2 v]
-+    set [create-platforms v] to [true]
++    when I receive [nivel-2 v]
++    set [criar-plataformas v] to [true]
 
 +    when I receive [game over v]
 +    hide
-+    set [create-platforms v] to [false]
++    set [criar-plataformas v] to [false]
 ```
 
 \--- /task \---
 
-Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
+Agora, se você tentar jogar o jogo, o **Personagem** cai através da plataforma! Alguma idéia do porquê?
 
-It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
+É porque o código de física não conhece a plataforma. Na verdade, é uma solução rápida:
 
 \--- task \---
 
-In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+Nos scripts do ator **Personagem**, substitua cada bloco `tocando em "Plataformas"`{:class="block3sensing"} por outro com um operador `OU`{:class="block3operators"} que verifica **se** está `tocando em “Plataformas”`{:class="block3sensing"} **OU** `tocando em “Plataforma-Movel”`{:class="block3sensing"}.
 
-Go through the code for the **Player Character** sprite and everywhere you see this block:
+Repasse o código do ator **Player Character**, e em todos os lugares em que você vir este bloco:
 
 ```blocks3
     <touching [Platforms v] ?>
 ```
 
-replace it with this one:
+substitua por este:
 
 ```blocks3
     <<touching [Platforms v] ?> or <touching [Moving-Platform v] ?>>
