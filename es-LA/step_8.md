@@ -1,14 +1,14 @@
-## Level 2
+## Nivel 2
 
 With this step, you're going to add a new level to the game that the player can get to by just pressing a button. Later, you can change your code to make it so they need a certain number of points, or something else, to get there.
 
-### Moving to the next level
+### Pasando al siguiente nivel
 
 \--- task \---
 
 First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
 
-![The button sprite to switch levels](images/levelButton.png)
+![El objeto botón para cambiar niveles](images/levelButton.png)
 
 \--- /task \---
 
@@ -47,9 +47,9 @@ These all need to be set by the programmer \(you!\), so if you add a third level
 
 The broadcasts are used to tell the other sprites which level to display, and to clear up the collectables when a new level starts.
 
-### Make the sprites react
+### Haz que los objetos reaccionen
 
-#### The **Collectable** sprite
+#### El objeto **Collectable**
 
 Now you need to get the other sprites to respond to these broadcasts! Start with the easiest one: clearing all the collectables.
 
