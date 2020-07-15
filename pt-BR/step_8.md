@@ -66,13 +66,13 @@ Adicione o seguinte código ao script do ator **Colecionavel** para dizer `escon
 
 Como uma das primeiras coisas que um novo clone faz é se mostrar, você não precisa se preocupar em exibir os colecionáveis!
 
-#### O ator **Platformas**
+#### O ator **Plataformas**
 
-Agora, para mudar o ator **Platformas**. Se quiser, você pode criar seu próprio novo nível mais tarde, mas por enquanto vamos usar o que eu já incluí - você verá o porquê no próximo passo!
+Agora, para mudar o ator **Plataformas**. Se quiser, você pode criar seu próprio novo nível mais tarde, mas por enquanto vamos usar o que eu já incluí - você verá o porquê no próximo passo!
 
 --- task ---
 
-Adicione este código ao ator **Platformas**:
+Adicione este código ao ator **Plataformas**:
 
 ```blocks3
 +    when I receive [nivel-1 v]
@@ -88,7 +88,7 @@ Adicione este código ao ator **Platformas**:
 
 --- /task ---
 
-Ele recebe as mensagens `agrupadas`{:class="block3operators"} do `level-`{:class="block3variables"} e `nivel-atual`{:class="block3variables"} que o ator **Botao** enviou e responde alterando a fantasia dos **Platformas**.
+Ele recebe as mensagens `agrupadas`{:class="block3operators"} do `nivel-`{:class="block3variables"} e `nivel-atual`{:class="block3variables"} que o ator **Botao** enviou e responde alterando a fantasia dos **Platformas**.
 
 #### O ator **Inimigo**
 

@@ -92,6 +92,6 @@ Agora configure um bloco para o ator **Colecionavel** para que ele reaja a mensa
 
 --- /task ---
 
-Esse código é parecido com o código que controla os atores **Platformas** e **Bordas**. A única diferença é que você também está configurando a variável `criar-colecionaveis`{:class="block3variables"} para `false` para que nenhum novo clone seja criado quando o jogo estiver terminado.
+Esse código é parecido com o código que controla os atores **Plataformas** e **Bordas**. A única diferença é que você também está configurando a variável `criar-colecionaveis`{:class="block3variables"} para `false` para que nenhum novo clone seja criado quando o jogo estiver terminado.
 
 Note que você pode usar a variável `criar-colecionaveis`{:class="block3variáveis"} para passar mensagens de uma parte do seu código para outra!
