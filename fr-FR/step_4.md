@@ -28,7 +28,7 @@ title: Comment fonctionne la sélection d'un costume ?
 Le bloc `prendre-costume`{:class="block3myblocks"} fonctionne un peu comme le bloc `perdu`{:class="block3myblocks"}, mais il a quelque chose en plus : il prend une variable **entrée** appelée `type`{:class="block3myblocks"}.
 
 ```blocks3
-    define pick-costume (type)
+    define prendre-costume (type)
     if <(type ::variables) = [1]> then
         switch costume to [star1 v]
     end
@@ -43,7 +43,7 @@ Jette un coup d'œil à la partie du script qui utilise le bloc :
 
 ```blocks3
     when I start as a clone
-    pick-costume (collectable-type ::variables) :: custom
+    prendre-costume (collectable-type ::variables) :: custom
     show
     repeat until <(y position) < [-170]>
         change y by (collectable-rapidité ::variables)
@@ -73,7 +73,7 @@ Ajoute un nouveau costume au sprite **Collectable** pour ton nouveau power-up. J
 Ensuite, dis au bloc `prendre-costume`{:class="block3myblocks"} **Mes blocs** de définir le nouveau costume chaque fois qu'il obtient la nouvelle valeur pour `type`{:class="block3myblocks"}, comme ceci \(en utilisant le nom du costume que tu as choisis\) :
 
 ```blocks3
-    define pick-costume (type)
+    define prendre-costume (type)
     if <(type ::variable) = [1]> then
         switch costume to [star1 v]
     end

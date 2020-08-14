@@ -32,7 +32,7 @@ Ajoute ces scripts à ton sprite **Bouton**. Tu devras créer quelques variables
         set [niveau-actuel v] to (niveau-min ::variables)
     end
 +    broadcast [collectable-nettoyage v]
-+    broadcast (join [level-](niveau-actuel))
++    broadcast (join [niveau-](niveau-actuel))
 ```
 
 --- /task ---

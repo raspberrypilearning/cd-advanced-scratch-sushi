@@ -58,7 +58,7 @@ Ce code fait que le clone **Plateforme-mobile** se déplace vers le haut de l'é
 
 --- task ---
 
-Fais maintenant disparaître / réapparaître les plateformes en fonction des diffusions qui changent de niveau (donc elles ne sont qu'au niveau avec de l'espace pour elles), et le message `partie terminée` {:class="block3events"} .
+Fais maintenant disparaître / réapparaître les plateformes en fonction des diffusions qui changent de niveau (donc elles ne sont qu'au niveau avec de l'espace pour elles), et le message `partie terminée`{:class="block3events"} .
 
 ```blocks3
 +    when I receive [niveau-1 v]
