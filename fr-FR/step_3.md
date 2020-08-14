@@ -20,9 +20,9 @@ Tout d'abord, trouve le bloc `perdu`{:class="block3myblocks"} et complète-le av
 --- /task ---
 
 --- collapse ---
-
-## titre: Que fait ce code ?
-
+---
+title: Que fait ce code ?
+---
 À chaque fois que le bloc `perdu`{:class="block3myblocks"} s'exécute, ce qu'il fait est :
 
 1. Arrêter la physique et les autres scripts de jeu agissant sur le **Perso joueur**
