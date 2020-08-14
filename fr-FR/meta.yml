@@ -1,0 +1,26 @@
+---
+title: Étoiles en chute libre
+hero_image: images/banner.png
+description: Crée un jeu de type plateforme et ajoute tes propres niveaux, pouvoirs et personnages.
+theme: orange
+listed: true
+copyedit: true
+curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
+interests: games
+technologies: scratch
+site_areas: coderdojo
+software: scratch
+version: 4.0.0
+last_tested: "2018-04-23"
+steps:
+  - title: Introduction
+  - title: Mise en place
+  - title: Fin du jeu
+  - title: Power-ups
+  - title: Super power-ups !
+  - title: "Défi : fais preuve de créativité !"
+    challenge: true
+  - title: Ajoute de la concurrence
+  - title: Niveau 2
+  - title: Plateformes mobiles
+  - title: Et ensuite ?
