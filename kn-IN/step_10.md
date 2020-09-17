@@ -1,81 +1,81 @@
-## What next?
+## ಮುಂದೆ ಏನು?
 
-You’ve got a complete game now, but there’s a whole lot more you can do with it! Here are a few ideas to get you started:
+ನೀವು ಈಗ ಸಂಪೂರ್ಣ ಆಟವನ್ನು ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ, ಆದರೆ ನೀವು ಇದರೊಂದಿಗೆ ಇನ್ನೂ ಹೆಚ್ಚಿನದನ್ನು ಮಾಡಬಹುದು! ನೀವು ಪ್ರಾರಂಭಿಸಲು ಕೆಲವು ವಿಚಾರಗಳು ಇಲ್ಲಿವೆ:
 
 ## \--- collapse \---
 
-## title: High scores
+## title: ಹೆಚ್ಚಿನ ಅಂಕಗಳು
 
-+ Keep a list of the names and scores of people who’ve gotten high scores in the game! You’ll need to use the `ask`{:class="block3looks"} block to the get their name.
++ ಆಟದಲ್ಲಿ ಹೆಚ್ಚಿನ ಅಂಕಗಳನ್ನು ಗಳಿಸಿದ ಜನರ ಹೆಸರುಗಳು ಮತ್ತು ಅಂಕಗಳ ಪಟ್ಟಿಯನ್ನು ಇರಿಸಿ! ನೀವು ಅವರ ಹೆಸರನ್ನು ಪಡೆಯಲು `ask`{:class="block3looks"} ಬ್ಲಾಕ್ ಬಳಸಬೇಕಾಗುತ್ತದೆ.
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: New power-ups
+## title: ಹೊಸ ಪವರ್-ಅಪ್‌ಗಳು
 
-+ Try adding some new power-ups, for example for: 
-  + Immunity to enemies
-  + More lives
-  + Bigger player character
-  + Smaller player character
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Scrolling levels
-
-+ Can you figure out how to make the levels scroll along, so the player character can move through them from left to right? Or at least make it *look* like that’s what’s happening?
++ ಕೆಲವು ಹೊಸ ಪವರ್-ಅಪ್‌ಗಳನ್ನು ಸೇರಿಸಲು ಪ್ರಯತ್ನಿಸಿ, ಉದಾಹರಣೆಗೆ: 
+  + ಶತ್ರುಗಳಿಗೆ ಪ್ರತಿರೋಧಕ ಶಕ್ತಿ
+  + ಹೆಚ್ಚು ಜೀವಗಳು
+  + ದೊಡ್ಡ ಆಟಗಾರನ ಪಾತ್ರ
+  + ಸಣ್ಣ ಆಟಗಾರನ ಪಾತ್ರ
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Completing levels
+## title: ಸ್ಕ್ರೋಲಿಂಗ್ ಹಂತಗಳು
 
-+ Right now, the levels never end. What if, instead of pushing a button, you needed a certain number of points to get to the next level?
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Play With physics
-
-+ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, and `y-speed`{:class="block3variables"}. How do they change the game?
-
-+ Can you use the physics to make power-ups?
++ ಆಟಗಾರನ ಪಾತ್ರವು ಎಡದಿಂದ ಬಲಕ್ಕೆ ಚಲಿಸಲು ಸಾಧ್ಯವಾಗುವಂತೆ ಮಾಡಲು, ಹಂತವನ್ನು ಹೇಗೆ ಸ್ಕ್ರಾಲ್ ಮಾಡಬಹುದು ಎಂದು ನೀವು ಯೋಚಿಸಬಹುದೇ? ಅಥವಾ ಕನಿಷ್ಠ ಅದನ್ನು ಹಾಗೆ *ಕಾಣುವಂತೆ* ಮಾಡಿ?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: More levels
+## title: ಪೂರ್ಣಗೊಳಿಸುವ ಹಂತಗಳು
 
-+ Add more levels! Make better art! Use the Stage background to make the game look cooler while still keeping platforms easy to work with for you as the coder.
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Sound effects
-
-+ This game is totally silent right now! Try adding background music and sound effects using the blocks in the **Sound** section!
++ ಇದೀಗ, ಮಟ್ಟಗಳು ಎಂದಿಗೂ ಕೊನೆಗೊಳ್ಳುವುದಿಲ್ಲ. ಬಟನನ್ನು ಒತ್ತುವ ಬದಲು, ಮುಂದಿನ ಹಂತಕ್ಕೆ ಹೋಗಲು ನಿಮಗೆ ನಿರ್ದಿಷ್ಟ ಸಂಖ್ಯೆಯ ಅಂಕಗಳು ಬೇಕಾದರೆ?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Secrets
+## title: ಭೌತಶಾಸ್ತ್ರದೊಂದಿಗೆ ಆಡಿ
 
-+ Think of secret bonuses, cheat codes, and other 'easter eggs' you can hide in the game for players to discover. Try to code some of them!
++ `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, ಮತ್ತು `y-speed`{:class="block3variables"} ನಂತೆ, ಭೌತಶಾಸ್ತ್ರ ಎಂಜಿನ್‌ನಲ್ಲಿ ಕೆಲವು ಮೌಲ್ಯಗಳನ್ನು ಬದಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಿ. ಅವುಗಳು ಆಟವನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸುತ್ತದೆ?
+
++ ಪವರ್-ಅಪ್‌ಗಳನ್ನು ಮಾಡಲು ನೀವು ಭೌತಶಾಸ್ತ್ರವನ್ನು ಬಳಸಬಹುದೇ?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Different characters
+## title: ಹೆಚ್ಚಿನ ಮಟ್ಟಗಳು
 
-+ Add more character sprites and let the player pick one. Make the characters different in attributes like size, how high they jump, maybe even how many lives they have, and how many points they get from collectables! 
++ ಹೆಚ್ಚಿನ ಹಂತಗಳನ್ನು ಸೇರಿಸಿ! ಉತ್ತಮ ಕಲೆ ಮಾಡಿ! ಹಂತದ ಹಿನ್ನಲೆಯನ್ನು ಬದಲಾಯಿಸಿ ಆಟವನ್ನು, ತುಂಬಾ ಮೋಜಿನಾಡನ್ನಾಗಿ ಮಾಡಿದರೂ ಕೂಡ, ಪ್ಲಾಟಫಾರ್ಮ್ ಅನ್ನು ನೀವು ಕೋಡರ್ ನಂತೆ ಕೆಲಸ ಮಾಡಲು ಸುಲಭ ಆಗುವ ಹಾಗೆ ಮಾಡಬಹುದೇ.
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: ಧ್ವನಿ ಪರಿಣಾಮಗಳು
+
++ ಈ ಆಟವು ಇದೀಗ ಸಂಪೂರ್ಣ ಮೌನವಾಗಿದೆ! **Sound** ವಿಭಾಗದಲ್ಲಿನ ಬ್ಲಾಕ್‌ಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಹಿನ್ನೆಲೆ ಸಂಗೀತ ಮತ್ತು ಧ್ವನಿ ಪರಿಣಾಮಗಳನ್ನು ಸೇರಿಸಲು ಪ್ರಯತ್ನಿಸಿ!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## ಶೀರ್ಷಿಕೆ: ರಹಸ್ಯಗಳು
+
++ ಆಟಗಾರರು ಕಂಡುಹಿಡಿಯಲಿಕ್ಕೋಸ್ಕರ, ರಹಸ್ಯ ಇನಾಮು‌ಗಳು, ಚೀಟ್ ಕೋಡ್‌ಗಳು ಮತ್ತು ಇತರ ನಿಧಿಗಳ ಬಗ್ಗೆ ಯೋಚಿಸಿ. ಅವುಗಳನ್ನು ಕೋಡ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿ!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: ವಿಭಿನ್ನ ಪಾತ್ರಗಳು
+
++ ಹೆಚ್ಚಿನ sprites ಪಾತ್ರಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಆಟಗಾರನು ಒಂದನ್ನು ಆರಿಸಲು ಅವಕಾಶ ಮಾಡಿಕೊಡಿ. ಗಾತ್ರ, ಅವರು ಎಷ್ಟು ಎತ್ತರಕ್ಕೆ ಜಿಗಿಯುತ್ತಾರೆ, ಬಹುಶಃ ಅವರು ಎಷ್ಟು ಜೀವಗಳನ್ನು ಹೊಂದಿದ್ದಾರೆ ಮತ್ತು ಸಂಗ್ರಹಯೋಗ್ಯ ವಸ್ತುಗಳಿಂದ ಎಷ್ಟು ಅಂಕಗಳನ್ನು ಪಡೆಯುತ್ತಾರೆ ಎಂಬಂತಹ ಗುಣಲಕ್ಷಣಗಳಲ್ಲಿ ಪಾತ್ರಗಳನ್ನು ವಿಭಿನ್ನಗೊಳಿಸಿ! 
 
 \--- /collapse \---
