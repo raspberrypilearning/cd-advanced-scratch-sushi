@@ -1,12 +1,12 @@
-## Adding some competition
+## ಕೆಲವು ಸ್ಪರ್ಧೆಯನ್ನು ಸೇರಿಸುವುದು
 
-Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platform games like Super Mario that we’re inspired by here.
+ನಿಮ್ಮ ಆಟವು ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ ಮತ್ತು ಈಗ ನೀವು ಅಂಕಗಳನ್ನು ಸಂಗ್ರಹಿಸಬಹುದು, ಪವರ್-ಅಪ್‌ಗಳಿಂದ ವಿಶೇಷ ಅಧಿಕಾರವನ್ನು ಪಡೆಯಬಹುದು ಮತ್ತು ಸೋಲಬಹುದು. ನಾವು ಎಲ್ಲೋ ಹೋಗುತ್ತಿದ್ದೇವೆ! ಆದರೂ ಕೆಲವು ಸ್ಪರ್ಧೆಯನ್ನು ಸೇರಿಸುವುದು ತಮಾಷೆಯಾಗಿರಬಹುದು - ಸ್ವಲ್ಪಮಟ್ಟಿಗೆ ಚಲಿಸುವ ಪಾತ್ರವನ್ನು ಸೇರಿಸುವುದರ ಬಗ್ಗೆ, ಆದರೆ ನೀವು ಆದರೆ ಸ್ಪರ್ಶಿಸಬಾರದು? ಸೂಪರ್ ಮಾರಿಯೋ ನಂತಹ ಸಾಂಪ್ರದಾಯಿಕ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆಟಗಳಲ್ಲಿ ಇರುವ ಶತ್ರುಗಳಂತೆಯೇ ಇದು.
 
 \--- task \---
 
-First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+ಮೊದಲಿಗೆ, ನಿಮ್ಮ ಶತ್ರುವಾಗಿ ಸೇರಿಸಲು sprite ಆರಿಸಿ. ನಮ್ಮ ಆಟಗಾರನ ಪಾತ್ರ ಬೆಕ್ಕು ಅದ ಕಾರಣ, ನಾನು ನಾಯಿಯನ್ನು ಆರಿಸಿದ್ದೇನೆ. ಆದರೂ ನೀವು ಸೇರಿಸಬಹುದಾದ ಸಾಕಷ್ಟು ಇತರ ‌sprites ಇವೆ. ನನಗೆ ವಿಷಯಗಳನ್ನು ಸ್ಪಷ್ಟವಾಗಿಸಲು ನಾನು sprite **Enemy** ಎಂದು ಮರುಹೆಸರಿಸಿದ್ದೇನೆ.
 
-Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
+Sprite ಅನ್ನು ಸರಿಯಾದ ಗಾತ್ರಕ್ಕೆ ಮರುಗಾತ್ರಗೊಳಿಸಿ ಮತ್ತು ಪ್ರಾರಂಭಿಸಲು ಎಲ್ಲಾದರೂ ಸೂಕ್ತವಾಗಿ ಇರಿಸಿ. ನನ್ನದು ಈ ತರಹ ಇದೆ:
 
 ![The dog enemy sprite](images/enemySprite.png)
 
@@ -14,7 +14,7 @@ Resize the sprite to the right size, and place it somewhere appropriate to start
 
 \--- task \---
 
-Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
+ಮೊದಲು ಸುಲಭವಾದ ಕೋಡ್ ಅನ್ನು ಬರೆಯಿರಿ: ಆಟಗಾರನು ಆಟವನ್ನು ಕಳೆದುಕೊಂಡಾಗ ಶತ್ರು ಕಣ್ಮರೆಯಾಗುವಂತೆ ಮಾಡಲು `game over`{:class="events"} ಸಂದೇಶಕ್ಕೆ ಪ್ರತಿಕ್ರಿಯಿಸಲು ಅದರ ಬ್ಲಾಕ್ ಅನ್ನು ಹೊಂದಿಸಿ.
 
 ```blocks3
 +    when I receive [game over v]
@@ -25,7 +25,7 @@ Write the easiest code first: set up its block for reacting to the `game over`{:
 
 \--- task \---
 
-Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
+ಈಗ ನೀವು ಶತ್ರು ಏನು ಮಾಡುತ್ತಾನೆ ಎಂಬುದಕ್ಕೆ ಕೋಡ್ ಬರೆಯಬೇಕಾಗಿದೆ. ನನ್ನ ಕೋಡ್ ಅನ್ನು ಇಲ್ಲಿ ಬಳಸಿ, ಆದರೆ ಹೆಚ್ಚುವರಿ ಸೇರಿಸಲು ಪರಿಗಣಿಸಿ! (ಅವರು ಬೇರೆ ಬೇರೆ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳಿಗೆ ಟೆಲಿಪೋರ್ಟ್ ಮಾಡಲು ಸಾಧ್ಯವಾದರೆ? ಪವರ್-ಅಪ್ ಇದ್ದರೆ ಅದು ವೇಗವಾಗಿ ಅಥವಾ ನಿಧಾನವಾಗಿ ಚಲಿಸುವಂತೆ ಮಾಡಿದರೆ?)
 
 ```blocks3
 +    when green flag clicked
@@ -41,17 +41,17 @@ Now you need to write the code for what the enemy does. Use my code here, but co
      end
 ```
 
-**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
+**ಗಮನಿಸಿ**: ನೀವು `go to`{:class="block3motion"} ಬ್ಲಾಕ್ ಅನ್ನು sprite ಪ್ಯಾನೆಲ್‌ಗೆ ಎಳೆಯಿರಿ, ಆದರೆ `x` `y` ಮತ್ತು ಮೌಲ್ಯಗಳನ್ನು ಬದಲಾಯಿಸಬೇಡಿ, ಅವು **Enemy** sprite ‌ನ ಪ್ರಸ್ತುತ ಸ್ಥಳದ ಮೌಲ್ಯಗಳಾಗಿವೆ!
 
-The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
+`if...then`{:class="block3control"} ಬ್ಲಾಕ್‌ನಲ್ಲಿರುವ ಕೋಡ್ sprite ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ನ ಅಂಚಿನಲ್ಲಿ ಬಂದಾಗ ತಿರುಗುವಂತೆ ಮಾಡುತ್ತದೆ!
 
 \--- /task \---
 
-The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+ನಿಮಗೆ ಅಗತ್ಯವಿರುವ ಮುಂದಿನ ವಿಷಯವೆಂದರೆ ಆಟಗಾರನ **Player Character** sprite, **Enemy** sprite ಅನ್ನು ಮುಟ್ಟಿದಾಗ ಜೀವವನ್ನು ಕಳೆದುಕೊಳ್ಳುವುದು. ಅಲ್ಲದೆ, sprites ತ್ವರಿತವಾಗಿ ಸ್ಪರ್ಶಿಸುವುದು **stop** ನೀವು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬೇಕು, ಇಲ್ಲದಿದ್ದರೆ ಸ್ಪರ್ಶಕ್ಕಾಗಿ ಪರಿಶೀಲಿಸುವ ಕೋಡ್ ಓಡುತ್ತಿದ್ದು ಮತ್ತು ಆಟಗಾರನು ಜೀವಗಳನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತಲೇ ಇರುತ್ತಾನೆ.
 
 \--- task \---
 
-Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
+ನಾನು ಅದನ್ನು ಹೇಗೆ ಮಾಡಿದ್ದೇನೆ ಎಂಬುದು ಇಲ್ಲಿದೆ, ಆದರೆ ನೀವು ಈ ಕೋಡ್ ಅನ್ನು ಸುಧಾರಿಸಲು ಪ್ರಯತ್ನಿಸಬಹುದು! ನಾನು **Player Character** spriteನ ಮುಖ್ಯ ಬ್ಲಾಕ್ ಅನ್ನು ಮಾರ್ಪಡಿಸಿದ್ದೇನೆ. `if`{:class="block3control"} ಬ್ಲಾಕ್‌ಗೆ ಮೊದಲು ಹೊಸ ಕೋಡ್ ಅನ್ನು ಸೇರಿಸಿ, ಅದು ನಿಮ್ಮ life ಇದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸುತ್ತದೆ.
 
 ```blocks3
     when green flag clicked
@@ -80,4 +80,4 @@ Here's how I did it, but you can try to improve on this code! I modified the **P
 
 \--- /task \---
 
-The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
+ಹೊಸ ಕೋಡ್ **Player Character** sprite ಅನ್ನು ಮರೆಮಾಡುತ್ತದೆ, ಅದನ್ನು ಅದರ ಆರಂಭಿಕ ಸ್ಥಾನಕ್ಕೆ ಹಿಂತಿರುಗಿಸುತ್ತದೆ, `lives`{:class="block3variables"} `1` ವೇರಿಯೇಬಲ್ ಅನ್ನು, ಮತ್ತು ಅರ್ಧ ಸೆಕೆಂಡಿನ ನಂತರ sprite ಮತ್ತೆ ಕಾಣಿಸಿಕೊಳ್ಳುವಂತೆ ಮಾಡುತ್ತದೆ.
