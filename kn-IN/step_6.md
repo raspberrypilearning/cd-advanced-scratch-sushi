@@ -1,3 +1,3 @@
-## Challenge: get creative!
+## ಸವಾಲು: ಸೃಜನಶೀಲರಾಗಿರಿ!
 
-Based on the previous two cards you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with two cool power-ups and see if you can make them!
+ಹಿಂದಿನ ಎರಡು ಕಾರ್ಡ್‌ಗಳನ್ನು ಆಧರಿಸಿ ನೀವು ಈಗ ನಿಮಗೆ ಬೇಕಾದಷ್ಟು ವಿಭಿನ್ನ ಪವರ್-ಅಪ್ ಸಂಗ್ರಹಗಳನ್ನು ಮಾಡಬಹುದು! ಸಾಮಾನ್ಯ ಸಂಖ್ಯೆಯ ಅಂಕಗಳಿಗಿಂತ 20 ಪಟ್ಟು ಹೆಚ್ಚು ನೀಡುವ, ಅಥವಾ ಮೂರು ಜೀವಗಳನ್ನು ಸೇರಿಸುವ, ಅಥವಾ ಆಟಗಾರನು ಒಂದು ಅವಧಿಗೆ ಜೀವದಿಂದ ಹೊರಗುಳಿಯಲು ಸಾಧ್ಯವಾಗದಿರುವ ಬಗ್ಗೆ ಏನು? ಎರಡು ಚೆನ್ನಾಗಿರುವ ಪವರ್-ಅಪ್‌ಗಳೊಂದಿಗೆ ಬನ್ನಿ ಮತ್ತು ನೀವು ಅವುಗಳನ್ನು ತಯಾರಿಸಬಹುದೇ ಎಂದು ನೋಡಿ!
