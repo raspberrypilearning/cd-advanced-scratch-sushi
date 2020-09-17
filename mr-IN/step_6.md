@@ -1,3 +1,3 @@
-## Challenge: get creative!
+## आव्हान: सर्जनशील व्हा!
 
-Based on the previous two cards you can now make as many different power-up collectables as you want! What about one that gives out 20 times the usual number of points, or adds three lives, or makes it so the player can’t run out of lives for a period of time? Come up with two cool power-ups and see if you can make them!
+मागील दोन कार्डांच्या आधारे आपण आता आपल्याला पाहिजे तितके भिन्न पॉवर-अप कलेक्टेबल्स बनवू शकता! अश्या एका बद्दल काय म्हणता जे नेहमीच्या गुणांपेक्षा 20 पट गुण देते, किंवा तीन जीवनदान जोडतात किंवा खेळाडू काही कालावधीसाठी जीव गमवू शकत नाही? दोन छान पॉवर-अप चा विचार करा आणि आपण ते बनवू शकता की नाही ते पहा!
