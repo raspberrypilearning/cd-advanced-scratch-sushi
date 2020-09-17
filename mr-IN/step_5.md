@@ -1,12 +1,12 @@
-## Super power-ups!
+## सुपर पॉवर-अप!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+आता आपल्याकडे नवीन पॉवर-अप कलेक्टेबल तयार झाले आहे, आता काहीतरी खरोखर छान करण्याची वेळ आली आहे: केवळ एक अतिरिक्त जीवन न देता काही सेकंदांसाठी पॉवर-अप चा 'वर्षाव' करू या.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+या साठी आपण आणखी एक `broadcast`{:class="block3events"} संदेश वापरणार आहात.
 
 \--- task \---
 
-First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+प्रथम, प्लेयर केरेक्टर `2` कलेक्टेबल ला स्पर्श करते तेव्हा संदेश प्रसारित करण्यासाठी `react-to-player`{:class="block3myblocks"} ब्लॉक बदला. संदेशास `collectable-rain` {:class="block3events"} असं नाव द्या.
 
 ```blocks3
     define react-to-player (type)
@@ -21,11 +21,11 @@ First, change the `react-to-player`{:class="block3myblocks"} block to broadcast 
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+आता आपणास **Collectable** स्प्राईट स्क्रिप्ट मध्ये कोडचा एक नवीन भाग तयार करणे आवश्यक आहे जे जेव्हा `collectable-rain`{:class="block3events"} संदेश प्रसारित होते तेव्हा सुरू होईल.
 
 \--- task \---
 
-Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+`collectable-rain`{:class="block3events"} प्रसारणासाठी ऐकू येण्या करिता **Collectable** स्प्राईट साठी हा कोड जोडा.
 
 ```blocks3
 +    when I receive [collectable-rain v]
@@ -38,13 +38,13 @@ Add this code for the **Collectable** sprite to make it listen out for the `coll
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: नवीन कोड काय करते?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+कोड चा हा भाग प्रसारण प्राप्त होण्याची प्रतीक्षा करतो आणि `collectable-frequency`{:class="block3variables"} व्हेरीएबल ला खूप लहान संख्येने सेट करून प्रतिसाद देतो, नंतर एक सेकंदाची वाट पहातो आणि नंतर बदललेला व्हेरीएबल परत `1` वर करतो.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+`collectable-frequency`{:class="block3variables"} व्हेरिएबल कलेक्टेबलचा पाऊस कसा काय पाडतो हे शोधण्यासाठी आपण तो कसा वापरला जातोय हे पाहू.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+मुख्य गेम लूपमध्ये **Collectable** स्प्राईटच्या प्रत बनविणार्‍या कोड चा भागाला `collectable-frequency`{:class="block3variables"} व्हेरिएबल द्वारे सांगितले जाते कि एक प्रत आणि दुसरी प्रत बनवण्यामध्ये किती वेळ थांबायचे आहे:
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
@@ -59,10 +59,10 @@ In the main game loop, the part of the code that makes **Collectable** sprite cl
     end
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+आपण पाहू शकता की `wait`{:class="block3control"} ब्लॉक <`collectable-frequency`{:class="block3variables"} द्वारे सेट केलेल्या लांबीसाठी कोड ला विराम देते.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+`collectable-frequency`{:class="block3variables"} चे मूल्य जर `0.000001` असेल तर, `wait`{:class="block3control"} ब्लॉक केवळ सेकंदाच्या **दहा लाखव्या** भागासाठी विराम देतो, याचा अर्थ `repeat until`{:class="block3control"} लूप सामान्य पेक्षा जास्त वेळा चालेल. परिणामी, `collectable-frequency`{:class="block3variables"} परत `1` वर बदलल्या शिवाय कोड सामान्य पेक्षा **बरेच** अधिक पॉवर-अप तयार करेल.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+आपण ह्या मधून उद्भवू शकणाऱ्या कोणत्याही समस्यांचा विचार करू शकता? तेव्हा बरेच पॉवर-अप्स असतील… आपण त्यांना पकडत राहिल्यास काय होईल?
 
 \--- /collapse \---
