@@ -1,20 +1,20 @@
-## Adding some competition
+## काही स्पर्धा जोडणे
 
-Your game works and now you can collect points, get special powers from power-ups, and lose. We’re getting somewhere! Maybe it’d be fun to add some competition though — what about including a character that moves around a little, but that you're not supposed to touch? This will be similar to enemies in the traditional platform games like Super Mario that we’re inspired by here.
+आपला गेम कार्य करतो आणि आता आपण गुण गोळा करू शकता, पॉवर-अपमधून विशेष शक्ती मिळवू शकता आणि हरू शकता. आपण कुठेतरी पोहोचत आहोत! कदाचित थोडी स्पर्धा जोडण्यात मजा येईल - थोडा इकडे तिकडे फिरणारा, आपण स्पर्श करु नये असा पात्राचा समावेश असला तर? हे सुपर मारियो सारख्या पारंपारिक प्लॅटफॉर्म गेम मधील शत्रूं सारखेच असेल जेथून आपण प्रेरणा घेत आहोत.
 
 \--- task \---
 
-First, pick a sprite to add as your enemy. Because our player character is a cat, I chose a dog. There are lots of other sprites you could add though. I also renamed the sprite **Enemy**, just to make things clearer for me.
+प्रथम, आपला शत्रू म्हणून जोडण्या साठी स्प्राईट निवडा. आमचे खेळाडू पात्र मांजर असल्याने मी कुत्रा निवडला आहे. आणखी बर्‍याच स्प्राईट्स आहेत जे आपण जोडू शकता. मी माझ्या साठी गोष्टी स्पष्ट करण्यासाठी स्प्राईट चे नाव **Enemy** ठेवले आहे.
 
-Resize the sprite to the right size, and place it somewhere appropriate to start. Here’s what mine looks like:
+स्प्राईटला योग्य आकार द्या आणि प्रारंभ करण्यासाठी कोठेतरी योग्य ठिकाणी ठेवा. माझे (स्प्राईट) कसे दिसते ते येथे आहे:
 
-![The dog enemy sprite](images/enemySprite.png)
+![शत्रु कुत्रा स्प्राईट](images/enemySprite.png)
 
 \--- /task \---
 
 \--- task \---
 
-Write the easiest code first: set up its block for reacting to the `game over`{:class="events"} message to make the enemy disappear when the player loses the game.
+सर्वात सोपा कोड आधी लिहा: जेव्हा खेळाडू खेळ हरतो तेव्हा शत्रूला अदृश्य करायला `game over`{:class="events"} संदेशावर प्रतिक्रिया व्यक्त करण्यासाठी ब्लॉक सेट करा.
 
 ```blocks3
 +    when I receive [game over v]
@@ -25,7 +25,7 @@ Write the easiest code first: set up its block for reacting to the `game over`{:
 
 \--- task \---
 
-Now you need to write the code for what the enemy does. Use my code here, but consider adding extra bits! (What if they can teleport around to different platforms? What if there’s a power-up that makes them move faster, or slower?)
+आता शत्रू काय करतो यासाठी आपल्याला कोड लिहिण्याची आवश्यकता आहे. येथे माझा कोड वापरा, परंतु काही अतिरिक्त भाग जोडण्याचा विचार करा! (ते वेगवेगळ्या प्लॅटफॉर्मवर टेलिपोर्ट करू शकले तर? एखादी असली पॉवर-अप असल्यास जी त्यांना वेगवान किंवा हळू बनवेल तर?)
 
 ```blocks3
 +    when green flag clicked
@@ -41,17 +41,17 @@ Now you need to write the code for what the enemy does. Use my code here, but co
      end
 ```
 
-**Note**: if you just drag the `go to`{:class="block3motion"} block into the sprite panel and don’t change the `x` and `y` values, they’ll be the values for the current location of the **Enemy** sprite!
+**नोंद**: आपण फक्त sprite पॅनेल मध्ये `go to`{:class="block3motion"} ब्लॉक ड्रॅग केले आणि `x` आणि `y` मूल्ये नाही बदलले, तर ती **Enemy** स्प्राइटच्या विद्यमान स्थानाची मूल्ये असतील!
 
-The code in the `if...then`{:class="block3control"} block will make the sprite turn around when they get to the end of the platform!
+`if...then`{:class="block3control"} ब्लॉक मधील कोड प्लॅटफॉर्मच्या शेवटी पोहोचल्यावर स्प्राईट ला फिरवेल!
 
 \--- /task \---
 
-The next thing you’ll need is for the player to lose a life when their **Player Character** sprite touches the **Enemy** sprite. Also, you need to make sure the sprites **stop** touching really quickly, since otherwise the code that checks for touching will keep running and the player will keep losing lives.
+आपल्यास पुढील जी गोष्ट आवश्यक आहे ते जेव्हा खेळाडू चे **Player Character** स्प्राईट **Enemy** स्प्राईट ला स्पर्श करते तेव्हा त्याने आपला जीव गमावला पाहिजे. तसेच, आपण हे सुनिश्चित करणे आवश्यक आहे की स्प्राईट्स त्वरीत स्पर्श करणे **थांबवतील**, कारण अन्यथा स्पर्श करण्याची तपासणी करत असलेला कोड चालत राहील आणि प्लेयर जीव गमावत राहील.
 
 \--- task \---
 
-Here's how I did it, but you can try to improve on this code! I modified the **Player Character** sprite’s main block. Add the new code before the `if`{:class="block3control"} block that checks if you're out of lives.
+मी ते कसे केले ते येथे आहे परंतु आपण या कोड मध्ये सुधारण्याचा प्रयत्न करू शकता! मी **Player Character** स्प्राईटच्या मुख्य ब्लॉक मध्ये सुधारणा केली. `if`{:class="block3control"} ब्लॉक च्या आधी आपला नवीन कोड जोडा जे आपली जीवने संपत आहे किंवा नाही हे तपासेल.
 
 ```blocks3
     when green flag clicked
@@ -80,4 +80,4 @@ Here's how I did it, but you can try to improve on this code! I modified the **P
 
 \--- /task \---
 
-The new code hides the **Player Character** sprite, moves it back to its starting position, reduces the `lives`{:class="block3variables"} variable by `1`, and after half a second makes the sprite re-appear.
+नवीन कोड **Player Character** स्प्राईट लपविते, त्यास त्याच्या सुरुवातीच्या स्थितीत परत हलविते, `lives`{:class="block3variables"} व्हेरिएबल `1 ` अंकानी कमी करते आणि अर्ध्या सेकंदानंतर स्प्राईट पुन्हा दिसून लावते.
