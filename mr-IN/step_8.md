@@ -88,7 +88,7 @@
 
 --- /task ---
 
-हे `level-`{:class="block3variables"} आणि `current-level`{:class="block3variables"} चे `joined`{:class="block3operators"} संदेश प्राप्त करते जे **Button** स्प्राइट्सनी पाठवले असते आणि ** Platforms** चे कोस्ट्यूम्स बदलून प्रतिसाद देते.
+हे `level-`{:class="block3variables"} आणि `current-level`{:class="block3variables"} चे `joined`{:class="block3operators"} संदेश प्राप्त करते जे **Button** स्प्राइट्सनी पाठवले असते आणि **Platforms** चे कोस्ट्यूम्स बदलून प्रतिसाद देते.
 
 #### **Enemy** स्प्राइट
 
