@@ -1,26 +1,26 @@
-## Moving platforms
+## ಚಲಿಸುವ ವೇದಿಕೆಗಳು (ಪ್ಲಾಟ್‌ಫಾರ್ಮ್)
 
-The reason I asked you to use my version of level 2 is the gap you might have noticed in the middle of the layout. You’re going to create a platform that moves through this gap and that the player can jump on and ride!
+ನನ್ನ 2 ನೇ ಹಂತದ ಆವೃತ್ತಿಯನ್ನು ಬಳಸಲು ನಾನು ನಿಮ್ಮನ್ನು ಕೇಳಲು ಕಾರಣ ‌ವಿನ್ಯಾಸದ ಮಧ್ಯದಲ್ಲಿರುವ ಅಂತರ ಎಂದು ನೀವು ಗಮನಿಸಿರಬಹುದು. ಈ ಅಂತರವನ್ನು ಅಂತರದಲ್ಲಿ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಅನ್ನು ನೀವು ರಚಿಸಲಿದ್ದೀರಿ ಮತ್ತು ಆಟಗಾರನು ಜಿಗಿಯಬಹುದು ಮತ್ತು ಸವಾರಿ ಮಾಡಬಹುದು!
 
-![Another level with different platforms](images/movingPlatforms.png)
+![ವಿಭಿನ್ನ ವೇದಿಕೆಗಳನ್ನು ಹೊಂದಿರುವ ಮತ್ತೊಂದು ಹಂತ](images/movingPlatforms.png)
 
-First, you’ll need the sprite for the platform.
+ಮೊದಲಿಗೆ, ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಾಗಿ ನಿಮಗೆ sprite ಅಗತ್ಯವಿದೆ.
 
 \--- task \---
 
-Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+ಹೊಸ sprite ಅನ್ನು ಸೇರಿಸಿ, ಅದಕ್ಕೆ **Moving-Platform** ಎಂದು ಹೆಸರಿಸಿ, ಮತ್ತು Costumes ಟ್ಯಾಬ್‌ನಲ್ಲಿ ವೇಷಭೂಷಣ ಗ್ರಾಹಕೀಕರಣ ಸಾಧನಗಳನ್ನು ಬಳಸಿ \(vector mode ಬಳಸಿ \) ಇತರ ಪ್ಲ್ಯಾಟ್‌ಫಾರ್ಮ್‌ಗಳಂತೆ ಕಾಣುವಂತೆ ಮಾಡಿ.
 
 \--- /task \---
 
-Now, let's add some code to the sprite.
+ಈಗ, sprite ಗೆ ಕೆಲವು ಕೋಡ್ ಅನ್ನು ಸೇರಿಸೋಣ.
 
-Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. I picked `4` seconds as my interval. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+ಮೂಲಭೂತ ಸಂಗತಿಗಳೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ: ಪರದೆಯ ಮೇಲೆ ಚಲಿಸುವ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳ ಅಂತ್ಯವಿಲ್ಲದ ಗುಂಪನ್ನು ಮಾಡಲು, ನೀವು ಪ್ಲ್ಯಾಟ್‌ಫಾರ್ಮ್ ಅನ್ನು ನಿಯಮಿತ ಮಧ್ಯಂತರದಲ್ಲಿ ಕ್ಲೋನ್ ಮಾಡಬೇಕಾಗುತ್ತದೆ. ನಾನು interval ಆಗಿ ` 4 ` ಸೆಕೆಂಡುಗಳನ್ನು ಆರಿಸಿದೆ. ಪ್ಲ್ಯಾಟ್‌ಫಾರ್ಮ್‌ಗಳನ್ನು ತಯಾರಿಸಲು ಆನ್/ಆಫ್ ಸ್ವಿಚ್ ಇದೆ ಎಂದು ನೀವು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬೇಕು, ಇದರಿಂದ ಅವು ಹಂತ 1 ರಲ್ಲಿ ತೋರಿಸುವುದಿಲ್ಲ. ನಾನು `create-platforms`{:class="block3variables"} ಎಂಬ ಹೊಸ ವೇರಿಯೇಬಲ್ ಅನ್ನು ಬಳಸುತ್ತಿದ್ದೇನೆ.
 
 \--- task \---
 
-Add code to create clones of your platform sprite.
+ನಿಮ್ಮ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ sprite‌ ನ ತದ್ರೂಪುಗಳನ್ನು ರಚಿಸಲು ಕೋಡ್ ಸೇರಿಸಿ.
 
-Here's how mine looks so far:
+ನನ್ನದು ಇಲ್ಲಿಯವರೆಗೆ ಹೇಗೆ ಕಾಣುತ್ತದೆ ಎಂಬುದು ಇಲ್ಲಿದೆ:
 
 ```blocks3
 +    when green flag clicked
@@ -37,7 +37,7 @@ Here's how mine looks so far:
 
 \--- task \---
 
-Then add the clone's code:
+ನಂತರ ತದ್ರೂಪಿ ಕೋಡ್ ಸೇರಿಸಿ:
 
 ```blocks3
 +    when I start as a clone
@@ -54,11 +54,11 @@ Then add the clone's code:
 
 \--- /task \---
 
-This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
+ಈ ಕೋಡ್ **Moving-Platform** ತದ್ರೂಪಿ ಪರದೆಯ ಮೇಲ್ಭಾಗಕ್ಕೆ ಚಲಿಸುವಂತೆ ಮಾಡುತ್ತದೆ, ಆಟಗಾರನು ನಿಧಾನವಾಗಿ ಮತ್ತು ಹೊರಗೆ ಹೋಗಲು ಸಾಕಷ್ಟು ನಿಧಾನಗೊಳಿಸುತ್ತದೆ ಮತ್ತು ನಂತರ ಕಣ್ಮರೆಯಾಗುತ್ತದೆ.
 
 \--- task \---
 
-Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
+ಈಗ ಹಂತಗಳನ್ನು ಬದಲಾಯಿಸುವ ಪ್ರಸಾರಗಳ ಆಧಾರದ ಮೇಲೆ ವೇದಿಕೆ‌ಗಳು ಕಣ್ಮರೆಯಾಗುವಂತೆ/ಮತ್ತೆ ಗೋಚರಿಸುವಂತೆ ಮಾಡಿ (ಆದ್ದರಿಂದ ಅವುಗಳು ಸ್ಥಳಾವಕಾಶದೊಂದಿಗೆ ಮಾತ್ರ ಮಟ್ಟದಲ್ಲಿರುತ್ತವೆ), ಮತ್ತು `game over`{:class="block3events"} ಸಂದೇಶ.
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -75,21 +75,21 @@ Now make the platforms disappear/reappear based on the broadcasts that change le
 
 \--- /task \---
 
-Now, if you try to actually play the game, the **Player Character** falls through the platform! Any idea why?
+ಈಗ, ನೀವು ನಿಜವಾಗಿಯೂ ಆಟವನ್ನು ಆಡಲು ಪ್ರಯತ್ನಿಸಿದರೆ, **Player Character** ವೇದಿಕೆಯ ಮೂಲಕ ಬೀಳುತ್ತದೆ! ಏಕೆ ಎಂದು ಗೊತ್ತೆ?
 
-It’s because the physics code doesn’t know about the platform. It’s actually a quick fix:
+ಇದಕ್ಕೆ ಕಾರಣ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಬಗ್ಗೆ ಭೌತಶಾಸ್ತ್ರ ಕೋಡ್‌ಗೆ ತಿಳಿದಿಲ್ಲದಿರುವುದು. ಇದು ನಿಜಕ್ಕೂ ತ್ವರಿತ ಪರಿಹಾರ:
 
 \--- task \---
 
-In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+**Player Character** sprite ಸ್ಕ್ರಿಪ್ಟ್‌ನಲ್ಲಿ, ಪ್ರತಿಯೊಂದು `touching “Platforms”`{:class="block3sensing"} ಬ್ಲಾಕ್ ನ ಬದಲು, **ಒಂದೋ** `touching “Platforms”`{:class="block3sensing"} **ಅಥವಾ** `touching “Moving-Platform”`{:class="block3sensing"} ಎಂದು ತೀರ್ಮಾನಿಸುವ `OR`{:class="block3operators"} ಆಪರೇಟರ್ ಅನ್ನು ಉಪಯೋಗಿಸಿ.
 
-Go through the code for the **Player Character** sprite and everywhere you see this block:
+**Player Character** spriteನ ಕೋಡ್ ಅನ್ನು ಗಮನಿಸಿದರೆ ಎಲ್ಲೆಲ್ಲೂ ನೀವು ಈ ಕೆಳಗಿನದನ್ನು ನೋಡಬಹುದು:
 
 ```blocks3
     <touching [Platforms v] ?>
 ```
 
-replace it with this one:
+ಇದನ್ನು ಇದರೊಂದಿಗೆ ಬದಲಾಯಿಸಿ:
 
 ```blocks3
     <<touching [Platforms v] ?> or <touching [Moving-Platform v] ?>>
