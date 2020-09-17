@@ -1,48 +1,48 @@
-## Setting things up
+## वस्तुंचे व्यवस्थापन
 
-Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+कारण की आपण फिज़िक्स इंजिन बनविणे नाही परंतु Scratch मध्ये code कशे करायचे ते शिकत आहात (code ज्या कंप्युटर गेम मधील वस्तु वास्तविक जगातील वस्तुं सारके वर्तन करु लागतात, उदा. ते मजल्यांन मधून पडत नाहीत), मी आधीच बनविलेल्या एका प्रोजेक्ट पासून आपली सुरुवात करणार ज्या मध्ये हलविण्या, उडी मारण्या आणि प्लॅटफॉर्म शोधण्यासाठी मुलभूत गोष्टी अंगभूत आहेत.
 
-You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
+या कार्ड वरच्या तपशीलांसह प्रोजेक्ट कडे चपळ दृष्ट द्या, कारण आपण त्या मध्ये नंतर काही बदल करणार आहात, परंतु आपल्याला हे करीत असलेले सर्वच काही समजण्याची गरज नाही!
 
-### Get the project
-
-\--- task \---
-
-The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
-
-To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
-
-You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
-
-\--- /task \---
-
-### Take a look at the code
-
-The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
-
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
+### प्रोजेक्ट मिळवा
 
 \--- task \---
 
-Take a look at how the code is put together.
+सर्व प्रथम [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} वरुन Scratch कोड ची प्रत मिळवा.
+
+प्रोजेक्टचा ऑफलाइन उपयोग करण्या करिता, **See Inside**, वरती क्लिक करून, नंतर **File** मेनू मधून **Download to your computer** वर क्लिक करुन आपल्या कंप्युटर मध्ये डाउनलोड करा. त्या नंतर डाउनलोड केलीली फाइल आपण Scratch मध्ये कंप्युटर वरुन उघडू शकता.
+
+आपण आपल्या ब्राउझर मधील Scratch मध्ये **See Inside** आणि नंतर**Remix** क्लिक करून देखील हे वापरू शकता.
 
 \--- /task \---
 
-It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
+### कोड पहा
+
+गेमच्या फिजिक्स इंजिनमध्ये विविध प्रकारचे घटक आहेत, त्यातील काही आधीच कार्यरत आहेत आणि त्यापैकी काही अद्याप नाहीत. आपण गेम चालवून आणि खेळण्याचा प्रयत्न करून याची चाचणी घेऊ शकता.
+
+आपण पहाल की आपण आपला जीव (lives) गमावू शकता परंतु जेव्हा आपण समाप्त होतात तेव्हा काही ही घडत नाही. तसेच, खेळामध्ये फक्त एक लेवल आहे, संग्रहित करण्यासाठी एक प्रकारची वस्तू आणि कोणतेही शत्रू नाहीत. आपण त्या सर्वांचे निराकरण करून त्यावर आणखी काहीतरी करणार आहात!
+
+\--- task \---
+
+कोड एकत्र कसा ठेवला आहे ते पहा.
+
+\--- /task \---
+
+त्या मध्ये ब-याच **My blocks** ब्लॉक्स, चा उपयोग होतो, जे आपला कोड चे तुकड्यांमध्ये विभाजित करण्यासाठी उत्कृष्ट आहेत जेणेकरून आपण त्यास अधिक चांगल्या प्रकारे व्यवस्थापित करू शकता. **My blocks** ब्लॉक हा आपण बर्‍याच ब्लॉक्स मधून बनविला एक ब्लॉक आहे आणि आपण त्यास काही सूचना देऊ शकता. पुढील स्टेप मध्ये हे कसे कार्य करते ते आपण पहाल!
 
 ![](images/setup2and3.png)
 
-### 'My blocks' blocks are really useful
+### 'My blocks' ब्लॉक्स हे खरोखरच उपयोगी आहेत
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+वरील कोड मध्ये, मुख्य गेम `forever`{:class="block3control"} लूप, `main-physics`{:class="block3myblocks"} **My blocks** ब्लॉक ला भरपूर काही करण्यासाठी सांगते! ब्लॉक्स ला अश्या प्रकारे वेगळे ठेवणे हे मुख्य लूप वाचणे आणि गेममध्ये काय होत आहे हे, ते **कसे** होते याची चिंता न करता, समजून घेण्यास सुलभ करते.
 
 \--- task \---
 
-Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks.
+आता `reset game`{:class="block3myblocks"} आणि `reset character`{:class="block3myblocks"} **My blocks** ब्लॉक्स कडे लक्ष ध्या.
 
 \--- /task \---
 
-They do pretty normal things, such as setting up variables and making sure the character rotates properly
+ते ब-याच सामान्य गोष्टी करतात, जसे की व्हेरिएबल्स सेट करणे आणि हे सुनिश्चित करणे की पात्र योग्य प्रकारे फिरत आहे
 
-- `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
-- The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
+- `reset-game`{:class="block3myblocks"} हे `reset-character`{:class="block3myblocks"} ला **कॉल** करते, जे दर्शवते की आपण एका **My blocks** ब्लॉक चा इतर **My blocks** ब्लॉक मध्ये वापर करु शकता
+- मुख्य लूप मध्ये `reset-character`{:class="block3myblocks"} **My blocks** ब्लॉक चा उपयोग दोन भिन्न ठिकाणी होतो. याचा अर्थ केवळ **My blocks** ब्लॉक, मधला code बदलून आपण आपल्या मुख्य गेम loop मध्ये दोन ठिकाणे बदलू शकता, जे आपल्या बर्‍याच कामाची बचत करते आणि आपल्याला चुका टाळण्यास मदत करते.
