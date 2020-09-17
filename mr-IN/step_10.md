@@ -1,81 +1,81 @@
-## What next?
+## पुढे काय?
 
-You’ve got a complete game now, but there’s a whole lot more you can do with it! Here are a few ideas to get you started:
+आपल्‍याला आता एक संपूर्ण गेम मिळाला आहे, परंतु आपण त्या मध्ये आणखी बरेच काही करू शकता! आपल्याला प्रारंभ करण्यासाठी येथे काही कल्पना दिल्या आहेत:
 
 ## \--- collapse \---
 
-## title: High scores
+## title: उच्च गुणसंख्या
 
-+ Keep a list of the names and scores of people who’ve gotten high scores in the game! You’ll need to use the `ask`{:class="block3looks"} block to the get their name.
++ गेममध्ये उच्च गुण मिळविलेल्या लोकांच्या नावांची आणि अंकांची सूची ठेवा! त्यांचे नाव मिळविण्या साठी आपल्याला `ask`{:class="block3looks"} ब्लॉक वापरण्याची आवश्यकता पडेल.
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: New power-ups
+## title: नवीन पावर-अप
 
-+ Try adding some new power-ups, for example for: 
-  + Immunity to enemies
-  + More lives
-  + Bigger player character
-  + Smaller player character
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Scrolling levels
-
-+ Can you figure out how to make the levels scroll along, so the player character can move through them from left to right? Or at least make it *look* like that’s what’s happening?
++ काही नवीन पावर-अप जोड्ण्याचा प्रयत्न करा, उदाहरणार्थ: 
+  + शत्रूंपासून प्रतिकार
+  + अधिक जीवने
+  + मोठे खेडाळू पात्र
+  + लहान खेडाळू पात्र
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Completing levels
+## title: स्क्रोलींग लेव्हल्स
 
-+ Right now, the levels never end. What if, instead of pushing a button, you needed a certain number of points to get to the next level?
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Play With physics
-
-+ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, and `y-speed`{:class="block3variables"}. How do they change the game?
-
-+ Can you use the physics to make power-ups?
++ लेव्हल्सला स्क्रोल कसे करावे हे आपण समजू शकता का, जेणेकरून खेळाडूचे पात्र त्या मधून डावीकडून उजवीकडे हलू शकेल? किंवा किमान ते असे होत आहे असं *दाखवा*?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: More levels
+## title: लेव्हल्स पूर्ण करणे
 
-+ Add more levels! Make better art! Use the Stage background to make the game look cooler while still keeping platforms easy to work with for you as the coder.
-
-\--- /collapse \---
-
-## \--- collapse \---
-
-## title: Sound effects
-
-+ This game is totally silent right now! Try adding background music and sound effects using the blocks in the **Sound** section!
++ सध्या, लेव्हल्स कधीच संपत नाहीत. कसं होईल, जर बटण दाबण्याऐवजी आपल्याला पुढच्या लेव्हलवर जाण्यासाठी काही विशिष्ट गुण हवे असतील?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Secrets
+## title: फिज़िक्स सह खेळा
 
-+ Think of secret bonuses, cheat codes, and other 'easter eggs' you can hide in the game for players to discover. Try to code some of them!
++ फिज़िक्स इंजिनमधील काही मूल्ये बदलून बघा, जसे की `gravity` {:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, आणि `y-speed`{:class="block3variables"}. ते खेळ कसा बदलतील?
+
++ आपण पॉवर-अप करण्यासाठी फिज़िक्स वापरू शकता?
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: Different characters
+## title: अधिक लेव्हल्स
 
-+ Add more character sprites and let the player pick one. Make the characters different in attributes like size, how high they jump, maybe even how many lives they have, and how many points they get from collectables! 
++ अधिक लेव्हल्स जोडा! चांगली कला बनवा! आपल्यास कोडर म्हणून प्लॅटफॉर्मवर कार्य करणे सोपे ठेवत असताना गेम झकास दिसण्यासाठी स्टेज पार्श्वभूमीचा वापरा.
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: ध्वनी प्रभाव
+
++ ही गेम सध्या पूर्णपणे शांत आहे! **Sound** विभागात ब्लॉक्स चा वापर करून पार्श्व संगीत आणि ध्वनी प्रभाव जोडण्याचा प्रयत्न करा!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: रहस्य
+
++ गेममध्ये खेळाडूंनी शोधण्यासाठी गुप्त बोनस, फसवणूक कोड आणि आपण लपवू शकता तसले इतर 'इस्टर एग' यांचा विचार करा. त्यापैकी काही कोड करण्याचा प्रयत्न करा!
+
+\--- /collapse \---
+
+## \--- collapse \---
+
+## title: भिन्न पात्र
+
++ अधिक पात्र स्प्राइट्स जोडा आणि खेळाडूला त्यापैकी एक निवडू द्या. पात्रांच्या वैशिष्ट्यांमध्ये भिन्नता टाका जसा की त्यांचा आकार, त्यांची उंच उडी, कदाचित त्यांच्या कडे किती जीवने आहेत आणि संग्रहणीयां मधुण त्यांना किती गुण मिळतील! 
 
 \--- /collapse \---
