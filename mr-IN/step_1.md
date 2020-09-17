@@ -1,46 +1,46 @@
 \--- no-print \---
 
-This is the **Scratch 3** version of the project. There is also a [Scratch 2 version of the project](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
+ही प्रोजेक्टची **Scratch 3** आवृत्ती (वर्ज़न) आहे. प्रोजेक्टची [ Scratch 2 आवृत्ती देखील आहे ](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
 
 \--- /no-print \---
 
-## Introduction
+## परिचय
 
-These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
+ह्या एड्वान्स्ड Scratch सुशी कार्ड्स आहेत, आणि त्यांच्याबरोबर आपण एक प्लॅटफोर्म-शैलीचा खेळ तयार कराल ज्यामध्ये आपण नंतर आपले स्वतःचे स्तर, पावर आणि वर्ण (केरेक्टर्स) जोडू शकता!
 
-### What you will make
+### आपण काय तयार करणार आहोत
 
-Here is an example of the game you will build. Feel free to improve on my "art".
+आपण तयार करणा-या खेळाचे उदाहरण येथे आहे. माझ्या "कला" वर सुधारण्यासाठी मोकळ मन राखा.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
 </div>
 
-Use the arrow keys to move the cat around. Watch out for the dog!
+मांजरीला फिरण्यासाठी एरो की वापरा. कुत्र्याकडे लक्ष द्या!
 
 ## \--- collapse \---
 
-## title: What you will learn
+## title: आपण काय शिकणार
 
-+ Cloning sprites
-+ Using variables inside cloned sprites
-+ Creating and using **My blocks** blocks
-+ Reusing code in several places with **My blocks** blocks
-+ Messages to trigger behaviours across sprites
-+ Using variables to configure your program
++ स्प्राइट्सची प्रत बनवणे
++ स्प्राइट्स च्या प्रत मध्ये वॅरिएबल्स चा उपयोग
++ **My blocks** ब्लॉक्स बनविणे आणी वापरणे
++ **My blocks** ब्लॉक्स मध्ये अनेक ठिकाणी कोड चा पुन: उपयोग
++ सर्व स्प्राइट्स मध्ये वर्तन ट्रिगर करण्या साठी संदेश
++ प्रोग्राम कॉन्फीगर करण्या करिता वॅरिएबल्स चा उपयोग
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: What you will need
+## title: तुम्हाला काय लागेल
 
-### Hardware
+### हार्डवेअर
 
-+ A computer capable of running Scratch 3
++ Scratch 3 चालवण्यास सक्षम असलेले संगणक
 
-### Software
+### सॉफ्टवेअर
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} or [offline](https://scratch.mit.edu/download/){:target="_blank"})
++ Scratch 3 (एकतर [ऑनलाईन](https://scratch.mit.edu/projects/editor/){:target="_blank"} किंवा [ऑफलाईन](https://scratch.mit.edu/download/){:target="_blank"})
 
 \--- /collapse \---
