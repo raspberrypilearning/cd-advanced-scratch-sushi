@@ -1,12 +1,12 @@
-## Super power-ups!
+## ಸೂಪರ್ ಪವರ್-ಅಪ್ಗಳು!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+ಈಗ ನೀವು ಹೊಸ ಪವರ್-ಅಪ್ ಸಂಗ್ರಹಿಸಬಹುದಾದ ಕೆಲಸವನ್ನು ಹೊಂದಿದ್ದೀರಿ, ಅದು ನಿಜವಾಗಿಯೂ ಚೆನ್ನಾಗಿ ಏನನ್ನಾದರೂ ಮಾಡುವ ಸಮಯ: ಹೆಚ್ಚುವರಿ ಜೀವನವನ್ನು ನೀಡುವ ಬದಲು ಕೆಲವು ಸೆಕೆಂಡುಗಳ ಕಾಲ ಅದನ್ನು ಪವರ್-ಅಪ್‌ಗಳ 'ಮಳೆ'ಯನ್ನಾಗಿ ಮಾಡೋಣ.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+ಇದಕ್ಕಾಗಿ, ನೀವು ಇನ್ನೊಂದು `broadcast`{:class="block3events"} ಸಂದೇಶವನ್ನು ಬಳಸಲಿದ್ದೀರಿ.
 
 \--- task \---
 
-First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+ಮೊದಲಿಗೆ, ಆಟಗಾರ ಪಾತ್ರವು `2` ಸಂಗ್ರಹಿಸಬಹುದಾದ ಪ್ರಕಾರವನ್ನು ಮುಟ್ಟಿದಾಗ ಸಂದೇಶವನ್ನು ಪ್ರಸಾರ ಮಾಡಲು `react-to-player`{:class="block3myblocks"} ಬ್ಲಾಕ್ ಅನ್ನು ಬದಲಾಯಿಸಿ. `collectable-rain`{:class="block3events"} ಸಂದೇಶವನ್ನು ಕರೆಯಿರಿ.
 
 ```blocks3
     define react-to-player (type)
@@ -21,11 +21,11 @@ First, change the `react-to-player`{:class="block3myblocks"} block to broadcast 
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+`collectable-rain`{:class="block3events"} ಸಂದೇಶ ಪ್ರಸಾರ ಮಾಡಿದಾಗ ಶುರುವಾಗುವಂಥಹ ಕೋಡ್ ಅನ್ನು, ಈಗ ನೀವು **Collectable** sprite ಸ್ಕ್ರಿಪ್ಟ್‌ನ ಒಳಗೆ ಸೇರಿಸಬೇಕು.
 
 \--- task \---
 
-Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+`collectable-rain`{:class="block3events"} ಪ್ರಸಾರವನ್ನು ಆಲಿಸುವಂತೆ ಮಾಡಲು **Collectable** spriteಗಾಗಿ ಈ ಕೋಡ್ ಅನ್ನು ಸೇರಿಸಿ.
 
 ```blocks3
 +    when I receive [collectable-rain v]
@@ -38,13 +38,13 @@ Add this code for the **Collectable** sprite to make it listen out for the `coll
 
 ## \--- collapse \---
 
-## title: What does the new code do?
+## title: ಈ ಹೊಸ ಕೋಡ್ ಏನು ಮಾಡುತ್ತದೆ?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+ಈ ಕೋಡ್ ತುಣುಕು ಪ್ರಸಾರವನ್ನು ಸ್ವೀಕರಿಸಲು ಕಾಯುತ್ತದೆ ಮತ್ತು `collectable-frequency`{:class="block3variables"} ವೇರಿಯೇಬಲ್ ಅನ್ನು ಬಹಳ ಕಡಿಮೆ ಸಂಖ್ಯೆಗೆ ಹೊಂದಿಸುವ ಮೂಲಕ ಸ್ಪಂದಿಸುತ್ತದೆ, ನಂತರ ಒಂದು ಸೆಕೆಂಡ್ ಕಾಯುತ್ತದೆ, ತದನಂತರ ಪುನಃ `1` ಗೆ ಬದಲಾಯಿಸುತ್ತದೆ.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+`collectable-frequency`{:class="block3variables"} ವೇರಿಯೇಬಲ್ ಅನ್ನು ಇದು ಸಂಗ್ರಹಯೋಗ್ಯ ಮಳೆಯಾಗಲು ಕಾರಣವೇನೆಂದು ಕಂಡುಹಿಡಿಯಲು ಹೇಗೆ ಬಳಸಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ನೋಡೋಣ.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+ಮುಖ್ಯ ಆಟದ ‌ಲೂಪ್ ನಲ್ಲಿ, **Collectable** sprite ತದ್ರೂಪಿಗಳನ್ನು ಸೃಷ್ಟಿಸುವ ಕೋಡ್‌ನ ಭಾಗಕ್ಕೆ, `collectable-frequency`{:class="block3variables"} ವೇರಿಯೇಬಲ್, ಎರಡು ತದ್ರೂಪಿಗಳನ್ನು ಸೃಷ್ಟಿಸುವ ನಡುವೆ ಎಷ್ಟು ಸಮಯದ ಅಂತರ ಇರಬೇಕೆಂದು ಸೂಚಿಸುತ್ತದೆ:
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
@@ -59,10 +59,10 @@ In the main game loop, the part of the code that makes **Collectable** sprite cl
     end
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+`wait`{:class="block3control"} ಬ್ಲಾಕ್ ಇಲ್ಲಿ `collectable-frequency`{:class="block3variables"} ನಿಗದಿಪಡಿಸಿದ ಸಮಯ ತನಕ ವಿರಾಮ ಹೊಂದುವಂತೆ ಮಾಡುತ್ತದೆ.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+`collectable-frequency`{:class="block3variables"} ನ ಮೌಲ್ಯ `<code>0.000001` ಆಗಿದ್ದರೆ, `wait`{:class="block3control"} ಬ್ಲಾಕ್, ಸೆಕೆಂಡಿನ **ದಶಲಕ್ಷ** ಒಂದು ಭಾಗದ ವರೆಗೆ ಮಾತ್ರ ವಿರಾಮ ನೀಡುತ್ತದೆ. ಇದರರ್ಥ <0>repeat until</code>{:class="block3control"} ಲೂಪ್ ನಿರೀಕ್ಷೆಗಿಂತ ಹಲವು ಪಟ್ಟು ಹೆಚ್ಚು ಸಮಯ ಓಡುತ್ತದೆ. ಪರಿಣಾಮವಾಗಿ ಕೋಡ್, `collectable-frequency`{:class="block3variables"} ನ ಬೆಲೆ `1` ಆಗುವ ವರೆಗೆ ಸಾಧಾರಣಕ್ಕಿಂತ ತುಂಬ ಹೆಚ್ಚು ಪವರ್-ಅಪ್ ಗಳನ್ನು ಸೃಷ್ಟಿಸುತ್ತದೆ.
 
-Can you think of any problems that might cause? There’ll be a lot more power-ups…what if you kept catching them?
+ನೀವು ಇದರಿಂದ ಉಂಟಾಗುವ ಯಾವುದೇ ಸಮಸ್ಯೆಗಳ ಬಗ್ಗೆ ಯೋಚಿಸಬಹುದೇ? ಇನ್ನೂ ಹೆಚ್ಚಿನ ಪವರ್-ಅಪ್‌ಗಳು ಇರುತ್ತವೆ…ನೀವು ಅವುಗಳನ್ನು ಹಿಡಿಯುತ್ತಿದ್ದರೆ ಏನು?
 
 \--- /collapse \---
