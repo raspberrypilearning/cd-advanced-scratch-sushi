@@ -1,45 +1,45 @@
 \--- no-print \---
 
-This is the **Scratch 3** version of the project. There is also a [Scratch 2 version of the project](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
+ಇದು **Scratch 3** ಯೋಜನೆಯ ಆವೃತ್ತಿ. ಯೋಜನೆಯ [Scratch 2 ಆವೃತ್ತಿ ಸಹ ಇದೆ](https://projects.raspberrypi.org/en/projects/cd-advanced-scratch-sushi-scratch2).
 
 \--- /no-print \---
 
-## Introduction
+## ಪರಿಚಯ
 
-These are the Advanced Scratch Sushi Cards, and with them you’ll make a platform-style game to which you can later add your own levels, powers, and characters!
+ಇವು ಸುಧಾರಿತ Scratch ಸುಶಿ ಕಾರ್ಡ್‌ಗಳು, ಮತ್ತು ಅವರೊಂದಿಗೆ ನೀವು ಪ್ಲಾಟ್‌ಫಾರ್ಮ್-ಶೈಲಿಯ ಆಟವನ್ನು ಮಾಡುತ್ತೀರಿ, ಅದಕ್ಕೆ ನೀವು ನಂತರ ನಿಮ್ಮ ಸ್ವಂತ ಮಟ್ಟಗಳು, ಅಧಿಕಾರಗಳು ಮತ್ತು ಪಾತ್ರಗಳನ್ನು ಸೇರಿಸಬಹುದು!
 
-### What you will make
+### ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ
 
-Here is an example of the game you will build. Feel free to improve on my "art".
+ನೀವು ನಿರ್ಮಿಸುವ ಆಟದ ಉದಾಹರಣೆ ಇಲ್ಲಿದೆ. ನನ್ನ "ಕಲೆ" ಯನ್ನು ಸುಧಾರಿಸಲು ಹಿಂಜರಿಯಬೇಡಿ.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
 </div>
 
-Use the arrow keys to move the cat around. Watch out for the dog!
+ಬೆಕ್ಕನ್ನು ಸುತ್ತಲು ಬಾಣದ ಕೀಲಿಗಳನ್ನು[arrow keys] ಬಳಸಿ. ನಾಯಿಯನ್ನು ಗಮನಿಸಿ!
 
 ## \--- collapse \---
 
-## title: What you will learn
+## title: ನೀವು ಏನು ಕಲಿಯುವಿರಿ
 
-+ Cloning sprites
-+ Using variables inside cloned sprites
-+ Creating and using **My blocks** blocks
-+ Reusing code in several places with **My blocks** blocks
-+ Messages to trigger behaviours across sprites
-+ Using variables to configure your program
++ ಸ್ಪ್ರೈಟ್ ಗಳನ್ನು ಕ್ಲೋನ್ ಮಾಡುವುದು
++ Cloned sprites ಒಳಗೆ ವೇರಿಯೇಬಲ್ಸ್ ಬಳಸುವುದು
++ **My blocks** ಬ್ಲಾಕ್ ಗಳನ್ನು ರಚಿಸಿ ಉಪಯೋಗಿಸುವುದು
++ **My blocks** ಬ್ಲಾಕ್ ಗಳ ಮೂಲಕ ಹಲವು ಕಡೆ ಕೋಡ್ ನ ಮರುಬಳಕೆ
++ ಸ್ಪ್ರೈಟ್‌ಗಳಾದ್ಯಂತ ವರ್ತನೆಗಳನ್ನು ಪ್ರಚೋದಿಸುವ ಸಂದೇಶಗಳು
++ ನಿಮ್ಮ ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಲು ವೇರಿಯೇಬಲ್ಸ್ ಗಳನ್ನು ಬಳಸುವುದು
 
 \--- /collapse \---
 
 ## \--- collapse \---
 
-## title: What you will need
+## title: ನಿಮಗೆ ಬೇಕಾದುದು
 
-### Hardware
+### Hardware \(ಯಂತ್ರಾಂಶ\)
 
-+ A computer capable of running Scratch 3
++ Scratch 3 ಅನ್ನು ಚಲಾಯಿಸುವ ಸಾಮರ್ಥ್ಯವಿರುವ ಕಂಪ್ಯೂಟರ್
 
-### Software
+### Software \(ಸಾಫ್ಟ್ವೇರ್\)
 
 + Scratch 3 (either [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} or [offline](https://scratch.mit.edu/download/){:target="_blank"})
 
