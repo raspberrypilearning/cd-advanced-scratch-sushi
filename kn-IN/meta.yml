@@ -1,7 +1,7 @@
 ---
-title: Falling stars
+title: ಬೀಳುವ ನಕ್ಷತ್ರಗಳು
 hero_image: images/banner.png
-description: Make a platform-style game and add your own levels, powers, and characters.
+description: ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಶೈಲಿಯ ಆಟವನ್ನು ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಸ್ವಂತ ಮಟ್ಟಗಳು, ಅಧಿಕಾರಗಳು ಮತ್ತು ಪಾತ್ರಧಾರಿಗಳನ್ನು ಸೇರಿಸಿ.
 theme: orange
 listed: true
 copyedit: true
@@ -14,23 +14,23 @@ version: 4.0.0
 last_tested: "2018-04-23"
 steps:
   - 
-    title: Introduction
+    title: ಪರಿಚಯ
   - 
-    title: Setting things up
+    title: ವಿಷಯಗಳನ್ನು ಹೊಂದಿಸುವುದು
   - 
-    title: Losing the game
+    title: ಆಟವನ್ನು ಕಳೆದುಕೊಳ್ಳುವುದು
   - 
-    title: Power-ups
+    title: ಪವರ್-ಅಪ್ಗಳು
   - 
-    title: Super power-ups!
+    title: ಸೂಪರ್ ಪವರ್-ಅಪ್ಗಳು!
   - 
-    title: "Challenge: get creative!"
+    title: "ಸವಾಲು: ಸೃಜನಶೀಲರಾಗಿರಿ!"
     challenge: true
   - 
-    title: Adding some competition
+    title: ಕೆಲವು ಸ್ಪರ್ಧೆಯನ್ನು ಸೇರಿಸಲಾಗುತ್ತಿದೆ
   - 
-    title: Level 2
+    title: ಹಂತ 2
   - 
-    title: Moving platforms
+    title: ಚಲಿಸುವ ವೇದಿಕೆಗಳು \(ಪ್ಲಾಟ್‌ಫಾರ್ಮ್\)
   - 
-    title: What next?
+    title: ಮುಂದೆ ಏನು?
