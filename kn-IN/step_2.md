@@ -1,48 +1,48 @@
-## Setting things up
+## ಸಾಮಗ್ರಿಗಳನ್ನು ಹೊಂದಿಸುವುದು
 
-Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+ನೀವು Scratch‌ನಲ್ಲಿ ಹೇಗೆ code ಮಾಡಬೇಕೆಂದು ಕಲಿಯುತ್ತಿರುವಿರಿ ಮತ್ತು ಫಿಸಿಕ್ಸ್ ಎಂಜಿನ್ ಅನ್ನು ಹೇಗೆ ನಿರ್ಮಿಸುವುದು ಎಂಬುದರ ಬಗ್ಗೆ ಅಲ್ಲ (ಕಂಪ್ಯೂಟರ್ ಆಟದಲ್ಲಿನ ವಿಷಯಗಳನ್ನು ನೈಜ-ಪ್ರಪಂಚದ ವಸ್ತುಗಳಂತೆ ವರ್ತಿಸುವಂತೆ ಮಾಡುವ ಕೋಡ್, ಉದಾ. ಅವು ಮಹಡಿಗಳ ಮೂಲಕ ಬೀಳದಂತೆ ನೋಡಿಕೊಳ್ಳುವುದು). ನಾನು ಈಗಾಗಲೇ ರಚಿಸಿದ ಚಲಿಸುವ, ಜಿಗಿಯುವ ಮತ್ತು ದಿಬ್ಬ/ವೇದಿಕೆ ಪತ್ತೆಹಚ್ಚುವ ಮೂಲಭೂತ ಅಂಶಗಳ ಜೊತೆ ನೀವು ಪ್ರಾರಂಭಿಸುತ್ತೀರಿ.
 
-You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
+ಈ ಕಾರ್ಡ್‌ನಲ್ಲಿನ ವಿವರಗಳನ್ನು ಒಳಗೊಂಡಂತೆ ನೀವು ಪ್ರಾಜೆಕ್ಟ್ ಅನ್ನು ತ್ವರಿತವಾಗಿ ನೋಡಬೇಕು, ಏಕೆಂದರೆ ನೀವು ನಂತರ ಅದರಲ್ಲಿ ಕೆಲವು ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡುತ್ತೀರಿ, ಆದರೆ ಅದು ಮಾಡುತ್ತಿರುವ ಎಲ್ಲವನ್ನೂ ನೀವು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವ ಅಗತ್ಯವಿಲ್ಲ!
 
-### Get the project
-
-\--- task \---
-
-The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
-
-To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
-
-You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
-
-\--- /task \---
-
-### Take a look at the code
-
-The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
-
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
+### ಪ್ರಾಜೆಕ್ಟ್ ಅನ್ನು ಪಡೆಯಿರಿ
 
 \--- task \---
 
-Take a look at how the code is put together.
+[dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} ನಿಂದ Scratch code‌ನ ನಕಲನ್ನು ಪಡೆಯುವುದು ನೀವು ಮೊದಲು ಮಾಡಬೇಕಾಗಿರುವುದು.
+
+ಪ್ರಾಜೆಕ್ಟ್ ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಬಳಸಲು, **See Inside** ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ಅದನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ, ನಂತರ **File** menu ಮತ್ತು**Download to your computer** ಕ್ಲಿಕ್ ಮಾಡಿ. ನಂತರ ನೀವು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದ file ಅನ್ನು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ Scratch ‌ನಲ್ಲಿ ತೆರೆಯಬಹುದು.
+
+**See Inside** ಮತ್ತು ನಂತರ **Remix** ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ನೀವು ಅದನ್ನು ನೇರವಾಗಿ ನಿಮ್ಮ ಬ್ರೌಸರ್‌ನ Scratch‌ ನಲ್ಲಿ ಬಳಸಬಹುದು.
 
 \--- /task \---
 
-It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
+### ಒಮ್ಮೆ code ನೋಡಿ
+
+ಈ ಆಟದ ಫಿಸಿಕ್ಸ್ ಎಂಜಿನ್ ಅದರಲ್ಲಿ ವಿವಿಧ ಭಾಗಗಳು ಇವೆ, ಅವುಗಳಲ್ಲಿ ಕೆಲವು ಈಗಾಗಲೇ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತವೆ ಮತ್ತು ಅವುಗಳಲ್ಲಿ ಕೆಲವು ಇನ್ನೂ ಇಲ್ಲ. ಆಟವನ್ನು ಚಲಾಯಿಸುವ ಮೂಲಕ ಮತ್ತು ಅದನ್ನು ಆಡಲು ಪ್ರಯತ್ನಿಸುವ ಮೂಲಕ ನೀವು ಇದನ್ನು ಪರೀಕ್ಷಿಸಬಹುದು.
+
+ನೀವು ಲೈಫ್ ಕಳೆದುಕೊಳ್ಳಬಹುದು ಎಂದು ನೀವು ನೋಡುತ್ತೀರಿ, ಆದರೆ ಇದು ಖಾಲಿಯಾದಾಗ ಏನೂ ಆಗುವುದಿಲ್ಲ. ಅಲ್ಲದೆ, ಆಟವು ಕೇವಲ ಒಂದು ಹಂತವನ್ನು ಹೊಂದಿದೆ, ಸಂಗ್ರಹಿಸಲು ಒಂದು ರೀತಿಯ ವಿಷಯವಿದೆ ಮತ್ತು ಶತ್ರುಗಳಿಲ್ಲ. ನೀವು ಎಲ್ಲವನ್ನೂ ಸರಿಪಡಿಸಲು ಹೊರಟಿದ್ದೀರಿ, ಮತ್ತು ನಂತರ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಮಾಡಿ!
+
+\--- task \---
+
+Code ಹೇಗೆ ಒಟ್ಟುಗೂಡಿಸಲಾಗಿದೆ ಎಂಬುದನ್ನು ನೋಡೋಣ.
+
+\--- /task \---
+
+ಇದು ಸಾಕಷ್ಟು **My blocks** ಬ್ಲಾಕ್ ಅನ್ನು ಉಪಯೋಗಿಸುತ್ತದೆ, ನಿಮ್ಮ code ಅನ್ನು ತುಂಡುಗಳಾಗಿ ವಿಭಜಿಸಲು ಇದು ಉತ್ತಮವಾಗಿದೆ ಆದ್ದರಿಂದ ನೀವು ಅದನ್ನು ಉತ್ತಮವಾಗಿ ನಿರ್ವಹಿಸಬಹುದು. **My blocks** ಬ್ಲಾಕ್ ಎನ್ನುವುದು ಹಲವಾರು ಇತರ ಬ್ಲಾಕ್‌ಗಳಿಂದ ರಚಿಸಲ್ಪಟ್ಟ ಒಂದು ಬ್ಲಾಕ್ ಆಗಿದೆ, ಮತ್ತು ನೀವು ಅದಕ್ಕೆ ಕೆಲವು ಸೂಚನೆಗಳನ್ನು ನೀಡಬಹುದು. ಮುಂಬರುವ ಹಂತದಲ್ಲಿ ಅದು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ ಎಂಬುದನ್ನು ನೀವು ನೋಡುತ್ತೀರಿ!
 
 ![](images/setup2and3.png)
 
-### 'My blocks' blocks are really useful
+### 'ನನ್ನ blocks'ಬ್ಲಾಕ್ ನಿಜವಾಗಿಯೂ ಉಪಯುಕ್ತವಾಗಿವೆ
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+ಮೇಲಿನ ಕೋಡ್‌ನಲ್ಲಿ, ಮುಖ್ಯ ಆಟದ `forever`{:class="block3control"} ಲೂಪ್ </strong> ಎಲ್ಲಾ ಕೆಲಸವನ್ನು ಮಾಡಲು, `main-physics`{:class="block3myblocks"} **My blocks</1> ಅನ್ನು ಕರೆಯುತ್ತದೆ! **ಹೇಗೆ** ಇದು ಸಂಭವಿಸುತ್ತದೆ ಎಂಬುದರ ಬಗ್ಗೆ ಚಿಂತಿಸದೆ, ಬ್ಲಾಕ್ಗಳನ್ನು ಈ ರೀತಿ ಬೇರ್ಪಡಿಸುವುದರಿಂದ ಮುಖ್ಯ ಲೂಪ್ ಅನ್ನು ಓದುವುದು ಮತ್ತು ಆಟದಲ್ಲಿ ಏನಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಸುಲಭವಾಗುತ್ತದೆ.</p> 
 
 \--- task \---
 
-Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks.
+ಈಗ `reset game`{:class="block3myblocks"} ಮತ್ತು `reset character`{:class="block3myblocks"} **My blocks** ಬ್ಲಾಕ್ ಗಳನ್ನು ನೋಡಿ.
 
 \--- /task \---
 
-They do pretty normal things, such as setting up variables and making sure the character rotates properly
+ವೇರಿಯೇಬಲ್ಸ್ ಗಳನ್ನು ಹೊಂದಿಸುವುದು ಮತ್ತು ಪಾತ್ರವು ಸರಿಯಾಗಿ ತಿರುಗುತ್ತಿದೆಯೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುವಂತಹ ಸಾಮಾನ್ಯ ಕೆಲಸಗಳನ್ನು ಅವರು ಮಾಡುತ್ತಾರೆ
 
-- `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
-- The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
+- `reset-game`{:class="block3myblocks"}, `reset-character`{:class="block3myblocks"} ಅನ್ನು **ಕರೆ** ಮಾಡುವ ಮೂಲಕ, **My blocks** ಬ್ಲಾಕ್ ಒಳಗೆ ಮತ್ತೊಂದು **My blocks** ಬ್ಲಾಕ್ ಬಳಸಬಹುದು ಎಂದು ತೋರಿಸುತ್ತದೆ
+- `reset-character`{:class="block3myblocks"} **My blocks** ಬ್ಲಾಕ್ ಮುಖ್ಯ ಲೂಪ್ನಲ್ಲಿ ಎರಡು ವಿಭಿನ್ನ ಸ್ಥಳಗಳಲ್ಲಿ ಬಳಸಲಾಗುತ್ತದೆ. ಇದರರ್ಥ **My blocks** ಬ್ಲಾಕ್ ಕೋಡ್ ಅನ್ನು ಮಾತ್ರ ಬದಲಾಯಿಸುವ ಮೂಲಕ ನಿಮ್ಮ ಮುಖ್ಯ ಆಟದ ಲೂಪ್ ‌ನಲ್ಲಿ ನೀವು ಎರಡು ಸ್ಥಳಗಳನ್ನು ಬದಲಾಯಿಸಬಹುದು, ಇದು ನಿಮಗೆ ಬಹಳಷ್ಟು ಕೆಲಸವನ್ನು ಉಳಿಸುತ್ತದೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ತಪ್ಪಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.
