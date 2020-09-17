@@ -66,13 +66,13 @@ Certo, adesso lo sprite **Catturabili** ha solo un costume, dal momento che c'è
 
 \--- task \---
 
-Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+Aggiungi un nuovo costume allo sprite **Catturabili** per il tuo nuovo potenziamento. A me piace il fulmine, ma scegli quello che piace a te.
 
 \--- /task \---
 
 \--- task \---
 
-Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
+Poi, dì al blocco `scegli-costume`{:class="block3myblocks"} ne **I Miei Blocchi** di impostare il nuovo costume ogni volta che riceve il nuovo valore di `tipo`{:class="block3myblocks"}, come questo \(usa qualsiasi nome di costume hai scelto\):
 
 ```blocks3
     definisci scegli-costume (type :: custom-arg)
@@ -88,21 +88,21 @@ end
 
 ### Crea il codice di potenziamento
 
-Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
+Ora devi decidere che cosa farà il nuovo oggetto da raccogliere! Inizieremo con qualcosa di semplice: dare al giocatore una vita in più. Nel prossimo passaggio, farai qualcosa di più interessante.
 
 \--- task \---
 
-Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
+Vai nella sezione **I Miei Blocchi** e fai clic su **Crea Un Blocco**. Rinomina il nuovo blocco `reazione-al-giocatore`{:class="block3myblocks"} e aggiungi un **input numerico** chiamato `tipo`{:class="block3myblocks"}.
 
-![Type in the name for the block](images/powerupMakeName.png)
+![Digita il nome per il blocco](images/powerupMakeName.png)
 
-Click **OK**.
+Premi **OK**.
 
 \--- /task \---
 
 \--- task \---
 
-Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
+Fai sì che il blocco `reazione-al-giocatore`{: class = "block3myblocks"} ne **I Miei Blocchi** o aumenti i punti o aumenti le vite del giocatore, a seconda del valore di `tipo`{:class="block3myblocks"}.
 
 ```blocks3
 + definisci reazione-al-giocatore (tipo :: custom-arg)
@@ -118,7 +118,7 @@ Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either i
 
 \--- task \---
 
-Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
+Aggiorna il codice `quando vengo clonato`{:class="block3events"} per sostituire il blocco che aggiunge un punto con una **chiamata** a `reazione-al-giocatore`{:class="block3myblocks"}, **passandogli** `catturabili-tipo`{:class="block3variables"}.
 
 ```blocks3
 + se <touching [Player Character v] ?> allora 
@@ -129,31 +129,31 @@ Update the `when I start as a clone`{:class="block3events"} code to replace the 
 
 \--- /task \---
 
-By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life.
+Usando questo nuovo blocco `reazione-al-giocatore`{:class="block3myblocks"} ne **I Miei Blocchi**, le stelle aggiungono ancora un punto, ma il nuovo potenziamento che hai creato aggiunge una vita.
 
 ### Usare `catturabili-tipo`{:class="block3variables"} per far apparire oggetti da raccogliere a caso
 
-Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
+In questo momento, ti starai chiedendo come dirai a ogni oggetto da raccogliere di che tipo dovrebbe essere.
 
-You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. to use for the collectable.
+Puoi farlo impostando il valore di `catturabili-tipo`{:class="block3variables"}. Questa variabile è solo un numero. Come hai visto, è usata per dire ai blocchi `scegli-costume`{:class="block3myblocks"} e `reazione-al-giocatore`{:class="block3myblocks"} quale costume, regole, ecc. da usare per l'oggetto da raccogliere.
 
 ## \--- collapse \---
 
 ## title: Lavorare con le variabili in un clone
 
-For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}.
+Per ogni clone dello sprite **Catturabili**, puoi impostare un valore diverso per `catturabili-tipo`{:class="block3variables"}.
 
-Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created.
+Pensa ad esso come fosse una nuova copia dello sprite **Catturabili** con l'aiuto del valore che è memorizzato in `catturabili-tipo`{:class="block3variables"} nel momento in cui viene creato il clone **Catturabili**.
 
-You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game.
+Ci si potrebbe chiedere se la modifica del valore di `catturabili-tipo`{:class="block3variables"} trasformerà tutti i catturabili sullo schermo nello stesso tipo. Ciò non accade, perché una delle cose che rende speciali i cloni è che non possono cambiare i valori di nessuna variabile con cui iniziano. I cloni di sprite hanno effettivamente **valori costanti**. Ciò significa che quando cambi il valore di `catturabili-tipo`{:class="block3variables"}, questo non influenza i cloni **Catturabili** già presenti nel gioco.
 
 \--- /collapse \---
 
-You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, pick between the numbers at random to make a random collectable every time.
+Stai per impostare il `catturabili-tipo`{:class="block3variables"} su `1` o `2` per ogni nuovo clone che crei. Per mantenere il gioco interessante, scegli i numeri a caso per creare un oggetto da raccogliere casuale ogni volta.
 
 \--- task \---
 
-Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
+Trova la ripetizione `ripeti fino a quando`{:class="block3control"} all'interno del codice della bandiera verde per lo sprite **Catturabili** e aggiungi il codice `se... allora`{:class=" block3control "} mostrato di seguito.
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
@@ -169,6 +169,6 @@ crea clone di [me stesso v]
 
 \--- /task \---
 
-This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy.
+Questo codice offre una possibilità di 1 su 50 di impostare il `catturabili-tipo`{:class="block3variables"} a `2`. Dopotutto, non vuoi dare al giocatore la possibilità di raccogliere una vita extra troppo spesso, altrimenti il gioco sarebbe troppo facile.
 
-Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it.
+Ora hai un nuovo tipo di oggetto da raccogliere che a volte appare al posto della stella, e che ti dà una vita extra invece di un punto quando lo raccogli.
