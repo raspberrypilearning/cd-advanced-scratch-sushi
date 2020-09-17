@@ -1,12 +1,12 @@
-## Level 2
+## ಹಂತ 2
 
-With this step, you're going to add a new level to the game that the player can get to by just pressing a button. Later, you can change your code to make it so they need a certain number of points, or something else, to get there.
+ಈ ಹಂತದ ಮೂಲಕ, ನೀವು ಕೇವಲ ಒಂದು ಬಟನನ್ನು ಒತ್ತುವ ಮೂಲಕ ಆಟಗಾರನು ಪಡೆಯಬಹುದಾದ ಹೊಸ ಮಟ್ಟವನ್ನು ಸೇರಿಸಲು ಹೊರಟಿದ್ದೀರಿ. ನಂತರ, ನಿಮ್ಮ ಕೋಡ್ ಅನ್ನು ಮಾಡಲು ನೀವು ಅದನ್ನು ಬದಲಾಯಿಸಬಹುದು ಆದ್ದರಿಂದ ಅವರಿಗೆ ಅಲ್ಲಿಗೆ ಹೋಗಲು ನಿರ್ದಿಷ್ಟ ಸಂಖ್ಯೆಯ ಅಂಕಗಳು ಅಥವಾ ಇನ್ನೇನಾದರೂ ಅಗತ್ಯವಿರುತ್ತದೆ.
 
-### Moving to the next level
+### ಮುಂದಿನ ಹಂತಕ್ಕೆ ಚಲಿಸುವುದು
 
 \--- task \---
 
-First, create a new sprite as a button by either adding one from the library or drawing your own. I did a bit of both and came up with this:
+ಮೊದಲಿಗೆ, ಲೈಬ್ರರಿಯಿಂದ ಒಂದನ್ನು ಸೇರಿಸುವ ಮೂಲಕ ಅಥವಾ ನಿಮ್ಮದೇ ಆದದನ್ನು ಸೆಳೆಯುವ ಮೂಲಕ ಹೊಸ sprite ಅನ್ನು ಬಟನ್ ಆಗಿ ರಚಿಸಿ. ನಾನು ಎರಡನ್ನೂ ಸ್ವಲ್ಪಮಟ್ಟಿಗೆ ಮಾಡಿದ್ದೇನೆ ಮತ್ತು ಇಲ್ಲಿಯ ತನಕ ಬಂದಿದ್ದೇನೆ:
 
 ![The button sprite to switch levels](images/levelButton.png)
 
@@ -14,9 +14,9 @@ First, create a new sprite as a button by either adding one from the library or 
 
 \--- task \---
 
-Now, the code for this button is clever: it’s designed so that every time you click it it will take you to the next level, no matter how many levels there are.
+ಈಗ, ಈ ಬಟನ್ ಕೋಡ್ ಬುದ್ಧಿವಂತವಾಗಿದೆ: ಇದನ್ನು ಹೇಗೆ ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ ಎಂದರೆ ನೀವು ಅದನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿದಾಗಲೆಲ್ಲಾ ಅದು ನಿಮ್ಮನ್ನು ಮುಂದಿನ ಹಂತಕ್ಕೆ ಕೊಂಡೊಯ್ಯುತ್ತದೆ, ಎಷ್ಟೇ ಹಂತಗಳಿದ್ದರೂ ಸಹ.
 
-Add these scripts to your **Button** sprite. You will need to create some variables as you do so.
+ನಿಮ್ಮ **Button** sprite ‌ಗೆ ಈ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಸೇರಿಸಿ. ನೀವು ಹಾಗೆ ಕೆಲವು ವೇರಿಯೇಬಲ್ ಗಳನ್ನು ರಚಿಸಬೇಕಾಗುತ್ತದೆ.
 
 ```blocks3
 +    when green flag clicked
@@ -37,25 +37,25 @@ Add these scripts to your **Button** sprite. You will need to create some variab
 
 \--- /task \---
 
-Can you see how the program will use the variables you created?
+ನೀವು ರಚಿಸಿದ ಅಸ್ಥಿರಗಳನ್ನು ಪ್ರೋಗ್ರಾಂ ಹೇಗೆ ಬಳಸುತ್ತದೆ ಎಂಬುದನ್ನು ನೀವು ನೋಡಬಹುದೇ?
 
-+ `max-level`{:class="block3variables"} stores the highest level
-+ `min-level`{:class="block3variables"} stores the lowest level
-+ `current-level`{:class="block3variables"} stores the level the player is on right now
++ `max-level`{:class="block3variables"} ಅತ್ಯುನ್ನತ ಮಟ್ಟವನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ
++ `min-level`{:class="block3variables"} ಅತ್ಯಂತ ಕಡಿಮೆ ಮಟ್ಟವನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ
++ `current-level`{:class="block3variables"} ಆಟಗಾರನು ಇದೀಗ ಇರುವ ಮಟ್ಟವನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ
 
-These all need to be set by the programmer \(you!\), so if you add a third level, don’t forget to change the value of `max-level`{:class="block3variables"}! `min-level`{:class="block3variables"} will never need to change, of course.
+ಇವೆಲ್ಲವನ್ನೂ ಪ್ರೋಗ್ರಾಮರ್\(ನೀವು! \) ಹೊಂದಿಸಬೇಕಾಗಿದೆ, ಆದ್ದರಿಂದ ನೀವು ಮೂರನೇ ಹಂತವನ್ನು ಸೇರಿಸಿದರೆ, `max-level`{:class="block3variables"} ನ ಮೌಲ್ಯವನ್ನು ಬದಲಾಯಿಸಲು ಮರೆಯಬೇಡಿ! `min-level`{:class="block3variables"} ಅನ್ನು ಎಂದಿಗೂ ಬದಲಾಯಿಸಬೇಕಾಗಿಲ್ಲ.
 
-The broadcasts are used to tell the other sprites which level to display, and to clear up the collectables when a new level starts.
+ಯಾವ ಮಟ್ಟವನ್ನು ಪ್ರದರ್ಶಿಸಬೇಕು ಎಂದು ಇತರ sprites‌ ಗಳಿಗೆ ಹೇಳಲು ಮತ್ತು ಹೊಸ ಮಟ್ಟ ಪ್ರಾರಂಭವಾದಾಗ ಸಂಗ್ರಹಯೋಗ್ಯ ವಸ್ತುಗಳನ್ನು ತೆರವುಗೊಳಿಸಲು ಪ್ರಸಾರಗಳನ್ನು ಬಳಸಲಾಗುತ್ತದೆ.
 
-### Make the sprites react
+### Sprites ಪ್ರತಿಕ್ರಿಯಿಸುವಂತೆ ಮಾಡಿ
 
-#### The **Collectable** sprite
+#### **Collectable** sprite
 
-Now you need to get the other sprites to respond to these broadcasts! Start with the easiest one: clearing all the collectables.
+ಈ ಪ್ರಸಾರಗಳಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಲು ಈಗ ನೀವು ಇತರ sprites ‌ಗಳನ್ನು ಪಡೆಯಬೇಕು! ಸುಲಭವಾದದರೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ: ಎಲ್ಲಾ ಸಂಗ್ರಹಯೋಗ್ಯ ವಸ್ತುಗಳನ್ನು ತೆರವುಗೊಳಿಸುವುದು.
 
 \--- task \---
 
-Add the following code to the **Collectable** sprite scripts to tell all its clones to `hide`{:class="block3vlooks"} when they receive the cleanup broadcast:
+`hide`{:class="block3vlooks"} ಸಂದೇಶವನ್ನು ಸ್ವೀಕರಿಸಿದಾಗ ಎಲ್ಲಾ ತದ್ರೂಪಿಗಳನ್ನು <1>hide</1>{:class="block3vlooks"} (ಮರೆ) ಮಾಡಲು ಈ ಕೆಳಗಿನ ಕೋಡ್ ಅನ್ನು **Collectable** sprite ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳಿಗೆ ಸೇರಿಸಿ:
 
 ```blocks3
 +    when I receive [collectable-cleanup v]
@@ -64,15 +64,15 @@ Add the following code to the **Collectable** sprite scripts to tell all its clo
 
 \--- /task \---
 
-Since one of the first things any new clone does is show itself, you don't have to worry about unhiding collectables!
+ಯಾವುದೇ ಹೊಸ ತದ್ರೂಪಿ ಮಾಡುವ ಮೊದಲ ಕೆಲಸ, ಸ್ವತಃ ತೋರಿಸುವುದು ಆಗಿರುವುದರಿಂದ, ಸಂಗ್ರಹಯೋಗ್ಯ ವಸ್ತುಗಳನ್ನು ಮರೆಮಾಚುವ ಬಗ್ಗೆ ನೀವು ಚಿಂತಿಸಬೇಕಾಗಿಲ್ಲ!
 
-#### The **Platforms** sprite
+#### **Platforms**sprite
 
-Now to switch the **Platforms** sprite. You can design your own new level later if you like, but for now let’s use the one I’ve already included — you’ll see why on the next step!
+ಈಗ **Platforms** sprite ಅನ್ನು ಬದಲಾಯಿಸಲು. ನೀವು ಬಯಸಿದರೆ ನಂತರ ನಿಮ್ಮ ಸ್ವಂತ ಹೊಸ ಮಟ್ಟವನ್ನು ನೀವು ವಿನ್ಯಾಸಗೊಳಿಸಬಹುದು, ಆದರೆ ಇದೀಗ ನಾನು ಈಗಾಗಲೇ ಸೇರಿಸಿದ್ದನ್ನು ಬಳಸೋಣ - ಮುಂದಿನ ಹಂತದಲ್ಲಿ ಏಕೆ ಎಂದು ನೀವು ನೋಡುತ್ತೀರಿ!
 
 \--- task \---
 
-Add this code to the **Platforms** sprite:
+ಈ ಕೋಡ್ ಅನ್ನು **Platform** spriteಗೆ ಸೇರಿಸಿ:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -88,13 +88,13 @@ Add this code to the **Platforms** sprite:
 
 \--- /task \---
 
-It receives the `joined`{:class="block3operators"} messages of `level-`{:class="block3variables"} and `current-level`{:class="block3variables"} that the **Button** sprite sends out, and responds by changing the **Platforms** costume.
+ಇದು **Button** sprite ಕಳುಹಿಸುವ `level-`{:class="block3variables"} ಮತ್ತು `current-level` ಗಳ `joined`{:class="block3operators"} ಸಂದೇಶಗಳನ್ನು ಪಡೆಯುತ್ತದೆ. ಮತ್ತು **Platforms** ವಸ್ತ್ರವಿನ್ಯಾಸಗಳನ್ನು ಬದಲಾಯಿಸುವ ಮೂಲಕ ಸ್ಪಂದಿಸುತ್ತದೆ.
 
-#### The **Enemy** sprite
+#### **Enemy** sprite
 
 \--- task \---
 
-In the **Enemy** sprite scripts, just make sure the sprite disappears when the player enters level 2, like this:
+** Enemy ** sprite ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳಲ್ಲಿ, ಆಟಗಾರನು 2 ನೇ ಹಂತಕ್ಕೆ ಪ್ರವೇಶಿಸಿದಾಗ sprite ಕಣ್ಮರೆಯಾಗುತ್ತದೆ ಎಂದು ಈ ರೀತಿಯಲ್ಲಿ ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -108,15 +108,15 @@ In the **Enemy** sprite scripts, just make sure the sprite disappears when the p
 
 \--- /task \---
 
-If you prefer, you can make the enemy move to another platform instead. In that case, you would use a `go to`{:class="block3motion"} block instead of the `show`{:class="block3looks"} and `hide`{:class="block3looks"} blocks.
+ನೀವು ಬಯಸಿದಲ್ಲಿ, ನೀವು ಶತ್ರುಗಳನ್ನು ಮತ್ತೊಂದು ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗೆ ಚಲಿಸುವಂತೆ ಮಾಡಬಹುದು. ಅಂತಹ ಸಂದರ್ಭದಲ್ಲಿ, ನೀವು `show`{:class="block3looks"} ಮತ್ತು `hide`{:class="block3looks"} ಬದಲಿಗೆ `go to`{:class="block3motion"} ಬ್ಲಾಕ್ ಅನ್ನು ಉಪಯೋಗಿಸಿ.
 
-### Make the **Player Character** appear in the right place
+### **Player Character** ಸರಿಯಾದ ಸ್ಥಳದಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುವಂತೆ ಮಾಡಿ
 
-Whenever a new level starts, the **Player Character** sprite needs to go to the right place for that level. To make this happen, you need to change where the sprite gets its coordinates from when it first appears on the Stage. At the moment, there are fixed `x` and `y` values in its code.
+ಹೊಸ ಮಟ್ಟ ಪ್ರಾರಂಭವಾದಾಗ, **Player Character** sprite ಆ ಮಟ್ಟದ ಸರಿಯಾದ ಸ್ಥಳಕ್ಕೆ ಹೋಗಬೇಕಾಗಿದೆ. ಇದನ್ನು ಮಾಡಲು, sprite ಮೊದಲ ಬಾರಿಗೆ ವೇದಿಕೆಯಲ್ಲಿ ಕಾಣಿಸಿಕೊಂಡಾಗ ಅದರ ನಿರ್ದೇಶಾಂಕಗಳನ್ನು ಎಲ್ಲಿ ಪಡೆಯುತ್ತದೆ ಎಂಬುದನ್ನು ನೀವು ಬದಲಾಯಿಸಬೇಕಾಗಿದೆ. ಈ ಸಮಯದಲ್ಲಿ, ಅದರ ಕೋಡ್‌ನಲ್ಲಿನ ಮೌಲ್ಯಗಳು ` x` ಮತ್ತು ` y` ಸ್ಥಿರವಾಗಿರುತ್ತದೆ.
 
 \--- task \---
 
-Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
+ಆರಂಭಿಕ ನಿರ್ದೇಶಾಂಕಗಳಿಗಾಗಿ ವೇರಿಯೇಬಲ್ ಗಳನ್ನು ರಚಿಸುವ ಮೂಲಕ ಪ್ರಾರಂಭಿಸಿ: `start-x`{:class="block3variables"} ಮತ್ತು `start-y`{:class="block3variables"}. ನಂತರ ಸ್ಥಿರವಾದ `x` ಮತ್ತು `y` ಗಳನ್ನು ಉಪಯೋಗಿಸುವ ಬದಲು, ಅವುಗಳನ್ನು, `reset-character`{:class="block3myblocks"} **My blocks** ಬ್ಲಾಕ್ ನ `go to`{:class="block3motion"} ಬ್ಲಾಕಿಗೆ ಸೇರಿಸಿ:
 
 ```blocks3
     define reset-character
@@ -130,7 +130,7 @@ Begin by creating variables for the starting coordinates: `start-x`{:class="bloc
 
 \--- task \---
 
-Then for each broadcast announcing the start of a level, set the right `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"} coordinates in response, and add a **call** to `reset-character`{:class="block3myblocks"}:
+ಒಂದು ಹಂತದ ಪ್ರಾರಂಭವನ್ನು ಘೋಷಿಸುವ ಪ್ರತಿ ಪ್ರಸಾರಕ್ಕೂ ಪ್ರತಿಕ್ರಿಯೆಯಾಗಿ, ಸರಿಯಾದ `start-x`{:class="block3variables"} ಮತ್ತು `start-y`{:class="block3variables"} ಅನ್ನು ಹೊಂದಿಸಿ ಮತ್ತು `reset-character`{:class="block3myblocks"} ಗೆ ಒಂದು ಕರೆ\(**call**\) ಯನ್ನು ಮಾಡಿ:
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -148,13 +148,13 @@ Then for each broadcast announcing the start of a level, set the right `start-x`
 
 \--- /task \---
 
-### Starting at Level 1
+### ಹಂತ 1 ರಿಂದ ಪ್ರಾರಂಭ
 
-You also need to make sure that every time someone starts the game, the first level they play is level 1.
+ಯಾರಾದರೂ ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿದಾಗ, ಅವರು ಆಡುವ ಮೊದಲ ಹಂತವು ಮಟ್ಟ 1 ಎಂದು ನೀವು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬೇಕು.
 
 \--- task \---
 
-Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
+`reset-game`{:class="block3myblocks"} ನ ಸ್ಕ್ರಿಪ್ಟ್ ಗೆ ಹೋಗಿ ಅದರಿಂದ `reset-character`{:class="block3myblocks"} ಗೆ ಇರುವ ಕರೆಯನ್ನು ತೆಗೆದು ಹಾಕಿ. ಅದರ ಸ್ಥಳದಲ್ಲಿ, `min-level`{:class="block3variables"} ಪ್ರಸಾರ ಮಾಡಿ. ಈ ಕಾರ್ಡ್‌ನೊಂದಿಗೆ ನೀವು ಈಗಾಗಲೇ ಸೇರಿಸಿದ ಕೋಡ್, ನಂತರ **Player Character** spriteಗೆ ಸರಿಯಾದ ಆರಂಭಿಕ ನಿರ್ದೇಶಾಂಕಗಳನ್ನು ಹೊಂದಿಸುತ್ತದೆ, ಮತ್ತು `reset-character`{:class="block3myblocks"} ಸಹ ಕರೆ ಮಾಡುತ್ತದೆ.
 
 ```blocks3
     define reset-game
@@ -172,12 +172,12 @@ Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `r
 
 ## \--- collapse \---
 
-## title: Resetting the Player Character versus resetting the game
+## title: ಆಟವನ್ನು ಮರುಹೊಂದಿಸುವ ವಿರುದ್ಧ ಪ್ಲೇಯರ್ ಅಕ್ಷರವನ್ನು ಮರುಹೊಂದಿಸುವುದು
 
-Notice that the first block in the **Player Character** sprite's main green flag script is a call to the `reset-game`{:class="block3myblocks"} **My blocks** block.
+**Player Character** sprite‌ನ ಮುಖ್ಯ ಹಸಿರು ಧ್ವಜ ಸ್ಕ್ರಿಪ್ಟ್‌ನಲ್ಲಿನ ಮೊದಲ ಬ್ಲಾಕ್ `reset-game`{:class="block3myblocks"} **My blocks** ಗೆ ಇರುವ ಕರೆ ಎಂದು ಗಮನಿಸಿ.
 
-This block sets up all the variables for a new game and then calls the `reset-character`{:class="block3myblocks"} **My blocks** block, which places the character back in its correct starting position.
+ಈ ಬ್ಲಾಕ್ ಹೊಸ ಆಟಕ್ಕಾಗಿ ಎಲ್ಲಾ ವೇರಿಯೇಬಲ್ ಗಳನ್ನು ಹೊಂದಿಸುತ್ತದೆ ಮತ್ತು ನಂತರ `reset-character`{:class="block3myblocks"} **My blocks** ಅನ್ನು ಕರೆಯುತ್ತದೆ. ಇದು ಅಕ್ಷರವನ್ನು ಅದರ ಸರಿಯಾದ ಆರಂಭಿಕ ಸ್ಥಾನದಲ್ಲಿ ಇರಿಸುತ್ತದೆ.
 
-Having the `reset-character`{:class="block3myblocks"} code in its own block separate from `reset-game`{:class="block3myblocks"} allows you to reset the character to different positions **without** having to reset the whole game.
+`reset-character`{:class="block3myblocks"} ಹೊಂದಿರುವ ಕೋಡ್ `reset-game`{:class="block3myblocks"} ನಲ್ಲಿ ಇರದೇ, ತನ್ನದೇ ಆದ ಬ್ಲಾಕಿನಲ್ಲಿ ಇರುವುದರಿಂದ, ಆಟವನ್ನು **ಪುನರಾರಂಭಿಸದೇ** ಪಾತ್ರದ ಸ್ಥಳವನ್ನು ಮರುಹೊಂದಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ.
 
 \--- /collapse \---
