@@ -41,6 +41,6 @@
 
 ### Software \(ಸಾಫ್ಟ್ವೇರ್\)
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/projects/editor/){:target="_blank"} or [offline](https://scratch.mit.edu/download/){:target="_blank"})
++ Scratch 3 ([ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ](https://scratch.mit.edu/projects/editor/){:target="_blank"} ಅಥವಾ [ಆಫ್‌ಲೈನ್ನಲ್ಲಿ](https://scratch.mit.edu/download/){:target="_blank"})
 
 \--- /collapse \---
