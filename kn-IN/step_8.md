@@ -88,7 +88,7 @@
 
 --- /task ---
 
-ಇದು **Button** sprite ಕಳುಹಿಸುವ `level-`{:class="block3variables"} ಮತ್ತು `current-level` ಗಳ `joined`{:class="block3operators"} ಸಂದೇಶಗಳನ್ನು ಪಡೆಯುತ್ತದೆ. ಮತ್ತು **Platforms** ವಸ್ತ್ರವಿನ್ಯಾಸಗಳನ್ನು ಬದಲಾಯಿಸುವ ಮೂಲಕ ಸ್ಪಂದಿಸುತ್ತದೆ.
+ಇದು **Button** sprite ಕಳುಹಿಸುವ `level-`{:class="block3variables"} ಮತ್ತು `current-level`{:class="block3variables"} ಗಳ `joined`{:class="block3operators"} ಸಂದೇಶಗಳನ್ನು ಪಡೆಯುತ್ತದೆ. ಮತ್ತು **Platforms** ವಸ್ತ್ರವಿನ್ಯಾಸಗಳನ್ನು ಬದಲಾಯಿಸುವ ಮೂಲಕ ಸ್ಪಂದಿಸುತ್ತದೆ.
 
 #### **Enemy** sprite
 
