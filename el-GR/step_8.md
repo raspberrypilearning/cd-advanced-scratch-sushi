@@ -88,7 +88,7 @@
 
 --- /task ---
 
-Λαμβάνει την `ένωση`{:class="block3operators"} των μηνυμάτων `επίπεδο-`{:class="block3variables"} και `τρέχον-επίπεδο`{:class="block3variables"} που το **Κουμπί** στέλνει, και ανταποκρίνεται αλλάζοντας τις ενδυμασίες για τις **Πλατφόρμες **.
+Λαμβάνει την `ένωση`{:class="block3operators"} των μηνυμάτων `επίπεδο-`{:class="block3variables"} και `τρέχον-επίπεδο`{:class="block3variables"} που το **Κουμπί** στέλνει, και ανταποκρίνεται αλλάζοντας τις ενδυμασίες για τις **Πλατφόρμες**.
 
 #### Το αντικείμενο **Εχθρός**
 
@@ -121,8 +121,8 @@
 ```blocks3
     define επαναφορά-χαρακτήρα
     set [μπορεί-να-πηδήξει v] to [true]
-    set [x-velocity v] to [0]
-    set [y-velocity v] to [-0]
+    set [ταχύτητα-x v] to [0]
+    set [ταχύτητα-y v] to [-0]
 +    go to x: (αρχή-x) y: (αρχή-y)
 ```
 
@@ -161,8 +161,8 @@
     set rotation style [left-right v]
     set [ύψος-άλματος v] to [15]
     set [βαρύτητα v] to [2]
-    set [x-speed v] to [1]
-    set [y-speed v] to [1]
+    set [ταχύτητα-x v] to [1]
+    set [ταχύτητα-y v] to [1]
     set [ζωές v] to [3]
     set [πόντοι v] to [0]
 +    broadcast (join [επίπεδο](ελάχιστο-επίπεδο ::variables))

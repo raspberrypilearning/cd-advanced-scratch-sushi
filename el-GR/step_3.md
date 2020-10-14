@@ -9,7 +9,7 @@
 Αρχικά, βρες το μπλοκ `χάνει`{:class="block3myblocks"} και συμπλήρωσε τον ακόλουθο κώδικα:
 
 ```blocks3
-    define lose
+    define χάνει
 +    stop [other scripts in sprite v] :: control stack
 +    broadcast [Τέλος Παιχνιδιού v]
 +    go to x:(0) y:(0)
