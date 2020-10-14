@@ -1,0 +1,26 @@
+---
+title: Αστέρια που πέφτουν
+hero_image: images/banner.png
+description: Δημιούργησε ένα παιχνίδι σε στυλ πλατφόρμας και πρόσθεσε τα δικά σου επίπεδα, δυνάμεις και χαρακτήρες.
+theme: orange
+listed: true
+copyedit: true
+curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
+interests: games
+technologies: scratch
+site_areas: coderdojo
+software: scratch
+version: 4.0.0
+last_tested: "2018-04-23"
+steps:
+  - title: Εισαγωγή
+  - title: Ρύθμιση των πραγμάτων
+  - title: Χάνοντας το παιχνίδι
+  - title: Βραβεία
+  - title: Σούπερ Βραβεία!
+  - title: "Πρόκληση: γίνε δημιουργικός!"
+    challenge: true
+  - title: Περισσότερος ανταγωνισμός
+  - title: Επίπεδο 2
+  - title: Κινούμενες πλατφόρμες
+  - title: Τι υπάρχει μετά;
