@@ -1,71 +1,71 @@
-lose
+خسارة
 
-game over
+انتهت اللعبة
 
-Game Over!
+انتهت اللعبة!
 
-collectable-value
+قيمة التجميعات
 
-collectable-speed
+سرعة التجميعات
 
-collectable-frequency
+عدد مرات التجميعات
 
-create-collectables
+إنشاء تجميعات
 
-collectable type
+نوع التجميعات
 
-pick costume
+اختيار المظهر
 
-points
+نقاط
 
-type
+نوع
 
-react-to-player
+التفاعل مع لاعب
 
-collectable-rain
+تجميع مطر
 
-Enemy
+عدو
 
-enemy-move-steps
+خطوات حركة العدو
 
-Platforms
+المنصات
 
-Edges
+الحواف
 
-Player Character
+شخصية اللاعب
 
-reset-game
+إعادة اللعبه
 
-reset-character
+إعادة تعيين شخصية
 
-main-physics
+الفيزياء الرئيسية
 
-lives
+الأرواح
 
-max-level
+اعلى مستوى
 
-min-level
+أدنى مستوى
 
-current-level
+المستوى الحالي
 
-collectable-cleanup
+تنظيف التجميعات
 
-level-
+المستوى -
 
-level-1
+المستوى-1
 
-level-2
+المستوى-2
 
-start-x
+بداية-س
 
-start-y
+بداية-ص
 
-can-jump
+يستطيع القفز
 
-jump-height
+ارتفاع القفز
 
-gravity
+الجاذبية
 
-Moving-Platform
+منصة متحركة
 
-create-platforms
+إنشاء-منصات
