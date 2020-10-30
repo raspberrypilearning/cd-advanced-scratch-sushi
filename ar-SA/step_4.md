@@ -9,15 +9,15 @@
 في البرامج النصية للكائن **تجميع** ، ابحث عن الكود `عندما أبدأ كنسخة clone`{:class="block3events"}. الكتل التي يجب إلقاء نظرة عليها هي الكتل التي تعطيك نقاطًا لجمع النجم
 
 ```blocks3
-    اذا <touching [Player Character v]?> 
-        غيّر [points v] بمقدار (collectable-value ::variables)
-        احذف هذه النسخة
+    if <touching [شخصية اللاعب v]?> then
+        change [نقاط v] by (قيمة التجميعات ::variables)
+        delete this clone
 ```
 
 وهذا الذي يختار شكل للنسخة:
 
 ```blocks3
-    pick-costume (collectable-type ::variables) :: custom
+    اختيار المظهر (نوع التجميعات ::variables) :: custom
 ```
 
 --- collapse ---
@@ -28,9 +28,9 @@ title: كيف يعمل اختيار الشكل؟
 تعمل الكتلة `اختيار المظهر`{:class="block3myblocks"} تمامًا مثل الكتلة `اخسر`{:class="block3myblocks"} ، لكنها تحتوي على شيء إضافي: وهو متغير **مدخلات** يسمى `نوع`{:class="block3myblocks"}.
 
 ```blocks3
-    حدد pick-costume (type)
-    if <(type :: variables) = [1]> ثم
-        بدّل الزي إلى [star1 v]
+    define اختيار المظهر (نوع)
+    if <(نوع ::variables) = [1]> then
+        switch costume to [star1 v]
     end
 ```
 
@@ -42,14 +42,14 @@ title: كيف يعمل اختيار الشكل؟
 ألق نظرة على جزء البرنامج النصي الذي يستخدم الكتلة:
 
 ```blocks3
-    عندما أبدأ كاختيار
-    clone (نوع قابل للتجميع :: المتغيرات) :: custom
+    when I start as a clone
+    اختيار المظهر (نوع التجميعات ::variables) :: custom
     show
-    كرر حتى <(موضع y) < [-170]>
-        تغيير y بواسطة (collectable-speed :: variables)
-        if <touching [Player Character v]?>
-            تغيير [النقاط v] بواسطة (collectable-value :: variables)
-            احذف هذا الاستنساخ
+    repeat until <(y position) < [-170]>
+        change y by (سرعة التجميعات ::variables)
+        if <touching [شخصية اللاعب v]?> then
+            change [نقاط v] by (قيمة التجميعات ::variables)
+            delete this clone
 ```
 
 يمكنك أن ترى أن المتغير `نوع التجميعات`{:class="block3variables"} **يمرر** الى الكتلة `اختيار المظهر`{:class="block3myblocks"}. داخل الكودر البرمجي لـ `اختيار المظهر`{:class="block3myblocks"} فان مدخلات `نوع التجميعات`{:class="block3variables"} تستعمل بعد ذلك كمدخل للمتغير (`نوع`{:class="block3myblocks"}).
@@ -73,13 +73,13 @@ title: كيف يعمل اختيار الشكل؟
 بعد ذلك، قل لكتلة `اختيار المظهر`{:class="block3myblocks"} من كتل **لبناتي** لضبط شكل جديد كلما حصل على قيمة جديدة للمتغير `نوع`{:class="block3myblocks"}، مثل هذا (باستخدام اي اسم للشكل الذي اخترته):
 
 ```blocks3
-    حدد pick-costume (type)
-    if <(type :: variable) = [1]> ثم
-        بدل زي إلى [star1 v]
+    define اختيار المظهر (نوع)
+    if <(نوع ::variable) = [1]> then
+        switch costume to [star1 v]
     end
-+ if <(type :: variable) = [2]> ثم
-+ بدل البرق الخامس]
-+ نهاية
++    if <(نوع ::variable) = [2]> then
++        switch costume to [lightning v]
++    end
 ```
 
 --- /task ---
@@ -103,13 +103,13 @@ title: كيف يعمل اختيار الشكل؟
 اجعل `التفاعل مع لاعب`{:class="block3myblocks"} في كتلة **لبناتي** إما يعمل على زيادة النقاط أو زيادة حياة اللاعب، اعتمادًا على قيمة المتغير `نوع`{:class="block3myblocks"}.
 
 ```blocks3
-+ حدد رد الفعل على اللاعب (النوع)
-+ إذا <(النوع :: متغير) = [1]> ثم
-+ تغيير [النقاط v] بواسطة (collectable-value :: variables)
-+ end
-+ if <(type: : متغير) = [2]> ثم
-+ تغيير [حياة الخامس] بحلول نهاية [1]
-+
++    define التفاعل مع لاعب (نوع)
++    if <(نوع ::variable) = [1]> then
++        change [نقاط v] by (قيمة التجميعات ::variables)
++    end
++    if <(نوع ::variable) = [2]> then
++        change [الأرواح v] by [1]
++    end
 ```
 
 --- /task ---
@@ -119,10 +119,10 @@ title: كيف يعمل اختيار الشكل؟
 قم بتحديث التعليمات البرمجية في `عندما أبدأ كنسخة`{:class="block3events"} لاستبدال الكتلة التي تضيف نقطة من خلال **الاستدعاء** الى `التفاعل مع لاعب`{:class="block3myblocks"}، **ومرر** `نوع التجميعات`{:class="block3variables"} له.
 
 ```blocks3
-+ if <touching [Player Character v] ?> +
-+ رد فعل على اللاعب (من النوع القابل للتحصيل :: المتغيرات) :: custom
-+ احذف هذا clone
-+ end
++    if <touching [شخصية اللاعب v] ?> then
++        التفاعل مع لاعب (نوع التجميعات ::variables) :: custom
++        delete this clone
++    end
 ```
 
 --- /task ---
@@ -155,15 +155,15 @@ title: العمل مع المتغيرات في النسخة
 ابحث عن حلقة `تكرار حتى`{:class="block3control"} داخل رمز العلم الأخضر للعنصر **تجميع** ، وأضف `إذا... else`{:class="block3control"} الكود الموضح أدناه.
 
 ```blocks3
-    كرر حتى <not <(create-collectables ::variables) = [true]>>
-+ إذا <[50] = (اختر عشوائي (1) إلى (50))> ثم
-+ اضبط [تحصيل من النوع الخامس] إلى [2]
-+ آخر
-+ مجموعة [قابل للتحصيل من النوع الخامس] إلى [1]
-+ انتظر نهاية
-        (تحصيل تردد :: المتغيرات) ثانية
-        انتقل إلى س: (اختر عشوائي (-240) إلى (240)) ذ: (179)
-        إنشاء استنساخ من [نفسي الخامس]
+    repeat until <not <(إنشاء تجميعات ::variables) = [true]>>
++        if <[50] = (pick random (1) to (50))> then
++            set [نوع التجميعات v] to [2]
++        else
++            set [نوع التجميعات v] to [1]
++        end
+        wait (عدد مرات التجميعات ::variables) secs
+        go to x: (pick random (-240) to (240)) y: (179)
+        create clone of [myself v]
 ```
 
 --- /task ---

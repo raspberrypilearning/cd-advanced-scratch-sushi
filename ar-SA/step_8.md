@@ -19,20 +19,20 @@
 أضف هذه البرامج النصية إلى كائن **الزر** الخاص بك. سوف تحتاج إلى إنشاء بعض المتغيرات بينما تفعل ذلك.
 
 ```blocks3
-+    عند النقر على العلم الاخضر
-+    set [max-level v] to [2]
-+    set [min-level v] to [1]
-+    set [current-level v] to [1]
++    when green flag clicked
++    set اعلى مستوى v] to [2]
++    set [أدنى مستوى v] to [1]
++    set [المستوى الحالي v] to [1]
 ```
 
 ```blocks3
-+ عند النقر فوق هذا الكائن
-+ قم بتغيير [المستوى-الحالي v] بمقدار (1)
-+ إذا <(المستوى الحالي) > (المستوى الأعلى :: المتغيرات)> ثم
-      set [current-level v] to (min-level ::variables)
-    end  
-+ نشر [تحصيل-الربح]
-+ نشر (انضمام [level-](المستوى الحالي))
++    when this sprite clicked
++    change [المستوى الحالي v] by (1)
++    if <(المستوى الحالي) > (اعلى مستوى ::variables)> then
+        set [المستوى الحالي v] to (أدنى مستوى ::variables)
+    end
++    broadcast [تنظيف التجميعات v]
++    broadcast (join [المستوى -](المستوى الحالي))
 ```
 
 --- /task ---
@@ -58,8 +58,8 @@
 أضف الكود التالي إلى البرامج النصية للكائن **المقتنيات** لإخبار جميع النسخ لـ`تختفي`{:class="block3looks"} عندما يتلقون بث المسح:
 
 ```blocks3
-+ عندما أتلقى [collectable-cleanup v]
-+ اخفاء
++    when I receive [تنظيف التجميعات v]
++    hide
 ```
 
 --- /task ---
@@ -75,15 +75,15 @@
 أضف هذه التعليمات البرمجية إلى كائن **اللاعب**:
 
 ```blocks3
-+ عندما أتلقى [المستوى 1 v]
-+ بدل الزي إلى [المستوى 1 v]
-+ العرض
++    when I receive [المستوى-1 v]
++    switch costume to [Level 1 v]
++    show
 ```
 
 ```blocks3
-+ عندما أتلقى [المستوى-2 v]
-+ بدل الزي إلى [المستوى 2 v]
-+ العرض
++    when I receive [المستوى-2 v]
++    switch costume to [Level 2 v]
++    show
 ```
 
 --- /task ---
@@ -97,13 +97,13 @@
 في النصوص البرمجية للكائن **العدو**، فقط تأكد من اختفاء الكائن عندما يدخل اللاعب المستوى 2 ، مثل هذا:
 
 ```blocks3
-+ عندما أتلقى [المستوى-1 v]
-+ العرض
++    when I receive [المستوى-1 v]
++    show
 ```
 
 ```blocks3
-+ عندما أتلقى [المستوى-2 v]
-+ إخفاء
++    when I receive [المستوى-2 v]
++    hide
 ```
 
 --- /task ---
@@ -119,11 +119,11 @@
 ابدأ بإنشاء متغيرات لإحداثيات البداية: `بداية-س`{:class="block3variables"} و `بداية-ص`{:class="block3variables"}. ثم قم بتوصيلها في كتلة `انتقل إلى`{:class="block3motion"} في كتل `إعادة تعيين الشخصية`{:class="block3myblocks"} الموجودة في كتل **لبناتي** بدلا من القيم الثابتة لـ `س` و `ص`:
 
 ```blocks3
-    حدد إعادة تعيين الشخصية
-    set [can-jump v] to [true]
+    define إعادة تعيين شخصية
+    set [يستطيع القفز v] to [true]
     set [x-velocity v] to [0]
     set [y-velocity v] to [-0]
-+ انتقل إلى  x: (start-x) y: (start-y)
++    go to x: (بداية-س) y: (بداية-ص)
 ```
 
 --- /task ---
@@ -133,17 +133,17 @@
 ثم لكل بث يعلن بداية المستوى ، اضبط قيم المحاور `بداية-س`{:class="block3variables"} و `بداية-ص`{:class="block3variables"} الصحيحة في الاستجابة، وإضافة **استدعاء** إلى `إعادة تعيين الشخصية`{:class="block3myblocks"}:
 
 ```blocks3
-+ عندما أتلقى [level-1 v]
-+ اضبط [start-x v] الى [-183]
-+ set [start-y v] إلى [42]
-+اعادة الشخصية :: الزي
++    when I receive [المستوى -1 v]
++    set [بداية-س v] to [-183]
++    set [بداية-ص v] to [42]
++    إعادة تعيين شخصية :: custom
 ```
 
 ```blocks3
-+ عندما أتلقى [level-2 v]
-+ set [start-x v] إلى [-218]
-+ set [start-y v] إلى [-143]
-+ اعادة الشخصية :: الزي
++    when I receive [المستوى -2 v]
++    set [بداية-س v] to [-218]
++    set [بداية-ص v] to [-143]
++    إعادة تعيين شخصية :: custom
 ```
 
 --- /task ---
@@ -157,15 +157,15 @@
 انتقل إلى النص البرمجي الخاص بـ`اعادة اللعبة`{:class="block3myblocks"} وإزالة الاستدعاء `إعادة تعيين الشخصية`{:class="block3myblocks"} منه. بدلا عنها، قم ببث `المستوى الادنى`{:class="block3variables"}. سيقوم الكود الذي أضفته بالفعل مع هذه البطاقة بإعداد إحداثيات البداية الصحيحة لكائن **شخصية اللاعب**، وأيضا استدعاء `إعادة تعيين الشخصية`{:class="block3myblocks"}.
 
 ```blocks3
-    تحديد اعادة تعيين اللعبة
+    define إعادة اللعبه
     set rotation style [left-right v]
-    set [jump-height v] to [15]
-    set [gravity v] to [2]
+    set [ارتفاع القفز v] to [15]
+    set [الجاذبية v] to [2]
     set [x-speed v] to [1]
     set [y-speed v] to [1]
-    set [lives v] to [3]
-    set [points v] to [0]
-+ النشر (انضم [level-] (المستوى-المتوسط::المتغيرات))
+    set [الأرواح v] to [3]
+    set [نقاط v] to [0]
++    broadcast (join [المستوى -](أدنى مستوى ::variables))
 ```
 
 --- /task ---

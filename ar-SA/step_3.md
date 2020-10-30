@@ -42,13 +42,13 @@ title: ماذا يفعل هذا الرمز؟
 ابدأ باسهل الكائنات. كائنات **المنصات** و **الحواف** على حد سواء تحتاج نص برمجي لتظهر عند بدء تشغيل اللعبة وتختفي عندما تتلقى البث `انتهت اللعبة`{:class="block3events"}، لذلك قم باضافة هذه الكتل البرمجية إلى كل منها:
 
 ```blocks3
-+ عندما أتلقى [انتهت اللعبة v]
-+ إخفاء
++    when I receive [انتهت اللعبة  v]
++    hide
 ```
 
 ```blocks3
-+ عندما نقر العلم الأخضر
-+ عرض
++    when green flag clicked
++    show
 ```
 
 --- /task ---
@@ -64,13 +64,13 @@ title: ماذا يفعل هذا الرمز؟
 ```blocks3
     when green flag clicked
     hide
-    set [collectable-value v] to [1]
-    set [collectable-speed v] to [1]
-    set [collectable-frequency v] to [1]
-    set [create-collectables v] to [true]
+    set [قيمة التجميعات v] to [1]
+    set [سرعة التجميعات v] to [1]
+    set [عدد مرات التجميعات v] to [1]
+    set [إنشاء تجميعات v] to [true]
     set [collectable-type v] to [1]
-    repeat until <not <(create-collectables) = [true]>>
-        wait (collectable-frequency) secs
+    repeat until <not <(إنشاء تجميعات) = [true]>>
+        wait (عدد مرات التجميعات) secs
         go to x: (pick random (-240) to (240)) y: (179)
         create clone of [myself v]
     end
@@ -85,9 +85,9 @@ title: ماذا يفعل هذا الرمز؟
 الآن قم بإنشاء الكتلة البرمجية للكائن **تجميع** بحيث تتفاعل مع البث `انتهت اللعبة`:
 
 ```blocks3
-+ عندما أتلقى [انتهت اللعبة v]
-+ إخفاء
-+ set [create-collectables v] إلى [false]
++    when I receive [انتهت اللعبة v]
++    hide
++    set [إنشاء تجميعات v] to [false]
 ```
 
 --- /task ---

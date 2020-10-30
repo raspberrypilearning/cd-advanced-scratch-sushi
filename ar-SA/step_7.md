@@ -17,8 +17,8 @@
 اكتب الكود الأسهل أولاً: قم بإعداد الكتلة الخاصة به للرد على رسالة `اللعبة انتهت`{:class="events"} لجعل العدو يختفي عندما يخسر اللاعب اللعبة.
 
 ```blocks3
-+ عندما أتلقى [game over v]
-+ إخفاء
++    when I receive [انتهت اللعبة v]
++    hide
 ```
 
 --- /task ---
@@ -28,15 +28,15 @@
 الآن تحتاج إلى كتابة كود لما يفعله العدو. استخدم الكود الخاص بي هنا ، لكن فكر في إضافة وحدات إضافية! (ماذا لو استطاعوا الانتقال الفوري إلى منصات مختلفة؟ ماذا لو كانت هناك قوة تجعلهم يتحركون بشكل أسرع أم أبطأ؟)
 
 ```blocks3
-+  عند الضغط على العلم الأخضر
-+  اعرض
-+  اضبط [خطوات-نقل-العدو v] الى [5]
-+ اضبط نمط الدوران [يسار-يمين v]
-+ اذهب الى x: (-25) y: (-9)        
-+ للابد
-       move (enemy-move-steps) steps
-        if <not <touching [Platforms v] ?>> then
-            set [enemy-move-steps v] to ((enemy-move-steps) * (-1))
++    when green flag clicked
++    show
++    set [خطوات حركة العدو v] to [5]
++    set rotation style [left-right v]
++    go to x: (-25) y: (-9)
++    forever
+        move (خطوات حركة العدو) steps
+        if <not <touching [المنصات v] ?>> then
+            set [خطوات حركة العدو v] to ((خطوات حركة العدو) * (-1))
         end
      end
 ```
@@ -54,26 +54,26 @@
 إليك كيف فعلت ذلك ، ولكن يمكنك محاولة تحسين هذا الكود! قمت بتعديل كتلة الكائن **شخصية اللاعب** الرئيسية. أضف الكود الجديد قبل كتلة `if`{:class="block3control"} والتي تتحقق مما إذا كنت لا تملك حياة.
 
 ```blocks3
-    عند الضغط على العلم الاخضر
-reset-game :: custom
+    when green flag clicked
+    إعادة اللعبه :: custom
     forever
-        main-physics :: custom
+        الفيزياء الرئيسية :: custom
         if <(y position) < [-179]> then
             hide
-            reset-character :: custom
-            change [lives v] by (-1)
+            إعادة تعيين شخصية :: custom
+            change [الأرواح v] by (-1)
             wait (0.05) secs
             show
         end
-+ اذا <touching [Enemy v] ?> ثم
-hide
++        if <touching [عدو v] ?> then
+            hide
             go to x: (-187) y: (42)
-            change [lives v] by (-1)
+            change [الأرواح v] by (-1)
             wait (0.5) secs
             show
-+    النهاية
-if <(lives) < [1]> then
-            lose :: custom
++        end
+        if <(الأرواح) < [1]> then
+            خسارة :: custom
         end
     end
 ```

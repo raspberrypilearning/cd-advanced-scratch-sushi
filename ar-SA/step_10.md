@@ -47,7 +47,7 @@ title: اكمال المستويات
 title: العب مع الفيزياء
 ---
 
-+ حاول تغيير بعض القيم في محرك الفيزياء ، مثل `الجاذبية`{: class="block3variables"} ، ارتفاع القفز ،`x-speed`{: class="block3variables"} ، و`y-speed`{:class="block3variables"}. كيف يغيرون اللعبة؟
++ حاول تغيير بعض القيم في محرك الفيزياء ، مثل `الجاذبية`{: class="block3variables"} ، `ارتفاع القفز`{:class="block3variables"} ،`x-speed`{:class="block3variables"} ، و`y-speed`{:class="block3variables"}. كيف يغيرون اللعبة؟
 
 + هل يمكنك استخدام الفيزياء لصنع امدادات الطاقة؟
 

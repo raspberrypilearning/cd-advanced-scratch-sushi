@@ -2,7 +2,7 @@
 
 السبب في أنني طلبت منك استخدام نسختي من المستوى 2 هو الفجوة التي قد تكون لاحظتها في منتصف التصميم. ستقوم بإنشاء منصة تتحرك من خلال هذه الفجوة والتي يمكن للاعب القفز عليها وركوبها!
 
-![مستوى آخر مع منصات مختلفة](images/movingPlatforms.png)
+![مستوى آخر مع منصات مختلفة](images/movingالمنصات.png)
 
 أولاً ، ستحتاج كائن للمنصة.
 
@@ -23,11 +23,11 @@
 إليك كيف تبدو لي حتى الآن:
 
 ```blocks3
-+ عند نقر العلم الأخضر
-+ إخفاء
-+ إلى الأبد
-       wait (4) secs
-        if <(create-platforms ::variables) = [true]> then
++    when green flag clicked
++    hide
++    forever
+        wait (4) secs
+        if <(إنشاء-منصات ::variables) = [true]> then
             create clone of [myself v]
         end
     end
@@ -40,10 +40,10 @@
 ثم أضف التعليمات البرمجية للنسخة:
 
 ```blocks3
-+ عندما أبدأ كـ نسخة
-+ إظهار
-+ للأبد
-       if <(y position) < [180]> then
++    when I start as a clone
++    show
++    forever
+        if <(y position) < [180]> then
             change y by (1)
             wait (0.02) secs
         else
@@ -61,16 +61,16 @@
 الآن اجعل المنصات تختفي / تعاود الظهور على أساس عمليات البث التي تغير المستويات (بحيث تكون موجودة فقط في المستوى الذي تتوفر فيه مساحة لهم) ، وفي رسالة `انتهت اللعبة`{:class="block3events"}.
 
 ```blocks3
-+ عندما أتلقى [level-1 v]
-+ اضبط  [create-platform v] إلى [false]
-+ اخفاء
++    when I receive [المستوى-1 v]
++    set [إنشاء-منصات v] to [false]
++    hide
 
-+ عندما أتلقى [level-2 v]
-+ اضبط  [create-platforms v] إلى [true]
++    when I receive [المستوى-2 v]
++    set [إنشاء-منصات v] to [true]
 
-+ تلقي [game over v]
-+ اخفاء
-+ اضبط [create-platform v] إلى [false]
++    when I receive [انتهت اللعبة v]
++    hide
++    set [إنشاء-منصات v] to [false]
 ```
 
 --- /task ---
@@ -86,13 +86,13 @@
 انتقل بين التعليمات البرمجية لكائن **شخصية اللاعب** وفي كل مكان ترى هذه الكتلة:
 
 ```blocks3
-    <touching [Platforms v] ?>
+    <touching [المنصات v] ?>
 ```
 
 استبدالها مع هذا:
 
 ```blocks3
-    <<touching [Platforms v] ?> أو <touching [Moving-Platform v] ?>>
+    <<touching [المنصات v] ?> or <touching [منصة متحركة v] ?>>
 ```
 
 --- /task ---

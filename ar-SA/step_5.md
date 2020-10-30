@@ -9,14 +9,14 @@
 أولاً ، قم بتغيير كتلة `التفاعل مع لاعب`{:class="block3myblocks"} لبث رسالة عندما تلمس شخصية اللاعب النوع `2` تحصيل. استدعي الرسالة `تجميع مطر`{:class="block3events"}.
 
 ```blocks3
-    حدد رد الفعل على اللاعب (النوع)
-    إذا كان <(type::variable) = [1]> ثم
-        [point v] بواسطة (قيم-المقتنيات::variables)
+    define التفاعل مع لاعب (نوع)
+    if <(نوع ::variable) = [1]> then
+        change [نقاط v] by (قيمة التجميعات ::variables)
     end
-    if <(type::variable) = [2]> ثم
-- تغيير [lives v] بحلول [1]    
-+ البث [تحصيل-المطر v]
-    نهاية
+    if <(نوع ::variable) = [2]> then
+-        change [الأرواح v] by [1]    
++        broadcast [تجميع مطر v]
+    end
 ```
 
 --- /task ---
@@ -28,10 +28,10 @@
 أضف هذا الرمز للكائن **المقتنيات** لجعله يستمع إلى بث `تجميع مطر`{:class="block3events"}.
 
 ```blocks3
-+ عندما أتلقى [collectable-rain v]
-+ مجموعة [collectable-frequency v] إلى [0.000001]
-+ انتظر (1) ثوانٍ
-+ مجموعة [collectable-frequency v] إلى [1]
++    when I receive [تجميع مطر v]
++    set [عدد مرات التجميعات v] to [0.000001]
++    wait (1) secs
++    set [عدد مرات التجميعات v] to [1]
 ```
 
 --- /task ---
@@ -48,16 +48,16 @@ title: ماذا تفعل المقاطع الجديدة؟
 في حلقة اللعبة الرئيسية ، يتم إخبار جزء الكود الذي يجعل نسخ الكائن **مقتنيات** بواسطة المتغير `عدد مرات التجميعات`{:class="block3variables"} كم من الوقت يجب الانتظار بين عمل نسخة والاخرى:
 
 ```blocks3
-    كرر حتى <not <(create-collectables ::variables) = [true]>>
-        إذا < [50] = (pick random (1) to (50))> ثم
-            مجموعة [collectable-type v] إلى [2]
-        آخر
-            مجموعة [collectable-type v] إلى [1]
-        نهاية
-        الانتظار (collectable-frequency ::variables) بالثواني
-        انتقل إلى x: (pick random (-240) to (240)) y:(179)
-        بإنشاء استنساخ لـ [myself v]
-    النهاية
+    repeat until <not <(إنشاء تجميعات ::variables) = [true]>>
+        if < [50] = (pick random (1) to (50))> then
+            set [نوع التجميعات v] to [2]
+        else
+            set [نوع التجميعات v] to [1]
+        end
+        wait (عدد مرات التجميعات ::variables) secs
+        go to x: (pick random (-240) to (240)) y:(179)
+        create clone of [myself v]
+    end
 ```
 
 يمكنك أن ترى أن `الكتلة هنا`{:class="block3control"} تتوقف مؤقتًا عن الكود طول المدة المحددة بواسطة `عدد مرات التجميعات`{:class="block3variables"}.
