@@ -168,7 +168,6 @@
     set [نقاط v] to [0]
 +    broadcast (join [المستوى -](أدنى مستوى ::variables))
 ```
-s
 --- /task ---
 
 --- collapse ---
