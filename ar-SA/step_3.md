@@ -68,7 +68,7 @@ title: ماذا يفعل هذا الرمز؟
     set [سرعة التجميعات v] to [1]
     set [عدد مرات التجميعات v] to [1]
     set [إنشاء تجميعات v] to [true]
-    set [collectable-type v] to [1]
+    set [نوع التجميعات v] to [1]
     repeat until <not <(إنشاء تجميعات) = [true]>>
         wait (عدد مرات التجميعات) secs
         go to x: (pick random (-240) to (240)) y: (179)

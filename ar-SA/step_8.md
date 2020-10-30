@@ -20,7 +20,7 @@
 
 ```blocks3
 +    when green flag clicked
-+    set اعلى مستوى v] to [2]
++    set [اعلى مستوى v] to [2]
 +    set [أدنى مستوى v] to [1]
 +    set [المستوى الحالي v] to [1]
 ```
@@ -121,10 +121,11 @@
 ```blocks3
     define إعادة تعيين شخصية
     set [يستطيع القفز v] to [true]
-    set [x-velocity v] to [0]
-    set [y-velocity v] to [-0]
+    set [قوى-س v] to [0]
+    set [قوى-ص v] to [-0]
 +    go to x: (بداية-س) y: (بداية-ص)
 ```
+
 
 --- /task ---
 
@@ -161,13 +162,13 @@
     set rotation style [left-right v]
     set [ارتفاع القفز v] to [15]
     set [الجاذبية v] to [2]
-    set [x-speed v] to [1]
-    set [y-speed v] to [1]
+    set [سرعة-س v] to [1]
+    set [سرعة-ص v] to [1]
     set [الأرواح v] to [3]
     set [نقاط v] to [0]
 +    broadcast (join [المستوى -](أدنى مستوى ::variables))
 ```
-
+s
 --- /task ---
 
 --- collapse ---
