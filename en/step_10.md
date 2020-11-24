@@ -47,7 +47,7 @@ title: Completing levels
 title: Play With physics
 ---
 
-+ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, and `y-speed`{:class="block3variables"}. How do they change the game?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. How do they change the game?
 
 + Can you use the physics to make power-ups?
  

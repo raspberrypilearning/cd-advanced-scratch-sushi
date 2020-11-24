@@ -8,7 +8,7 @@ You should take a quick look at the project, including the details on this card,
 
 --- task ---
 
-The first thing you’ll need to do is to get a copy of the Scratch code from [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} .
+The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430)d{:target="_blank"}.
 
 To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
 
