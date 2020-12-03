@@ -13,7 +13,7 @@
 Εδώ είναι ένα παράδειγμα του παιχνιδιού που θα φτιάξεις. Μη διστάσεις να βελτιώσεις το δημιούργημά μου.
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 Χρησιμοποίησε τα πλήκτρα βέλους για να μετακινήσεις τη γάτα. Πρόσεξε το σκύλο!
