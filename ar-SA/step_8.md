@@ -119,11 +119,11 @@
 ابدأ بإنشاء متغيرات لإحداثيات البداية: ` start-x ` {: class = "block3variables"} و ` start-y ` {: class= "block3variables"}. ثم قم بتوصيلها في كتلة ` انتقل إلى ` {: class = "block3motion"} في كتل `إعادة تعيين الشخصية` {: class = "block3myblocks"} الموجودة في كتل **لبناتي** بدلا من القيم الثابتة لـ `س` و `ص`:
 
 ```blocks3
-    حدد إعادة تعيين الشخصية
+    define reset-character
     set [can-jump v] to [true]
-    set [x-velocity v] to [0]
-    set [y-velocity v] to [-0]
-+ انتقل إلى  x: (start-x) y: (start-y)
+    set [x-speed v] to [0]
+    set [y-speed v] to [-0]
++    go to x: (start-x) y: (start-y)
 ```
 
 \--- /task \---
@@ -157,15 +157,15 @@
 انتقل إلى النص البرمجي الخاص بـ` اعادة اللعبة` {: class = "block3myblocks"} وإزالة الاستدعاء ` إعادة تعيين الشخصية ` {: class = "block3myblocks"} منه. بدلا عنها، قم ببث ` المستوى الادنى ` {:class="block3variables"}. سيقوم الكود الذي أضفته بالفعل مع هذه البطاقة بإعداد إحداثيات البداية الصحيحة لكائن ** شخصية اللاعب **، وأيضا استدعاء ` إعادة تعيين الشخصية` {: class = "block3myblocks"}.
 
 ```blocks3
-    تحديد اعادة تعيين اللعبة
+    define reset-game
     set rotation style [left-right v]
     set [jump-height v] to [15]
     set [gravity v] to [2]
-    set [x-speed v] to [1]
-    set [y-speed v] to [1]
+    set [x-speed-adjuster v] to [1]
+    set [y-speed-adjuster v] to [1]
     set [lives v] to [3]
     set [points v] to [0]
-+ النشر (انضم [level-] (المستوى-المتوسط::المتغيرات))
++    broadcast (join [level-](min-level ::variables))
 ```
 
 \--- /task \---
