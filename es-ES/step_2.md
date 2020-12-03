@@ -1,40 +1,40 @@
-## Setting things up
+## Preparando todo
 
-Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+Como estás aprendiendo a programar en Scratch y no a construir un motor de física (el código que hace que las cosas en un juego de computadora se comporten como objetos del mundo real, por ejemplo, no se caen a través de los pisos), comenzarás con un proyecto que he creado que ya tiene integrado lo básico para moverse, saltar y detectar plataformas.
 
-You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
+Debes echarle un vistazo rápido al proyecto, incluidos los detalles en esta tarjeta, ya que harás algunos cambios más adelante, ¡pero no necesitas entender todo lo que hace!
 
-### Get the project
+### Obtener el proyecto
 
 \--- task \---
 
 The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
 
-To use the project offline, download it by clicking **See Inside**, then go to the **File** menu and click **Download to your computer**. Then you can open the downloaded file in Scratch on your computer.
+Para usar el proyecto sin conexión a Internet, descárgalo haciendo clic en **Ver dentro**, luego ve al menú **Archivo** y haz clic en **Guardar en tu ordenador**. Luego puedes abrir el archivo descargado en Scratch en tu ordenador.
 
-You can also use it directly in Scratch in your browser by just clicking **See Inside** and then **Remix**.
+También puedes usarlo directamente en Scratch en tu navegador haciendo clic en **Ver dentro** y luego **Reinventar**.
 
 \--- /task \---
 
 ### Take a look at the code
 
-The physics engine of the game has a variety of pieces in it, some of which work already and some of which don’t yet. You can test this out by running the game and trying to play it.
+El motor de física del juego tiene una variedad de piezas, algunas de las cuales ya funcionan y otras aún no. Puedes probar esto ejecutando el juego e intentando jugarlo.
 
-You'll see that you can lose lives, but nothing happens when you run out. Also, the game only has one level, one type of thing to collect, and no enemies. You’re going to fix all of that, and a then do a bit more!
+Verás que puedes perder vidas, pero nada pasa cuando se te terminan. Además, el juego solo tiene un nivel, un solo tipo de cosas para recolectar y no tiene enemigos. Vas a arreglar todo eso, ¡y un poco más!
 
 \--- task \---
 
-Take a look at how the code is put together.
+Echa un vistazo a la forma en que el código está hecho.
 
 \--- /task \---
 
-It uses lots of **My blocks** blocks, which are great for splitting your code up into pieces so you can manage it better. A **My blocks** block is a block you make up out of a lot of other blocks, and you can give some instructions to it. You'll see how it works in an upcoming step!
+Utiliza muchos bloques de **Mis bloques** que son ideales para dividir tu código en pedazos para que puedas gestionarlo mejor. Un bloque **Mis bloques** es un bloque que fabricas a partir de un montón de otros bloques, y al que puedes ponerle algunas instrucciones. ¡Verás cómo funciona en un próximo paso!
 
 ![](images/setup2and3.png)
 
-### 'My blocks' blocks are really useful
+### Los bloques 'Mis bloques' son realmente útiles
 
-In the code above, the main game `forever`{:class="block3control"} loop calls the `main-physics`{:class="block3myblocks"} **My blocks** block to do a whole lot of stuff! Keeping the blocks separated like this makes it easy to read the main loop and understand what happens in the game, without worrying about **how** it happens.
+¡En el código de arriba, el bucle `por siempre`{:class="block3control"} del juego principal llama al bloque `fisica-principal`{:class="block3myblocks"} **Mis bloques** para hacer un montón de cosas! Mantener así separados los bloques hace que sea fácil leer el bucle principal y entender lo que sucede en el juego, sin preocuparse por **cómo** sucede.
 
 \--- task \---
 
