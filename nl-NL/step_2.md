@@ -8,7 +8,7 @@ Werp een blik op het project, inclusief de details op deze kaart, want je zult e
 
 \--- task \---
 
-Het eerste wat je moet doen is een kopie van de Scratch code maken van [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_ blank"}.
+The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
 
 Als je het project offline wilt gebruiken, downloadt je het door te klikken op **Bekijk van binnen**, klik vervolgens op **Bestand** en op **Opslaan op je computer**. Vervolgens kun je het gedownloade bestand in Scratch op je computer openen.
 
