@@ -10,10 +10,10 @@ Esta es la versión **Scratch 3** del proyecto. También hay una [versión del p
 
 ### Lo que harás
 
-Aquí hay un ejemplo del juego que construirás. Siéntase libre de mejorar mi "arte".
+Aquí hay un ejemplo del juego que construirás. Siéntete libre de mejorar mi "arte".
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 Usa las flechas del teclado para mover al gato. ¡Ten cuidado con el perro!
@@ -26,7 +26,7 @@ Usa las flechas del teclado para mover al gato. ¡Ten cuidado con el perro!
 + Usar variables dentro de objetos clonados
 + Crear y usar bloques **Mis bloques**
 + Reutilizar código en varios lugares con **Mis bloques**
-+ Mensajes para desencadenar comportamientos a través de objetos
++ Mensajes para desencadenar comportamientos entre objetos
 + Usar variables para configurar tu programa
 
 \--- /collapse \---
@@ -41,6 +41,6 @@ Usa las flechas del teclado para mover al gato. ¡Ten cuidado con el perro!
 
 ### Software
 
-+ Scratch 3 (ya sea [en línea](https://scratch.mit.edu/projects/editor/){:target="_ blank"} o [offline](https://scratch.mit.edu/download/){:target="_blank"})
++ Scratch 3 (ya sea [en línea](https://scratch.mit.edu/projects/editor/){:target="_blank"} o [sin conexión](https://scratch.mit.edu/download/){:target="_blank"})
 
 \--- /collapse \---
