@@ -119,11 +119,11 @@ Sempre que um novo nível começa, o ator **Personagem** precisa ir ao lugar cer
 Comece criando variáveis para as coordenadas iniciais: `inicio-x`{:class="block3variables"} e `inicio-y`{:class="block3variables"}. Em seguida, conecte-as ao bloco `vá para`{:class="block3motion"} no bloco `reiniciar-personagem`{:class="block3myblocks"} em **Meus Blocos** ao invés dos valores fixos para `x` e `y`:
 
 ```blocks3
-    define reiniciar-personagem
-    set [pode-pular v] to [true]
-    set [velocidade-x v] to [0]
-    set [velocidade-y v] to [-0]
-+    go to x: (inicio-x) y: (inicio-y)
+    define reset-character
+    set [can-jump v] to [true]
+    set [x-speed v] to [0]
+    set [y-speed v] to [-0]
++    go to x: (start-x) y: (start-y)
 ```
 
 \--- /task \---
@@ -157,15 +157,15 @@ Você também precisa garantir que toda vez que alguém iniciar o jogo, o primei
 Vá para o script `reiniciar-jogo`{:class="block3myblocks"} e remova a chamada para `reiniciar-personagem`{:class="block3myblocks"} dele. No seu lugar, transmita `nivel-minimo`{:class="block3variables"}. O código que você já adicionou com este cartão irá configurar as coordenadas de início corretas para o ator **Personagem** e chamar `reiniciar-personagem`{:class="block3myblocks"}.
 
 ```blocks3
-    define reiniciar-jogo
+    define reset-game
     set rotation style [left-right v]
-    set [altura-pulo v] to [15]
-    set [gravidade v] to [2]
-    set [aceleracao-x v] to [1]
-    set [aceleracao-y v] to [1]
-    set [vidas v] to [3]
-    set [pontos v] to [0]
-+    broadcast (join [nivel-](nivel-minimo ::variables))
+    set [jump-height v] to [15]
+    set [gravity v] to [2]
+    set [x-speed-adjuster v] to [1]
+    set [y-speed-adjuster v] to [1]
+    set [lives v] to [3]
+    set [points v] to [0]
++    broadcast (join [level-](min-level ::variables))
 ```
 
 \--- /task \---
