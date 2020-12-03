@@ -8,7 +8,7 @@ Debes echarle un vistazo rápido al proyecto, incluidos los detalles en esta tar
 
 \--- task \---
 
-The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
+Lo primero que debes hacer es obtener una copia del código Scratch desde [aquí](https://scratch.mit.edu/projects/454114430){:target="_ blank"}.
 
 Para usar el proyecto sin conexión a Internet, descárgalo haciendo clic en **Ver dentro**, luego ve al menú **Archivo** y haz clic en **Guardar en tu ordenador**. Luego puedes abrir el archivo descargado en Scratch en tu ordenador.
 
@@ -16,7 +16,7 @@ También puedes usarlo directamente en Scratch en tu navegador haciendo clic en 
 
 \--- /task \---
 
-### Take a look at the code
+### Echa un vistazo al código
 
 El motor de física del juego tiene una variedad de piezas, algunas de las cuales ya funcionan y otras aún no. Puedes probar esto ejecutando el juego e intentando jugarlo.
 
@@ -38,11 +38,11 @@ Utiliza muchos bloques de **Mis bloques** que son ideales para dividir tu códig
 
 \--- task \---
 
-Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:class="block3myblocks"} **My blocks** blocks.
+Ahora mira a los bloques `recomenzar-juego`{:class="block3myblocks"} y `recomenzar-personaje`{:class="block3myblocks"} **Mis bloques**.
 
 \--- /task \---
 
-They do pretty normal things, such as setting up variables and making sure the character rotates properly
+Hacen cosas bastante normales, como configurar variables y asegurarse de que el personaje gira correctamente
 
-- `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
-- The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
+- `recomenzar-juego`{: class = "block3myblocks"} **llama a** `recomenzar-personaje`{: class = "block3myblocks"}, lo que muestra que puedes usar un bloque **Mis bloques** adentro de otro bloque **Mis bloques**
+- El bloque `recomenzar-personaje`{:class="block3myblocks"} **Mis bloques** se usa en dos lugares diferentes en el bucle principal. Esto significa que puedes cambiar dos lugares en tu bucle principal de juego cambiando solo el código dentro del bloque **Mis bloques**, lo que te ahorra mucho trabajo y te ayuda a evitar errores.
