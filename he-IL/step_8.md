@@ -121,8 +121,8 @@ Begin by creating variables for the starting coordinates: `start-x`{:class="bloc
 ```blocks3
     define reset-character
     set [can-jump v] to [true]
-    set [x-velocity v] to [0]
-    set [y-velocity v] to [-0]
+    set [x-speed v] to [0]
+    set [y-speed v] to [-0]
 +    go to x: (start-x) y: (start-y)
 ```
 
@@ -161,8 +161,8 @@ Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `r
     set rotation style [left-right v]
     set [jump-height v] to [15]
     set [gravity v] to [2]
-    set [x-speed v] to [1]
-    set [y-speed v] to [1]
+    set [x-speed-adjuster v] to [1]
+    set [y-speed-adjuster v] to [1]
     set [lives v] to [3]
     set [points v] to [0]
 +    broadcast (join [level-](min-level ::variables))
