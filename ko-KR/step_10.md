@@ -42,7 +42,7 @@
 
 ## title: 물리학으로 놀기
 
-+ `중력`{CLASS = "block3variables"} `점프 높이`{CLASS = "block3variables"}, `X 속도`{CLASS = "block3variables" } 및 `y- 속력`{: class = "block3variables"} 같은 물리 엔진의 값을 변경해 보세요. 게임이 어떻게 달라지나요?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. 게임이 어떻게 달라지나요?
 
 + 물리학을 사용하여 파워 업을 할 수 있습니까?
 
