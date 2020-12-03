@@ -119,11 +119,11 @@ Whenever a new level starts, the **Player Character** sprite needs to go to the 
 Begin by creating variables for the starting coordinates: `start-x`{:class="block3variables"} and `start-y`{:class="block3variables"}. Then plug them into the `go to`{:class="block3motion"} block in the `reset-character`{:class="block3myblocks"} **My blocks** block instead of the fixed `x` and `y` values:
 
 ```blocks3
-    reset-character 정의하기
-    [can-jump v] 를 [true] 로 설정
-    [x-velocity v] 를 [0] 로 설정
-    [y-velocity v] 를 [-0] 로 설정
-+    x: (start-x) y: (start-y) 로 이동하기
+    define reset-character
+    set [can-jump v] to [true]
+    set [x-speed v] to [0]
+    set [y-speed v] to [-0]
++    go to x: (start-x) y: (start-y)
 ```
 
 \--- /task \---
@@ -157,15 +157,15 @@ You also need to make sure that every time someone starts the game, the first le
 Go to the `reset-game`{:class="block3myblocks"} script and remove the call to `reset-character`{:class="block3myblocks"} from it. In its place, broadcast the `min-level`{:class="block3variables"}. The code you've already added with this card will then set up the correct starting coordinates for the **Player Character** sprite, and also call `reset-character`{:class="block3myblocks"}.
 
 ```blocks3
-    reset-game 정의하기
-    rotation style 를 [left-right v] 로 정하기 
-    [jump-height v] 를 [15] 로 정하기 
-    [gravity v] 를 [2] 로 정하기 
-    [x-speed v] 를 [1] 로 정하기 
-    [y-speed v] 를 [1] 로 정하기 
-    [lives v] 를 [3] 로 정하기 
-    [points v] 를 [0] 로 정하기 
-+    ([level-] 과 (min-level ::variables) 결합하기) 신호 보내기
+    define reset-game
+    set rotation style [left-right v]
+    set [jump-height v] to [15]
+    set [gravity v] to [2]
+    set [x-speed-adjuster v] to [1]
+    set [y-speed-adjuster v] to [1]
+    set [lives v] to [3]
+    set [points v] to [0]
++    broadcast (join [level-](min-level ::variables))
 ```
 
 \--- /task \---
