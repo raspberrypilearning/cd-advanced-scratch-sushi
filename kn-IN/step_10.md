@@ -42,7 +42,7 @@
 
 ## title: ಭೌತಶಾಸ್ತ್ರದೊಂದಿಗೆ ಆಡಿ
 
-+ `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, ಮತ್ತು `y-speed`{:class="block3variables"} ನಂತೆ, ಭೌತಶಾಸ್ತ್ರ ಎಂಜಿನ್‌ನಲ್ಲಿ ಕೆಲವು ಮೌಲ್ಯಗಳನ್ನು ಬದಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಿ. ಅವುಗಳು ಆಟವನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸುತ್ತದೆ?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. ಅವುಗಳು ಆಟವನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸುತ್ತದೆ?
 
 + ಪವರ್-ಅಪ್‌ಗಳನ್ನು ಮಾಡಲು ನೀವು ಭೌತಶಾಸ್ತ್ರವನ್ನು ಬಳಸಬಹುದೇ?
 
