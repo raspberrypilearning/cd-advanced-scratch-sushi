@@ -13,7 +13,7 @@ Dies sind die erweiterten Scratch Sushi Karten, mit denen du ein Plattform-Spiel
 Hier ist ein Beispiel für das Spiel, das du bauen wirst. Fühl dich frei und verbessere meine "Kunst".
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 Bewege die Katze mit den Pfeiltasten. Pass auf den Hund auf!
