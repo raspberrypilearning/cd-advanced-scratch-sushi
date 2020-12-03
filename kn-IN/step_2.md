@@ -8,7 +8,7 @@
 
 \--- task \---
 
-[dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} ನಿಂದ Scratch code‌ನ ನಕಲನ್ನು ಪಡೆಯುವುದು ನೀವು ಮೊದಲು ಮಾಡಬೇಕಾಗಿರುವುದು.
+The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
 
 ಪ್ರಾಜೆಕ್ಟ್ ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಬಳಸಲು, **See Inside** ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ಅದನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ, ನಂತರ **File** menu ಮತ್ತು**Download to your computer** ಕ್ಲಿಕ್ ಮಾಡಿ. ನಂತರ ನೀವು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದ file ಅನ್ನು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ Scratch ‌ನಲ್ಲಿ ತೆರೆಯಬಹುದು.
 
