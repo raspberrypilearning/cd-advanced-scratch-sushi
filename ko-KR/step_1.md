@@ -13,7 +13,7 @@
 다음은 당신이 작성할 게임의 예입니다. 내 "예술적 창의력 "을 자유롭게 향상 시키세요.
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 고양이를 움직이려면 화살표 키를 사용하십시오. 강아지를 조심하세요!
