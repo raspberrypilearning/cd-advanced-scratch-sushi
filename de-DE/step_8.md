@@ -119,11 +119,11 @@ Immer wenn ein neues Level beginnt, muss die Figur des **Spielercharakters** an 
 Beginne mit dem Erstellen von Variablen für die Startkoordinaten: `start-x`{:class="block3variables"} und `start-y`{:class="block3variables"}. Ziehe sie dann in den `Gehe zu`{:class="block3motion"} - Block im `Spieler-zurücksetzen`{:class="block3myblocks"} **Meine Blöcke** - Block um die festen `x`- und `y`-Werte zu ersetzen:
 
 ```blocks3
-    Definiere Spieler-zurücksetzen
-    setze [kann-springen v] auf [wahr]
-    setze [x-Beschleunigung v] auf [0]
-    setze [y-Beschleunigung v] auf [-0]
-+    gehe zu  x: (start-x) y: (start-y)
+    define reset-character
+    set [can-jump v] to [true]
+    set [x-speed v] to [0]
+    set [y-speed v] to [-0]
++    go to x: (start-x) y: (start-y)
 ```
 
 \--- /task \---
@@ -157,15 +157,15 @@ Du musst auch sicherstellen, dass jedes Mal, wenn jemand das Spiel startet, der 
 Gehe zum Skript `Spiel-zurücksetzen`{:class="block3myblocks"} und entferne den Aufruf von `Spieler-zurücksetzen`{:class="block3myblocks"}. Sende stattdessen `min-Level`{:class="block3variables"} an alle. Der mit dieser Karte bereits hinzugefügte Code setzt dann die korrekten Startkoordinaten für die Figur **Spielercharakter** und ruft auch `Spieler-zurücksetzen`{:class="block3myblocks"} auf.
 
 ```blocks3
-    Definiere Spiel-zurücksetzen
-    setze Drehtyp auf [links-rechts v]
-    setze [Sprunghöhe v] auf [15]
-    setze [Schwerkraft v] auf [2]
-    setze [x-Geschwindigkeit v] auf [1]
-    setze [Y-Geschwindigkeit v] auf [1]
-    setze [Leben v] auf [3]
-    setze [Punkte v] auf [0]
-+ Sende (betrete [Level-](min-Level ::variables)) an alle
+    define reset-game
+    set rotation style [left-right v]
+    set [jump-height v] to [15]
+    set [gravity v] to [2]
+    set [x-speed-adjuster v] to [1]
+    set [y-speed-adjuster v] to [1]
+    set [lives v] to [3]
+    set [points v] to [0]
++    broadcast (join [level-](min-level ::variables))
 ```
 
 \--- /task \---
