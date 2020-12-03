@@ -119,11 +119,11 @@ Wanneer een nieuw level begint, moet de **Speler** sprite naar de juiste plaats 
 Begin met het maken van variabelen voor de startcoördinaten: `start-x`{:class="block3variables"} en `start-y`{:class="block3variables"}. Zet ze vervolgens in het blok `ga naar`{:class="block3motion"} blok in het `reset-speler`{:class="block3myblocks"} **Mijn blokken** blok in plaats van de vaste `x` en `y` waarden:
 
 ```blocks3
-    definieer reset-speler
-    maak [kan-springen v] [true]
-    maak [x-vaart v] [0]
-    maak [y-vaart v] [-0]
-+ ga naar x: (start-x) y: (start- y)
+    define reset-character
+    set [can-jump v] to [true]
+    set [x-speed v] to [0]
+    set [y-speed v] to [-0]
++    go to x: (start-x) y: (start-y)
 ```
 
 \--- /task \---
@@ -157,15 +157,15 @@ Je moet er ook voor zorgen dat telkens wanneer iemand het spel start, het eerste
 Ga naar het script `reset-spel`{:class="block3myblocks"} en verwijder het signaal van `reset-speler`{:class="block3myblocks"}. Zend in plaats daarvan het signaal `min-level`{:class="block3variables"} uit. De code die je al met deze kaart hebt toegevoegd zal dan dan de juiste startcoördinaten instellen voor de **Speler** sprite en roept ook `reset-speler`{:class="block3myblocks"} aan.
 
 ```blocks3
-    definieer reset-spel
-    maak draaistijl [links-rechts v]
-    maak [sprong-hoogte v] [15]
-    maak [zwaartekracht v] [2]
-    maak [x-snelheid v] [1]
-    maak [y-snelheid v] [1]
-    maak [levens v] [3]
-    maak [punten v] [0]
-+ zend signaal (voeg [level-] en (min-level ::variables) samen)
+    define reset-game
+    set rotation style [left-right v]
+    set [jump-height v] to [15]
+    set [gravity v] to [2]
+    set [x-speed-adjuster v] to [1]
+    set [y-speed-adjuster v] to [1]
+    set [lives v] to [3]
+    set [points v] to [0]
++    broadcast (join [level-](min-level ::variables))
 ```
 
 \--- /task \---
