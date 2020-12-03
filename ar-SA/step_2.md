@@ -8,7 +8,7 @@
 
 \--- task \---
 
-أول ما عليك القيام به هو الحصول على نسخة من كود Scratch من [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){: target ="_ blank"}.
+The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
 
 لاستخدام المشروع في وضع عدم الاتصال بالانترنيت، قم بتحميل البرنامج بالضغط على **See Inside**، ثم انتقل إلى قائمة **ملف** وانقر **تحميل لجهاز الكمبيوتر الخاص بي**. ثم يمكنك فتح الملف الذي تم تنزيله في Scratch على جهاز الكمبيوتر الخاص بك.
 
