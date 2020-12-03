@@ -6,9 +6,9 @@ theme: orange
 listed: true
 copyedit: true
 curriculum: 2, design-0, programming-2, phys-comp-0, manufacture-0, community-0
-interests: ألعاب
+interests: games
 technologies: scratch
-site_areas: كودر دوجو
+site_areas: coderdojo
 software: scratch
 version: 4.0.0
 last_tested: "2018-04-23"
