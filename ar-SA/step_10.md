@@ -42,7 +42,7 @@
 
 ## title: العب مع الفيزياء
 
-+ حاول تغيير بعض القيم في محرك الفيزياء ، مثل `الجاذبية`{: class="block3variables"} ، ارتفاع القفز ``{: class="block3variables"}، `x-speed`{: class="block3variables"} ، و `y-speed`{: class="block3variables"}. كيف يغيرون اللعبة؟
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. كيف يغيرون اللعبة؟
 
 + هل يمكنك استخدام الفيزياء لصنع امدادات الطاقة؟
 
