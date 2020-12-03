@@ -42,7 +42,7 @@
 
 ## title: फिज़िक्स सह खेळा
 
-+ फिज़िक्स इंजिनमधील काही मूल्ये बदलून बघा, जसे की `gravity` {:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed`{:class="block3variables"}, आणि `y-speed`{:class="block3variables"}. ते खेळ कसा बदलतील?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. ते खेळ कसा बदलतील?
 
 + आपण पॉवर-अप करण्यासाठी फिज़िक्स वापरू शकता?
 
