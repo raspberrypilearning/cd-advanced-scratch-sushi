@@ -42,7 +42,7 @@ Je hebt nu een compleet spel, maar er is nog veel meer dat je ermee kunt doen! H
 
 ## title: Speel met natuurkunde
 
-+ Probeer bepaalde waarden in de natuurkunde te veranderen, zoals de `zwaartekracht`{:class="block3variables"}, `sprong-hoogte`{:class="block3variables"}, `x-snelheid`{:class="block3variables"}, en `y-snelheid`{:class="block3variables"}. Hoe veranderen ze het spel?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. Hoe veranderen ze het spel?
 
 + Kun je de natuurkunde gebruiken om power-ups te maken?
 
