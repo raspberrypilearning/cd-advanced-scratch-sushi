@@ -13,7 +13,7 @@ Dit zijn de Gevorderden Scratch Sushi kaarten, en hiermee maak je een platform-a
 Hier is een voorbeeld van de game die je gaat bouwen. Voel je vrij om mijn "kunst" te verbeteren.
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 Gebruik de pijltjestoetsen om de kat te laten bewegen. Pas op voor de hond!
