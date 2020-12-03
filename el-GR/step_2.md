@@ -8,7 +8,7 @@
 
 \--- task \---
 
-Το πρώτο πράγμα που πρέπει να κάνεις είναι να κάνεις ένα αντίγραφο του κώδικα Scratch από το [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_ blank"}.
+The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
 
 Για να χρησιμοποιήσεις το έργο εκτός σύνδεσης, μπορείς να το κατεβάσεις κάνοντας κλικ στο **Δείτε μέσα** και μετά από το μενού **Αρχείο** και **Αποθήκευση στον υπολογιστή σου**. Στη συνέχεια μπορείς να ανοίξεις το αρχείο στο πρόγραμμα Scratch που έχεις στον υπολογιστή σου.
 
