@@ -8,7 +8,7 @@
 
 \--- task \---
 
-सर्व प्रथम [dojo.soy/advanced-scratch](http://dojo.soy/advanced-scratch){:target="_blank"} वरुन Scratch कोड ची प्रत मिळवा.
+The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
 
 प्रोजेक्टचा ऑफलाइन उपयोग करण्या करिता, **See Inside**, वरती क्लिक करून, नंतर **File** मेनू मधून **Download to your computer** वर क्लिक करुन आपल्या कंप्युटर मध्ये डाउनलोड करा. त्या नंतर डाउनलोड केलीली फाइल आपण Scratch मध्ये कंप्युटर वरुन उघडू शकता.
 
