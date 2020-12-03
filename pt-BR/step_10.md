@@ -42,7 +42,7 @@ Você tem um jogo completo agora, mas ainda tem muito mais o que você pode faze
 
 ## title: Brincando com a física
 
-+ Tente alterar alguns dos valores no mecanismo de física, como `gravidade`{:class="block3variables"}, `altura-pulo`{:class="block3variables"}, `aceleracao-x`{:class="block3variables"} e `aceleracao-y`{:class="block3variables"}. Como eles mudam o jogo?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. Como eles mudam o jogo?
 
 + Você consegue usar a física para fazer power-ups?
 
