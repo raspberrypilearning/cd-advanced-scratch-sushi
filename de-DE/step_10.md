@@ -42,7 +42,7 @@ Du hast jetzt ein komplettes Spiel, aber du kannst noch viel mehr damit machen! 
 
 ## title: Spiele mit Physik
 
-+ Versuche einige der Werte in der Physik - Engine zu ändern, wie die `Anziehungskraft`{:class="block3variables"}, `Sprunghöhe`{:class="block3variables"}, `x-Geschwindigkeit`{:class="block3variables"} und `y-Geschwindigkeit`{:class="block3variables"}. Wie verändern sie das Spiel?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. Wie verändern sie das Spiel?
 
 + Kannst du die Physik nutzen, um Power-Ups zu machen?
 
