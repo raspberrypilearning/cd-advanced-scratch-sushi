@@ -26,7 +26,7 @@ Ahora tienes un juego completo, ¡pero aún hay mucho más que puedes hacer con 
 
 ## title: Niveles de desplazamiento
 
-+ ¿Puedes averiguar cómo hacer que los niveles se desplacen a lo largo, de modo que el personaje de juego pueda moverse a través de ellos, de izquierda a derecha? ¿O al menos hazlo *observar* como si eso fuese lo que está pasando?
++ ¿Puedes averiguar cómo hacer que los niveles se desplacen a lo largo, de modo que el personaje de juego pueda moverse a través de ellos, de izquierda a derecha? ¿O al menos hacer que *se vea* como si eso estuviese sucediendo?
 
 \--- /collapse \---
 
@@ -34,7 +34,7 @@ Ahora tienes un juego completo, ¡pero aún hay mucho más que puedes hacer con 
 
 ## title: Completando niveles
 
-+ Ahora, los niveles nunca terminan. ¿Qué pasaría si, en lugar de presionar un botón, necesitaras un cierto número de puntos para llegar al siguiente nivel?
++ Ahora mismo, los niveles nunca terminan. ¿Qué pasaría si, en lugar de presionar un botón, necesitaras un cierto número de puntos para llegar al siguiente nivel?
 
 \--- /collapse \---
 
@@ -42,7 +42,7 @@ Ahora tienes un juego completo, ¡pero aún hay mucho más que puedes hacer con 
 
 ## title: Jugar con la física
 
-+ Intenta cambiar algunos de los valores en el motor de física, como la `gravedad`{:class="block3variables"}, `altura de salto`{:class="block3variables"}, `x-velocidad`{:class="block3variables"}, y `y-velocidad`{:class="block3variables"}. ¿Cómo cambian el juego?
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. ¿Cómo cambian el juego?
 
 + ¿Puedes utilizar la física para hacer potenciadores?
 
@@ -52,7 +52,7 @@ Ahora tienes un juego completo, ¡pero aún hay mucho más que puedes hacer con 
 
 ## title: Más niveles
 
-+ ¡Agrega más niveles! ¡Haz un mejor arte! Usa el fondo del escenario para hacer que el juego se vea más genial mientras mantienes las plataformas fáciles de trabajar para ti como codificador.
++ ¡Agrega más niveles! ¡Haz un mejor arte! Usa el fondo del escenario para hacer que el juego se vea más genial, mientras mantienes las plataformas fáciles de trabajar para ti como programador.
 
 \--- /collapse \---
 
