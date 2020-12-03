@@ -1,12 +1,12 @@
 ## ¡Superpotenciadores!
 
-Now that you have a new power-up collectable working, it’s time to make it do something really cool: Let's make it 'rain' power-ups for a few seconds, instead of just giving out an extra life.
+Ahora que tienes un nuevo potenciador coleccionable funcionando, es hora de hacer que haga algo realmente genial: hagamos que 'lluevan' potenciadores durante unos segundos, en lugar de simplemente dar una vida extra.
 
-For this, you're going to use another `broadcast`{:class="block3events"} message.
+Para esto, vas a `enviar`{:class="block3events"} otro mensaje.
 
 \--- task \---
 
-First, change the `react-to-player`{:class="block3myblocks"} block to broadcast a message when the player character touches a type `2` collectable. Call the message `collectable-rain`{:class="block3events"}.
+Primero, cambia el bloque de `reaccionar-al-jugador`{:class="block3myblocks"} para enviar un mensaje cuando el personaje del jugador toca un coleccionable tipo `2`. Llame al mensaje `lluvia-coleccionable`{:class="block3events"}.
 
 ```blocks3
     define react-to-player (type)
@@ -21,11 +21,11 @@ First, change the `react-to-player`{:class="block3myblocks"} block to broadcast 
 
 \--- /task \---
 
-Now you need to create a new piece of code inside the **Collectable** sprite scripts that will start whenever the `collectable-rain`{:class="block3events"} message is broadcast.
+Ahora necesitas crear una nueva pieza de código dentro del script del objeto **Coleccionable**, que comenzará cada vez que se envíe el mensaje `lluvia-coleccionable`{:class="block3events"}.
 
 \--- task \---
 
-Add this code for the **Collectable** sprite to make it listen out for the `collectable-rain`{:class="block3events"} broadcast.
+Agregue este código al objeto **Coleccionable** para que escuche al mensaje `lluvia-coleccionable`{:class="block3events"}.
 
 ```blocks3
 +    when I receive [collectable-rain v]
@@ -38,13 +38,13 @@ Add this code for the **Collectable** sprite to make it listen out for the `coll
 
 ## \--- collapse \---
 
-## title: ¿Qué hace el nuevo bloque?
+## title: ¿Qué hace el nuevo código?
 
-This piece of code waits to receive a broadcast, and responds by setting the `collectable-frequency`{:class="block3variables"} variable to a very small number, then waiting for one second, and then changing the variable back to `1`.
+Esta pieza de código espera recibir un mensaje, y responde configurando la variable `frecuencia-coleccionable`{:class="block3variables"} a un número muy pequeño, luego espera un segundo, y luego vuelve a cambiar la variable a ` 1`.
 
-Let's look at how the `collectable-frequency`{:class="block3variables"} variable is used to find out why this makes it rain collectables.
+Veamos cómo se usa la variable `frecuencia-coleccionable`{:class="block3variables"} para descubrir por qué hace que lluevan coleccionables.
 
-In the main game loop, the part of the code that makes **Collectable** sprite clones gets told by the `collectable-frequency`{:class="block3variables"} variable how long to wait between making one clone and the next:
+En el bucle principal del juego, la parte del código que genera los clones del objeto **Coleccionable** recibe información de la variable `frecuencia-coleccionable`{:class="block3variables"} acerca de cuánto tiempo esperar entre hacer un clon y el siguiente:
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
@@ -59,10 +59,10 @@ In the main game loop, the part of the code that makes **Collectable** sprite cl
     end
 ```
 
-You can see that the `wait`{:class="block3control"} block here pauses the code for the length of time set by `collectable-frequency`{:class="block3variables"}.
+Puedes ver que el bloque `esperar`{:class="block3control"} aquí, detiene el código durante el tiempo establecido por `frecuencia-coleccionable`{:class="block3variables"}.
 
-If the value of `collectable-frequency`{:class="block3variables"} is `0.000001`, the `wait`{:class="block3control"} block only pauses for **one millionth** of a second, meaning that the `repeat until`{:class="block3control"} loop will run many more times than normal. As a result, the code is going to create **a lot** more power-ups than it normally would, until `collectable-frequency`{:class="block3variables"} is changed back `1`.
+Si el valor de `frecuencia-coleccionable`{:class="block3variables"} es ` 0.000001 `, el bloque `esperar`{:class="block3control"} solo se detiene por **una millonésima** de segundo, lo que significa que el blucle `repetir hasta que`{:class="block3control"} se ejecutará muchas más veces de lo normal. Como resultado, el código creará **muchos** más potenciadores de lo normal, hasta que `frecuencia-coleccionable`{:class="block3variables"} se cambie de nuevo a `1`.
 
-¿Puedes pensar en algúnos problemas que eso pueda causar? Habrá muchos más potenciadores…¿qué pasaría si los siguieras atrapando?
+¿Puedes pensar en algunos problemas que eso pueda causar? Habrá muchos más potenciadores…¿qué pasaría si los siguieras atrapando?
 
 \--- /collapse \---
