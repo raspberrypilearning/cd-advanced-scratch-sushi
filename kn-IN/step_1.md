@@ -13,7 +13,7 @@
 ನೀವು ನಿರ್ಮಿಸುವ ಆಟದ ಉದಾಹರಣೆ ಇಲ್ಲಿದೆ. ನನ್ನ "ಕಲೆ" ಯನ್ನು ಸುಧಾರಿಸಲು ಹಿಂಜರಿಯಬೇಡಿ.
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 ಬೆಕ್ಕನ್ನು ಸುತ್ತಲು ಬಾಣದ ಕೀಲಿಗಳನ್ನು[arrow keys] ಬಳಸಿ. ನಾಯಿಯನ್ನು ಗಮನಿಸಿ!
