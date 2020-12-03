@@ -119,11 +119,11 @@ Ogni volta che inizia un nuovo livello, lo sprite di **Personaggio-giocatore** d
 Inizia creando variabili per le coordinate di partenza: `partenza-x`{:class="block3variables"} e `partenza-y`{:class="block3variables"}. Quindi inseriscili nel blocco `vai a`{:class="block3motion"} nel blocco `reset-personaggio`{:class="block3myblocks"} de **I Miei Blocchi** invece dei valori fissi di `x` e `y`:
 
 ```blocks3
-    definisci reset-character
-porta [puo-saltare v] a [true]
-porta [x-velocita v] a [0]
-porta [y-velocita v] a [-0]
-+ vai a x: (partenza-x) y: (partenza-y)
+    define reset-character
+    set [can-jump v] to [true]
+    set [x-speed v] to [0]
+    set [y-speed v] to [-0]
++    go to x: (start-x) y: (start-y)
 ```
 
 \--- /task \---
@@ -157,15 +157,15 @@ Devi anche assicurarti che ogni volta che qualcuno inizia il gioco, il primo liv
 Vai allo script `reset-partita`{:class="block3myblocks"} e rimuovi la chiamata a `reset-personaggio`{:class="block3myblocks"}. Al suo posto, trasmetti il `min-livello`{:class="block3variables"}. Il codice che hai già aggiunto con questa scheda imposterà quindi le coordinate iniziali corrette per lo sprite **Personaggio-giocatore**, e chiamerà anche `reset-personaggio`{:class="block3myblocks"}.
 
 ```blocks3
-    definisci reset-partita
-usa stile rotazione [sinistra-destra v]
-porta [salto-altezza v] a [15]
-porta [gravita v] a [2]
-porta [x-velocita v] a [1]
-porta [y-velocita v] a [1]
-porta [vite v] a [3]
-porta [punteggio v] a [0]
-+ invia a tutti (unione di [livello-] e (min-livello :: variables))
+    define reset-game
+    set rotation style [left-right v]
+    set [jump-height v] to [15]
+    set [gravity v] to [2]
+    set [x-speed-adjuster v] to [1]
+    set [y-speed-adjuster v] to [1]
+    set [lives v] to [3]
+    set [points v] to [0]
++    broadcast (join [level-](min-level ::variables))
 ```
 
 \--- /task \---
