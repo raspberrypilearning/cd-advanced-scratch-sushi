@@ -13,7 +13,7 @@
 إليك مثال على اللعبة التي ستقوم ببنائها. لا تتردد في تحسين "الفن" الخاص بي.
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 استخدم مفاتيح الأسهم لتحريك القطة. احترس من الكلب!
