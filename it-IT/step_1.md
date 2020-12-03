@@ -13,7 +13,7 @@ Queste sono le Scratch Sushi Cards avanzate, e con esse creerai un gioco in stil
 Ecco un esempio del gioco che costruirai. Sentiti libero di migliorare la mia "opera".
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/223694539/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/454114430/?autostart=false" frameborder="0"></iframe>
 </div>
 
 Usa i tasti freccia per muovere il gatto. Fai attenzione al cane!
