@@ -4,15 +4,15 @@ fin del juego
 
 ¡Fin del juego!
 
-valor coleccionable
+valor-coleccionable
 
-velocidad coleccionable
+velocidad-coleccionable
 
-frecuencia coleccionable
+frecuencia-coleccionable
 
-crear coleccionables
+crear-coleccionables
 
-tipo coleccionable
+tipo-coleccionable
 
 elegir disfraz
 
@@ -20,13 +20,13 @@ puntos
 
 tipo
 
-reaccionar al jugador
+reaccionar-al-jugador
 
-lluvia coleccionable
+lluvia-coleccionable
 
 Enemigo
 
-pasos de movimiento enemigo
+pasos-de-movimiento-enemigo
 
 Plataformas
 
@@ -34,38 +34,38 @@ Bordes
 
 Personaje del jugador
 
-reiniciar juego
+reiniciar-juego
 
-reiniciar personaje
+reiniciar-personaje
 
-física principal
+física-principal
 
 vidas
 
-nivel máximo
+nivel-máximo
 
-nivel mínimo
+nivel-mínimo
 
-nivel actual
+nivel-actual
 
-limpieza coleccionable
+limpieza-coleccionable
 
 nivel-
 
-nivel 1
+nivel-1
 
-nivel 2
+nivel-2
 
-iniciar x
+iniciar-x
 
-iniciar y
+iniciar-y
 
-puede saltar
+puede-saltar
 
-altura del salto
+altura-del-salto
 
 gravedad
 
-Plataforma móvil
+Plataforma-móvil
 
-crear plataformas
+crear-plataformas
