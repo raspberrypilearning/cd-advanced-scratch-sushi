@@ -42,7 +42,7 @@
 
 ## τίτλος: Παίξε με τη φυσική
 
-+ Δοκίμασε να αλλάξεις μερικές από τις τιμές στη μηχανή φυσικής, όπως η `βαρύτητα`{:class="block3variables"}, το `ύψος άλματος`{:class="block3variables"}, ο `ρυθμός-x`{:class="block3variables"} και ο `ρυθμός-y`{:class="block3variables"}. Πώς επηρεάζεται το παιχνίδι;
++ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. Πώς επηρεάζεται το παιχνίδι;
 
 + Μπορείς να χρησιμοποιήσεις τη φυσική για να πάρεις βραβεία;
 
