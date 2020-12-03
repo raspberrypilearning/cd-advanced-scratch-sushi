@@ -1,6 +1,6 @@
 ## Plataformas móviles
 
-The reason I asked you to use my version of level 2 is the gap you might have noticed in the middle of the layout. You’re going to create a platform that moves through this gap and that the player can jump on and ride!
+La razón por la que le pedí que usaras mi versión del nivel 2 es el espacio vacío que puedes haber notado en el medio del diseño. ¡Vas a crear una plataforma que se mueva a través de esta brecha y que el jugador pueda saltar y recorrer!
 
 ![Otro nivel con diferentes plataformas](images/movingPlatforms.png)
 
@@ -8,19 +8,19 @@ Primero, necesitarás el objeto para la plataforma.
 
 \--- task \---
 
-Add a new sprite, name it **Moving-Platform**, and using the costume customisation tools in the Costumes tab to make it look like the other platforms \(use vector mode\).
+Agrega un nuevo objeto, asígnale el nombre de **Plataforma-móvil**, y usa las herramientas de personalización de disfraz en la pestaña Disfraces para que se vea como las otras plataformas \(usa el modo vectorial\).
 
 \--- /task \---
 
-Now, let's add some code to the sprite.
+Ahora, agreguemos algo de código al objeto.
 
-Begin with the basics: to make a never-ending set of platforms moving up the screen, you’ll need to clone the platform at regular intervals. Yo elegí `4` segundos como mi intervalo. You also need to make sure that there’s an on/off switch for making the platforms, so that they don’t show up in level 1. I’m using a new variable called `create-platforms`{:class="block3variables"}.
+Comienza con lo básico: para hacer un conjunto interminable de plataformas que se muevan hacia arriba de la pantalla, necesitarás clonar la plataforma a intervalos regulares. Yo elegí `4` segundos como mi intervalo. También debes asegurarte de que haya un interruptor de encendido/apagado para generar las plataformas, de manera que no aparezcan en el nivel 1. Estoy usando una nueva variable llamada `crear-plataformas`{:class="block3variables"}.
 
 \--- task \---
 
-Add code to create clones of your platform sprite.
+Añade código para crear clones de tu objeto plataforma.
 
-Así es como el mio se ve hasta ahora:
+Así es como el mío se ve hasta ahora:
 
 ```blocks3
 +    when green flag clicked
@@ -37,7 +37,7 @@ Así es como el mio se ve hasta ahora:
 
 \--- task \---
 
-Luego agregue el código del clon:
+Luego agrega el código del clon:
 
 ```blocks3
 +    when I start as a clone
@@ -54,11 +54,11 @@ Luego agregue el código del clon:
 
 \--- /task \---
 
-This code makes the **Moving-Platform** clone move up to the top of the screen, slowly enough for the player to jump on and off, and then disappear.
+Este código hace que el clon de **Plataforma-móvil** se mueva hacia la parte superior de la pantalla, lo suficientemente lento como para que el jugador suba y baje, y luego desaparece.
 
 \--- task \---
 
-Now make the platforms disappear/reappear based on the broadcasts that change levels (so they're only on the level with space for them), and the `game over`{:class="block3events"} message.
+Ahora haz que las plataformas desaparezcan/reaparezcan en función de los mensajes que cambian los niveles (para que solo estén en el nivel con espacio para ellas), y del mensaje de `fin del juego`{:class="block3events"}.
 
 ```blocks3
 +    when I receive [level-1 v]
@@ -75,21 +75,21 @@ Now make the platforms disappear/reappear based on the broadcasts that change le
 
 \--- /task \---
 
-Now, if you try to actually play the game, the **Player Character** falls through the platform! ¿Alguna idea de por qué?
+Ahora, si realmente intentas jugar el juego, ¡el **Personaje del jugador** se cae a través de la plataforma! ¿Alguna idea de por qué?
 
-It’s because the physics code doesn’t know about the platform. En realidad es una solución rápida:
+Es porque el código de física no reconoce la plataforma. En realidad es una solución rápida:
 
 \--- task \---
 
-In the **Player Character** sprite scripts, replace every `touching “Platforms”`{:class="block3sensing"} block with an `OR`{:class="block3operators"} operator that checks for **either** `touching “Platforms”`{:class="block3sensing"} **OR** `touching “Moving-Platform”`{:class="block3sensing"}.
+En los scripts del objeto **Personaje del jugador**, reemplace cada bloque de `tocando “Plataformas”`{:class="block3sensing"} con un operador `O`{:class="block3operators"} que compruebe **ya sea** `tocando “Plataformas”`{:class="block3sensing"} **O** `tocando “Plataforma-móvil”`{:class="block3sensing"}.
 
-Go through the code for the **Player Character** sprite and everywhere you see this block:
+Revisa del código del objeto **Personaje del jugador** y dondequiera que veas este bloque:
 
 ```blocks3
     <touching [Platforms v] ?>
 ```
 
-reemplazarlo con este:
+reemplázalo con este:
 
 ```blocks3
     <<touching [Platforms v] ?> or <touching [Moving-Platform v] ?>>
