@@ -1,12 +1,12 @@
 ## Poderes
 
-At the moment you have just one type of collectable: a star that gains you one point when you grab it. On this card, you’re going to create a new type of collectable, and you'll do it in a way that will make adding other types of collectables easy. Then you can invent your own power-ups and bonuses and really make the game your own!
+Por el momento solo tienes un tipo de coleccionable: una estrella con la que ganas un punto cuando la agarras. En esta tarjeta, vas a crear un nuevo tipo de coleccionable, y lo harás de una manera que facilitará la adición de otros tipos de coleccionables. ¡Entonces podrás inventar tus propios potenciadores y bonificaciones y realmente hacer tuyo el juego!
 
-I’ve already included some pieces to do this with the `collectable-type`{:class="block3variables"} variable and the `pick-costume`{:class="block3myblocks"} **My blocks** block. You’re going to need to improve on them though.
+Ya he incluido algunas piezas para hacer esto con la variable `tipo-coleccionable`{:class="block3variables"} y el bloque `elige-disfraz`{:class="block3myblocks"} **Mis bloques**. Sin embargo, vas a necesitar mejorarlos.
 
-Let's have a look at how the collectable works right now.
+Echemos un vistazo a cómo funciona el coleccionable en este momento.
 
-In the scripts for the **Collectable** sprite, find the `when I start as a clone`{:class="block3events"} code. The blocks you should look at are the ones that give you points for collecting a star:
+En los scripts para el sprite **Coleccionable**, encuentra el `al comenzar como clon`{:class="block3events"}. Los bloques que debes mirar son los que te dan puntos por recoger una estrella:
 
 ```blocks3
     if <touching [Player Character v]?> then
@@ -14,7 +14,7 @@ In the scripts for the **Collectable** sprite, find the `when I start as a clone
         delete this clone
 ```
 
-and this one that selects a costume for the clone:
+y éste que selecciona un disfraz para el clon:
 
 ```blocks3
     pick-costume (collectable-type ::variables) :: custom
@@ -22,9 +22,9 @@ and this one that selects a costume for the clone:
 
 ## \--- collapse \---
 
-## title: How does picking a costume work?
+## title: ¿Cómo funciona la elección de un disfraz?
 
-The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:class="block3myblocks"} block, but it has something extra: it takes an **input** variable called `type`{:class="block3myblocks"}.
+El bloque `elige-disfraz`{:class="block3myblocks"} funciona un poco como el bloque `perder`{:class="block3myblocks"}, pero tiene algo extra: toma una variable de **entrada** llamada `tipo`{:class="block3myblocks"}.
 
 ```blocks3
     define pick-costume (type)
@@ -33,12 +33,12 @@ The `pick-costume`{:class="block3myblocks"} block works a bit like the `lose`{:c
     end
 ```
 
-When the `pick-costume`{:class="block3myblocks"} block runs, what it does is this:
+Cuando el bloque `elegir-disfraz`{:class="block3myblocks"} se ejecuta, lo que hace es esto:
 
-1. It looks at the `type`{:class="block3myblocks"} input variable
-2. If the value of `type`{:class="block3myblocks"} is equal to `1`, it switches to the `star1` costume
+1. Mira a la variable de entrada `tipo`{: class = "block3myblocks"}
+2. Si el valor de `tipo`{:class="block3myblocks"} es igual a `1`, cambia al traje `estrella1`
 
-Take a look at the part of the script that uses the block:
+Echa un vistazo a la parte del script que utiliza el bloque:
 
 ```blocks3
     when I start as a clone
@@ -51,25 +51,25 @@ Take a look at the part of the script that uses the block:
             delete this clone
 ```
 
-You can see that the `collectable-type`{:class="block3variables"} variable gets **passed** to the `pick-costume`{:class="block3myblocks"} block. Inside the code for `pick-costume`{:class="block3myblocks"}, `collectable-type`{:class="block3variables"} is then used as the input variable (`type`{:class="block3myblocks"}).
+Puedes ver que la variable `tipo-coleccionable`{:class="block3variables"} **pasa ** al bloque `elegir-disfraz`{:class="block3myblocks"}. Dentro del código de `elegir-disfraz`{:class="block3myblocks"}, `collectable-type`{:class="block3variables"} se utiliza como la variable de entrada (`tipo`{:class="block3myblocks"}).
 
-This means that the value of `collectable-type`{:class="block3variables"} decides which costume the sprite clone gets.
+Esto significa que el valor de `de tipo-coleccionable`{: class = "block3variables"} decide qué disfraz obtiene el objeto clon.
 
 \--- /collapse \---
 
-### Add a costume for the new power-up
+### Añade un disfraz para el nuevo poder
 
-Of course, right now the **Collectable** sprite only has one costume, since there's only one type of collectable. You're about to change that.
+Por supuesto, en este momento, el objeto **coleccionable** sólo tiene un disfraz, ya que sólo hay un tipo de coleccionable. Estás a punto de cambiar eso.
 
 \--- task \---
 
-Add a new costume to the **Collectable** sprite for your new power-up. I like the lightning bolt, but pick whatever you like.
+Agrega un nuevo disfraz al sprite **Coleccionable** para tu nuevo poder. Me gusta el relámpago, pero tú puedes eligir lo que quieras.
 
 \--- /task \---
 
 \--- task \---
 
-Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to set the new costume whenever it gets the new value for `type`{:class="block3myblocks"}, like this \(using whatever costume name you picked\):
+A continuación, indica el `disfraz`{:class="block3myblocks"} **Mis bloques** para establecer el nuevo disfraz cuando recibe el nuevo valor `tipo`{:class="block3myblocks"}, de esta manera \(usando cualquier nombre de disfraz que hayas elegido\):
 
 ```blocks3
     define pick-costume (type)
@@ -83,23 +83,23 @@ Next, tell the `pick-costume`{:class="block3myblocks"} **My blocks** block to se
 
 \--- /task \---
 
-### Create the power-up code
+### Crear el código de encendido.
 
-Now you need to decide what the new collectable will do! We’ll start with something simple: giving the player a new life. In the next step, you’ll make it do something cooler.
+¡Ahora tienes que decidir qué hará el nuevo coleccionable! Empezaremos con algo simple: dar al jugador una nueva vida. En el siguiente paso, lo harás hacer algo más interesante.
 
 \--- task \---
 
-Go into the **My blocks** section and click **Make a Block**. Name the new block `react-to-player`{:class="block3myblocks"} and add a **number input** named `type`{:class="block3myblocks"}.
+Ve a la sección **Mis bloques** y haz clic en **Crear un bloque**. Nombra el nuevo bloque `reaccion-a-jugador`{:class="block3myblocks"} y agrega una **entrada de número** llamada `tip[o`{:class="block3myblocks"}.
 
-![Type in the name for the block](images/powerupMakeName.png)
+![Escribe el nombre del bloque](images/powerupMakeName.png)
 
-Click **OK**.
+Haz clic en **OK**.
 
 \--- /task \---
 
 \--- task \---
 
-Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either increase the points or increase the player’s lives, depending on the value of `type`{:class="block3myblocks"}.
+Haz que el bloque `reaccion-al-jugador`{:class="block3myblocks"} **Mis bloques** aumente los puntos o incremente la vida del jugador, dependiendo del valor de `tipo `{:class="block3myblocks"}.
 
 ```blocks3
 +    define react-to-player (type)
@@ -115,7 +115,7 @@ Make the `react-to-player`{:class="block3myblocks"} **My blocks** block either i
 
 \--- task \---
 
-Update the `when I start as a clone`{:class="block3events"} code to replace the block that adds a point with a **call** to `react-to-player`{:class="block3myblocks"}, **passing** `collectable-type`{:class="block3variables"} to it.
+Actualiza el código de `al comenzar como clon`{:class="block3events"} para reemplazar el bloque que añade un punto por una **llamada** a `reacion-a-jugador`{:class="block3myblocks"}, **pasándole ** `tipo-coleccionable`{:class="block3variables"}.
 
 ```blocks3
 +    if <touching [Player Character v] ?> then
@@ -126,31 +126,31 @@ Update the `when I start as a clone`{:class="block3events"} code to replace the 
 
 \--- /task \---
 
-By using this new `react-to-player`{:class="block3myblocks"} **My blocks** block, stars still add a point, but the new power-up you've created adds a life.
+Al usar este nuevo bloque `reaccion-al-jugador`{:class="block3myblocks"} **Mis bloques**, las estrellas todavía añaden un punto, pero el nuevo poder que has creado añade una vida.
 
-### Using `collectable-type`{:class="block3variables"} to make different collectables appear at random
+### Usando `de tipo coleccionable`{:class="block3variables"} para hacer que los diferentes coleccionables aparezcan al azar
 
-Right now, you might be wondering how you'll tell each collectable the game makes what type it should be.
+En este momento, quizás te estés preguntando cómo dirás a cada coleccionable que hace el juego, qué tipo debería ser.
 
-You do this by setting the value of `collectable-type`{:class="block3variables"}. This variable is just a number. As you've seen, it's used to tell the `pick-costume`{:class="block3myblocks"} and `react-to-player`{:class="block3myblocks"} blocks what costume, rules, etc. to use for the collectable.
+Lo haces estableciendo el valor de `tipo-coleccionable`{:class="block3variables"}. Esta variable es sólo un número. Como has visto, se utiliza para decirle a los bloques `elige-disfraz`{: class = "block3myblocks"} y `reaccion-a-jugador`{: class = "block3myblocks"} qué disfraz, reglas, etc seguir. para usar para el coleccionable.
 
 ## \--- collapse \---
 
-## title: Working with variables in a clone
+## title: Trabajando con variables en un clon
 
-For each clone of the **Collectable** sprite, you can set a different value for `collectable-type`{:class="block3variables"}.
+Para cada clon del objeto **Coleccionable**, puedes establecer un valor diferente para `tipo-coleccionable`{:class="block3variables"}.
 
-Think of it like creating a new copy of the **Collectable** sprite with the help of the value that is stored in `collectable-type`{:class="block3variables"} at the time the **Collectable** clone gets created.
+Piensa en él como crear una nueva copia del objeto **Coleccionable** con la ayuda del valor que se almacena en `tipo-coleccionable`{:class="block3variables"} en el momento en que se crea el clon **Coleccionable**.
 
-You might be wondering whether changing the value of `collectable-type`{:class="block3variables"} will turn all the collectables on the Stage into the same type. That doesn't happen, because one of the things that makes clones special is that they cannot change the values of any variables they start with. Sprite clones effectively have **constant** values. That means that when you change the value of `collectable-type`{:class="block3variables"}, this doesn't affect the **Collectable** sprite clones that are already in the game.
+Puede que te preguntes si cambiar el valor de `tipo-coleccionable`{:class="block3variables"} convertirá todos los coleccionables en el mismo tipo. Esto no sucede, porque una de las cosas que hace que los clones sean especiales es que no pueden cambiar los valores de cualquier variable con la que comiencen. Los objetos clones tienen valores**constantes**. Eso significa que cuando cambias el valor de `tipo-coleccionable`{:class="block3variables"}, esto no afecta a los clones de objetos **Coleccionable** que ya están en el juego.
 
 \--- /collapse \---
 
-You're going to set the `collectable-type`{:class="block3variables"} to either `1` or `2` for each new clone that you make. To keep the game interesting, pick between the numbers at random to make a random collectable every time.
+Vas a establecer el `tipo-coleccionable`{:class="block3variables"} a `1` o `2` por cada nuevo clon que hagas. Para mantener el interés del juego, escoge entre los números al azar para hacer un coleccionable aleatorio cada vez.
 
 \--- task \---
 
-Find the `repeat until`{:class="block3control"} loop inside the green flag code for the **Collectable** sprite, and add the `if...else`{:class="block3control"} code shown below.
+Encuentra el bucle `repetir hasta`{:class="block3control"} dentro del código de bandera verde para el objeto **Coleccionable** y añade el código `if..else`{:class="block3control"} mostrado a continuación.
 
 ```blocks3
     repeat until <not <(create-collectables ::variables) = [true]>>
@@ -166,6 +166,6 @@ Find the `repeat until`{:class="block3control"} loop inside the green flag code 
 
 \--- /task \---
 
-This code gives a 1-in-50 chance of setting the `collectable-type`{:class="block3variables"} to `2`. After all, you don't want to give the player the chance to collect an extra life too often, otherwise the game would be too easy.
+Este código da una probabilidad de 1 entre 50 de establecer el `tipo-coleccionable`{:class="block3variables"} a `2`. Después de todo, no quieres dar al jugador la oportunidad de ganar una vida extra con demasiada frecuencia, de lo contrario el juego sería demasiado fácil.
 
-Now you have a new type of collectable that sometimes shows up instead of the star, and that gives you an extra life instead of a point when you collect it.
+Ahora tienes un nuevo tipo de coleccionable que a veces aparece en lugar de la estrella, y eso te da una vida extra en lugar de un punto cuando la recoges.
