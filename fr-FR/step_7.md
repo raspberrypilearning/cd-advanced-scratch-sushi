@@ -8,7 +8,7 @@ Tout d'abord, choisis un sprite à ajouter comme ennemi. Parce que notre personn
 
 Redimensionne le sprite à la bonne taille et place-le à un endroit approprié pour commencer. Voici à quoi ressemble le mien :
 
-![Le sprite ennemi chien](images/EnnemiSprite.png)
+![Le sprite ennemi chien](images/enemySprite.png)
 
 --- /task ---
 
