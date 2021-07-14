@@ -130,7 +130,7 @@ En utilisant ce nouveau bloc `réagir-au-joueur`{:class="block3myblocks"} **Mes 
 
 ### Utilisation de `collectable-type`{:class="block3variables"} pour faire apparaître différents objets de collection au hasard
 
-En ce moment, Tu te demandes peut-être comment tu vas dire à chaque objet de collection que le jeu fait quel type il doit être.
+En ce moment, tu te demandes peut-être comment tu vas dire à chaque objet de collection que le jeu fait quel type il doit être.
 
 Tu le fais en définissant la valeur de `collectable-type`{:class="block3variables"}. Cette variable est juste un nombre. Comme tu l’as vu, il est utilisé pour dire aux blocs `prendre-costume`{:class="block3myblocks"} et `réagir-au-joueur`{:class="block3myblocks"} quel costume, règles, etc. utiliser pour l'objet de collection.
 
