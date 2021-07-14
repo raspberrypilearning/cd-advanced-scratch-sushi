@@ -32,7 +32,7 @@ Tout d'abord, trouve le bloc `perdu`{:class="block3myblocks"} et complète-le av
 
 \--- /collapse \---
 
-Maintenant tu dois t'assurer que tous les sprites savent quoi faire quand le jeu est terminé. et comment se réinitialiser quand le joueur démarre une nouvelle partie. **N'oublie pas que tous les nouveaux sprites que tu ajoutes peuvent aussi avoir besoin de code pour cela !**
+Maintenant tu dois t'assurer que tous les sprites savent quoi faire quand le jeu est terminé, et comment se réinitialiser quand le joueur démarre une nouvelle partie. **N'oublie pas que tous les nouveaux sprites que tu ajoutes peuvent aussi avoir besoin de code pour cela !**
 
 ### Cacher les plateformes et les bords
 
