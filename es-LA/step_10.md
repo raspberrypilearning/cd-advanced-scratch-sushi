@@ -42,7 +42,7 @@ Ahora tienes un juego completo, ¡pero aún hay mucho más que puedes hacer con 
 
 ## title: Jugar con la física
 
-+ Try changing some of the values in the physics engine, like the `gravity`{:class="block3variables"}, `jump height`{:class="block3variables"}, `x-speed-adjuster`{:class="block3variables"}, and `y-speed-adjuster`{:class="block3variables"}. ¿Cómo cambian el juego?
++ Intenta cambiar algunos de los valores en el motor de física, como la `gravedad `{:class="block3variables"}, `altura-del-salto`{:class="block3variables"}, `rapidez-x`{:class="block3variables"}, y `rapidez-y`{:class="block3variables"}. ¿Cómo cambian el juego?
 
 + ¿Puedes utilizar la física para hacer potenciadores?
 
