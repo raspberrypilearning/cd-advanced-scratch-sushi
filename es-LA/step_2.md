@@ -8,7 +8,7 @@ Debes echarle un vistazo rápido al proyecto, incluyendo los detalles en esta ta
 
 \--- task \---
 
-The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
+Lo primero que debes hacer es obtener una copia del código Scratch desde [aquí](https://scratch.mit.edu/projects/454114430){:target="_ blank"}.
 
 Para usar el proyecto sin conexión a Internet, descárgalo haciendo clic en **Ver dentro**, luego ve al menú **Archivo** y haz clic en **Guardar en tu computador**. Luego puedes abrir el archivo descargado en Scratch en tu computadora.
 
