@@ -34,7 +34,7 @@ Usa muchos bloques de **Mis bloques**, que son excelentes para dividir tu códig
 
 ### Los bloques de 'Mis bloques' son realmente útiles
 
-En el código anterior, el bucle principal `por siempre`{:class=''block3control"} del juego llama al bloque `física-principal`{: Class = "block3myblocks"} de **Mis bloques** para hacer un montón de cosas! Mantener separados los bloques así hace que sea fácil leer el bucle principal y entender lo que sucede en el juego, sin preocuparse por **cómo** sucede.
+En el código anterior, el bucle principal `por siempre`{:class=“block3control"} del juego llama al bloque `física-principal`{: Class = "block3myblocks"} de **Mis bloques** para hacer un montón de cosas! Mantener separados los bloques así hace que sea fácil leer el bucle principal y entender lo que sucede en el juego, sin preocuparse por **cómo** sucede.
 
 \--- task \---
 
