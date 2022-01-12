@@ -11,16 +11,18 @@ technologies: scratch
 site_areas: coderdojo
 software: scratch
 version: 4.0.0
-last_tested: "2018-04-23"
+last_tested: '2018-04-23'
 steps:
-  - title: المقدمة
-  - title: ضبط الأمور
-  - title: خسارة اللعبة
-  - title: امدادات الطاقة
-  - title: امدادات طاقة خارقة!
-  - title: "تحدي: كن مبدعا!"
-    challenge: true
-  - title: إضافة بعض المنافسة
-  - title: المستوى ٢
-  - title: منصات متحركة
-  - title: ما التالي؟
+- title: المقدمة
+  completion: engaged
+- title: ضبط الأمور
+- title: خسارة اللعبة
+- title: امدادات الطاقة
+- title: امدادات طاقة خارقة!
+- title: 'تحدي: كن مبدعا!'
+  challenge: true
+- title: إضافة بعض المنافسة
+- title: المستوى ٢
+  completion: internal
+- title: منصات متحركة
+- title: ما التالي؟

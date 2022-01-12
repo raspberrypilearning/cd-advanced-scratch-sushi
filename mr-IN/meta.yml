@@ -1,7 +1,8 @@
 ---
 title: पडत तारे
 hero_image: images/banner.png
-description: एक प्लटॅफोर्म-शैलीचा गेम बनवा आणि आपले स्वतःचे स्तर, पावर्स आणि वर्ण जोडा.
+description: एक प्लटॅफोर्म-शैलीचा गेम बनवा आणि आपले स्वतःचे स्तर, पावर्स आणि वर्ण
+  जोडा.
 theme: orange
 listed: true
 copyedit: true
@@ -11,16 +12,18 @@ technologies: scratch
 site_areas: coderdojo
 software: scratch
 version: 4.0.0
-last_tested: "2018-04-23"
+last_tested: '2018-04-23'
 steps:
-  - title: परिचय
-  - title: वस्तुंचे व्यवस्थापन
-  - title: खेळ हरणे
-  - title: पॉवर-अप
-  - title: सुपर पॉवर-अप!
-  - title: "आव्हान: सर्जनशील (क्रिएटीव्ह) व्हा!"
-    challenge: true
-  - title: काही स्पर्धा जोडणे
-  - title: लेवल 2
-  - title: प्लॅटफॉर्म हलविणे
-  - title: पुढे काय?
+- title: परिचय
+  completion: engaged
+- title: वस्तुंचे व्यवस्थापन
+- title: खेळ हरणे
+- title: पॉवर-अप
+- title: सुपर पॉवर-अप!
+- title: 'आव्हान: सर्जनशील (क्रिएटीव्ह) व्हा!'
+  challenge: true
+- title: काही स्पर्धा जोडणे
+- title: लेवल 2
+  completion: internal
+- title: प्लॅटफॉर्म हलविणे
+- title: पुढे काय?

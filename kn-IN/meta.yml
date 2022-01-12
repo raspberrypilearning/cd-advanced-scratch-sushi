@@ -1,7 +1,8 @@
 ---
 title: ಬೀಳುವ ನಕ್ಷತ್ರಗಳು
 hero_image: images/banner.png
-description: ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಶೈಲಿಯ ಆಟವನ್ನು ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಸ್ವಂತ ಮಟ್ಟಗಳು, ಅಧಿಕಾರಗಳು ಮತ್ತು ಪಾತ್ರಧಾರಿಗಳನ್ನು ಸೇರಿಸಿ.
+description: ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಶೈಲಿಯ ಆಟವನ್ನು ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಸ್ವಂತ ಮಟ್ಟಗಳು, ಅಧಿಕಾರಗಳು
+  ಮತ್ತು ಪಾತ್ರಧಾರಿಗಳನ್ನು ಸೇರಿಸಿ.
 theme: orange
 listed: true
 copyedit: true
@@ -11,16 +12,18 @@ technologies: scratch
 site_areas: coderdojo
 software: scratch
 version: 4.0.0
-last_tested: "2018-04-23"
+last_tested: '2018-04-23'
 steps:
-  - title: ಪರಿಚಯ
-  - title: ವಿಷಯಗಳನ್ನು ಹೊಂದಿಸುವುದು
-  - title: ಆಟವನ್ನು ಕಳೆದುಕೊಳ್ಳುವುದು
-  - title: ಪವರ್-ಅಪ್ಗಳು
-  - title: ಸೂಪರ್ ಪವರ್-ಅಪ್ಗಳು!
-  - title: "ಸವಾಲು: ಸೃಜನಶೀಲರಾಗಿರಿ!"
-    challenge: true
-  - title: ಕೆಲವು ಸ್ಪರ್ಧೆಯನ್ನು ಸೇರಿಸಲಾಗುತ್ತಿದೆ
-  - title: ಹಂತ 2
-  - title: ಚಲಿಸುವ ವೇದಿಕೆಗಳು
-  - title: ಮುಂದೆ ಏನು?
+- title: ಪರಿಚಯ
+  completion: engaged
+- title: ವಿಷಯಗಳನ್ನು ಹೊಂದಿಸುವುದು
+- title: ಆಟವನ್ನು ಕಳೆದುಕೊಳ್ಳುವುದು
+- title: ಪವರ್-ಅಪ್ಗಳು
+- title: ಸೂಪರ್ ಪವರ್-ಅಪ್ಗಳು!
+- title: 'ಸವಾಲು: ಸೃಜನಶೀಲರಾಗಿರಿ!'
+  challenge: true
+- title: ಕೆಲವು ಸ್ಪರ್ಧೆಯನ್ನು ಸೇರಿಸಲಾಗುತ್ತಿದೆ
+- title: ಹಂತ 2
+  completion: internal
+- title: ಚಲಿಸುವ ವೇದಿಕೆಗಳು
+- title: ಮುಂದೆ ಏನು?
