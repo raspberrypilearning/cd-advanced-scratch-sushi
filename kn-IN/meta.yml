@@ -15,15 +15,17 @@ version: 4.0.0
 last_tested: '2018-04-23'
 steps:
 - title: ಪರಿಚಯ
-  completion: engaged
 - title: ವಿಷಯಗಳನ್ನು ಹೊಂದಿಸುವುದು
 - title: ಆಟವನ್ನು ಕಳೆದುಕೊಳ್ಳುವುದು
+  completion:
+  - engaged
 - title: ಪವರ್-ಅಪ್ಗಳು
 - title: ಸೂಪರ್ ಪವರ್-ಅಪ್ಗಳು!
 - title: 'ಸವಾಲು: ಸೃಜನಶೀಲರಾಗಿರಿ!'
   challenge: true
 - title: ಕೆಲವು ಸ್ಪರ್ಧೆಯನ್ನು ಸೇರಿಸಲಾಗುತ್ತಿದೆ
 - title: ಹಂತ 2
-  completion: internal
 - title: ಚಲಿಸುವ ವೇದಿಕೆಗಳು
+  completion:
+  - internal
 - title: ಮುಂದೆ ಏನು?

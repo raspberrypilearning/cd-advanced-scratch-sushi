@@ -15,15 +15,17 @@ version: 4.0.0
 last_tested: '2018-04-23'
 steps:
 - title: Εισαγωγή
-  completion: engaged
 - title: Ρύθμιση των πραγμάτων
 - title: Χάνοντας το παιχνίδι
+  completion:
+  - engaged
 - title: Βραβεία
 - title: Σούπερ Βραβεία!
 - title: 'Πρόκληση: γίνε δημιουργικός!'
   challenge: true
 - title: Περισσότερος ανταγωνισμός
 - title: Επίπεδο 2
-  completion: internal
 - title: Κινούμενες πλατφόρμες
+  completion:
+  - internal
 - title: Τι υπάρχει μετά;

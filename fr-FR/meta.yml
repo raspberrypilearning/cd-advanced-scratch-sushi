@@ -15,15 +15,17 @@ version: 4.0.0
 last_tested: '2018-04-23'
 steps:
 - title: Introduction
-  completion: engaged
 - title: Mise en place
 - title: Perdre la partie
+  completion:
+  - engaged
 - title: Power-ups
 - title: Super power-ups !
 - title: 'Défi : fais preuve de créativité !'
   challenge: true
 - title: Ajoute de la concurrence
 - title: Niveau 2
-  completion: internal
 - title: Plateformes mobiles
+  completion:
+  - internal
 - title: Et ensuite ?

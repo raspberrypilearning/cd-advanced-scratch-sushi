@@ -15,15 +15,17 @@ version: 4.0.0
 last_tested: '2018-04-23'
 steps:
 - title: Inleiding
-  completion: engaged
 - title: De voorbereidingen
 - title: Het spel verliezen
+  completion:
+  - engaged
 - title: Power-ups
 - title: Super power-ups!
 - title: 'Uitdaging: wees creatief!'
   challenge: true
 - title: Wedstrijdelement toevoegen
 - title: Level 2
-  completion: internal
 - title: Bewegende platforms
+  completion:
+  - internal
 - title: Wat nu?
