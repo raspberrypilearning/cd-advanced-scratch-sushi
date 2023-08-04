@@ -8,7 +8,7 @@ Jette un rapide coup d'œil au projet, y compris aux détails de cette carte, ca
 
 \--- task \---
 
-The first thing you’ll need to do is to get a copy of the Scratch code from [here](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
+La première chose que tu dois faire est d'obtenir une copie du code Scratch de [ici](https://scratch.mit.edu/projects/454114430){:target="_blank"}.
 
 Pour utiliser le projet hors-ligne, télécharge-le en cliquant sur **Voir à l'intérieur**, puis va dans le menu **Fichier** et clique sur **Sauvegarder sur votre ordinateur**. Ensuite, tu peux ouvrir le fichier téléchargé dans Scratch sur ton ordinateur.
 
