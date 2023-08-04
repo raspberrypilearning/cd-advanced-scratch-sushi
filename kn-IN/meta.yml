@@ -11,7 +11,7 @@ technologies: scratch
 site_areas: coderdojo
 software: scratch
 version: 4.0.0
-last_tested: "2018-04-23"
+last_tested: '2018-04-23'
 steps:
   - 
     title: ಪರಿಚಯ
@@ -19,12 +19,14 @@ steps:
     title: ವಿಷಯಗಳನ್ನು ಹೊಂದಿಸುವುದು
   - 
     title: ಆಟವನ್ನು ಕಳೆದುಕೊಳ್ಳುವುದು
+    completion:
+      - engaged
   - 
     title: ಪವರ್-ಅಪ್ಗಳು
   - 
     title: ಸೂಪರ್ ಪವರ್-ಅಪ್ಗಳು!
   - 
-    title: "ಸವಾಲು: ಸೃಜನಶೀಲರಾಗಿರಿ!"
+    title: 'ಸವಾಲು: ಸೃಜನಶೀಲರಾಗಿರಿ!'
     challenge: true
   - 
     title: ಕೆಲವು ಸ್ಪರ್ಧೆಯನ್ನು ಸೇರಿಸಲಾಗುತ್ತಿದೆ
@@ -32,5 +34,7 @@ steps:
     title: ಹಂತ 2
   - 
     title: ಚಲಿಸುವ ವೇದಿಕೆಗಳು \(ಪ್ಲಾಟ್‌ಫಾರ್ಮ್\)
+    completion:
+      - internal
   - 
     title: ಮುಂದೆ ಏನು?
