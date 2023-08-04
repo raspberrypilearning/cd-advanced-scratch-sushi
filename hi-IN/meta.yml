@@ -11,7 +11,7 @@ technologies: scratch
 site_areas: coderdojo
 software: scratch
 version: 4.0.0
-last_tested: "2018-04-23"
+last_tested: '2018-04-23'
 steps:
   - 
     title: Introduction
@@ -19,12 +19,14 @@ steps:
     title: Setting things up
   - 
     title: Losing the game
+    completion:
+      - engaged
   - 
     title: Power-ups
   - 
     title: Super power-ups!
   - 
-    title: "Challenge: get creative!"
+    title: 'Challenge: get creative!'
     challenge: true
   - 
     title: Adding some competition
@@ -32,5 +34,7 @@ steps:
     title: Level 2
   - 
     title: Moving platforms
+    completion:
+      - internal
   - 
     title: What next?
