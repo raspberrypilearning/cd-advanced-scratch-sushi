@@ -8,7 +8,7 @@ Primero, elige un objeto para agregar como tu enemigo. Como nuestro personaje es
 
 Cambia el tamaño del objeto al tamaño correcto y colócalo en un lugar apropiado para comenzar. Así es como se ve el mío:
 
-![El objeto perro enemigo](images/EnemySprite.png)
+![El objeto perro enemigo](images/enemySprite.png)
 
 --- /task ---
 
