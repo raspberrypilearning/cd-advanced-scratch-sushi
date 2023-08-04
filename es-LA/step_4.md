@@ -10,14 +10,14 @@ En los scripts para el objeto **Coleccionable**, busca el código `al comenzar c
 
 ```blocks3
     if <touching [Personaje del jugador v]?> then
-        change [points v] by (valor-coleccionable ::variables)
+        change [puntos v] by (valor-coleccionable ::variables)
         delete this clone
 ```
 
 y este que selecciona un disfraz para el clon:
 
 ```blocks3
-    pick-costume (tipo-coleccionable ::variables) :: custom
+    elegir-disfraz (tipo-coleccionable ::variables) :: custom
 ```
 
 --- collapse ---
@@ -28,9 +28,9 @@ title: ¿Cómo funciona elegir un disfraz?
 El bloque `elegir-disfraz`{:class="block3myblocks"} funciona un poco como el bloque `perder`{:class="block3myblocks"}, pero tiene algo extra: toma una variable de **entrada** llamada `tipo`{:class="block3myblocks"}.
 
 ```blocks3
-    define pick-costume (type)
-    if <(type ::variables) = [1]> then
-        switch costume to [star1 v]
+    define elegir-disfraz (tipo)
+    if <(tipo ::variables) = [1]> then
+        switch costume to [estrella1 v]
     end
 ```
 
@@ -43,12 +43,12 @@ Echa un vistazo a la parte del script que utiliza el bloque:
 
 ```blocks3
     when I start as a clone
-    pick-costume (tipo-coleccionable ::variables) :: custom
+    elegir-disfraz (tipo-coleccionable ::variables) :: custom
     show
     repeat until <(y position) < [-170]>
         change y by (velocidad-coleccionable ::variables)
         if <touching [Personaje del jugador v]?> then
-            change [points v] by (valor-coleccionable ::variables)
+            change [puntos v] by (valor-coleccionable ::variables)
             delete this clone
 ```
 
@@ -73,12 +73,12 @@ Agrega un nuevo disfraz al objeto **Coleccionable** para tu nuevo potenciador. A
 A continuación, dile al bloque `elegir-disfraz`{:class="block3myblocks"} de **Mis bloques** que establezca el nuevo disfraz cuando obtenga el nuevo valor para `tipo`{:class="block3myblocks"}, de esta manera \(usando cualquier nombre de disfraz que hayas elegido\):
 
 ```blocks3
-    define pick-costume (type)
-    if <(type ::variable) = [1]> then
-        switch costume to [star1 v]
+    define elegir-disfraz (tipo)
+    if <(tipo ::variable) = [1]> then
+        switch costume to [estrella1 v]
     end
-+    if <(type ::variable) = [2]> then
-+        switch costume to [lightning v]
++    if <(tipo ::variable) = [2]> then
++        switch costume to [rayo v]
 +    end
 ```
 
@@ -103,11 +103,11 @@ Clic **OK**.
 Haz que el bloque `reaccionar-al-jugador`{:class="block3myblocks"} de **Mis bloques** aumente ya sea los puntos o la vida del jugador, dependiendo del valor del `tipo`{:class="block3myblocks"}.
 
 ```blocks3
-+    define react-to-player (type)
-+    if <(type ::variable) = [1]> then
-+        change [points v] by (valor-coleccionable ::variables)
++    define reaccionar-al-jugador (tipo)
++    if <(tipo ::variable) = [1]> then
++        change [puntos v] by (valor-coleccionable ::variables)
 +    end
-+    if <(type ::variable) = [2]> then
++    if <(tipo ::variable) = [2]> then
 +        change [vidas v] by [1]
 +    end
 ```
@@ -120,7 +120,7 @@ Actualiza el código de `al comenzar como clon`{:class="block3events"} para reem
 
 ```blocks3
 +    if <touching [Personaje del jugador v] ?> then
-+        react-to-player (tipo-coleccionable ::variables) :: custom
++        reaccionar-al-jugador (tipo-coleccionable ::variables) :: custom
 +        delete this clone
 +    end
 ```
@@ -155,7 +155,7 @@ Vas a configurar el `tipo-coleccionable`{:class="block3variables"} a `1` o `2` p
 Encuentra el bucle `repetir hasta que`{:class="block3control"} dentro del código de la bandera verde para el objeto **Coleccionable**, y agregue el código `si...entonces`{:class="block3control"} que se muestra a continuación.
 
 ```blocks3
-    repeat until <not <(create-collectables ::variables) = [true]>>
+    repeat until <not <(crear-coleccionables ::variables) = [true]>>
 +        if <[50] = (pick random (1) to (50))> then
 +            set [tipo-coleccionable v] to [2]
 +        else
@@ -163,7 +163,7 @@ Encuentra el bucle `repetir hasta que`{:class="block3control"} dentro del códig
 +        end
         wait (frecuencia-coleccionable ::variables) secs
         go to x: (pick random (-240) to (240)) y: (179)
-        create clone of [myself v]
+        create clone of [mí mismo v]
 ```
 
 --- /task ---

@@ -28,7 +28,7 @@ Así es como el mío se ve hasta ahora:
 +    forever
         wait (4) secs
         if <(crear-plataformas ::variables) = [true]> then
-            create clone of [myself v]
+            create clone of [mí mismo v]
         end
     end
 ```

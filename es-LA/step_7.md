@@ -31,11 +31,11 @@ Ahora necesitas escribir el código de lo que hace el enemigo. Usa mi código aq
 +    when green flag clicked
 +    show
 +    set [pasos-de-movimiento-enemigo v] to [5]
-+    set rotation style [left-right v]
++    set rotation style [izquierda-derecha v]
 +    go to x: (-25) y: (-9)
 +    forever
         move (pasos-de-movimiento-enemigo) steps
-        if <not <touching [Platforms v] ?>> then
+        if <not <touching [Plataformas v] ?>> then
             set [pasos-de-movimiento-enemigo v] to ((pasos-de-movimiento-enemigo) * (-1))
         end
      end
@@ -55,12 +55,12 @@ Así es como lo hice, ¡pero puedes intentar mejorar este código! He modificado
 
 ```blocks3
     when green flag clicked
-    reset-game :: custom
+    reiniciar-juego :: custom
     forever
-        main-physics :: custom
+        física-principal :: custom
         if <(y position) < [-179]> then
             hide
-            reset-character :: custom
+            reiniciar-personaje :: custom
             change [vidas v] by (-1)
             wait (0.05) secs
             show
@@ -73,7 +73,7 @@ Así es como lo hice, ¡pero puedes intentar mejorar este código! He modificado
             show
 +        end
         if <(vidas) < [1]> then
-            lose :: custom
+            perder :: custom
         end
     end
 ```

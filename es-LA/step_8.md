@@ -8,7 +8,7 @@ Con este paso, agregarás un nuevo nivel al juego al que el jugador puede accede
 
 Primero, crea un nuevo objeto como un botón, ya sea añadiendo uno de la biblioteca o dibujando el tuyo propio. Hice un poco de ambas cosas y este fue el resultado:
 
-![El objeto botón para cambiar niveles](images/nivelButton.png)
+![El objeto botón para cambiar niveles](images/levelButton.png)
 
 --- /task ---
 
@@ -27,7 +27,7 @@ Añade estos scripts a tu objeto **Botón**. Necesitarás crear algunas variable
 
 ```blocks3
 +    when this sprite clicked
-+    change [cnivel-actual v] by (1)
++    change [nivel-actual v] by (1)
 +    if <(nivel-actual) > (nivel-máximo ::variables)> then
         set [nivel-actual v] to (nivel-mínimo ::variables)
     end
@@ -119,10 +119,10 @@ Cada vez que comienza un nuevo nivel, el objeto de **Personaje del jugador** nec
 Comienza creando variables para las coordenadas iniciales: `iniciar-x`{:class="block3variables"} e `iniciar-y`{:class="block3variables"}. Luego, insértalas al bloque `ir a`{:class="block3motion"} en el bloque de `reiniciar-personaje`{:class="block3myblocks"} de **Mis bloques** en lugar de los valores fijos de `x` e `y`:
 
 ```blocks3
-    define reset-character
+    define reiniciar-personaje
     set [puede-saltar v] to [true]
-    set [x-speed v] to [0]
-    set [y-speed v] to [-0]
+    set [x-velocidad v] to [0]
+    set [y-velocidad v] to [-0]
 +    go to x: (iniciar-x) y: (iniciar-y)
 ```
 
@@ -136,14 +136,14 @@ Luego, para cada mensaje que anuncie el inicio de un nivel, configure las coorde
 +    when I receive [nivel-1 v]
 +    set [iniciar-x v] to [-183]
 +    set [iniciar-y v] to [42]
-+    reset-character :: custom
++    reiniciar-personaje :: custom
 ```
 
 ```blocks3
 +    when I receive [nivel-2 v]
 +    set [iniciar-x v] to [-218]
 +    set [iniciar-y v] to [-143]
-+    reset-character :: custom
++    reiniciar-personaje :: custom
 ```
 
 --- /task ---
@@ -157,8 +157,8 @@ También debes asegurarte de que cada vez que alguien comienza el juego, el prim
 Ve al script de `reiniciar-juego`{:class="block3myblocks"} y elimina la llamada para `reiniciar-personaje`{:class="block3myblocks"}. En su lugar, envía el `nivel-mínimo`{:class="block3variables"}. El código que ya has agregado con esta tarjeta configurará las coordenadas iniciales correctas para el objeto **Personaje del jugador**, y también llamará a `reiniciar-personaje`{:class="block3myblocks"}.
 
 ```blocks3
-    define reset-game
-    set rotation style [left-right v]
+    define reiniciar-juego
+    set rotation style [izquierda-derecha v]
     set [altura-del-salto v] to [15]
     set [gravedad v] to [2]
     set [x-speed-adjuster v] to [1]

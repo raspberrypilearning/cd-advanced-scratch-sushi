@@ -9,12 +9,12 @@ Puede que hayas notado que el bloque `perder`{:class="block3myblocks"} de **Mis 
 Primero, encuentra el bloque `perder`{:class="block3myblocks"} y complétalo con el siguiente código:
 
 ```blocks3
-    define lose
-+    stop [other scripts in sprite v] :: control stack
+    define perder
++    stop [otros programas en el objeto v] :: control stack
 +    broadcast [fin del juego v]
 +    go to x:(0) y:(0)
 +    say [¡Fin del juego!] for (2) secs
-+    stop [all v]
++    stop [todos v]
 ```
 
 --- /task ---
@@ -72,7 +72,7 @@ Mira cómo funciona el objeto **Coleccionable**. Comprueba si puedes entender al
     repeat until <not <(crear-coleccionables) = [true]>>
         wait (frecuencia-coleccionable) secs
         go to x: (pick random (-240) to (240)) y: (179)
-        create clone of [myself v]
+        create clone of [mí mismo v]
     end
 ```
 

@@ -11,7 +11,7 @@ Primero, cambia el bloque de `reaccionar-al-jugador`{:class="block3myblocks"} pa
 ```blocks3
     define tipo (tipo)
     if <(tipo ::variable) = [1]> then
-        change [points v] by (valor-coleccionable ::variables)
+        change [puntos v] by (valor-coleccionable ::variables)
     end
     if <(tipo ::variable) = [2]> then
 -        change [vidas v] by [1]    
@@ -56,7 +56,7 @@ En el bucle principal del juego, la parte del código que genera los clones del 
         end
         wait (frecuencia-coleccionable ::variables) secs
         go to x: (pick random (-240) to (240)) y:(179)
-        create clone of [myself v]
+        create clone of [mí mismo v]
     end
 ```
 
