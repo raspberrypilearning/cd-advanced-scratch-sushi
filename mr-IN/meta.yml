@@ -11,7 +11,7 @@ technologies: scratch
 site_areas: coderdojo
 software: scratch
 version: 4.0.0
-last_tested: "2018-04-23"
+last_tested: '2018-04-23'
 steps:
   - 
     title: परिचय
@@ -19,12 +19,14 @@ steps:
     title: वस्तुंचे व्यवस्थापन
   - 
     title: खेळ हरणे
+    completion:
+      - engaged
   - 
     title: पॉवर-अप
   - 
     title: सुपर पॉवर-अप!
   - 
-    title: "आव्हान: सर्जनशील (क्रिएटीव्ह) व्हा!"
+    title: 'आव्हान: सर्जनशील (क्रिएटीव्ह) व्हा!'
     challenge: true
   - 
     title: काही स्पर्धा जोडणे
@@ -32,5 +34,7 @@ steps:
     title: लेवल 2
   - 
     title: प्लॅटफॉर्म हलविणे
+    completion:
+      - internal
   - 
     title: पुढे काय?
