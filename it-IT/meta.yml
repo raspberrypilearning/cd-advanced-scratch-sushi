@@ -11,7 +11,7 @@ technologies: scratch
 site_areas: coderdojo
 software: scratch
 version: 4.0.0
-last_tested: "2018-04-23"
+last_tested: '2018-04-23'
 steps:
   - 
     title: Introduzione
@@ -19,12 +19,14 @@ steps:
     title: Impostare il tutto
   - 
     title: Perdere al gioco
+    completion:
+      - engaged
   - 
     title: Potenziamenti
   - 
     title: Super potenziamenti!
   - 
-    title: "Sfida: diventa creativo!"
+    title: 'Sfida: diventa creativo!'
     challenge: true
   - 
     title: Aggiungiamo un po' di competizione
@@ -32,5 +34,7 @@ steps:
     title: Livello 2
   - 
     title: Piattaforme mobili
+    completion:
+      - internal
   - 
     title: E adesso?
