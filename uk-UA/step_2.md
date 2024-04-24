@@ -1,6 +1,6 @@
-## Setting things up
+## Налаштування
 
-Because you’re learning how to code in Scratch and not how to build a physics engine (code that makes things in a computer game behave like real-world objects, e.g. they don't fall through floors), you’ll be starting with a project I’ve created that already has the basics for moving, jumping, and detecting platforms built in.
+Тому що ви вчитеся, як кодувати в Scratch, а не як створювати фізичний движок (код, який робить речі в комп'ютерній грі поводяться як об'єкти реального світу, наприклад, вони не падають через поверхи), ви починаєте з створений мною проект, який вже має основи для переміщення, стрибків і виявлення вбудованих платформ.
 
 You should take a quick look at the project, including the details on this card, because you’ll be making some changes to it later, but you don’t need to understand everything it’s doing!
 
@@ -45,4 +45,4 @@ Now look at the `reset game`{:class="block3myblocks"} and `reset character`{:cla
 They do pretty normal things, such as setting up variables and making sure the character rotates properly
 
 - `reset-game`{:class="block3myblocks"} **calls** `reset-character`{:class="block3myblocks"}, showing you that you can use a **My blocks** block inside another **My blocks** block
-- The `reset-character`{:class="block3myblocks"} **My blocks** block gets used in two different places in the main loop. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
+- `скидання символів`{: class = "block3myblocks"} **Мої блоки блоків** використовуються в двох різних місцях основного циклу. This means you can change two places in your main game loop by only changing the code inside of the **My blocks** block, which saves you a lot of work and helps you avoid mistakes.
